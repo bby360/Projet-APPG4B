@@ -7,12 +7,13 @@
 
 </head>
 <body>
+<img id="fond" src="photo.jpg">
 <header>
 
     <ul>
-        <li><a href="">Accueil</a></li>
+        <li><a href="index.php?action=see_home">Accueil</a></li>
         <li><a href="">Votre profil</a></li>
-        <li><a href="">Pièces</a></li>
+        <li><a href="index.php?action=rooms">Pièces</a></li>
         <li><a href="">Urgence</a></li>
         <li><a href="">Catalogue</a></li>
         <li><a href="">Consommation</a></li>

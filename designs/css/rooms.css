@@ -1,0 +1,184 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    width: 100%;
+}
+
+#fond {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+/*menu deroulant*/
+#menuvertical {
+
+    width: 16%;
+    margin-left: 42%;
+    height: 30px;
+    list-style-type: none ;
+    margin-top: 10%;
+    padding: 0px;
+}
+
+#menuvertical ul {
+    display: none ;
+    list-style-type: none ;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 30px;
+
+}
+
+#menuvertical li {
+    position: relative;
+    border-radius: 15px 15px;
+    width: 100%;
+    height: 2em;
+    border: 2px solid #2D241E;
+    padding: 0;
+    margin: 0;
+    margin-top: .5%;
+    background-image: linear-gradient(to bottom right, #bbacac, #696969);
+}
+
+#menuvertical a {
+    display: block ;
+    width: 100%;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    color: #21177d;
+    font-size: 200%;
+    text-align: center;
+}
+
+#menuvertical li:hover ul {
+    display: block ;
+    position: absolute;
+    margin-top: 5%;  /*espace entre 1er choix et le menu deroulant*/
+    left: 49%;  /*pour aligner le menu deroulant*/
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+#menuvertical ul a {
+    display: block;
+    text-decoration: none;
+}
+
+#salon{
+    background-image: linear-gradient(to bottom right, #bbacac, #696969);
+}
+
+
+/*FIN menu deroulant*/
+
+#mode{
+    position: relative;
+    margin-top: 3%;
+
+    font-size: 150%;
+}
+#mode p{
+    margin-left: 41%;    /*position du texte*/
+}
+
+#mode input{
+    margin-left: 27%;    /*position des choix*/
+}
+
+#lumiere_auto{
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: 150%;
+}
+#lumiere_auto select{
+    font-size: 80%;
+}
+
+#lumiere_manuel{
+    display: inline-block;
+    position: relative;
+    font-size: 90%;
+    margin-top: 3%;
+    margin-left: 23%;
+}
+
+#ouverture_volets{
+    display: inline-block;
+    position: relative;
+    width: 81.5%;
+    font-size: 150%;
+    margin-top: 1%;
+    margin-left: 10.5%;
+}
+
+#ouverture_volets input{
+    font-size: 80%;
+}
+
+#volets_manuel{
+    display: inline-block;
+    position: relative;
+    font-size: 90%;
+    margin-top: 3%;
+    margin-left: 23%;
+}
+
+#fermeture_volets{
+    display: block;
+    position: relative;
+    font-size: 150%;
+    margin-top: 3%;
+    margin-left: 10.5%;
+}
+
+#fermeture_volets input{
+    font-size: 80%;
+}
+
+#ventilateur{
+    display: inline-block;
+    position: relative;
+    margin-top: 3%;
+    margin-left: 44%;
+    font-size: 150%;
+}
+
+#ventilateur select{
+    font-size: 80%;
+}
+
+#temperature{
+    display: block;
+    position: relative;
+    font-size: 150%;
+    margin-top: 2%;
+    margin-left: 45%;
+}
+
+#temperature input{
+    width: 7%;
+    font-size: 80%;
+}
+
+#valider{
+    display: block;
+    position: relative;
+    font-size: 150%;
+    margin-top: 2%;
+    margin-left: 48%;
+}
+
+#valider input{
+
+    font-size: 100%;
+}
