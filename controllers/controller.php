@@ -16,3 +16,6 @@ function rooms(){
 function seeError(){
     require "views/home.php";
 }
+functtion footer(){
+require "views/footer.php";
+}
