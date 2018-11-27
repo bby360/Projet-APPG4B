@@ -25,7 +25,10 @@ if(isset($_GET["action"])){
         case 'connection':
             connection();
             break;
-
+            
+        case 'footer':
+            footer();
+            break;
 
         default:
             seeError();
