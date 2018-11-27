@@ -26,8 +26,8 @@ if(isset($_GET["action"])){
             connection();
             break;
             
-        case 'footer':
-            footer();
+        case 'header':
+            header();
             break;
 
         default:
