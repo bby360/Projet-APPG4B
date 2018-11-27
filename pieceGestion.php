@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); 
 
 $db = new PDO('mysql:host=localhost;dbname=testsite;charset=utf8', 'root', '');
 
