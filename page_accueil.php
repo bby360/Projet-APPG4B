@@ -19,7 +19,7 @@
 <section>
 
 
-<div class="piece"><a href="index.php?action=room">
+<div class="piece"><a href="index.php?action=room&amp;piece=salon">
   <div class="text">
     <p>PIECES</p>            
   </div>
