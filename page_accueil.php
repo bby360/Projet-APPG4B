@@ -21,7 +21,7 @@
 
 <div class="piece"><a href="index.php?action=room">
   <div class="text">
-    <p>PIECE</p>            
+    <p>PIECES</p>            
   </div>
 </a>
 </div>
