@@ -16,3 +16,10 @@ function rooms(){
 function seeError(){
     require "views/home.php";
 }
+function inscription(){
+    require "views/inscription.php";
+}
+
+function connexion(){
+    require "views/connexion.php";
+}

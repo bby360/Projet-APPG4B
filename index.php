@@ -22,8 +22,12 @@ if(isset($_GET["action"])){
             aide();
             break;
 
-        case 'connection':
-            connection();
+        case 'connexion':
+            connexion();
+            break;
+            
+        case 'inscription':
+            inscription();
             break;
 
         default:
