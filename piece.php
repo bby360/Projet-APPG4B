@@ -8,19 +8,7 @@
 <body>
 	 <img id="fond" src="photo.jpg"> 
 	<header class="header">
-		<ul>
-			<li><a href="page_accueil.html">Accueil</a></li>
-			<li><a href="">Votre profil</a></li>
-			<li><a href="">Pièces</a></li>
-			<li><a href="">Catalogue</a></li>
-			<li><a href="">Consommation</a></li>
-			<li><a href="">Forum</a></li>
-			<li><a href="">FAQ</a></li>
-			<li><a href="">Urgence</a></li>
-		</ul>
-		<div class="deconnexion">
-			<a href="">Déconnexion</a>
-		</div>
+		 <?php include("header.php"); ?>
 	</header>
 	<section>
 		
@@ -28,10 +16,10 @@
 			<ul id="menuvertical">           
             <li id="salon"><a href="#">SALON</a>
                 <ul>
-                    <li id="bureau"><a href="#">BUREAU</a></li>
-                    <li><a href="#">Sous-Menu 2.2</a></li>
-                    <li><a href="#">Sous-Menu 2.3</a></li>
-                    <li><a href="#">Sous-Menu 2.4</a></li>
+                    <li id="bureau"><a href="index.php?action=salon&amp;piece=bureau">BUREAU</a></li>
+                    <li><a href="index.php?action=salon&amp;piece=cuisine">CUISINE</a></li>
+                    <li><a href="index.php?action=salon&amp;piece=chambre1">CHAMBRE 1 </a></li>
+                    <li><a href="index.php?action=salon&amp;piece=chambre2">CHAMBRE 2</a></li>
                 </ul>
             </li>                       
         </ul>
