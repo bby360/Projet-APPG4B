@@ -26,7 +26,7 @@ function inscriptionx()
             $adress=$_POST['adress'];
 
             mysql_select_db("Domisep");
-            $requete= "INSERT INTO Client VALUES('','$lastName','firstName','login';'email','password','phone','adress')";
+            $requete= "INSERT INTO Client VALUES('','$lastName','$firstName','$login';'$email','$password','$phone','$adress')";
         }
     }
     else { 
