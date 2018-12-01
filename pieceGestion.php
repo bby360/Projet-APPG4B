@@ -1,21 +1,35 @@
 <?php
 
 function Update(){
-$db -> exec('UPDATE Room INNER JOIN House ON "Room.idHouse"="House.idHouse" 
-			SET mode=$_POST["mode"] WHERE "House.idClient"=$_SESSION["id"] AND "Room.nom"=$_GET["piece"]') //GET le nom de la piece
+$req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse SET mode= :nvmode WHERE house.idClient="1" AND nom="salon"'); 
+	$req -> execute(array(
+		'nvmode'=>$_POST['mode']));
+	$req->closeCursor();
 
-if($_POST['mode']=='automatique'){
-	$db -> exec('UPDATE Room INNER JOIN House ON "Room.idHouse"="House.idHouse" 
-					SET lumiereManu=$_POST["lumiere_manuel"], ouvertureVolets=$_POST["ouverture_volets"], 
-					fermetureVolets=$_POST["fermeture_volets"], temperature=$_POST["temperature"]
-					WHERE "House.idClient"=$_SESSION["id"] AND "Room.nom"=$_GET["piece"]')
-}
-else{
-	$db -> exec('UPDATE Room INNER JOIN House ON "Room.idHouse"="House.idHouse" 
-					SET lumiereAuto=$_POST["lumiere_auto"], ouvertureVolets=$_POST["ouverture_volets"], 
-					fermetureVolets=$_POST["fermeture_volets"], temperature=$_POST["temperature"]
-					WHERE "House.idClient"=$_SESSION["id"] AND "Room.nom"=$_GET["piece"]')
-}
+	if($_POST['mode']=='automatique'){
+		$req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse SET lumiereAuto=:nvlumiereAuto, ouvertureVolets=:nvouvertureVolets, fermetureVolets=:nvfermetureVolets, temperature=:nvtemperature, ventilateur=:nvventilateur WHERE house.idClient="1" AND nom="salon"');
 
+		$req -> execute(array(
+			'nvlumiereAuto'=>$_POST['lumiere_auto'],
+			'nvouvertureVolets'=>$_POST['ouverture_volets'],
+			'nvfermetureVolets'=>$_POST['fermeture_volets'],
+			'nvtemperature'=>$_POST['temperature'],
+			'nvventilateur'=>$_POST['ventilateur']
+			));
+	}
+
+	else{
+		$req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse
+						SET lumiereManu=:nvlumiereManu, voletsManu=:nvvoletsManu, temperature=:nvtemperature, ventilateur=:nvventilateur
+						WHERE house.idClient="1" AND nom="salon"');
+		$req -> execute(array(
+			'nvlumiereManu'=>$_POST['lumiere_manuel'],
+			'nvvoletsManu'=>$_POST['volets_manuel'],
+			'nvtemperature'=>$_POST['temperature'],
+			'nvventilateur'=>$_POST['ventilateur'],
+		));
+
+	}
+}
 ?>
 
