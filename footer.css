@@ -1,37 +1,41 @@
 /* Bas de page */
 
+*{
+	background: #00497A;
+	font-family: "Libre Baskerville", Arial;
+}
+
+/* Bas de page */
+
 footer {
-	background: white;
-	background-size: cover;
-	background-position: bottom center;
+	background-color: white;
+	position:fixed;
+	bottom:0;
+	left:0;
+	width: 100%;
+	height: 8%;
 
 }
-#mention {
+footer ul {
+	list-style: none;
+	background-color: white;
+}
+footer ul li {
+	display: inline;
+	margin-left: 10px;
+	text-decoration: none;
+	margin-top: auto;
+	margin-bottom: auto;
+	background-color: white;
+}
+footer ul li a{
 	color: black;
-	z-index: 2;
+	background-color: white;
 }
-
-#Apropos {
-	color:black;
-	z-index: 2;
+footer li:last-child {
+	float: right;
+	color: black;
 }
-
-#triangle {
-	width: 0;
-	height: 0;
-	border-left: 130px solid transparent;
-	border-right: 130px solid transparent;
-	border-top: 150px solid #00497A;
-	position:relative;
-	left: 40%;
-	bottom: 40px;
-	z-index: 1;
-}
-
-/* Crated by */
-
-#crea {
-	float:left;
-	position: absolute;
-	margin: 0 auto;
+#createdby{
+	position: left;
 }
