@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="../design/editProfile.css" />
-    <title>Editer votre profil</title>
+    <link rel="stylesheet" type="text/css" href="../design/footer.css" />
+    <title>footer</title>
 </head>
 <body>
 <footer>
