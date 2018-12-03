@@ -64,7 +64,7 @@
        <input type="password" name="confirm_password" required>
    </td>
 </br>
-
+</tr>
 </table>
 
 <p>
