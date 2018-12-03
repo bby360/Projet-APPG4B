@@ -6,7 +6,7 @@ function getRooms(){
 	$db = dbConnect();
 
 }
-$notification="Vous avez oublier de remplir un champs";
+$notification="Vous avez oublié de remplir un champ";
 
 function inscriptionx()
 {
@@ -55,7 +55,7 @@ function connexionx()
                 $_SESSION['login']=$ligne['login'];
                 $_SESSION['password']=$ligne['password'];
 
-                echo "Vous vous êtes bien conenctés";         
+                echo "Vous vous êtes bien conencté";
             }
 
         else{ 
