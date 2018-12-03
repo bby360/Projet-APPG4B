@@ -1,17 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../design/editProfile.css" />
+    <title>Editer votre profil</title>
+</head>
+<body>
 <footer>
+
+    <p>
     <ul>
-        <li><a href="mentionlegal" id="mention">Mentions légales</a></li>
-        <li><a href="apropos" id="Apropos">A Propos</a></li>
-        <li> Created by</li>
+        <li><a href="" id="mention">Mentions légales</a></li>
+        <li><a href="" id="Apropos">A Propos</a></li>
+        <li>Created by</li>
+        <li><img src="..design/logo.jpg" id="logo" alt="Logo CA"></li>
+
+
+
     </ul>
-    <div id="triangle"></div>
-    <img id="image2" src="logonou.png">
-</footer> 
+    </p>
 
+</footer>
 
-<?php try {
-                     <img scr="logo.png" alt="Logo CréAmbition" > 
-            }   catch (Exception $e){
-                    echo $e -> getMessage();
+</body>
 
-            }?>
+</html>
