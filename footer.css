@@ -1,0 +1,37 @@
+/* Bas de page */
+
+footer {
+	background: white;
+	background-size: cover;
+	background-position: bottom center;
+
+}
+#mention {
+	color: black;
+	z-index: 2;
+}
+
+#Apropos {
+	color:black;
+	z-index: 2;
+}
+
+#triangle {
+	width: 0;
+	height: 0;
+	border-left: 130px solid transparent;
+	border-right: 130px solid transparent;
+	border-top: 150px solid #00497A;
+	position:relative;
+	left: 40%;
+	bottom: 40px;
+	z-index: 1;
+}
+
+/* Crated by */
+
+#crea {
+	float:left;
+	position: absolute;
+	margin: 0 auto;
+}
