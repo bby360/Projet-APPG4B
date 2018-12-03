@@ -34,7 +34,7 @@ session_start();
 	
 		<p class="NotaBene">NB: La dure de l'installation varie en fonction du nombre de capteurs sélectionnés</p>
 
-		<a href="index.php?action=inscription"><input type="button" value="Retour"></a>
+		<a href="../index.php?action=inscription"><input type="button" value="Retour"></a>
 		<input type="submit" value="Valider"> 
 	</form>
 	</section>
