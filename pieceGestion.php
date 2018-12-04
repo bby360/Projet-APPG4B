@@ -13,8 +13,7 @@ $req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse SE
 			'nvlumiereAuto'=>$_POST['lumiere_auto'],
 			'nvouvertureVolets'=>$_POST['ouverture_volets'],
 			'nvfermetureVolets'=>$_POST['fermeture_volets'],
-			'nvtemperature'=>$_POST['temperature'],
-			'nvventilateur'=>$_POST['ventilateur']
+			'nvtemperature'=>$_POST['temperature'],			
 			));
 	}
 
@@ -26,7 +25,7 @@ $req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse SE
 			'nvlumiereManu'=>$_POST['lumiere_manuel'],
 			'nvvoletsManu'=>$_POST['volets_manuel'],
 			'nvtemperature'=>$_POST['temperature'],
-			'nvventilateur'=>$_POST['ventilateur'],
+			
 		));
 
 	}
