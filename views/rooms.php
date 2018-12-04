@@ -3,16 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Pièce</title>
-    <link rel="stylesheet" type="text/css" href="../designs/css/rooms.css" />
+    <link rel="stylesheet" type="text/css" href="designs/css/rooms.css" />
 </head>
 <body>
 <img id="fond" src="photo.jpg">
 <header>
-
-<?php
+    <?php
 include 'header.php';
 ?>
-
 </header>
 <section>
 
@@ -83,6 +81,5 @@ include 'header.php';
 
     </form>
 </section>
-
 </body>
 </html>

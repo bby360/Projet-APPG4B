@@ -2,15 +2,17 @@
 
 require "controllers/controller.php";
 
+
+
 if(isset($_GET["action"])){
     $action = htmlspecialchars($_GET["action"]);
 
     switch ($action) {
-        case 'see_home':
-            seeHome();
+        case 'home':
+            home();
             break;
 
-        case 'temporary':
+        case 'temporary_guest.php':
             temporary();
             break;
 
@@ -18,8 +20,8 @@ if(isset($_GET["action"])){
             rooms();
             break;
 
-        case 'aide':
-            aide();
+        case 'deconnexion':
+            deconnexion();
             break;
 
         case 'connexion':
@@ -33,6 +35,18 @@ if(isset($_GET["action"])){
         case 'inscrire':
             inscrire();
             break;
+
+        case 'edit_profile':
+            editProfile();
+            break;
+            
+        case 'inscription2':
+            inscription2();
+            break;
+
+        case 'SeeRoom':
+            SeeRoom();
+            break;    
 
         default:
             seeError();

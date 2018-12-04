@@ -1,4 +1,3 @@
-<?php include("design/editProfile.css");?>
 <?php
 session_start();
 
@@ -7,6 +6,7 @@ $_SESSION['prenom'] = 'Jean';
 $_SESSION['nom'] = 'Dupont';
 $_SESSION['age'] = 24;
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,19 +18,9 @@ $_SESSION['age'] = 24;
     <body>
     	<header>
             <ul>
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Votre profil</a></li>
-                <li><a href="">Pièces</a></li>
-                <li><a href="">Urgence</a></li>
-                <li><a href="">Catalogue</a></li>
-                <li><a href="">Consommation</a></li>
-                <li><a href="">Forum</a></li>
-                <li><a href="">FAQ</a></li>
-            </ul>
-
-             <div class="deconnexion">
-                 <a href="">Déconnexion</a></li>
-             </div>
+<?php include 'header.php';
+?>
+        </header>
 
             <h1> Editer votre profil</h1></header>
 
