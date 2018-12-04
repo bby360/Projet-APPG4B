@@ -39,6 +39,10 @@ if(isset($_GET["action"])){
         case 'edit_profile':
             editProfile();
             break;
+            
+        case 'inscription2':
+            inscription2();
+            break;
 
         default:
             seeError();
