@@ -21,7 +21,6 @@ a {
 .piece {
  position: relative;
  display: inline-block;
- float: left;
  width: 300px;
  height: 250px;
  background-image: url("salon-moderne.jpg");
@@ -57,7 +56,6 @@ a {
 .profil {
  display: inline-block;
  position: relative;
- float: right;
  width: 300px;
  height: 250px;
  background-image: url("bureau-moderne.jpg");
@@ -94,7 +92,6 @@ a {
 .catalogue {
  display:inline-block;
  position: relative;
- float: right;
  width: 300px;
  height: 250px;
  background-image: url("bureau-moderne.jpg");
@@ -131,7 +128,6 @@ a {
 .consommation {
  display: inline-block;
  position: relative;
- float: left;
  width: 300px;
  height: 250px;
  background-image: url("bureau-moderne.jpg");
@@ -181,8 +177,7 @@ footer ul li {
     display: inline;
     margin-left: 10px;
     text-decoration: none;   
-    margin-top: auto;
-    margin-bottom: auto;
+
 }
 
 footer ul li a{

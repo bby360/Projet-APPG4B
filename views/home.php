@@ -3,8 +3,8 @@
 <html>
 <head>
  <meta charset="utf-8" />
- <title>Page d'accueil</title>
- <link rel="stylesheet" type="text/css" href="page_accueil.css" />
+ <title>home</title>
+ <link rel="stylesheet" type="text/css" href="./designs/css/home.css" />
 </head>
 <body>
   <img id="fond" src="photo.jpg">
@@ -47,7 +47,11 @@
 </section>
 
 <footer>
-  <?php include("footer.php"); ?>
+  <ul>
+   <li><a href="">Mentions légales</a></li>
+   <li><a href="">A Propos</a></li>
+   <li><a href="">Created by</a></li>
+ </ul>
 </footer>  
 </body>
 </html>

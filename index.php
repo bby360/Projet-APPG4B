@@ -2,8 +2,6 @@
 
 require "controllers/controller.php";
 
-
-
 if(isset($_GET["action"])){
     $action = htmlspecialchars($_GET["action"]);
 
@@ -20,8 +18,8 @@ if(isset($_GET["action"])){
             rooms();
             break;
 
-        case 'deconnexion':
-            deconnexion();
+        case 'aide':
+            aide();
             break;
 
         case 'connexion':
@@ -34,14 +32,6 @@ if(isset($_GET["action"])){
 
         case 'inscrire':
             inscrire();
-            break;
-
-        case 'edit_profile':
-            editProfile();
-            break;
-            
-        case 'inscription2':
-            inscription2();
             break;
 
         default:
