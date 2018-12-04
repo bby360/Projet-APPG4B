@@ -19,6 +19,10 @@ if(isset($_GET["action"])){
         case 'seeRoom':
             seeRooms();
             break;
+        
+        case 'edit_profile':
+            editProfile();
+            break;
 
 
         default:
