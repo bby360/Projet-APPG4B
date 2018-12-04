@@ -47,11 +47,7 @@
 </section>
 
 <footer>
-  <ul>
-   <li><a href="">Mentions légales</a></li>
-   <li><a href="">A Propos</a></li>
-   <li><a href="">Created by</a></li>
- </ul>
+  <?php include("footer.php"); ?>
 </footer>  
 </body>
 </html>
