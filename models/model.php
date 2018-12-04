@@ -71,4 +71,13 @@ function connexionx()
         include('index.php?action=connexion');
      }
     }
+
+function inscription2(){
+    $db = dbConnect();
+    $req = $db->prepare("INSERT INTO Client(adress,postalcode) VALUES (?,?)");
+    $req ->execute(array($_POST['Adresse'],$_POST['CP']));
+
+}
+
+
 ?>

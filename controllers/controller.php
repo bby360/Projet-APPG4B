@@ -20,6 +20,11 @@ function inscription(){
     require "views/inscription.php";
 }
 
+function inscription2(){
+
+    require "views/inscription2.php";
+}
+
 function connexion(){
     require "views/connexion.php";
 }

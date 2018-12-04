@@ -30,6 +30,15 @@ if(isset($_GET["action"])){
             inscription();
             break;
 
+        case 'inscription2':
+            inscription2();
+            break;
+
+        case 'catalogue':
+            catalogue();
+            break;
+
+
         default:
             seeError();
             break;

@@ -25,7 +25,7 @@ session_start();
 	
 	
 		<p>Veuillez consulter notre catalogue afin de selectionner les produits correspondants à vos besoins
-		<input type="button" name="catalogue" value="Catalogue"></p>
+		<a href="./index.php?action=catalogue"><input type="button" name="catalogue" value="Catalogue"></p></a>
 
 		<p>Une fois votre choix effectué, merci de prendre rendez-vous avec l'un de nos installateurs. <br>Celui-ci se rendra à votre domicile pour procéder à l'installation de votre system G4B.</p>
 
@@ -34,8 +34,8 @@ session_start();
 	
 		<p class="NotaBene">NB: La dure de l'installation varie en fonction du nombre de capteurs sélectionnés</p>
 
-		<a href="../index.php?action=inscription"><input type="button" value="Retour"></a>
-		<input type="submit" value="Valider"> 
+		<a href="./index.php?action=inscription"><input type="button" value="Retour"></a>
+		<a href="./index.php?action=inscription2"><input type="submit" value="Valider"></a>
 	</form>
 	</section>
 
