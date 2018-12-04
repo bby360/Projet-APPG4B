@@ -6,6 +6,9 @@ if(isset($_GET["action"])){
     $action = htmlspecialchars($_GET["action"]);
 
     switch ($action) {
+        case 'see_home':
+            seeHome();
+            break;
 
         case 'temporary':
             temporary();
@@ -15,16 +18,26 @@ if(isset($_GET["action"])){
             rooms();
             break;
 
-
-        case 'seeRoom':
-            seeRooms();
+        case 'aide':
+            aide();
             break;
 
+        case 'connexion':
+            connexion();
+            break;
+            
+        case 'inscription':
+            view_inscription();
+            break;
+
+        case 'inscrire':
+            inscrire();
+            break;
 
         default:
             seeError();
             break;
     }
 } else {
-    rooms();
+    seeHome();
 }

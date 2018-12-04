@@ -2,8 +2,12 @@
 
 require "models/model.php";
 
+function seeHome(){
+    require "views/home.php";
+}
+
 function temporary(){
-    require "views/temporary_guest.php";
+    require "views/temporary.php";
 }
 
 function rooms(){
@@ -12,9 +16,10 @@ function rooms(){
 function seeError(){
     require "views/home.php";
 }
+function view_inscription() {
+    require "../views/inscription.php";
+}
 
-function seeRooms(){
-    $rooms = getRooms()->fetchAll();
-
-    require "views/rooms.php";
+function viewconnexion(){
+    require "../models/model.php";
 }
