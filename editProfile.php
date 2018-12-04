@@ -1,4 +1,12 @@
 <?php include("design/editProfile.css");?>
+<?php
+session_start();
+
+//Créer avant les variables sur d'autres pages
+$_SESSION['prenom'] = 'Jean';
+$_SESSION['nom'] = 'Dupont';
+$_SESSION['age'] = 24;
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,7 +39,7 @@
 
         <div id=soussection>
         <div class="Contact">
-            <form method="get" action="traitement.php">
+            <form method="post" action="ProfileEdited.php">
 
                 <fieldset>
                 <legend><h2>Changer votre contact</h2></legend>
@@ -48,14 +56,14 @@
         </div>
 
         <div class="Photo">
-    	   <form method="post" action="page.php" enctype="multipart/form-data">
+    	   <form method="post" action="ProfileEdited.php" enctype="multipart/form-data">
 
                 <fieldset>
                 <legend><h2>Changer votre photo de profil</h2></legend>
 
     	           <p>
-                    <label for="photo">Choisir votre photo (JPG, PNG ) :</label><br />
-                    <h3> <input type="file" name="photo" /> </h3>
+                    <label for="photo">Choisir votre photo (JPG, JPEG, PNG ) :</label><br />
+                    <h3> <input type="file" name="newpic" /> </h3>
                     <h3><input type="submit" value="Enregistrer" /></h3>
                     </p>
                 </fieldset>
