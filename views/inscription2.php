@@ -13,7 +13,10 @@ session_start();
 </head>
 
 <body>
-<header><h1>Inscription</h1></header>
+<header>
+    <?php include("header.php"); ?>
+    <h1>Inscription</h1>
+</header>
 
 <section>
     <form method="post" action="../models/i2model">
