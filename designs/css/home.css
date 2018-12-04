@@ -1,3 +1,4 @@
+
 html, body{
     margin: 0;
     padding: 0;
@@ -21,12 +22,13 @@ a {
 .piece {
  position: relative;
  display: inline-block;
+ float: left;
  width: 300px;
  height: 250px;
  background-image: url("salon-moderne.jpg");
  background-size: contain;
  background-size: cover;
- margin-left: 25%;
+ margin-left: 20%;
  margin-top: 5%;
  border: 4px solid #2D241E;
 }
@@ -56,6 +58,7 @@ a {
 .profil {
  display: inline-block;
  position: relative;
+ float: right;
  width: 300px;
  height: 250px;
  background-image: url("bureau-moderne.jpg");
@@ -63,7 +66,7 @@ a {
  background-size: cover;
  background-position: center;
  margin-top: 5%;
- margin-right: 30%;
+ margin-right: 20%;
  border: 4px solid #2D241E;
 }
 
@@ -92,20 +95,21 @@ a {
 .catalogue {
  display:inline-block;
  position: relative;
+ float: right;
  width: 300px;
  height: 250px;
  background-image: url("bureau-moderne.jpg");
  background-size: contain;
  background-size: cover;
  background-position: center;
- margin-right: 30%;
+ margin-right: 20%;
  margin-top: 3%;
  border: 4px solid #2D241E;
 }
 
 .catalogue .text {
  color: orange;
- font-size: 300%;
+ font-size: 250%;
  line-height: 1.5em;
  text-shadow: 2px 2px 2px #000;
  text-align: center;
@@ -128,6 +132,7 @@ a {
 .consommation {
  display: inline-block;
  position: relative;
+ float: left;
  width: 300px;
  height: 250px;
  background-image: url("bureau-moderne.jpg");
@@ -135,13 +140,13 @@ a {
  background-size: cover;
  background-position: center;
  margin-top: 3%;
- margin-left: 25%;
+ margin-left: 20%;
  border: 4px solid #2D241E;
 }
 
 .consommation .text {
  color: orange;
- font-size: 220%;
+ font-size: 200%;
  line-height: 1.5em;
  text-shadow: 2px 2px 2px #000;
  text-align: center;
@@ -177,7 +182,8 @@ footer ul li {
     display: inline;
     margin-left: 10px;
     text-decoration: none;   
-
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 footer ul li a{
@@ -187,3 +193,4 @@ footer li:last-child {
     float: right;
     color: black;
 }
+
