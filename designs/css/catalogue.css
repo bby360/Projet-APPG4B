@@ -1,0 +1,74 @@
+html, body{
+    margin: 0;
+    padding:0;
+    width: 100%;
+    background-color:#00497A;
+}
+
+section {
+    display:flex;
+    background-color:#00497A;
+    font-family: LibreBaskerville;
+    padding-top: 0px;
+    height: 100%;
+    width: 100%;
+    color:white;
+}
+h1 {
+    color: white;
+    font-size: 42px;
+    font-weight: 60;
+    font-family: LibreBaskerville;
+    text-align: center;
+    padding-top: 0px;
+    background-color: #00497A;
+}
+
+.luminosite {
+    display:flex;
+    width: 350px; /* On a indiqué une largeur (obligatoire) */
+    margin: auto; /* On peut donc demander à ce que le bloc soit centré avec auto */
+    border: 1px solid white;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 20px;
+    justify-content:space-around;
+    background-image:"./designs/pictures/luminosité.jpg";
+}
+
+.temperature{
+    display:flex;
+    width: 350px; /* On a indiqué une largeur (obligatoire) */
+    margin: auto; /* On peut donc demander à ce que le bloc soit centré avec auto */
+    border: 1px solid white;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 20px;
+    justify-content:space-around;
+}
+.presence{
+    display:flex;
+    width: 350px; /* On a indiqué une largeur (obligatoire) */
+    margin: auto; /* On peut donc demander à ce que le bloc soit centré avec auto */
+    border: 1px solid white;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 20px;
+    justify-content:space-around;
+}
+
+#light{
+    width: 108px;
+    height: 72px;
+    float:left;
+}
+#temperature{
+    width: 126px;
+    height: 72px;
+}
+#presence{
+    width: 128px;
+    height: 84px;
+    float:left;
+}
+
