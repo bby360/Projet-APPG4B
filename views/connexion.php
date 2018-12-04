@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 
 <html>
@@ -9,34 +10,28 @@
 </head>
 <body>
 <header>
+    <?php require "header.php"?>
     <h1>VOTRE MAISON A PORTEE DE MAIN</h1>
-    <div class="image1"></div>
+
 </header>
 <section>
 
-    <div>
-
-
-    </div>
-
-    <!-- /La boite -->
-
     <div class = "connexion">
 
-        <form method="POST" action="./views/model.php">
+        <form method="POST" action="../models/model.php">
 
             <table align="center">
                 <tr>
                     <td>
-                        <label>login</label>
+                        <label>Mail</label>
                     </td>
                     <td>
-                        <input type="text" name="login" id="login"autofocus>
+                        <input type="email" name="email" placeholder="Ex: jean.dupont@gmail.com" id="email" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>password</label>
+                        <label>Mot de passe</label>
                     </td>
                     <td>
                         <input type="text" name="password" id="password" required>
@@ -44,19 +39,13 @@
                 </tr>
 
             </table>
+            <p>
+                <input type="submit" value="S'inscrire">
+                <input type="submit" value="Mot de passe oublié">
+            </p>
 
         </form>
 
-    </div>
-
-    <img src="">
-
-    <div class="sinscrire">
-        <a href="inscription.html">S'inscrire</a>
-    </div>
-
-    <div class="mdp_oublie">
-        <a href="mdp_oublie.html">Mot de passe oublié</a>
     </div>
 
     <div class="catalogue">
@@ -65,14 +54,13 @@
 
 </section>
 
+
 <footer>
-    <ul>
-        <li><a href="mentionlegal.php" id="mention">Mentions légales</a></li>
-        <li><a href="" id="Apropos">A Propos</a></li>
-        <li> Created by</li>
-    </ul>
-    <div id="triangle"></div>
-    <img id="image2" src="logonou.png">
+        <p> Mentions légales
+            <img src="designs/pictures/Creaweb.jpg" id="creambition">
+        </p>
+    <p>Created by</p>
 </footer>
 </body>
 </html>
+
