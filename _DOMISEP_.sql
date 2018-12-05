@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Dec 04, 2018 at 04:06 PM
+-- Generation Time: Dec 05, 2018 at 08:47 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.8
 
@@ -65,19 +65,20 @@ CREATE TABLE `Client` (
   `lastName` varchar(255) CHARACTER SET utf8 NOT NULL,
   `firstName` varchar(255) CHARACTER SET utf8 NOT NULL,
   `email` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `phone` int(10) NOT NULL,
+  `phone` varchar(10) NOT NULL,
   `adress` varchar(255) CHARACTER SET utf8 NOT NULL,
   `password` text CHARACTER SET utf8 NOT NULL,
-  `postalcode` int(5) NOT NULL
+  `postalcode` int(5) NOT NULL,
+  `emergency` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Ceci est la table client';
 
 --
 -- Dumping data for table `Client`
 --
 
-INSERT INTO `Client` (`idClient`, `lastName`, `firstName`, `email`, `phone`, `adress`, `password`, `postalcode`) VALUES
-(1, 'Dupond', 'Michel', 'michel.dupond@gmail.com', 654398723, '13 avenue du général de Gaulle', 'motdepasse', 92170),
-(2, 'Martin', 'Stéphanie', 'stphmar@yahoo.fr', 688231062, '6 impasse des oliviers', 'iseppromo2021', 93370);
+INSERT INTO `Client` (`idClient`, `lastName`, `firstName`, `email`, `phone`, `adress`, `password`, `postalcode`, `emergency`) VALUES
+(1, 'Dupond', 'Michel', 'michel.dupond@gmail.com', '0654398723', '13 avenue du général de Gaulle', 'motdepasse', 92170, '0'),
+(2, 'Martin', 'Stéphanie', 'stphmar@yahoo.fr', '0688231062', '6 impasse des oliviers', 'iseppromo2021', 93370, '0654690217');
 
 -- --------------------------------------------------------
 
