@@ -79,12 +79,13 @@
                     <li> <a href="#"> Ajouter une pièce</li>
                     <li> <a href="index.php?action=seeRoom">Voir mes pièces</li>
                 </ul>
+            </li>
             <li><a href="#">Urgence</a></li>
             <li><a href="#">Catalogue</a></li>
             <li><a href="#">Consommation</a></li>
             <li><a href="#">Forum</a></li>
             <li><a href="#">FAQ</a></li>
-            <li><a href="">Déconnexion</a></li>
+            <li><a href="index.php?action=deconexion.php">Déconnexion</a></li>
         </ul>
     </nav>
 </header>
