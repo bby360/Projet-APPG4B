@@ -19,6 +19,10 @@ if(isset($_GET["action"])){
         case 'rooms':
             rooms();
             break;
+            
+        case 'add_room':
+            addRoom();
+            break;
 
         case 'deconnexion':
             deconnexion();
@@ -54,6 +58,10 @@ if(isset($_GET["action"])){
 
         case 'header':
             header();
+            break;
+            
+        case 'catalogue':
+            catalogue();
             break;
 
         default:
