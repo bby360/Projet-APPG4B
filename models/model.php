@@ -87,7 +87,7 @@ function connexion()
         include('index.php?action=connexion');
      }
     }
-function Update(){
+function updateRoom(){
 $req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse SET mode= :nvmode WHERE house.idClient="1" AND nom="salon"'); 
 	$req -> execute(array(
 		'nvmode'=>$_POST['mode']));
