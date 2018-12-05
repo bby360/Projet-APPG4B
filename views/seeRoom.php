@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Page d'accueil</title>
-    <link rel="stylesheet" type="text/css" href="./designs/css/guest.css" />
+    <link rel="stylesheet" type="text/css" href="designs/css/guest.css" />
 
 </head>
 <body>
 <header>
-<?php include 'header.php';
-?>
+    <?php
+    include 'header.php';
+    ?>
 </header>
 <section>
 
@@ -17,7 +18,7 @@
 
     <ul>
         <?php foreach($rooms as $room) { ?>
-            <li><a href="index.php?action=see_room&id=<?= $room["id"]; ?>"><?= $room["name"]; ?></a> <?= $room["area"]; ?></li>
+            <li><a href="index.php?action=see_room&id=<?= $room["idRoom"]; ?>"></a> <?= $room["roomName"]; ?> <?= $room["mode"]; ?><?= $room["surface"]; ?></li>
         <?php } ?>
     </ul>
 
