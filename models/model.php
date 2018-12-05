@@ -41,7 +41,7 @@ function inscription()
             $phone=$_POST['phone'];
             $adress=$_POST['adress'];
 
-            mysql_select_db("Domisep");
+	    $db = dbConnect();
             $requete= "INSERT INTO Client VALUES('','$lastName','$firstName','$email','$password','$phone','$adress')";
         }
     }
@@ -58,7 +58,7 @@ function connexion()
         $email=$_POST['email'];
         $password=$_POST['password'];
 
-        mysql_select_db('Domisep');
+	$db = dbConnect();
         $requete=$db->prepare('SELECT * FROM Client WHERE email= ? and mdp=?');
         $req ->execute(array($email,$password));
 
