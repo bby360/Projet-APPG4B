@@ -64,4 +64,8 @@ function catalogue(){
     require"views/catalogue.php";
 }
 
+function seeError(){
+    require "views/error.php";
+}
+
 >
