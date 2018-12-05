@@ -81,7 +81,7 @@
                 </ul>
             </li>
             <li><a href="#">Urgence</a></li>
-            <li><a href="#">Catalogue</a></li>
+            <li><a href="index.php?action=catalogue.php">Catalogue</a></li>
             <li><a href="#">Consommation</a></li>
             <li><a href="#">Forum</a></li>
             <li><a href="#">FAQ</a></li>
