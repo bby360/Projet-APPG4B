@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Page d'accueil</title>
-    <link rel="stylesheet" type="text/css" href="designs/css/guest.css" />
-
+    <link rel="stylesheet" type="text/css" href="designs/css/seeRoom.css" />
 </head>
 <body>
 <header>
@@ -16,19 +15,24 @@
 
     <h1>Liste des pièces</h1>
 
-    <ul>
+    <ol>
         <?php foreach($rooms as $room) { ?>
-            <li><a href="index.php?action=see_room&id=<?= $room["idRoom"]; ?>"></a> <?= $room["roomName"]; ?> <?= $room["mode"]; ?><?= $room["surface"]; ?></li>
+            <li>
+                
+                <?= 'Numéro de la pièce ' ,$room["idRoom"]; ?>
+                
+                <?= 'Nom de la pièce ' ,$room["roomName"]; ?>
+                
+                <?= 'Mode de la pièce ' ,$room["mode"]; ?>
+                
+                <?= 'Surface de la pièce ' ,$room["surface"]; ?>
+                
+            </li>
         <?php } ?>
-    </ul>
+    </ol>
 
 </section>
-<footer>
-    <ul>
-        <li><a href="">Mentions légales</a></li>
-        <li><a href="">A Propos</a></li>
-        <li><a href="">Created by</a></li>
-    </ul>
-</footer>
+    
 </body>
+    
 </html>
