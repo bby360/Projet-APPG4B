@@ -19,11 +19,12 @@ function seeHome(){
     require "views/home.php";
 }
 
-function seeRooms(){
-    $rooms = getRooms()->fetchAll();
+function seeRoom(){
+    $rooms = getRoom()->fetchAll();
 
-    require "views/rooms.php";
+    require "views/seeRoom.php";
 }
+
 
 function connexion(){
     require "views/connexion.php";
