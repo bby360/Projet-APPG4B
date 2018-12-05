@@ -1,0 +1,39 @@
+*{
+	font-family: "Libre Baskerville", Arial;
+	
+}
+
+h1{
+	color: white;
+  	font-size: 42px;
+ 	font-weight: 600;
+  	font-family: LibreBaskerville;
+  	text-align: center;
+  	padding-top: 40px
+	
+
+}
+
+header {
+  background-color:#00497A;
+  background-size: cover;
+  background-position: bottom center;
+  height: 250px;
+  width: 100%;
+}
+
+section {
+	background-color:#00497A;
+    background-size: cover;
+    background-position: bottom center;
+    padding-top: 2px;
+    font-family: LibreBaskerville;
+    height: 300px;
+    width: 100%;
+    color:white;
+    text-align: center;
+  }
+
+.NotaBene{
+	font-style : italic ;
+}
