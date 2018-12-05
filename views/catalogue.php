@@ -11,28 +11,29 @@
 </header>
 
 <section>
-
-    <div class="luminosite"><a href="index.php?action=see_home"></a>
-        <p>
-        <h1> Capteurs de luminosité: </h1>
-        <a href="index.php?action=see_home"><img src="designs/pictures/light.jpg" id="light" /></a>
-        </p>
+<div class="gallery">
+        <a target="_blank" href="./designs/pictures/light.jpg">
+            <img src="designs/pictures/light.jpg">
+        </a>
+        <div class="desc">Capteurs de luinosité</div>
     </div>
 
-    <div class="temperature">
-        <p>
-        <h1>Capteurs de température :</h1>
-        <a href="index.php?action=see_home"><img src="designs/pictures/temprature.jpg" id="temperature" /></a>
-        </p>
+    <div class="gallery">
+        <a target="_blank" href="./designs/pictures/presence.jpg">
+            <img src="designs/pictures/presence.jpg">
+        </a>
+        <div class="desc">Capteurs de présence </div>
     </div>
 
-    <div class="presence">
-        <p>
-        <h1> Capteurs de présence :</h1>
-        <a href="index.php?action=see_home"><img src="designs/pictures/presence.jpg" id="presence"/><</a>
-        </p>
+    <div class="gallery">
+        <a target="_blank" href="designs/pictures/temperature.jpg">
+            <img src="designs/pictures/temperature.jpg">
+        </a>
+        <div class="desc">Capteurs de température </div>
     </div>
 
 </section>
+    <footer>
+        <?php require "footer.php">
 </body>
 </html>
