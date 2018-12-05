@@ -1,5 +1,7 @@
 <?php
 
+$notification="Vous avez oublié de remplir un champ";
+
 require "models/model.php";
 
 function temporary(){
@@ -44,7 +46,27 @@ function header(){
 }
 
 function inscription(){
-    require "views/inscription.php";
+if (isset($_POST['lastName']) and isset($_POST['firstName']) and isset($_POST['email']) 
+    and isset($_POST['password']) and isset($_POST['phone']) and isset($_POST['adress'])) {
+        if (!empty($_POST['lastName']) and !empty($_POST['firstName']) and 
+        !empty($_POST['email']) and !empty($_POST['password']) and !empty($_POST['phone']) and 
+        !empty($_POST['adress'])) {
+            $lastName=$_POST['lastName'];
+            $firstName=$_POST['firstName'];
+            $email=$_POST['email'];
+            $password=$_POST['password'];
+            $phone=$_POST['phone'];
+            $adress=$_POST['adress'];
+            
+            $adduser=adduser();
+        }
+    }
+else { 
+        $notification;
+        include('index.php?action=inscription');
+    }
+}
+
 }
 
 function inscription2(){
