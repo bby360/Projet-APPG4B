@@ -3,7 +3,7 @@
     // On démarre la session
     session_start();
  
-    if isset($_SESSION['email']) { // Si tu es connecté on te déconnecte et on te redirige vers une page.
+    if (isset($_SESSION['email'])){ // Si tu es connecté on te déconnecte et on te redirige vers une page.
  
         // Supression des variables de session et de la session
         $_SESSION = array();
@@ -22,5 +22,7 @@
     }
  
          
- 
-?>
+
+
+
+
