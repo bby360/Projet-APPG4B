@@ -14,7 +14,7 @@ function seeError(){
 }
 
 function seeHome(){
-    require "views/seeHome.php";
+    require "views/home.php";
 }
 
 function seeRooms(){
