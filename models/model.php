@@ -15,11 +15,7 @@ function getRoom($id_room){
     $req->bindParam("id_room", $id_room);
 }
 
-function seeRoom(){
-    $rooms = getRoom()->fetchAll();
 
-    require "views/seeRoom.php";
-}
 
 
 function insertRoom($a, $b) {
@@ -30,6 +26,7 @@ function insertRoom($a, $b) {
     $req->execute();
     $req->closeCursor();
 
+	
 }
 
 function adduser()
