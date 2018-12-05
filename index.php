@@ -46,11 +46,21 @@ if(isset($_GET["action"])){
 
         case 'SeeRoom':
             SeeRoom();
-            break;    
+            break;
+            
+        case 'footer':
+            footer();
+            break;
+
+        case 'header':
+            header();
+            break;
 
         default:
             seeError();
             break;
+            
+            
     }
 } else {
     seeHome();
