@@ -97,4 +97,29 @@ $req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse SE
 		));
 	}
 }
+
+function inscription2{
+
+    if (isset($_POST['Adresse']) and isset($_POST['CP']){
+
+        $_SESSION['adress']=$_POST['Adresse'];
+
+        $_SESSION['postalcode']=$_POST["CP"];
+
+
+        $db = dbConnect();
+        $req = $db-> prepare("INSERT INTO Client VALUES ('',:nom,:prenom,:email,:phone,:adress,:password,:postalcode)");
+        $req -> execute(array(
+            'nom' => $_SESSION['lastName'],
+            'prenom' => $_SESSION['firstName'],
+            'email' => $_SESSION['email'],
+            'phone' => $_SESSION['phone'],
+            'adress' => $_SESSION['adress'],
+            'password' => $_SESSION['password'],
+            'postalcode' => $_SESSION['postalcode'],
+
+        ));
+    }
+
+}
 ?>
