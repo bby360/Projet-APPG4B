@@ -23,7 +23,7 @@
                 </ul>
             </li>                       
         </ul>
-	<form action="pieceGestionTest.php" method="post"> 
+	<form action="./model.php" method="post"> 
 		<div id="mode"> 
 			<p>Mode de gestion de la pièce : </br></p>
 			<input type="radio" name="mode" value="automatique" id="automatique" checked="checked" /> <label for="automatique">Automatique</label>
