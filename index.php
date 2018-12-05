@@ -48,8 +48,8 @@ if(isset($_GET["action"])){
             inscription2();
             break;
 
-        case 'SeeRoom':
-            SeeRoom();
+        case 'seeRoom':
+            seeRoom();
             break;
             
         case 'footer':
