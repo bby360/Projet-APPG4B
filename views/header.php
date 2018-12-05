@@ -7,30 +7,30 @@
     header {
         position: relative;
     }
-    ul {
+    header ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
         background-color: #333;
     }
-    li {
+    header li {
         float: left;
     }
-    li a {
+    header li a {
         display: block;
         color: white;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
     }
-    li:last-child{
+    header li:last-child{
         float:right;
     }
-    li a:hover {
+    header li a:hover {
         background-color: #111;
     }
-    nav li:hover .submenu{
+    header nav li:hover .submenu{
         display: inline-block;
         position: absolute;
         top:100%;
@@ -79,13 +79,12 @@
                     <li> <a href="#"> Ajouter une pièce</li>
                     <li> <a href="index.php?action=seeRoom">Voir mes pièces</li>
                 </ul>
-            </li>
             <li><a href="#">Urgence</a></li>
-            <li><a href="index.php?action=catalogue.php">Catalogue</a></li>
+            <li><a href="#">Catalogue</a></li>
             <li><a href="#">Consommation</a></li>
             <li><a href="#">Forum</a></li>
             <li><a href="#">FAQ</a></li>
-            <li><a href="index.php?action=deconexion.php">Déconnexion</a></li>
+            <li><a href="">Déconnexion</a></li>
         </ul>
     </nav>
 </header>
