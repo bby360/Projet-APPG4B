@@ -15,6 +15,13 @@ function getRoom($id_room){
     $req->bindParam("id_room", $id_room);
 }
 
+function seeRoom(){
+    $rooms = getRoom()->fetchAll();
+
+    require "views/seeRoom.php";
+}
+
+
 function insertRoom($a, $b) {
     $db = dbConnect();
     $req = $db->prepare("INSERT INTO rooms(name,area) VALUES(:sql_var_a, :area)");
