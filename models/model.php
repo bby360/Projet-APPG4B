@@ -135,4 +135,80 @@ function updateAuto($a, $b, $c, $d, $e, $f){
     $req->execute();
     $req->closeCursor();
  }
+
+
+$notification="Vous avez oublié de remplir un champ";
+
+function inscrire(): bool
+{
+    $db=dbConnect();
+    $req = $db->prepare('INSERT 
+        INTO client(lastName, firstName, email, password, phone, adress) 
+        VALUES(:lastName, :firstName, :email, :password, :phone, :adress)');
+    $req->execute([
+        'lastName' => $_POST['lastName'],
+        'firstName' => $_POST['firstName'],
+        'email' => $_POST['email'],
+        'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+        'phone' => $_POST['phone'],
+        'adress' => $_POST['adress'],
+    ]);
+    return true;
+}
+
+/*
+*Vérifie si un email existe
+*/
+
+function existingEmail($email): bool
+{
+    $db=dbConnect();
+
+    $req = $db->prepare('SELECT EXISTS(SELECT * FROM client WHERE email = ?)');
+    $req->execute(array($email));
+    return $req->fetch()["EXISTS (SELECT * FROM client WHERE email = '$email')"];
+}
+
+/**
+ * Vérifie le format d'un mot de passe
+ * @param $str
+ * @return bool
+ */
+function isAPassword($str): bool
+{
+    if (empty($str) ||
+        strlen($str) < 8 ||
+        !preg_match("#[0-9]+#", $str) ||
+        !preg_match("#[a-zA-Z]+#", $str) ||
+        !preg_match('/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/', $str)
+    ) {
+        return false;
+    } else {
+        return is_string($str);
+    }
+}
+
+
+function connexion($email, $password): bool
+{
+    $db=dbConnect();
+    $req = $db->prepare('SELECT email, password, FROM client WHERE email = :email');
+    $req->execute(['email' => $email]);
+    $client = $req->fetch();
+    if (!$client) {
+        return false;
+    }
+    if (password_verify($password, $client['password'])) {
+        session_start();
+        $_SESSION['lastName'] = $client['lastName'];
+        $_SESSION['firstName'] = $client['nom'];
+        $_SESSION['email'] = $client['email'];
+        $_SESSION['adress'] = $client['adress'];
+        $_SESSION['phone'] = $client['phone'];
+        return true;
+    } else {
+        return false;
+    }
+}
+
 ?>
