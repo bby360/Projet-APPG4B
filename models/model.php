@@ -71,32 +71,6 @@ function connexion()
         include('index.php?action=connexion');
      }
     }
-function updateRoom(){
-$req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse SET mode= :nvmode WHERE house.idClient="1" AND nom="salon"'); 
-	$req -> execute(array(
-		'nvmode'=>$_POST['mode']));
-	$req->closeCursor();
-	if($_POST['mode']=='automatique'){
-		$req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse SET lumiereAuto=:nvlumiereAuto, ouvertureVolets=:nvouvertureVolets, fermetureVolets=:nvfermetureVolets, temperature=:nvtemperature, ventilateur=:nvventilateur WHERE house.idClient="1" AND nom="salon"');
-		$req -> execute(array(
-			'nvlumiereAuto'=>$_POST['lumiere_auto'],
-			'nvouvertureVolets'=>$_POST['ouverture_volets'],
-			'nvfermetureVolets'=>$_POST['fermeture_volets'],
-			'nvtemperature'=>$_POST['temperature'],			
-			));
-	}
-	else{
-		$req = $db -> prepare('UPDATE rooms JOIN house ON rooms.idHouse=house.idHouse
-						SET lumiereManu=:nvlumiereManu, voletsManu=:nvvoletsManu, temperature=:nvtemperature, ventilateur=:nvventilateur
-						WHERE house.idClient="1" AND nom="salon"');
-		$req -> execute(array(
-			'nvlumiereManu'=>$_POST['lumiere_manuel'],
-			'nvvoletsManu'=>$_POST['volets_manuel'],
-			'nvtemperature'=>$_POST['temperature'],
-			
-		));
-	}
-}
 
 function inscription2{
 
@@ -122,4 +96,43 @@ function inscription2{
     }
 
 }
+	
+function updateMode($mode,$client,$nom) {
+	$db = dbConnect();
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse SET mode= :nvmode WHERE house.idClient= :idClient AND roomName= :nvnom'); 
+	
+    $req->bindParam("nvmode", $mode);
+    $req->bindParam("idClient", $client);
+    $req->bindParam("nvnom", $nom);
+    $req->execute();
+    $req->closeCursor();
+}
+
+function updateAuto($a, $b, $c, $d, $e, $f){
+	$db = dbConnect();
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
+						SET lumAuto=:nvLumiereAuto, blindOpenTime=:nvOuvertureVolets, blindCloseTime=:nvFermetureVolets, tempAuto=:nvTemperature WHERE house.idClient= :idClient AND roomName= :nvNom');
+    $req->bindParam("idClient", $a);
+    $req->bindParam("nvNom", $b);
+    $req->bindParam("nvLumiereAuto", $c);
+    $req->bindParam("nvOuvertureVolets", $d);
+    $req->bindParam("nvFermetureVolets", $e);
+    $req->bindParam("nvTemperature", $f);
+    $req->execute();
+    $req->closeCursor();
+ }
+
+ function updateManu($a, $b, $c, $d, $e){
+	$db = dbConnect();
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
+						SET lumManu=:nvLumiereManu, voletsManu=:nvVoletsManu, tempManu=:nvTemperature
+						 WHERE house.idClient= :idClient AND roomName= :nvNom');
+    $req->bindParam("idClient", $a);
+    $req->bindParam("nvNom", $b);
+    $req->bindParam("nvLumiereManu", $c);
+    $req->bindParam("nvVoletsManu", $d);
+    $req->bindParam("nvTemperature", $e);
+    $req->execute();
+    $req->closeCursor();
+ }
 ?>
