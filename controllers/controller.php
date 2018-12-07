@@ -42,28 +42,11 @@ function footer(){
     require "views/footer.php";
 }
 
-function inscription(){
-if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email']) 
-    && isset($_POST['password']) && isset($_POST['phone']) && isset($_POST['adress']) && isset($_POST['confirm_password'])) {
-
-        if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && 
-        !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['phone']) && 
-        !empty($_POST['adress']) && $_POST['password']=$_POST['confirm_password']) {
-                $alerte = "Veuillez remplir tous les champs correctement.";
-            } else if (!isAPassword($_POST['password'])) {
-                $alerte = "Veuillez entrer un format de mot de passe valide avec au moins 8 caractères, une lettre, un chiffre et un caractère spécial.";
-            } else if (!existingEmail($_POST['email'])) {
-                inscrire();
-                header('Location: index.php?action=inscrire');
-                exit();
-            } else {
-                $alerte = "Un compte existe déjà avec cet email!";
-            }
-        }
 
 function inscription2(){
-    require "views/inscription2.php";
+    inscription2_();
 }
+	
 function addRoom(){
     $name = htmlspecialchars($_POST["name"]);
     $area = htmlspecialchars($_POST["area"]);
@@ -97,3 +80,6 @@ function updateRoom(){
 				}
 }
 
+function view_inscription(){
+    inscription();
+}
