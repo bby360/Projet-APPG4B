@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8" />
-<title>Header</title>
+<title>Page d'accueil</title>
 
 <style>
     header {
@@ -28,12 +28,12 @@
         float:right;
     }
     header li a:hover {
-        background-color: #111;
+        background-color: #77B5FE;
     }
     header nav li:hover .submenu{
         display: inline-block;
         position: absolute;
-        top:100%;
+
         left: 0px;
         padding: 0px;
         z-index: 100000;
@@ -49,8 +49,8 @@
         padding: 15px 30px 20px 30px;
     }
     #logo{
-        width: 100px;
-        height: 10px;
+        width: 30px;
+        height: 30px;
     }
     li:first-child{
         width: 70px;
@@ -59,9 +59,13 @@
     .active {
         background-color: #303030;
     }
+    .subMenu{
+        display none;
+    }
     .submenu{
         display:none;
     }
+
     @media screen and (max-width: 600px){
         ul.topnav li.right,
         ul.topnav li {float: none;}
@@ -74,10 +78,14 @@
             <li><a href="index.php?action=see_home"><img src="./designs/pictures/G4B.png" id="logo"></a></li>
             <li><a href="index.php?action=see_home">Accueil</a></li>
             <li><a href="index.php?action=profil">Votre profil</a></li>
+            <ul class="subMenu">
+                <li> <a href="index.php?action=profil"> Voir mon profil</li>
+                <li> <a href="index.php?action=seeRoom">Ajouter un profil temporaire</li>
+            </ul>
             <li><a href="index.php?action=rooms">Pièces</a>
                 <ul class="submenu">
                     <li> <a href="#"> Ajouter une pièce</li>
-                    <li> <a href="index.php?action=seeRoom">Voir mes pièces</li>
+                    <li> <a href="index.php?action=temporaryGuest">Voir mes pièces</li>
                 </ul>
             <li><a href="#">Urgence</a></li>
             <li><a href="index.php?action=catalogue">Catalogue</a></li>
