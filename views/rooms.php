@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Pièce</title>
-	<link rel="stylesheet" type="text/css" href="piece.css" />
+	<link rel="stylesheet" type="text/css" href="./designs/css/rooms.css" />
 </head>
 <body>
 	 <img id="fond" src="./designs/pictures/photo.jpg"> 
