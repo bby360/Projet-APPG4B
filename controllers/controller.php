@@ -47,26 +47,23 @@ function header(){
 }
 
 function inscription(){
-if (isset($_POST['lastName']) and isset($_POST['firstName']) and isset($_POST['email']) 
-    and isset($_POST['password']) and isset($_POST['phone']) and isset($_POST['adress'])) {
-        if (!empty($_POST['lastName']) and !empty($_POST['firstName']) and 
-        !empty($_POST['email']) and !empty($_POST['password']) and !empty($_POST['phone']) and 
-        !empty($_POST['adress'])) {
-            $lastName=$_POST['lastName'];
-            $firstName=$_POST['firstName'];
-            $email=$_POST['email'];
-            $password=$_POST['password'];
-            $phone=$_POST['phone'];
-            $adress=$_POST['adress'];
-            
-            $adduser=adduser();
+if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email']) 
+    && isset($_POST['password']) && isset($_POST['phone']) && isset($_POST['adress']) && isset($_POST['confirm_password'])) {
+
+        if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && 
+        !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['phone']) && 
+        !empty($_POST['adress']) && $_POST['password']=$_POST['confirm_password']) {
+                $alerte = "Veuillez remplir tous les champs correctement.";
+            } else if (!isAPassword($_POST['password'])) {
+                $alerte = "Veuillez entrer un format de mot de passe valide avec au moins 8 caractères, une lettre, un chiffre et un caractère spécial.";
+            } else if (!existingEmail($_POST['email'])) {
+                inscrire();
+                header('Location: index.php?action=inscrire');
+                exit();
+            } else {
+                $alerte = "Un compte existe déjà avec cet email!";
+            }
         }
-    }
-else { 
-        $notification;
-        include('index.php?action=inscription');
-    }
-}
 
 function inscription2(){
     require "views/inscription2.php";
