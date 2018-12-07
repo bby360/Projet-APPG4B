@@ -18,15 +18,14 @@ function getRoom($id_room){
 
 
 
-function insertRoom($a, $b) {
+function insertRoom($name, $area) {
     $db = dbConnect();
-    $req = $db->prepare("INSERT INTO rooms(name,area) VALUES(:sql_var_a, :area)");
+    $req = $db->prepare("INSERT INTO room(name,area) VALUES(:sql_var_a, :area)");
     $req->bindParam("sql_var_a", $a);
     $req->bindParam("area", $b);
     $req->execute();
     $req->closeCursor();
 
-	
 }
 
 function adduser()
