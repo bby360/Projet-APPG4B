@@ -23,11 +23,11 @@
                 </ul>
             </li>                       
         </ul>
-	<form action="./model.php" method="post"> 
+	<form action="index.php?action=updateRoom" method="post"> 
 		<div id="mode"> 
-			<p>Mode de gestion de la pièce : </br></p>
-			<input type="radio" name="mode" value="automatique" id="automatique" checked="checked" /> <label for="automatique">Automatique</label>
-			<input type="radio" name="mode" value="manuel" id="manuel" /> <label for="manuel">Manuel</label>
+			<p>Mode de gestion de la pièce : <br></p>
+			<input type="radio" name="mode" value="Auto" id="automatique" checked="checked" /> <label for="automatique">Automatique</label>
+			<input type="radio" name="mode" value="Manuel" id="manuel" /> <label for="manuel">Manuel</label>
 		</div>
 
 		<div id="lumiere_auto">
@@ -65,7 +65,10 @@
 
     </form>
 	</section>
-		
+	<footer>
+ 		<?php include("footer.php"); ?>
+
+	</footer> 
 
 
 	
