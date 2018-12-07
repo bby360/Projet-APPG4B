@@ -7,7 +7,7 @@
  <link rel="stylesheet" type="text/css" href="page_accueil.css" />
 </head>
 <body>
-  <img id="fond" src="./design/pictures/photo.jpg">
+  <img id="fond" src="./designs/pictures/photo.jpg">
  <header>  
    <?php include("header.php"); ?>
 
