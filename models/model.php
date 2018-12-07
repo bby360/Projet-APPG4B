@@ -190,7 +190,7 @@ function isAPassword($str): bool
 }
 
 
-function connexion($email, $password): bool
+function connexionBis($email, $password): bool
 {
     $db=dbConnect();
     $req = $db->prepare('SELECT email, password, FROM client WHERE email = :email');
