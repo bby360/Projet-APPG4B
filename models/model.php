@@ -35,7 +35,7 @@ function adduser()
             $requete= "INSERT INTO Client VALUES('','$lastName','$firstName','$email','$password','$phone','$adress')";
 }
 
-function connexion()
+function connexion2()
 {
     if ( !empty($_POST['email']) and isset($_POST['password']) )
     {
@@ -72,7 +72,7 @@ function connexion()
      }
     }
 
-function inscription2(){
+function inscription2bis(){
 
         $_SESSION['adress']=$_POST['Adresse'];
 
