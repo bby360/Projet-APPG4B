@@ -71,32 +71,7 @@ function connexion2()
      }
     }
 
-function inscription2bis(){
 
-        $_SESSION['adress']=$_POST['Adresse'];
-
-        $_SESSION['postalcode']=$_POST["CP"];
-
-       if (isset($_POST['Adresse']) and isset($_POST['CP'])) {
-
-           $db = dbConnect();
-           $req = $db->prepare("INSERT INTO Client VALUES ('',:nom,:prenom,:email,:phone,:adress,:password,:postalcode)");
-           $req->execute(array(
-               'nom' => $_SESSION['lastName'],
-               'prenom' => $_SESSION['firstName'],
-               'email' => $_SESSION['email'],
-               'phone' => $_SESSION['phone'],
-               'adress' => $_SESSION['adress'],
-               'password' => $_SESSION['password'],
-               'postalcode' => $_SESSION['postalcode'],
-
-           ));
-           
-       }
-
-
-
-}
 	
 function updateMode($mode,$client,$nom) {
 	$db = dbConnect();
@@ -140,22 +115,7 @@ function updateAuto($a, $b, $c, $d, $e, $f){
 
 $notification="Vous avez oublié de remplir un champ";
 
-function inscrire(): bool
-{
-    $db=dbConnect();
-    $req = $db->prepare('INSERT 
-        INTO client(lastName, firstName, email, password, phone, adress) 
-        VALUES(:lastName, :firstName, :email, :password, :phone, :adress)');
-    $req->execute([
-        'lastName' => $_POST['lastName'],
-        'firstName' => $_POST['firstName'],
-        'email' => $_POST['email'],
-        'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-        'phone' => $_POST['phone'],
-        'adress' => $_POST['adress'],
-    ]);
-    return true;
-}
+
 
 /*
 *Vérifie si un email existe
@@ -210,6 +170,75 @@ function connexionBis($email, $password): bool
     } else {
         return false;
     }
+}
+
+function inscription(){
+
+    
+
+        if ($_POST['password']!= $_POST['confirm_password']){
+
+            echo 'mots de passe différents!';
+
+            header('location:../views/inscription.php');
+
+        }
+
+        
+
+        else{
+
+
+            echo $_POST['lastName'];
+
+            $_SESSION['lastName']=$_POST['lastName'];
+            $_SESSION['firstName']=$_POST['firstName'];
+            $_SESSION['email']=$_POST['email'];
+            $_SESSION['phone']=$_POST['phone'];
+            $_SESSION['password']=$_POST['password'];
+
+            header('location:../views/inscription2.php');
+
+        }
+
+}
+
+
+
+function inscription2_(){
+
+
+
+        $_SESSION['adress']=$_POST['Adresse'];
+
+        $_SESSION['postalcode']=$_POST["CP"];
+
+       if (isset($_POST['Adresse']) and isset($_POST['CP'])) {
+
+           $db = dbConnect();
+
+           
+           $req = $db->prepare('INSERT INTO Client (lastName,firstName,email,phone,adress,password,postalcode) VALUES(:nom,:prenom,:email,:phone,:adress,:password,:postalcode)');
+           $req->execute(array(
+               'nom'=>$_SESSION['lastName'],
+               'prenom'=>$_SESSION['firstName'],
+               'email'=>$_SESSION['email'],
+               'phone'=>$_SESSION['phone'],
+               'adress'=>$_SESSION['adress'],
+               'password'=>$_SESSION['password'],
+               'postalcode'=>$_SESSION['postalcode'],
+
+           ));
+
+          echo $_SESSION['phone'];
+
+
+
+
+           header('location:../views/home.php');
+
+       }
+
 }
 
 ?>
