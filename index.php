@@ -12,7 +12,7 @@ if(isset($_GET["action"])){
             home();
             break;
 
-        case 'temporaryGuest.php':
+        case 'temporaryGuest':
             temporary();
             break;
 
