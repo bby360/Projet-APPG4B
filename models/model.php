@@ -188,9 +188,6 @@ function inscription(){
 
         else{
 
-
-            echo $_POST['lastName'];
-
             $_SESSION['lastName']=$_POST['lastName'];
             $_SESSION['firstName']=$_POST['firstName'];
             $_SESSION['email']=$_POST['email'];
@@ -229,10 +226,6 @@ function inscription2_(){
                'postalcode'=>$_SESSION['postalcode'],
 
            ));
-
-          echo $_SESSION['phone'];
-
-
 
 
            header('location:../views/home.php');
