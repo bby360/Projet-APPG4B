@@ -1,10 +1,5 @@
 <?php
 session_start();
-
-//Créer avant les variables sur d'autres pages
-$_SESSION['prenom'] = 'Jean';
-$_SESSION['nom'] = 'Dupont';
-$_SESSION['age'] = 24;
 ?>
 
 <!DOCTYPE html>
