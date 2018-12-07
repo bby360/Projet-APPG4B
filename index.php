@@ -36,9 +36,6 @@ if(isset($_GET["action"])){
             view_inscription();
             break;
 
-        case 'inscrire':
-            inscrire();
-            break;
 
         case 'edit_profile':
             editProfile();
