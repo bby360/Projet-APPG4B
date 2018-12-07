@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8" />
-<title>Page d'accueil</title>
+<title>Header</title>
 
 <style>
     header {
@@ -12,7 +12,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #333;
+        background-color: #00497A;
     }
     header li {
         float: left;
@@ -53,7 +53,7 @@
         height: 10px;
     }
     li:first-child{
-        width: 50px;
+        width: 70px;
         height:50px;
     }
     .active {
@@ -71,9 +71,9 @@
 <header>
     <nav>
         <ul>
-            <li><a href="#"><img src="logonou.png" id="logo"></a></li>
+            <li><a href="index.php?action=see_home"><img src="./designs/pictures/G4B.png" id="logo"></a></li>
             <li><a href="index.php?action=see_home">Accueil</a></li>
-            <li><a href="#">Votre profil</a></li>
+            <li><a href="index.php?action=profil">Votre profil</a></li>
             <li><a href="index.php?action=rooms">Pièces</a>
                 <ul class="submenu">
                     <li> <a href="#"> Ajouter une pièce</li>
@@ -84,7 +84,7 @@
             <li><a href="#">Consommation</a></li>
             <li><a href="#">Forum</a></li>
             <li><a href="#">FAQ</a></li>
-            <li><a href="">Déconnexion</a></li>
+            <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
         </ul>
     </nav>
 </header>
