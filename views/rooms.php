@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="piece.css" />
 </head>
 <body>
-	 <img id="fond" src="photo.jpg"> 
+	 <img id="fond" src="./designs/pictures/photo.jpg"> 
 	<header class="header">
 		 <?php include("header.php"); ?>
 	</header>
