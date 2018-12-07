@@ -64,14 +64,12 @@ if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['ema
 function inscription2(){
     require "views/inscription2.php";
 }
-
 function addRoom(){
     $name = htmlspecialchars($_POST["name"]);
     $area = htmlspecialchars($_POST["area"]);
-
     insertRoom($name, $area);
-    $rooms = getRooms()->fetchAll();
-    require "views/rooms.php";
+    $rooms = getRoom()->fetchAll();
+    require "views/addRoom.php";
 }
 
 function catalogue(){
