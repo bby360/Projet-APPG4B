@@ -68,8 +68,6 @@ else {
     }
 }
 
-}
-
 function inscription2(){
     require "views/inscription2.php";
 }
