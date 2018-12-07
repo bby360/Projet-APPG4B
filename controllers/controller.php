@@ -42,10 +42,6 @@ function footer(){
     require "views/footer.php";
 }
 
-function header(){
-    require "views/header.php";
-}
-
 function inscription(){
 if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email']) 
     && isset($_POST['password']) && isset($_POST['phone']) && isset($_POST['adress']) && isset($_POST['confirm_password'])) {
