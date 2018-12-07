@@ -25,7 +25,7 @@ a {
  float: left;
  width: 300px;
  height: 250px;
- background-image: url("salon-moderne.jpg");
+ background-image: url("./designs/pictures/salon-moderne.jpg");
  background-size: contain;
  background-size: cover;
  margin-left: 20%;
@@ -61,7 +61,7 @@ a {
  float: right;
  width: 300px;
  height: 250px;
- background-image: url("bureau-moderne.jpg");
+ background-image: url("./designs/pictures/bureau-moderne.jpg");
  background-size: contain;
  background-size: cover;
  background-position: center;
@@ -98,7 +98,7 @@ a {
  float: right;
  width: 300px;
  height: 250px;
- background-image: url("bureau-moderne.jpg");
+ background-image: url("./designs/pictures/bureau-moderne.jpg");
  background-size: contain;
  background-size: cover;
  background-position: center;
@@ -135,7 +135,7 @@ a {
  float: left;
  width: 300px;
  height: 250px;
- background-image: url("bureau-moderne.jpg");
+ background-image: url("./designs/pictures/bureau-moderne.jpg");
  background-size: contain;
  background-size: cover;
  background-position: center;
