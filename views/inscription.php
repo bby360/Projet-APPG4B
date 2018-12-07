@@ -13,7 +13,7 @@
 </header>
 
 <section>
-    <form method="POST" action="./views/model.php">
+    <form method="POST" action="index.php?action=inscription">
 
         <table align="center">
             <tr>
@@ -21,7 +21,7 @@
                     <label>Nom :</label>
                 </td>
                 <td>
-                    <input type="text" name="name" id="name"autofocus>
+                    <input type="text" name="lastName" id="lastName"autofocus>
                 </td>
             </tr>
             <tr>
@@ -34,20 +34,13 @@
             </tr>
             <tr>
                 <td>
-                    <label>Pseudo : </label>
-                </td>
-                <td>
-                    <input type="text" name="login" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
                     <label>Mail : </label>
                 </td>
                 <td>
                     <input type="email" name="email" placeholder="Ex: jean.dupont@gmail.com" id="email" required>
                 </td>
             </tr>
+            
             <tr>
                 <td>
                     <label>Mot de passe : </label>
@@ -63,17 +56,33 @@
                 <td>
                     <input type="password" name="confirm_password" required>
                 </td>
-                </br>
+            </tr>
+            <tr>
+                <td>
+                    <label>Phone : </label>
+                </td>
+                <td>
+                    <input type="phone" name="phone" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Adress  </label>
+                </td>
+                <td>
+                    <input type="text" name="adress" required>
+                </td>
             </tr>
 
         </table>
-
         <p>
-            <input type="submit" value="Retour">
-            <input type="reset" value="Suivant">
+            <input type="reset" value="Retour">
+            <input type="submit" value="valider" name="inscription" class="form-button">
         </p>
-
     </form>
+    <p><a href="index.php?action=connexion">Déjà inscrit ?</a></p>
+
+
 </section>
 <footer>
     <div id="triangle"></div>
