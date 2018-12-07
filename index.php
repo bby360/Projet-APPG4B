@@ -56,10 +56,6 @@ if(isset($_GET["action"])){
             footer();
             break;
 
-        case 'header':
-            header();
-            break;
-            
         case 'catalogue':
             catalogue();
             break;
