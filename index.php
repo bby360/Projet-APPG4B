@@ -63,7 +63,11 @@ if(isset($_GET["action"])){
         case 'catalogue':
             catalogue();
             break;
-
+            
+        case 'updateRoom':
+			updateRoom();
+			break;
+            
         default:
             seeError();
             break;
