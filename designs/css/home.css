@@ -1,4 +1,5 @@
 
+
 html, body{
     margin: 0;
     padding: 0;
@@ -98,7 +99,7 @@ a {
  float: right;
  width: 300px;
  height: 250px;
- background-image: url("./designs/pictures/bureau-moderne.jpg");
+ background-image: url("./designs/pictures/catalogue.jpg");
  background-size: contain;
  background-size: cover;
  background-position: center;
@@ -135,7 +136,7 @@ a {
  float: left;
  width: 300px;
  height: 250px;
- background-image: url("./designs/pictures/bureau-moderne.jpg");
+ background-image: url("./designs/pictures/graph.jpg");
  background-size: contain;
  background-size: cover;
  background-position: center;
@@ -164,3 +165,6 @@ a {
     transition: .5s ease;
 }
 /*FIN CONSOMMATION*/
+
+
+
