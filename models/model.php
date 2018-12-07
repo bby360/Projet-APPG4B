@@ -72,28 +72,30 @@ function connexion()
      }
     }
 
-function inscription2{
-
-    if (isset($_POST['Adresse']) and isset($_POST['CP']){
+function inscription2(){
 
         $_SESSION['adress']=$_POST['Adresse'];
 
         $_SESSION['postalcode']=$_POST["CP"];
 
+       if (isset($_POST['Adresse']) and isset($_POST['CP'])) {
 
-        $db = dbConnect();
-        $req = $db-> prepare("INSERT INTO Client VALUES ('',:nom,:prenom,:email,:phone,:adress,:password,:postalcode)");
-        $req -> execute(array(
-            'nom' => $_SESSION['lastName'],
-            'prenom' => $_SESSION['firstName'],
-            'email' => $_SESSION['email'],
-            'phone' => $_SESSION['phone'],
-            'adress' => $_SESSION['adress'],
-            'password' => $_SESSION['password'],
-            'postalcode' => $_SESSION['postalcode'],
+           $db = dbConnect();
+           $req = $db->prepare("INSERT INTO Client VALUES ('',:nom,:prenom,:email,:phone,:adress,:password,:postalcode)");
+           $req->execute(array(
+               'nom' => $_SESSION['lastName'],
+               'prenom' => $_SESSION['firstName'],
+               'email' => $_SESSION['email'],
+               'phone' => $_SESSION['phone'],
+               'adress' => $_SESSION['adress'],
+               'password' => $_SESSION['password'],
+               'postalcode' => $_SESSION['postalcode'],
 
-        ));
-    }
+           ));
+           
+       }
+
+
 
 }
 	
