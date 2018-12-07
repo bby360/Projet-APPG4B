@@ -2,12 +2,8 @@
 
 require "models/model.php";
 
-function seeHome(){
-    require "views/home.php";
-}
-
 function temporary(){
-    require "views/temporary.php";
+    require "views/temporary_guest.php";
 }
 
 function rooms(){
@@ -16,15 +12,47 @@ function rooms(){
 function seeError(){
     require "views/home.php";
 }
-function inscription(){
-    require "views/inscription.php";
+
+function seeHome(){
+    require "views/seeHome.php";
+}
+
+function seeRooms(){
+    $rooms = getRooms()->fetchAll();
+
+    require "views/rooms.php";
+}
+
+//function connexion(){
+    //require "views/connexion.php";
+//}
+
+function deconnexion(){
+    require "views/deconnexion.php";
+}
+
+function edit_profile(){
+    require "views/editProfile.php";
+}
+
+function footer(){
+    require "views/footer.php";
+}
+
+//function header(){
+    //require "views/header.php";
+//}
+
+function view_inscription(){
+    //require "views/inscription.php";
+    inscription();
 }
 
 function inscription2(){
-
-    require "views/inscription2.php";
+   //require "views/inscription2.php";
+   inscription2_();
 }
 
-function connexion(){
-    require "views/connexion.php";
+function catalogue(){
+    require "../views/catalogue.php";
 }
