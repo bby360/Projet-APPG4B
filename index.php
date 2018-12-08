@@ -10,7 +10,11 @@ if(isset($_GET["action"])){
             
         case 'catalogue':
             catalogue();
-            break;            
+            break;
+            
+        case 'inscription':
+            inscription();
+            break;
       
       default:
         welcome();
