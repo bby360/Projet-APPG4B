@@ -26,3 +26,7 @@ function inscription(){
 
         require "views/inscription.php";
 }
+
+function catalogue(){
+    require"views/catalogue.php";
+}
