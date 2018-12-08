@@ -38,7 +38,6 @@ function signingin($email, $mdp)
         $_SESSION['adress'] = $client['adress'];
         $_SESSION['phone'] = $client['phone'];
         $_SESSION['postalcode']=$client['postalcode'];
-        exit();
     } else {
 		$_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
     }
