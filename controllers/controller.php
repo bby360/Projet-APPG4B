@@ -30,3 +30,7 @@ function inscription(){
 function catalogue(){
     require"views/catalogue.php";
 }
+
+function dashboard(){
+    require"views/dashboard.php";
+}
