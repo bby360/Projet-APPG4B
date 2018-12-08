@@ -27,6 +27,29 @@ function signup(){
         require "views/signup.php";
 }
 
+
+function signin($email, $mdp)
+{   
+    $db=dbConnect();
+    $req = $db->prepare('SELECT * FROM client WHERE email = :email');
+    $req->execute(['email' => $email]);
+    $client = $req->fetch();
+
+    if (password_verify($_POST['mdp'], $client['mdp'])) {
+        session_start();
+        $_SESSION['lastName'] = $client['lastName'];
+        $_SESSION['firstName'] = $client['nom'];
+        $_SESSION['email'] = $client['email'];
+        $_SESSION['adress'] = $client['adress'];
+        $_SESSION['phone'] = $client['phone'];
+        exit();
+    } else {
+		$_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
+    }
+}
+
+
+
 function catalogue(){
     require"views/catalogue.php";
 }
