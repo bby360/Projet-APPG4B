@@ -12,8 +12,8 @@ if(isset($_GET["action"])){
             catalogue();
             break;
             
-        case 'inscription':
-            inscription();
+        case 'signup':
+            signup();
             break;
 
         case 'dashboard':
