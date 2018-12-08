@@ -4,7 +4,7 @@
 <head>
  <meta charset="utf-8" />
  <title>Page d'accueil</title>
- <link rel="stylesheet" type="text/css" href="./designs/css/pageNonConnecter.css" />
+ <link rel="stylesheet" type="text/css" href="./designs/css/welcome.css" />
 </head>
 <body>
 <img id="fond" src="fondAccueil.jpg">
