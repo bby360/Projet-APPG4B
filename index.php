@@ -7,6 +7,10 @@ if(isset($_GET["action"])){
         case 'connexion':
           seconnecter();
           break;
+            
+        case 'catalogue':
+            catalogue();
+            break;            
       
       default:
         welcome();
