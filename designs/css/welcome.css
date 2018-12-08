@@ -52,6 +52,20 @@ a{
     box-shadow: 8px 8px 30px black;
 }
 
+#catalogue{
+    position: relative;
+    float: right;
+    margin-right: -12%;
+    margin-top: 30%;
+    width: 12%;
+    height: 2em;
+    font-size: 25px;
+    background-color: #00497A;
+    text-align: center;
+    border-radius: 15px 15px;
+    box-shadow: 8px 8px 30px black;
+}
+
 p{
     position: relative;
     display: inline-block;
