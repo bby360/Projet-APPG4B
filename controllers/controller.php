@@ -32,7 +32,8 @@ function signin() {
     $_SESSION=array();
 
     if(!empty($_POST) && !empty($_POST['email']) && !empty($_POST['mdp'])) {
-
+                $email=$_POST['email'];
+                $mdp=$_POST['mdp'];
                 signingin($email, $mdp);
 
                 header('Location: index.php?action=dashboard');
