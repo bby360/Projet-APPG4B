@@ -17,7 +17,7 @@
     </div>
 
     <div id="inscrire">
-        <a href="#">S'inscrire</a>
+        <a href="index.php?action=inscrire">S'inscrire</a>
     </div>
 
     <img id="G4B" src="G4B.jpg">
