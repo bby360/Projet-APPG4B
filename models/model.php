@@ -4,71 +4,170 @@ require "models/dbconnexion.php";
 
 function getRooms(){
 	$db = dbConnect();
-
+	$req = $db->query("SELECT * FROM rooms");
+    	return $req;
 }
 $notification="Vous avez oublier de remplir un champs";
 
-function inscriptionx()
+function getRoom($id_room){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT * FROM rooms WHERE id = :id_room");
+    $req->bindParam("id_room", $id_room);
+}
+
+
+function insertRoom($a, $b) {
+    $db = dbConnect();
+    $req = $db->prepare("INSERT INTO rooms(name,area) VALUES(:sql_var_a, :area)");
+    $req->bindParam("sql_var_a", $a);
+    $req->bindParam("area", $b);
+    $req->execute();
+    $req->closeCursor();
+
+	
+}
+
+
+
+
+function inscription2bis(){
+
+        $_SESSION['adress']=$_POST['Adresse'];
+
+        $_SESSION['postalcode']=$_POST["CP"];
+
+       if (isset($_POST['Adresse']) and isset($_POST['CP'])) {
+
+           $db = dbConnect();
+           $req = $db->prepare("INSERT INTO client VALUES ('',:nom,:prenom,:email,:phone,:adress,:mdp,:postalcode)");
+           $req->execute(array(
+               'nom' => $_SESSION['lastName'],
+               'prenom' => $_SESSION['firstName'],
+               'email' => $_SESSION['email'],
+               'phone' => $_SESSION['phone'],
+               'adress' => $_SESSION['adress'],
+               'mdp' => $_SESSION['mdp'],
+               'postalcode' => $_SESSION['postalcode'],
+
+           ));
+           
+       }
+
+
+
+}
+	
+function updateMode($mode,$client,$nom) {
+	$db = dbConnect();
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse SET mode= :nvmode WHERE house.idclient= :idclient AND roomName= :nvnom'); 
+	
+    $req->bindParam("nvmode", $mode);
+    $req->bindParam("idclient", $client);
+    $req->bindParam("nvnom", $nom);
+    $req->execute();
+    $req->closeCursor();
+}
+
+function updateAuto($a, $b, $c, $d, $e, $f){
+	$db = dbConnect();
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
+						SET lumAuto=:nvLumiereAuto, blindOpenTime=:nvOuvertureVolets, blindCloseTime=:nvFermetureVolets, tempAuto=:nvTemperature WHERE house.idclient= :idclient AND roomName= :nvNom');
+    $req->bindParam("idclient", $a);
+    $req->bindParam("nvNom", $b);
+    $req->bindParam("nvLumiereAuto", $c);
+    $req->bindParam("nvOuvertureVolets", $d);
+    $req->bindParam("nvFermetureVolets", $e);
+    $req->bindParam("nvTemperature", $f);
+    $req->execute();
+    $req->closeCursor();
+ }
+
+ function updateManu($a, $b, $c, $d, $e){
+	$db = dbConnect();
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
+						SET lumManu=:nvLumiereManu, voletsManu=:nvVoletsManu, tempManu=:nvTemperature
+						 WHERE house.idclient= :idclient AND roomName= :nvNom');
+    $req->bindParam("idclient", $a);
+    $req->bindParam("nvNom", $b);
+    $req->bindParam("nvLumiereManu", $c);
+    $req->bindParam("nvVoletsManu", $d);
+    $req->bindParam("nvTemperature", $e);
+    $req->execute();
+    $req->closeCursor();
+ }
+
+
+$notification="Vous avez oublié de remplir un champ";
+
+function inscrire(): bool
 {
-    if (isset($_POST['lastName']) and isset($_POST['firstName']) and isset($_POST['login']) and isset($_POST['email']) 
-    and isset($_POST['password']) and isset($_POST['phone']) and isset($_POST['adress'])) {
+    $pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+    $db=dbConnect();
+    $req = $db->prepare("INSERT INTO client(lastName, firstName, email, phone, adress, mdp) 
+    VALUES(:lastName, :firstName, :email, :phone, :adress, :mdp)");
+ 
+    $req->execute([
+    'lastName'=> $_POST['lastName'],
+    'firstName' => $_POST['firstName'],
+    'email'=> $_POST['email'],
+    'phone'=> $_POST['phone'],
+    'adress'=> $_POST['adress'],
+    'mdp'=> $pass_hache
+    ]);
+ 
+    return true;
+}
 
-        if (!empty($_POST['lastName']) and !empty($_POST['firstName']) and !empty($_POST['login']) and 
-        !empty($_POST['email']) and !empty($_POST['password']) and !empty($_POST['phone']) and 
-        !empty($_POST['adress'])) {
+/*
+*Vérifie si un email existe
+*/
 
-            $lastName=$_POST['lastName'];
-            $firstName=$_POST['firstName'];
-            $login=$_POST['login'];
-            $email=$_POST['email'];
-            $password=$_POST['password'];
-            $phone=$_POST['phone'];
-            $adress=$_POST['adress'];
+function existingEmail($email): bool
+{   
+    $db=dbConnect();
+    $req = $db->prepare('SELECT EXISTS(SELECT * FROM client WHERE email = ?)');
+    $req->execute(array($email));
+    return true;
+}
 
-            mysql_select_db("Domisep");
-            $requete= "INSERT INTO Client VALUES('','$lastName','$firstName','$login';'$email','$password','$phone','$adress')";
-        }
-    }
-    else { 
-        $notification;
-        include('index.php?action=inscription');
-
+/**
+ * Vérifie le format d'un mot de passe
+ * @param $str
+ * @return bool
+ */
+function isAmdp($str): bool
+{   
+    if (empty($str) ||
+        strlen($str) < 8 ||
+        !preg_match("#[0-9]+#", $str) ||
+        !preg_match("#[a-zA-Z]+#", $str) ||
+        !preg_match('/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/', $str)
+    ) {
+        return false;
+    } else {
+        return is_string($str);
     }
 }
-function connexionx()
-{
-    if ( !empty($_POST['login']) and isset($_POST['password']) )
-    {
-        $login=$_POST['login'];
-        $password=$_POST['password'];
 
-        mysql_select_db('Domisep');
-        $requete=$db->prepare('SELECT * FROM Client WHERE login= ? and mdp=?');
-        $req ->execute(array($login,$password));
 
-        while ($ligne=$requete->fetch()) {
+function connexion($email, $mdp)
+{   
+    $db=dbConnect();
+    $req = $db->prepare('SELECT * FROM client WHERE email = :email');
+    $req->execute(['email' => $email]);
+    $client = $req->fetch();
 
-            if ($ligne['login']==$login and $ligne['password']==$password){
-
-                session_start();
-
-                $_SESSION['login']=$ligne['login'];
-                $_SESSION['password']=$ligne['password'];
-
-                echo "Vous vous êtes bien conenctés";         
-            }
-
-        else{ 
-            echo "Vous avez fait une erreur lors de la saisie du login/password, recommencez";
-
-            include('index.php?action=connexion');
-        }
-        }
-        
+    if (password_verify($_POST['mdp'], $client['mdp'])) {
+        session_start();
+        $_SESSION['lastName'] = $client['lastName'];
+        $_SESSION['firstName'] = $client['nom'];
+        $_SESSION['email'] = $client['email'];
+        $_SESSION['adress'] = $client['adress'];
+        $_SESSION['phone'] = $client['phone'];
+        exit();
+    } else {
+		$_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
     }
-    else {
-        $notification;
-        include('index.php?action=connexion');
-     }
-    }
+}
+
 ?>

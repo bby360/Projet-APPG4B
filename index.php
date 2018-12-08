@@ -2,37 +2,70 @@
 
 require "controllers/controller.php";
 
+
+
 if(isset($_GET["action"])){
     $action = htmlspecialchars($_GET["action"]);
 
     switch ($action) {
-        case 'see_home':
-            seeHome();
+        case 'home':
+            seeRoom();
             break;
 
-        case 'temporary':
+        case 'temporaryGuest.php':
             temporary();
             break;
 
         case 'rooms':
             rooms();
             break;
-
-        case 'aide':
-            aide();
+            
+        case 'add_room':
+            addRoom();
             break;
 
-        case 'connexion':
-            connexion();
+        case 'deconnexion':
+            deconnexion();
             break;
+
             
         case 'inscription':
             inscription();
             break;
 
+        case 'edit_profile':
+            editProfile();
+            break;
+            
+        case 'inscription2':
+            inscription2();
+            break;
+
+        case 'seeRoom':
+            seeRoom();
+            break;
+            
+        case 'footer':
+            footer();
+            break;
+            
+        case 'catalogue':
+            catalogue();
+            break;
+
+        case 'connexion':
+            seconnecter();
+            break;
+            
+        case 'updateRoom':
+			updateRoom();
+			break;
+            
         default:
             seeError();
             break;
+            
+            
     }
 } else {
     seeHome();
