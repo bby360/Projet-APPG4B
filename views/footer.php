@@ -31,7 +31,7 @@
     }
     footer ul li {
         display: inline;
-        margin-left: 10px;
+        margin-right: 10px;
         text-decoration: none;
         margin-top: auto;
         margin-bottom: auto;
@@ -41,13 +41,11 @@
         color: black;
         background-color: white;
     }
-    footer li:last-child {
-        float: right;
-        color: black;
+    .logo{
+        width: 50px;
+        height: 50px;
     }
-    #createdby{
-        position: left;
-    }
+
 </style>
 
 
@@ -56,10 +54,8 @@
 
     <p>
     <ul>
-        <li><a href="" id="mention">Mentions légales</a></li>
-        <li><a href="" id="Apropos">A Propos</a></li>
-        <li>Created by</li>
-        <li><img src="design/css/logo.jpg" id="logo" alt="Logo CA"></li>
+        <li><a href="" id="mention">Mentions légales</a> <a href="" id="Apropos">A Propos</a></li>
+        <li>Created by Creambition     <img src="designs/pictures/logo.jpg" class="logo"></li>
 
 
 
