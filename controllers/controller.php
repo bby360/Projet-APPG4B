@@ -32,13 +32,12 @@ function signin() {
     $_SESSION=array();
 
     if(!empty($_POST) && !empty($_POST['email']) && !empty($_POST['mdp'])) {
-        echo "blabla1";
 
-                connexion($email, $mdp);
+                signingin($email, $mdp);
 
-                header('Location: index.php?action=connexion');
+                header('Location: index.php?action=dashboard');
         }
-        require "views/connexion.php";
+        require "views/signin.php";
 
 }
 
