@@ -9,7 +9,6 @@
 </head>
 <body>
 <header>
-    <?php require "header.php"?>
     <h1>VOTRE MAISON A PORTEE DE MAIN</h1>
 
 </header>
