@@ -5,7 +5,7 @@ function welcome(){
     require "views/welcome.php";
 }
 
-function inscription(){
+function signup(){
 
     if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email']) 
     && isset($_POST['mdp']) && isset($_POST['phone']) && isset($_POST['adress']) && isset($_POST['confirm_mdp'])) {
