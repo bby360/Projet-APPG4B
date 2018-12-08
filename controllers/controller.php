@@ -17,7 +17,7 @@ function signup(){
                 $alerte = "Veuillez remplir tous les champs correctement.";
                 echo "Veuillez remplir tous les champs correctement.";
             }   else {                
-                inscrire();                
+                signingup();                
                 header('Location: index.php?action=dashboard');
 
                 exit();
