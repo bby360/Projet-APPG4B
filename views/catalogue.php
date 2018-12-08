@@ -27,7 +27,7 @@
 
     <div class="gallery">
         <a target="_blank" href="temperature.jpg">
-            <img src="temperature.jpg">
+            <img src="designs/pictures/temperature.jpg">
         </a>
         <div class="desc">Capteurs de température </div>
     </div>
