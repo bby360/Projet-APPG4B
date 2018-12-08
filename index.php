@@ -7,7 +7,10 @@ if(isset($_GET["action"])){
        case 'inscrire':
          inscrire();
          break;
-      
+            
+        case 'connexion':
+          seconnecter();
+          break;
       
       default:
         welcome();
