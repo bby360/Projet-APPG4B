@@ -2,7 +2,7 @@
 
 require "models/dbconnexion.php";
 
-function inscrire(): bool
+function signingup(): bool
 {
     $pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     $db=dbConnect();
