@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Page d'accueil</title>
-    <link rel="stylesheet" type="text/css" href="./designs/css/connexion.css" />
+    <link rel="stylesheet" type="text/css" href="./designs/css/signin.css" />
 </head>
 <body>
 <header>
@@ -41,7 +41,7 @@
             <input type="submit" value="valider" name="connexion">
         </form>
         <p>
-                <a href="index.php?action=inscription">sinscrire </a>
+                <a href="index.php?action=signup">sinscrire </a>
                 <input type="submit" value="Mot de passe oublié">
             </p>
     </div>
