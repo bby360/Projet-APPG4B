@@ -15,7 +15,11 @@ if(isset($_GET["action"])){
         case 'inscription':
             inscription();
             break;
-      
+
+        case 'dashboard':
+            dashboard();
+            break;
+            
       default:
         welcome();
         break;
