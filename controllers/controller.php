@@ -18,13 +18,13 @@ function inscription(){
                 echo "Veuillez remplir tous les champs correctement.";
             }   else {                
                 inscrire();                
-                header('Location: index.php?action=seehome');
+                header('Location: index.php?action=dashboard');
 
                 exit();
             }
         }
 
-        require "views/inscription.php";
+        require "views/signup.php";
 }
 
 function catalogue(){
