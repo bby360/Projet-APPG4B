@@ -9,6 +9,7 @@
 <body>
 <img id="fond" src="fondAccueil.jpg">
 <header>
+ <?php include 'header' ?>
 </header>
 <section>
 
