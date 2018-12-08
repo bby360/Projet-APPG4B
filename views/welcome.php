@@ -14,7 +14,7 @@
 <section>
 
     <div id="connexion">
-        <a href="#">Se Connecter</a>
+        <a href="index.php?action=signin">Se Connecter</a>
     </div>
 
     <div id="inscrire">
