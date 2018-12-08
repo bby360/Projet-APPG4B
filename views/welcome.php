@@ -20,6 +20,10 @@
     <div id="inscrire">
         <a href="index.php?action=signup">S'inscrire</a>
     </div>
+ 
+    <div id="catalogue">
+        <a href="index.php?action=catalogue">Accéder au catalogue</a>
+    </div> 
 
     <img id="G4B" src="G4B.jpg">
 
