@@ -68,5 +68,5 @@ if(isset($_GET["action"])){
             
     }
 } else {
-    seeHome();
+    pageNonConnecté();
 }

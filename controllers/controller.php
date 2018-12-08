@@ -8,6 +8,10 @@ function temporary(){
     require "views/temporary_guest.php";
 }
 
+function pageNonConnecter(){
+    require "views/pageNonConnecter";
+}
+
 function rooms(){
     require "views/rooms.php";
 }
@@ -21,7 +25,6 @@ function seeHome(){
 
 function seeRoom(){
     $rooms = getRoom()->fetchAll();
-
     require "views/seeRoom.php";
 }
 
@@ -71,40 +74,37 @@ function inscription(){
 }
 
 function inscription2(){
-    require "views/inscription2.php";
+    inscription2_();
 }
 
 function addRoom(){
     $name = htmlspecialchars($_POST["name"]);
     $area = htmlspecialchars($_POST["area"]);
-
     insertRoom($name, $area);
-    $rooms = getRooms()->fetchAll();
-    require "views/rooms.php";
+    $rooms = getRoom()->fetchAll();
+    require "views/addRoom.php";
 }
 
 function catalogue(){
-    require"views/catalogue.php";
+    require "views/catalogue.php";
 }
 
 function updateRoom(){
-				$idClient="1" /*$_SESSION[idClient]*/ ;
-				$nom ="Salon" /*$_Get[nom]*/ ;
-				$nvMode=$_POST['mode'];
-				$nvLumiereAuto=$_POST['lumiere_auto'];
-				$nvOuvertureVolets=$_POST['ouverture_volets'];
-				$nvFermetureVolets=$_POST['fermeture_volets'];
-				$nvLumiereManu=$_POST['lumiere_manuel'];
-				$nvVoletsManu=$_POST['volets_manuel'];
-				$nvTemperature=$_POST['temperature'];
-
-				updateMode($nvMode, $idClient, $nom);
-
-				if($nvMode =='Auto'){
-					updateAuto($idClient, $nom, $nvLumiereAuto, $nvOuvertureVolets, $nvFermetureVolets, $nvTemperature);
-				}
-				else{
-					updateManu($idClient, $nom, $nvLumiereManu, $nvVoletsManu, $nvTemperature);
-				}
+    $idClient="1" /*$_SESSION[idClient]*/ ;
+    $nom ="Salon" /*$_Get[nom]*/ ;
+    $nvMode=$_POST['mode'];
+    $nvLumiereAuto=$_POST['lumiere_auto'];
+    $nvOuvertureVolets=$_POST['ouverture_volets'];
+    $nvFermetureVolets=$_POST['fermeture_volets'];
+    $nvLumiereManu=$_POST['lumiere_manuel'];
+    $nvVoletsManu=$_POST['volets_manuel'];
+    $nvTemperature=$_POST['temperature'];
+    updateMode($nvMode, $idClient, $nom);
+    if($nvMode =='Auto'){
+        updateAuto($idClient, $nom, $nvLumiereAuto, $nvOuvertureVolets, $nvFermetureVolets, $nvTemperature);
+    }
+    else{
+        updateManu($idClient, $nom, $nvLumiereManu, $nvVoletsManu, $nvTemperature);
+    }
 }
 

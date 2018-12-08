@@ -16,53 +16,44 @@ function getRoom($id_room){
 }
 
 
-function insertRoom($a, $b) {
+function insertRoom($name, $area) {
     $db = dbConnect();
-    $req = $db->prepare("INSERT INTO rooms(name,area) VALUES(:sql_var_a, :area)");
+    $req = $db->prepare("INSERT INTO room(name,area) VALUES(:sql_var_a, :area)");
     $req->bindParam("sql_var_a", $a);
     $req->bindParam("area", $b);
     $req->execute();
     $req->closeCursor();
-
-	
 }
 
 
 
 
-function inscription2bis(){
-
-        $_SESSION['adress']=$_POST['Adresse'];
-
-        $_SESSION['postalcode']=$_POST["CP"];
-
-       if (isset($_POST['Adresse']) and isset($_POST['CP'])) {
-
-           $db = dbConnect();
-           $req = $db->prepare("INSERT INTO client VALUES ('',:nom,:prenom,:email,:phone,:adress,:mdp,:postalcode)");
-           $req->execute(array(
-               'nom' => $_SESSION['lastName'],
-               'prenom' => $_SESSION['firstName'],
-               'email' => $_SESSION['email'],
-               'phone' => $_SESSION['phone'],
-               'adress' => $_SESSION['adress'],
-               'mdp' => $_SESSION['mdp'],
-               'postalcode' => $_SESSION['postalcode'],
-
-           ));
-           
-       }
-
-
-
+function inscription2_(){
+    $_SESSION['adress']=$_POST['Adresse'];
+    $_SESSION['postalcode']=$_POST["CP"];
+   if (isset($_POST['Adresse']) and isset($_POST['CP'])) {
+       $db = dbConnect();
+       
+       $req = $db->prepare('INSERT INTO Client (lastName,firstName,email,phone,adress,password,postalcode) VALUES(:nom,:prenom,:email,:phone,:adress,:password,:postalcode)');
+       $req->execute(array(
+           'nom'=>$_SESSION['lastName'],
+           'prenom'=>$_SESSION['firstName'],
+           'email'=>$_SESSION['email'],
+           'phone'=>$_SESSION['phone'],
+           'adress'=>$_SESSION['adress'],
+           'password'=>$_SESSION['password'],
+           'postalcode'=>$_SESSION['postalcode'],
+       ));
+       header('location:../views/home.php');
+   }
 }
 	
 function updateMode($mode,$client,$nom) {
 	$db = dbConnect();
-    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse SET mode= :nvmode WHERE house.idclient= :idclient AND roomName= :nvnom'); 
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse SET mode= :nvmode WHERE house.idClient= :idClient AND roomName= :nvnom'); 
 	
     $req->bindParam("nvmode", $mode);
-    $req->bindParam("idclient", $client);
+    $req->bindParam("idClient", $client);
     $req->bindParam("nvnom", $nom);
     $req->execute();
     $req->closeCursor();
@@ -71,8 +62,8 @@ function updateMode($mode,$client,$nom) {
 function updateAuto($a, $b, $c, $d, $e, $f){
 	$db = dbConnect();
     $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
-						SET lumAuto=:nvLumiereAuto, blindOpenTime=:nvOuvertureVolets, blindCloseTime=:nvFermetureVolets, tempAuto=:nvTemperature WHERE house.idclient= :idclient AND roomName= :nvNom');
-    $req->bindParam("idclient", $a);
+						SET lumAuto=:nvLumiereAuto, blindOpenTime=:nvOuvertureVolets, blindCloseTime=:nvFermetureVolets, tempAuto=:nvTemperature WHERE house.idClient= :idClient AND roomName= :nvNom');
+    $req->bindParam("idClient", $a);
     $req->bindParam("nvNom", $b);
     $req->bindParam("nvLumiereAuto", $c);
     $req->bindParam("nvOuvertureVolets", $d);
@@ -81,13 +72,12 @@ function updateAuto($a, $b, $c, $d, $e, $f){
     $req->execute();
     $req->closeCursor();
  }
-
  function updateManu($a, $b, $c, $d, $e){
 	$db = dbConnect();
     $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
 						SET lumManu=:nvLumiereManu, voletsManu=:nvVoletsManu, tempManu=:nvTemperature
-						 WHERE house.idclient= :idclient AND roomName= :nvNom');
-    $req->bindParam("idclient", $a);
+						 WHERE house.idClient= :idClient AND roomName= :nvNom');
+    $req->bindParam("idClient", $a);
     $req->bindParam("nvNom", $b);
     $req->bindParam("nvLumiereManu", $c);
     $req->bindParam("nvVoletsManu", $d);
@@ -95,7 +85,6 @@ function updateAuto($a, $b, $c, $d, $e, $f){
     $req->execute();
     $req->closeCursor();
  }
-
 
 $notification="Vous avez oublié de remplir un champ";
 

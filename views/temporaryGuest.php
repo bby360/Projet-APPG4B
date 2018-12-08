@@ -76,7 +76,7 @@
 
     <div>
         <input type="checkbox" id="horns" name="horns">
-        <label for="horns">Burean</label>
+        <label for="horns">Bureau</label>
     </div>
 
     <div class="Valider">
@@ -85,4 +85,4 @@
 
 </section>
 </body>
-</html
+</html>

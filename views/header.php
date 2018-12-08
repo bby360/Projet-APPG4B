@@ -1,91 +1,45 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8" />
-<title>Page d'accueil</title>
 
-<style>
-    header {
-        position: relative;
-    }
-    header ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-    }
-    header li {
-        float: left;
-    }
-    header li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-    header li:last-child{
-        float:right;
-    }
-    header li a:hover {
-        background-color: #111;
-    }
-    header nav li:hover .submenu{
-        display: inline-block;
-        position: absolute;
-        top:100%;
-        left: 0px;
-        padding: 0px;
-        z-index: 100000;
-    }
-    .submenu li {
-        border-bottom: 1px solid #CCC;
-    }
-    .submenu li a {
-        padding: 15px 30px;
-        width: 270px;
-    }
-    nav ul li:hover a{
-        padding: 15px 30px 20px 30px;
-    }
-    #logo{
-        width: 100px;
-        height: 10px;
-    }
-    li:first-child{
-        width: 50px;
-        height:50px;
-    }
-    .active {
-        background-color: #303030;
-    }
-    .submenu{
-        display:none;
-    }
-    @media screen and (max-width: 600px){
-        ul.topnav li.right,
-        ul.topnav li {float: none;}
-    }
-</style>
+<head>
+    <title>Header</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./designs/css/header.css" />
+</head>
+
 <body>
 <header>
     <nav>
-        <ul>
-            <li><a href="#"><img src="logonou.png" id="logo"></a></li>
-            <li><a href="index.php?action=see_home">Accueil</a></li>
-            <li><a href="#">Votre profil</a></li>
-            <li><a href="index.php?action=rooms">Pièces</a>
-                <ul class="submenu">
-                    <li> <a href="#"> Ajouter une pièce</li>
-                    <li> <a href="index.php?action=seeRoom">Voir mes pièces</li>
-                </ul>
-            <li><a href="#">Urgence</a></li>
-            <li><a href="index.php?action=catalogue">Catalogue</a></li>
-            <li><a href="#">Consommation</a></li>
-            <li><a href="index.php?action=connexion">Forum</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="">Déconnexion</a></li>
-        </ul>
+
+        <div id="menu">
+            <ul>
+                <li><a href="#"><img src="./designs/pictures/G4B.png" id="logo"></a></li>
+                <li><a href="index.php?action=see_home">Accueil</a></li>
+                <li><a href="#">Votre profil</a>
+                    <ul>
+                        <li><a href="#">Modifier mon profil</a></li>
+                        <li><a href="index.php?action=guest">Ajouter un invité</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Pièces</a>
+                    <ul>
+                        <li><a href="index.php?action=see_room">Voir mes pièces</a></li>
+                        <li><a href="index.php?action=addroom">Ajouter une pièce</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="index.php?action=catalogue">Catalogue</a></li>
+                <li><a href="#">Consommation</a></li>
+                <li><a href="#">Forum</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Urgence</a></li>
+                <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+            </ul>
+        </div>
+
     </nav>
 </header>
 </body>
+
+</html>
