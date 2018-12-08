@@ -4,8 +4,8 @@ if(isset($_GET["action"])){
     $action = htmlspecialchars($_GET["action"]);
     switch ($action) {
             
-        case 'connexion':
-          seconnecter();
+        case 'signin':
+          signingin();
           break;
             
         case 'catalogue':
