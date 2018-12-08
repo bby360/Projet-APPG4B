@@ -1,1 +1,1 @@
-
+<?php require 'controller' ?>
