@@ -81,7 +81,14 @@
                     <input type="text" name="postalcode">
                 </td>
             </tr>
-
+            <tr>
+                <td>
+                    <label>Emergency Number  </label>
+                </td>
+                <td>
+                    <input type="text" name="emergency">
+                </td>
+            </tr>
         </table>
         <p>
             <input type="reset" value="Retour">
