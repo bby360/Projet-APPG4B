@@ -22,3 +22,24 @@ function signingup(): bool
  
     return true;
 }
+
+function signingin($email, $mdp)
+{   
+    $db=dbConnect();
+    $req = $db->prepare('SELECT * FROM client WHERE email = :email');
+    $req->execute(['email' => $email]);
+    $client = $req->fetch();
+
+    if (password_verify($_POST['mdp'], $client['mdp'])) {
+        session_start();
+        $_SESSION['lastName'] = $client['lastName'];
+        $_SESSION['firstName'] = $client['nom'];
+        $_SESSION['email'] = $client['email'];
+        $_SESSION['adress'] = $client['adress'];
+        $_SESSION['phone'] = $client['phone'];
+        $_SESSION['postalcode']=$client['postalcode'];
+        exit();
+    } else {
+		$_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
+    }
+}
