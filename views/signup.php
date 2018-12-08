@@ -73,6 +73,14 @@
                     <input type="text" name="adress">
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <label>Postal Code  </label>
+                </td>
+                <td>
+                    <input type="text" name="postalcode">
+                </td>
+            </tr>
 
         </table>
         <p>
