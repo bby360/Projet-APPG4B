@@ -26,3 +26,7 @@ function inscription(){
         header('location:views/inscription2.php');
     }
 }
+
+function inscription2(){
+    inscription2_();
+}
