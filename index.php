@@ -5,7 +5,7 @@ if(isset($_GET["action"])){
     switch ($action) {
             
         case 'signin':
-          signingin();
+          signin();
           break;
             
         case 'catalogue':
