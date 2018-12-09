@@ -67,3 +67,42 @@ VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:
     ]);
 
 }
+
+function updateMode($mode,$client,$nom) {
+    $db = dbConnect();
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse SET mode= :nvmode WHERE house.idClient= :idClient AND roomName= :nvnom');
+
+    $req->bindParam("nvmode", $mode);
+    $req->bindParam("idClient", $client);
+    $req->bindParam("nvnom", $nom);
+    $req->execute();
+    $req->closeCursor();
+}
+
+function updateAuto($a, $b, $c, $d, $e, $f){
+    $db = dbConnect();
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
+						SET lumAuto=:nvLumiereAuto, blindOpenTime=:nvOuvertureVolets, blindCloseTime=:nvFermetureVolets, tempAuto=:nvTemperature WHERE house.idClient= :idClient AND roomName= :nvNom');
+    $req->bindParam("idClient", $a);
+    $req->bindParam("nvNom", $b);
+    $req->bindParam("nvLumiereAuto", $c);
+    $req->bindParam("nvOuvertureVolets", $d);
+    $req->bindParam("nvFermetureVolets", $e);
+    $req->bindParam("nvTemperature", $f);
+    $req->execute();
+    $req->closeCursor();
+}
+
+function updateManu($a, $b, $c, $d, $e){
+    $db = dbConnect();
+    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
+						SET lumManu=:nvLumiereManu, voletsManu=:nvVoletsManu, tempManu=:nvTemperature
+						 WHERE house.idClient= :idClient AND roomName= :nvNom');
+    $req->bindParam("idClient", $a);
+    $req->bindParam("nvNom", $b);
+    $req->bindParam("nvLumiereManu", $c);
+    $req->bindParam("nvVoletsManu", $d);
+    $req->bindParam("nvTemperature", $e);
+    $req->execute();
+    $req->closeCursor();
+}
