@@ -47,7 +47,10 @@ if(isset($_GET["action"])){
 	case 'catalogueUnlog':
 		catalogueUnlog();
 		break;
-		  
+		    
+	    case 'deconnexion':
+		    deconnexion();
+		    break;
             
             
       default:
