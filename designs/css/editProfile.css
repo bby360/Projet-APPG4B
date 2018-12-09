@@ -124,27 +124,6 @@ h3{
 	color:white;
 	font-size: small; 
 }
-/*Ajouter un profil temporaire*/
-
-.temporaire a {
-	display: block;
-	float: right;
-	color:white;
-}
-.temporaire{
-	font-size: small;
-	font-style: italic;
-	height: 100%;
-  	width: 15%;
-  	margin:auto;
-  	text-align: center;
-}
-.temporaire a:hover{
-	text-decoration: underline;
-    color: #F0A009;
-	;
-
-}
 
 p
 {
