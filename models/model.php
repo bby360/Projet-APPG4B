@@ -49,23 +49,23 @@ function getRoomList(){
     return $req;
 }
 
-function insertRoom($idHouse, $name, $area, $mode,$tempAuto,$tempManu,$lumAuto,$lumManu,$blindOpenTime,$blindCloseTime) {
+function insertRoom() {
     $db = dbConnect();
-    $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime) 
-VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime)");
+    $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
+VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
     $req->execute([
         'idHouse'=> $_POST['idHouse'],
-        'roomName' => $_POST['roomName'],
-        'surface'=> $_POST['surface'],
-        'mode'=> $_POST['mode'],
+        'roomName' => $_POST['name'],
+        'surface'=> $_POST['area'],
+        'mode'=> $_POST['Mode'],
         'tempAuto'=> $_POST['tempAuto'],
         'tempManu'=> $_POST['tempManu'],
         'lumAuto'=> $_POST['lumAuto'],
         'lumManu'=> $_POST['lumManu'],
         'blindOpenTime'=> $_POST['blindOpenTime'],
-        'blindCloseTime' => $_POST['blindCloseTime']
+        'blindCloseTime' => $_POST['blindCloseTime'],
+        'voletsManu' => $_POST['voletsManu']
     ]);
-
 }
 
 function updateMode($mode,$client,$nom) {
