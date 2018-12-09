@@ -55,3 +55,4 @@ function roomList(){
     $rooms = getRoomList()->fetchAll();
 
     require "views/roomList.php";
+}
