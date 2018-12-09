@@ -51,8 +51,26 @@ function dashboard(){
     require"views/dashboard.php";
 }
 
-function roomList(){
+function roomList()
+{
     $rooms = getRoomList()->fetchAll();
 
     require "views/roomList.php";
+}
+
+function addRoom(){
+
+
+        if (isset($_POST['name']) && isset($_POST['area']) && isset($_POST['idHouse'])
+            && isset($_POST['tempManu']) && isset($_POST['tempAuto']) && isset($_POST['lumAuto'])
+            && isset($_POST['lumManu'])&& isset($_POST['blindOpenTime'])&& isset($_POST['blindCloseTime'])) {
+
+
+                insertRoom();
+                header('Location: index.php?action=roomList');
+
+                exit();
+
+        }
+  require "views/addRoom.php";
 }
