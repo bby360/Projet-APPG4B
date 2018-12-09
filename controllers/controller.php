@@ -133,7 +133,7 @@ function profileEdited() {
 }
 
 function catalogueunlog() {
-    require "views/catalogueUnlog";
+    require "views/catalogueUnlog.php";
 }
 
 function deconnexion(){
