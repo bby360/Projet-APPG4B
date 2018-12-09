@@ -15,9 +15,9 @@
             <ul>
                 <li><a href="#"><img src="./designs/pictures/G4B.png" id="logo"></a></li>
                 <li><a href="index.php?action=dashboard">Accueil</a></li>
-                <li><a href="#">Votre profil</a>
+                <li><a href="index.php?action=profileEdited">Votre profil</a>
                     <ul>
-                        <li><a href="#">Modifier mon profil</a></li>
+                        <li><a href="index.php?action=editProfile">Modifier mon profil</a></li>
                         <li><a href="index.php?action=guest">Ajouter un invité</a></li>
                     </ul>
                 </li>

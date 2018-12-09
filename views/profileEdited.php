@@ -3,7 +3,6 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<div xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="../design/ProfileEdited.css" />
@@ -20,11 +19,11 @@ session_start();
 
             <div class="Contact">
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', 'root');
+                $db = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
                 if ( !empty($_POST['email']) and empty($_POST['phone'])) {
                     $newemail = $_POST['email'];
                     $newemergency = $_POST['emergency'];
-                    $req = $bdd->prepare('UPDATE Client SET email = :newemail WHERE lastName = :lastName');
+                    $req = $db->prepare('UPDATE client SET email = :newemail WHERE lastName = :lastName');
                     $req->execute(array(
                         'newemail' => $newemail,
                         'lastName' => $_SESSION['lastName'],
@@ -32,7 +31,7 @@ session_start();
                 }
                 elseif (!empty($_POST['phone']) and empty($_POST['email'])){
                     $newphone = $_POST['phone'];
-                    $req = $bdd->prepare('UPDATE Client SET phone = :newphone WHERE lastName = :lastName');
+                    $req = $db->prepare('UPDATE client SET phone = :newphone WHERE lastName = :lastName');
                     $req->execute(array(
                         'newphone' => $newphone,
                         'lastName' => $_SESSION['lastName'],
@@ -41,7 +40,7 @@ session_start();
                 elseif (!empty($_POST['phone']) AND !empty($_POST['email'])){
                     $newphone = $_POST['phone'];
                     $newemail = $_POST['email'];
-                    $req = $bdd->prepare('UPDATE Client SET email = newemail, phone = :newphone WHERE lastName = :lastName');
+                    $req = $db->prepare('UPDATE client SET email = newemail, phone = :newphone WHERE lastName = :lastName');
                     $req->execute(array(
                         'newemail' => $newemail,
                         'newphone' => $newphone,

@@ -118,3 +118,12 @@ function updateRoom(){
 
     require "views/rooms.php";
 }
+
+
+function editProfile() {
+    require "views/editProfile.php";
+}
+
+function profileEdited() {
+    require "views/profileEdited.php";
+}

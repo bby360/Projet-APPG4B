@@ -1,3 +1,10 @@
+*{
+    z-index: 100000;
+}
+
+
+
+
 header{
     position: relative;
     margin: 0;
@@ -59,7 +66,7 @@ header #logo{
     height: 30px;
 }
 
-header @media screen and (max-width: 600px){
+@media screen and (max-width: 600px){
     #menu ul{
         width: 100%;
         height:auto;

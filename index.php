@@ -35,6 +35,15 @@ if(isset($_GET["action"])){
         case 'rooms':
             rooms();
             break;
+
+        case 'editProfile':
+        editProfile();
+        break;
+
+        case 'profileEdited':
+        profileEdited();
+        break;
+            
             
       default:
         welcome();
