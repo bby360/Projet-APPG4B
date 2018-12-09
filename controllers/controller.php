@@ -127,3 +127,7 @@ function editProfile() {
 function profileEdited() {
     require "views/profileEdited.php";
 }
+
+function catalogueunlog() {
+    require "views/catalogueUnlog";
+}
