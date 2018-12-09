@@ -16,7 +16,7 @@
 <section>
     <h1>Ajouter une pièce</h1>
 
-    <form method="post" action="index.php?action=addroom">
+    <form method="post" action="index.php?action=addRoom">
         <p>
             <label>
                 Nom de la pièce :
@@ -62,27 +62,34 @@
         <p>
             <label>
                 Lumière automatique :
-                <input type = "number" name="tempAuto" min="0" required>
+                <input type = "number" name="lumAuto" min="0" required>
             </label>
         </p>
         <p>
             <label>
                 Lumière manuelle :
-                <input type = "number" name = "tempManu" min="0" required>
+                <input type = "number" name = "lumManu" min="0" required>
             </label>
         </p>
 
         <p>
             <label>
                 Heure de ouverture des volets :
-                <input type = "number" name = "blindOpenTime" min="0" required>
+                <input type = "time" name = "blindOpenTime" required>
             </label>
         </p>
 
         <p>
             <label>
                 Heure de fermeture des volets :
-                <input type = "number" name = "blindCloseTime" min="0" required>
+                <input type = "time" name = "blindCloseTime" required>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                volets manuel :
+                <input type = "number" name = "voletsManu" min="0" required>
             </label>
         </p>
 
@@ -91,4 +98,5 @@
 
 </section>
 </body>
-</html
+</html>
+
