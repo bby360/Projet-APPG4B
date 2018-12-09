@@ -22,7 +22,7 @@
     </div>
  
     <div id="catalogue">
-        <a href="index.php?action=catalogue">Catalogue</a>
+        <a href="index.php?action=catalogueUnlog">Catalogue</a>
     </div> 
 
     <img id="G4B" src="./designs/pictures/G4B.jpg">
