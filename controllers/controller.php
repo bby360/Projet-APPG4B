@@ -135,3 +135,7 @@ function profileEdited() {
 function catalogueunlog() {
     require "views/catalogueUnlog";
 }
+
+function deconnexion(){
+    require "views/deconnexion.php";
+}
