@@ -20,7 +20,7 @@ if(isset($_GET["action"])){
             dashboard();
             break;
             
-        case 'roomList'
+        case 'roomList':
             roomList();
             break;
             
