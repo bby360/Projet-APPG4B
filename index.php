@@ -29,20 +29,25 @@ if(isset($_GET["action"])){
             break;
             
         case 'updateRoom':
-			updateRoom();
-			break;
+		updateRoom();
+		break;
             
         case 'rooms':
-            rooms();
-            break;
+            	rooms();
+            	break;
 
         case 'editProfile':
-        editProfile();
-        break;
+        	editProfile();
+        	break;
 
         case 'profileEdited':
-        profileEdited();
-        break;
+        	profileEdited();
+        	break;
+		    
+	case 'catalogueUnlog':
+		catalogueUnlog();
+		break;
+		  
             
             
       default:
