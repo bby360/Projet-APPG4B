@@ -3,7 +3,7 @@ html, body{
     padding:0;
     width: 100%;
     background-image:url('ins3bdd.png');
-    background-position: cover;
+    background-size: cover;
 }
 
 h1 {
