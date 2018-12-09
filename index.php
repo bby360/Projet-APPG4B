@@ -23,6 +23,10 @@ if(isset($_GET["action"])){
         case 'roomList':
             roomList();
             break;
+
+        case 'addRoom':
+            addRoom();
+            break;
             
       default:
         welcome();
