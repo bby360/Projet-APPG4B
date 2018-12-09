@@ -7,7 +7,7 @@
  <link rel="stylesheet" type="text/css" href="./designs/css/welcome.css" />
 </head>
 <body>
-<img id="fond" src="fondAccueil.jpg">
+<img id="fond" src="./designs/pictures/fondAccueil.jpg">
 <header>
 
 </header>
