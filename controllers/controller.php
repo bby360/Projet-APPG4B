@@ -5,6 +5,10 @@ function welcome(){
     require "views/welcome.php";
 }
 
+function notFound() {
+require "views/notFound.php";
+}
+
 function signup(){
 
     if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email']) 
