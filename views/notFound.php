@@ -10,7 +10,7 @@
     <?php require "header.php"?>
 </header>
 <section>
-    <h1> Erreur</h1>
+    <h1> ERREUR </h1>
 </section>
 <footer>
     <?php require"footer.php"?>
