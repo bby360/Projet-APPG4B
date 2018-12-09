@@ -25,7 +25,7 @@
         <a href="index.php?action=catalogue">Catalogue</a>
     </div> 
 
-    <img id="G4B" src="G4B.jpg">
+    <img id="G4B" src="./designs/pictures/G4B.jpg">
 
     <p>
         Gérez votre maison <br/>
@@ -34,7 +34,7 @@
 
     <div id="design">
         <p>designed by</p>
-        <img id="creambition" src="creambition.png">
+        <img id="creambition" src="./designs/pictures/creambition.png">
     </div>
 
 
