@@ -91,3 +91,7 @@ function addRoom(){
         }
   require "views/addRoom.php";
 }
+
+function rooms(){
+    require "views/rooms.php";
+}
