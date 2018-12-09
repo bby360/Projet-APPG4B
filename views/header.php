@@ -25,7 +25,7 @@
                 <li><a href="#">Pièces</a>
                     <ul>
                         <li><a href="index.php?action=roomList">Voir mes pièces</a></li>
-                        <li><a href="index.php?action=addroom">Ajouter une pièce</a></li>
+                        <li><a href="index.php?action=addRoom">Ajouter une pièce</a></li>
                     </ul>
                 </li>
 
