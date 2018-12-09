@@ -28,6 +28,14 @@ if(isset($_GET["action"])){
             addRoom();
             break;
             
+        case 'updateRoom':
+			updateRoom();
+			break;
+            
+        case 'rooms':
+            rooms();
+            break;
+            
       default:
         welcome();
         break;
