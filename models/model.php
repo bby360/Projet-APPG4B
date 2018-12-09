@@ -42,3 +42,9 @@ function signingin($email, $mdp)
 		$_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
     }
 }
+
+function getRoom(){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM room");
+    return $req;
+}
