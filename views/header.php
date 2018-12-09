@@ -13,7 +13,7 @@
 
         <div id="menu">
             <ul>
-                <li><a href="#"><img src="./designs/pictures/G4B.png" id="logo"></a></li>
+                <li><a href="#"><img src="./designs/pictures/G4B.jpg" id="logo"></a></li>
                 <li><a href="index.php?action=dashboard">Accueil</a></li>
                 <li><a href="index.php?action=profileEdited">Votre profil</a>
                     <ul>
