@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="designs/css/dashboard.css" />
 </head>
 <body>
-<img id="fond" src="../designs/css/photo.jpg">
+
 <header>
     <?php include("header.php"); ?>
 
