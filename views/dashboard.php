@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Page d'accueil</title>
-    <link rel="stylesheet" type="text/css" href="designs/css/home.css" />
+    <link rel="stylesheet" type="text/css" href="designs/css/dashboard.css" />
 </head>
 <body>
 <img id="fond" src="../designs/css/photo.jpg">
