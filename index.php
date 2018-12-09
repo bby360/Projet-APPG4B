@@ -20,6 +20,10 @@ if(isset($_GET["action"])){
             dashboard();
             break;
             
+        case 'roomList'
+            roomList();
+            break;
+            
       default:
         welcome();
         break;
