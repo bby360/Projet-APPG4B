@@ -51,7 +51,7 @@ if(isset($_GET["action"])){
             
             
       default:
-        welcome();
+        notFound();
         break;
 
     }
