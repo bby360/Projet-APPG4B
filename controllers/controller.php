@@ -28,17 +28,34 @@ function signup(){
 }
 
 function signin() {
+    
+    if(!empty($_POST['email']) && !empty($_POST['mdp'])){
 
-    $_SESSION=array();
+        $db=dbConnect();
+        $req = $db->prepare('SELECT * FROM client WHERE (email = :email)');
+        $req->execute(['email' => $_POST['email']]);
+        $client = $req->fetch(PDO::FETCH_OBJ);
 
-    if(!empty($_POST) && !empty($_POST['email']) && !empty($_POST['mdp'])) {
-                $email=$_POST['email'];
-                $mdp=$_POST['mdp'];
-                signingin($email, $mdp);
+            if(password_verify($_POST['mdp'], $client->mdp)) {
+                session_start();
+                $_SESSION['lastName'] = $client->lastName;
+                $_SESSION['firstName'] = $client->nom;
+                $_SESSION['email'] = $client->email;
+                $_SESSION['adress'] = $client->adress;
+                $_SESSION['phone'] = $client->phone;
+                $_SESSION['postalcode']=$client->postalcode;
+                $_SESSION['flash']['success'] = 'Vous êtes maintenant connecté';
 
+                
                 header('Location: index.php?action=dashboard');
+                exit();
+            }
+        
+        else{
+            $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
         }
-        require "views/signin.php";
+    }
+    require 'views/signin.php';
 
 }
 
