@@ -43,7 +43,7 @@ function signingin($email, $mdp)
     }
 }
 
-function getRoom(){
+function getRoomList(){
     $db = dbConnect();
     $req = $db->query("SELECT * FROM room");
     return $req;
