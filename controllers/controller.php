@@ -95,3 +95,26 @@ function addRoom(){
 function rooms(){
     require "views/rooms.php";
 }
+
+function updateRoom(){
+    $idClient="1" /*$_SESSION[idClient]*/ ;
+    $nom ="Salon" /*$_Get[nom]*/ ;
+    $nvMode=$_POST['mode'];
+    $nvLumiereAuto=$_POST['lumiere_auto'];
+    $nvOuvertureVolets=$_POST['ouverture_volets'];
+    $nvFermetureVolets=$_POST['fermeture_volets'];
+    $nvVoletsManu=$_POST['volets_manuel'];
+    $nvTemperature=$_POST['temperature'];
+
+    $nvLumiereManu=$_POST['lumiere_manuel'];
+    updateMode($nvMode, $idClient, $nom);
+
+    if($nvMode =='Auto'){
+        updateAuto($idClient, $nom, $nvLumiereAuto, $nvOuvertureVolets, $nvFermetureVolets, $nvTemperature);
+    }
+    else{
+        updateManu($idClient, $nom, $nvLumiereManu, $nvVoletsManu, $nvTemperature);
+    }
+
+    require "views/rooms.php";
+}
