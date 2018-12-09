@@ -50,3 +50,8 @@ function catalogue(){
 function dashboard(){
     require"views/dashboard.php";
 }
+
+function roomList(){
+    $rooms = getRoomList()->fetchAll();
+
+    require "views/roomList.php";
