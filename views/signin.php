@@ -53,10 +53,7 @@
 
 
 <footer>
-        <p> Mentions légales
-            <img src="designs/pictures/Creaweb.jpg" id="creambition">
-        </p>
-    <p>Created by</p>
+         <?php require "footer.php"?>
 </footer>
 </body>
 </html>
