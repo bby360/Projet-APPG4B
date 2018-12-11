@@ -100,8 +100,7 @@
 
 </section>
 <footer>
-    <div id="triangle"></div>
-    <p>Copyright - Tous droits réservés<br/>
+    <?php require "footer.php"?>
 </footer>
 </body>
 </html>
