@@ -15,7 +15,7 @@
         <a target="_blank" href="./designs/pictures/light.jpg">
             <img src="designs/pictures/light.jpg">
         </a>
-        <div class="desc">Capteurs de luinosité</div>
+        <div class="desc">Capteurs de luminosité</div>
     </div>
 
     <div class="gallery">
