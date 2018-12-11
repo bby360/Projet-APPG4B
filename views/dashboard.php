@@ -23,7 +23,7 @@
         </a>
     </div>
 
-    <div class="profil"><a href="index.php?action=profil">
+    <div class="profil"><a href="index.php?action=profileEdited.php">
             <div class="text">
                 <p>PROFIL</p>
             </div>

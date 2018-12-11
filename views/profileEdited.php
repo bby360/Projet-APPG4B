@@ -10,6 +10,10 @@ session_start();
     </head>
 
     <body>
+    <header>
+    <?php include("header.php"); ?>
+
+</header>
 
     <section>
 
@@ -93,7 +97,7 @@ session_start();
             </div>
 
             <div class=edit>
-                <h4> <a href="editProfile.php">Modifier votre profil</a></h4>
+                <h4> <a href="index.php?action=editProfile">Modifier votre profil</a></h4>
             </div>
 
         </div>

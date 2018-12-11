@@ -9,7 +9,7 @@
 <body>
 
 <header>
-    <h1>Inscris toi</h1>
+    <h1>Rejoignez nous</h1>
 </header>
 
 <section>
@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Téléhone : </label>
+                    <label>Téléphone : </label>
                 </td>
                 <td>
                     <input type="phone" name="phone">
@@ -75,10 +75,17 @@
             </tr>
             <tr>
                 <td>
-                    <label> Code Postale </label>
+                    <label> Code postale  </label>
                 </td>
                 <td>
                     <input type="text" name="postalcode">
+                </td>
+            </tr><tr>
+                <td>
+                    <label>Pays</label>
+                </td>
+                <td>
+                    <input type="text" name="pays" id="pays">
                 </td>
             </tr>
             <tr>
@@ -100,7 +107,8 @@
 
 </section>
 <footer>
-    <?php require "footer.php"?>
+    <div id="triangle"></div>
+    <p>Copyright - Tous droits réservés<br/>
 </footer>
 </body>
 </html>

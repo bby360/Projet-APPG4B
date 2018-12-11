@@ -10,21 +10,10 @@ session_start();
     </head>
 
     <body>
-    	<header>
-            <ul>
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Votre profil</a></li>
-                <li><a href="">Pièces</a></li>
-                <li><a href="">Urgence</a></li>
-                <li><a href="">Catalogue</a></li>
-                <li><a href="">Consommation</a></li>
-                <li><a href="">Forum</a></li>
-                <li><a href="">FAQ</a></li>
-            </ul>
+    <header>
+    <?php include("header.php"); ?>
 
-             <div class="deconnexion">
-                 <a href="">Déconnexion</a></li>
-             </div>
+</header>
 
             <h1> Editer votre profil</h1></header>
 
@@ -33,7 +22,7 @@ session_start();
 
         <div id=soussection>
         <div class="Contact">
-            <form method="post" action="profileEdited.php">
+            <form method="post" action="index.php?action=profileEdited.php">
 
                 <fieldset>
                 <legend><h2>Changer votre contact</h2></legend>
@@ -50,7 +39,7 @@ session_start();
         </div>
 
         <div class="Photo">
-    	   <form method="post" action="ProfileEdited.php" enctype="multipart/form-data">
+    	   <form method="post" action="index.php?action=profileEdited.php" enctype="multipart/form-data">
 
                 <fieldset>
                 <legend><h2>Changer votre photo de profil</h2></legend>

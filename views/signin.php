@@ -53,7 +53,10 @@
 
 
 <footer>
-         <?php require "footer.php"?>
+        <p> Mentions légales
+            <img src="designs/pictures/Creaweb.jpg" id="creambition">
+        </p>
+    <p>Created by</p>
 </footer>
 </body>
 </html>

@@ -27,9 +27,9 @@
 
     <img id="G4B" src="./designs/pictures/G4B.jpg">
 
-    <p>
-        Gérez votre maison <br/>
-        où que vous soyez
+    <p id="titre">
+        <b>Gérez votre maison <br/>
+        où que vous soyez<b>
     </p>
 
     <div id="design">
