@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Inscription</title>
-    <link rel="stylesheet" type="text/css" href="signup.css" />
+    <link rel="stylesheet" type="text/css" href="./designs/css/signup.css" />
 </head>
 <body>
 
