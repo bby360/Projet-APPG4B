@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Phone : </label>
+                    <label>Téléhone : </label>
                 </td>
                 <td>
                     <input type="phone" name="phone">
@@ -67,7 +67,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Adress  </label>
+                    <label>Adresse  </label>
                 </td>
                 <td>
                     <input type="text" name="adress">
@@ -75,7 +75,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Postal Code  </label>
+                    <label> Code Postale </label>
                 </td>
                 <td>
                     <input type="text" name="postalcode">
@@ -83,7 +83,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Emergency Number  </label>
+                    <label>Numéro d'urgence</label>
                 </td>
                 <td>
                     <input type="text" name="emergency">
