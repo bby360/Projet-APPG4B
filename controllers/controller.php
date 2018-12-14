@@ -20,11 +20,12 @@ function signup(){
  
                 $alerte = "Veuillez remplir tous les champs correctement.";
                 echo "Veuillez remplir tous les champs correctement.";
-            }   else {                
+            }   else {
                 signingup();                
                 header('Location: index.php?action=signin');
 
                 exit();
+                
             }
         }
 
@@ -43,12 +44,12 @@ function signin() {
             if(password_verify($_POST['mdp'], $client->mdp)) {
                 session_start();
                 $_SESSION['lastName'] = $client->lastName;
-                $_SESSION['firstName'] = $client->nom;
+                $_SESSION['firstName'] = $client->firstName;
                 $_SESSION['email'] = $client->email;
                 $_SESSION['adress'] = $client->adress;
                 $_SESSION['phone'] = $client->phone;
                 $_SESSION['postalcode']=$client->postalcode;
-                $_SESSION['flash']['success'] = 'Vous êtes maintenant connecté';
+                echo $_SESSION['flash']['success'] = 'Vous êtes maintenant connecté';
 
                 
                 header('Location: index.php?action=dashboard');
@@ -57,6 +58,7 @@ function signin() {
         
         else{
             $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
+            echo 'mauvais mdp';
         }
     }
     require 'views/signin.php';

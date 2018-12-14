@@ -34,7 +34,7 @@
 
     <div id="design">
         <p>designed by</p>
-        <img id="creambition" src="./designs/pictures/logo.jpg">
+        <img id="creambition" src="./designs/pictures/creambition.png">
     </div>
 
 
