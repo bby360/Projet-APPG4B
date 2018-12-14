@@ -35,6 +35,12 @@
                         <input type="password" name="mdp" id="mdp" required>
                     </td>
                 </tr>
+                
+                <tr>
+                <td>
+                <label><input type="checkbox" name="invite">Je suis un invité</label>
+                </td>
+                </tr>
 
             </table>
             <input type="submit" value="valider" name="connexion">
