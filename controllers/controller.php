@@ -78,7 +78,7 @@ function dashboard(){
 
 function roomList()
 {
-    $rooms = getRoomList()->fetchAll();
+    $rooms = getRoomList()->fetch();
 
     require "views/roomList.php";
 }

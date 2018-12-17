@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<img id="fond" src="../designs/css/photo.jpg">
+
 <header>
     <?php
     include 'header.php';
@@ -28,14 +28,6 @@
                 Surface de la pièce :
                 <input type = "number" name = "area" min="0" required>
             </label>
-        </p>
-        <p>
-            <label>
-                Id de la maison :
-                <input type = "number" name = "idHouse" min="0" required>
-            </label>
-        </p>
-
         <p>
             <label> Le mode de la pièce :
                 <select name="Mode">
