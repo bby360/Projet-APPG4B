@@ -40,7 +40,8 @@ function isAmdp($str): bool
 
 function getRoomList(){
     $db = dbConnect();
-    $req = $db->query("SELECT * FROM room");
+    $idSession = $_SESSION['id'];
+    $req = $db->query("SELECT * FROM room INNER JOIN house ON house.idHouse = room.idHouse WHERE id=$idSession");
     return $req;
 }
 
