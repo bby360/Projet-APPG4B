@@ -28,14 +28,6 @@
                 Surface de la pièce :
                 <input type = "number" name = "area" min="0" required>
             </label>
-        </p>
-        <p>
-            <label>
-                Id de la maison :
-                <input type = "number" name = "idHouse" min="0" required>
-            </label>
-        </p>
-
         <p>
             <label> Le mode de la pièce :
                 <select name="Mode">

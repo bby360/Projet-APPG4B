@@ -47,10 +47,10 @@ function getRoomList(){
 
 function insertRoom() {
     $db = dbConnect();
-    $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
-VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
+    $req = $db->prepare("INSERT INTO room(roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
+VALUES(:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
     $req->execute([
-        'idHouse'=> $_POST['idHouse'],
+        'idHouse'=> $_SESSION['idHouse'],
         'roomName' => $_POST['name'],
         'surface'=> $_POST['area'],
         'mode'=> $_POST['Mode'],
