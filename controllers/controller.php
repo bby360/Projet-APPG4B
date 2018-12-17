@@ -49,7 +49,9 @@ function signin() {
                 $_SESSION['adress'] = $client->adress;
                 $_SESSION['phone'] = $client->phone;
                 $_SESSION['postalcode']=$client->postalcode;
-                echo $_SESSION['flash']['success'] = 'Vous êtes maintenant connecté';
+                $_SESSION['id']=$client->id;
+
+                echo 'Vous êtes maintenant connecté';
 
                 
                 header('Location: index.php?action=dashboard');
@@ -58,7 +60,7 @@ function signin() {
         
         else{
             $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
-            echo 'mauvais mdp';
+            echo 'Vous avez tapé le mauvais mdp';
         }
     }
     require 'views/signin.php';
