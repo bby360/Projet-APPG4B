@@ -97,6 +97,9 @@
                 </td>
             </tr>
         </table>
+
+        <p><input type="checkbox" required name="terms"> J'ai lu et j'accepte les <u> conditions générales d'utilisation</u></p>
+
         <p>
             <input type="reset" value="Retour">
             <input type="submit" value="valider" name="inscription" class="form-button">

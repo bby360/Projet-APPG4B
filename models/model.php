@@ -7,7 +7,8 @@ function signingup(): bool
     $pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     $db=dbConnect();
     $req = $db->prepare("INSERT INTO client(lastName, firstName, email, phone, adress, mdp, postalcode, emergency,pays) 
-    VALUES(:lastName, :firstName, :email, :phone, :adress, :mdp, :postalcode, :, emergency:pays)");
+    VALUES(:lastName, :firstName, :email, :phone, :adress, :mdp, :postalcode, :emergency, :pays)");
+ 
     $req->execute([
     'lastName'=> $_POST['lastName'],
     'firstName' => $_POST['firstName'],
@@ -19,14 +20,9 @@ function signingup(): bool
     'emergency' => $_POST['emergency'],
     'pays' => $_POST['pays']
     ]);
-
-    $req2= $db->prepare("INSERT INTO house(adress) VALUES (:adress)");
-    $req2->execute(['adress'=> $_POST['adress']]);
  
     return true;
 }
-
-
 
 function isAmdp($str): bool
 {   
@@ -51,10 +47,10 @@ function getRoomList(){
 
 function insertRoom() {
     $db = dbConnect();
-    $req = $db->prepare("INSERT INTO room(roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
-VALUES(:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
+    $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
+VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
     $req->execute([
-        'idHouse'=> $_SESSION['idHouse'],
+        'idHouse'=> $_POST['idHouse'],
         'roomName' => $_POST['name'],
         'surface'=> $_POST['area'],
         'mode'=> $_POST['Mode'],
