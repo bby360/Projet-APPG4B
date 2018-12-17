@@ -15,7 +15,7 @@ function signingup(): bool
     'email'=> $_POST['email'],
     'phone'=> $_POST['phone'],
     'adress'=> $_POST['adress'],
-    'mdp'=> $pass_hache, test re
+    'mdp'=> $pass_hache,
     'postalcode'=> $_POST['postalcode'],
     'emergency' => $_POST['emergency'],
     'pays' => $_POST['pays']
