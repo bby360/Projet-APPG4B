@@ -30,6 +30,7 @@
     <p id="titre">
         <b>Gérez votre maison <br/>
         où que vous soyez<b>
+                ceci est un test
     </p>
 
     <div id="design">
