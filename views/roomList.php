@@ -18,7 +18,7 @@
     <table>
         <?php foreach($rooms as $room) { ?>
         <ul>
-            <li><a href="index.php?action=detailedRoom&id=<?=$room["idRoom"];?>"><?= $room["roomName"];?></li>
+            <li><?= $room["roomName"];?></li>
         </ul>
         <?php } ?>
 
