@@ -7,8 +7,7 @@ function signingup(): bool
     $pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     $db=dbConnect();
     $req = $db->prepare("INSERT INTO client(lastName, firstName, email, phone, adress, mdp, postalcode, emergency,pays) 
-    VALUES(:lastName, :firstName, :email, :phone, :adress, :mdp, :postalcode, :emergency, :pays)");
- 
+    VALUES(:lastName, :firstName, :email, :phone, :adress, :mdp, :postalcode, :, emergency:pays)");
     $req->execute([
     'lastName'=> $_POST['lastName'],
     'firstName' => $_POST['firstName'],
@@ -20,9 +19,14 @@ function signingup(): bool
     'emergency' => $_POST['emergency'],
     'pays' => $_POST['pays']
     ]);
+
+    $req2= $db->prepare("INSERT INTO house(adress) VALUES (:adress)");
+    $req2->execute(['adress'=> $_POST['adress']]);
  
     return true;
 }
+
+
 
 function isAmdp($str): bool
 {   
