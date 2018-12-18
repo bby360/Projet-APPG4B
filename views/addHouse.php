@@ -16,7 +16,7 @@
 <section>
     <h1>Ajouter une Maison</h1>
 
-    <form method="post" action="index.php?action=rooms">
+    <form method="post" action="index.php?action=addHouse">
         <p>
             <label>
                 Adresse de la maison :
