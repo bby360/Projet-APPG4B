@@ -1,9 +1,9 @@
 <?php
-session_start();
 require "models/dbconnexion.php";
 
 function signingup(): bool
-{
+{   session_start();
+
     $pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     $db=dbConnect();
     $req = $db->prepare("INSERT INTO client(lastName, firstName, email, phone, adress, mdp, postalcode, emergency,pays) 
@@ -26,6 +26,8 @@ function signingup(): bool
 
 
 function getRoomList(){
+    session_start();
+
     $db = dbConnect();
     $idSession = $_SESSION['id'];
     $req = $db->query("SELECT * FROM room INNER JOIN house ON house.idHouse = room.idHouse WHERE id=$idSession");
@@ -33,6 +35,8 @@ function getRoomList(){
 }
 
 function insertRoom() {
+    session_start();
+
     $db = dbConnect();
     $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
 VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
@@ -52,7 +56,8 @@ VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:
 }
 
 function insertHouse() {
-    
+    session_start();
+
     $db=dbConnect();
     $req=$db->prepare("INSERT INTO house VALUES('',:idClient, :adress)");
     $req ->execute([
