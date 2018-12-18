@@ -143,3 +143,10 @@ function catalogueunlog() {
 function deconnexion(){
     require "views/deconnexion.php";
 }
+
+function addHouse(){
+    if (isset($_POST['username'])) 
+
+    insertHouse();
+    require "views/addHouse.php";
+}

@@ -64,6 +64,16 @@ VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:
     ]);
 }
 
+function insertHouse() {
+    $db=dbConnect();
+    $req=$db->prepare("INSERT INTO house(adress) VALUES (:adress)");
+    $req ->execute([
+        'adress'=>$_POST['adress']
+    ]);
+    $req ->CloseCursor();
+
+}
+
 function updateMode($mode,$client,$nom) {
     $db = dbConnect();
     $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse SET mode= :nvmode WHERE house.idClient= :idClient AND roomName= :nvnom');

@@ -29,12 +29,12 @@ if(isset($_GET["action"])){
             break;
             
         case 'updateRoom':
-		updateRoom();
-		break;
+		    updateRoom();
+		    break;
             
         case 'rooms':
-            	rooms();
-            	break;
+            rooms();
+            break;
 
         case 'editProfile':
         	editProfile();
@@ -44,14 +44,17 @@ if(isset($_GET["action"])){
         	profileEdited();
         	break;
 		    
-	case 'catalogueUnlog':
-		catalogueUnlog();
-		break;
+	    case 'catalogueUnlog':
+		    catalogueUnlog();
+		    break;
 		    
 	    case 'deconnexion':
 		    deconnexion();
-		    break;
+            break;
             
+        case 'addHouse':
+            addHouse();
+            break;
             
       default:
         notFound();

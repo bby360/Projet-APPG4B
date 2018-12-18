@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Page d'accueil</title>
+    <title>Ajouter une pièce</title>
     <link rel="stylesheet" type="text/css" href="designs/css/addRoom.css" />
 
 </head>
