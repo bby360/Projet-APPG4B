@@ -68,6 +68,10 @@ function signin() {
 
 }
 
+function viewAddGuest(){
+    $rooms = getRoomList()->fetchAll();
+    require"views/addGuest.php";
+}
 
 function catalogue(){
     require"views/catalogue.php";
@@ -79,7 +83,7 @@ function dashboard(){
 
 function roomList()
 {
-    $rooms = getRoomList()->fetch();
+    $rooms = getRoomList()->fetchAll();
 
     require "views/roomList.php";
 }

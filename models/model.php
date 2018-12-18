@@ -30,7 +30,7 @@ function getRoomList(){
 
     $db = dbConnect();
     $idSession = $_SESSION['id'];
-    $req = $db->query("SELECT * FROM room INNER JOIN house ON house.idHouse = room.idHouse WHERE id=$idSession");
+    $req = $db->query("SELECT * FROM room ");
     return $req;
 }
 

@@ -31,6 +31,10 @@ if(isset($_GET["action"])){
         case 'updateRoom':
 		    updateRoom();
 		    break;
+
+        case 'addGuest':
+            viewAddGuest();
+            break;
             
         case 'rooms':
             rooms();
