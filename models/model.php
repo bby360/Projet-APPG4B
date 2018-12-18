@@ -24,19 +24,6 @@ function signingup(): bool
     return true;
 }
 
-function isAmdp($str): bool
-{   
-    if (empty($str) ||
-        strlen($str) < 8 ||
-        !preg_match("#[0-9]+#", $str) ||
-        !preg_match("#[a-zA-Z]+#", $str) ||
-        !preg_match('/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/', $str)
-    ) {
-        return false;
-    } else {
-        return is_string($str);
-    }
-}
 
 function getRoomList(){
     $db = dbConnect();
@@ -65,10 +52,12 @@ VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:
 }
 
 function insertHouse() {
+    
     $db=dbConnect();
-    $req=$db->prepare("INSERT INTO house(adress) VALUES (:adress)");
+    $req=$db->prepare("INSERT INTO house VALUES('',:idClient, :adress)");
     $req ->execute([
-        'adress'=>$_POST['adress']
+        'adress'=>$_POST['adress'],
+        'idClient'=>"1"//$_SESSION['idClient']
     ]);
     $req ->CloseCursor();
 

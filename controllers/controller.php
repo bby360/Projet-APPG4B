@@ -49,7 +49,8 @@ function signin() {
                 $_SESSION['adress'] = $client->adress;
                 $_SESSION['phone'] = $client->phone;
                 $_SESSION['postalcode']=$client->postalcode;
-                $_SESSION['id']=$client->id;
+                $_SESSION['pays']=$client->pays;
+                $_SESSION['idClient']=$client->idClient;
 
                 echo 'Vous êtes maintenant connecté';
 
@@ -145,8 +146,9 @@ function deconnexion(){
 }
 
 function addHouse(){
-    if (isset($_POST['username'])) 
-
+    if (isset($_POST['adress'])) {
     insertHouse();
+    }
     require "views/addHouse.php";
+    
 }

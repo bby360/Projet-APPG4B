@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Inscription</title>
     <link rel="stylesheet" type="text/css" href="./designs/css/signup.css" />
+    <script type="javascript" src="./designs/css/signup.js"></script>
 </head>
 <body>
 
@@ -18,7 +19,7 @@
         <table align="center">
             <tr>
                 <td>
-                    <label>Nom :</label>
+                    <label>Nom </label>
                 </td>
                 <td>
                     <input type="text" name="lastName" id="lastName"autofocus>
@@ -26,7 +27,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Prenom : </label>
+                    <label>Prenom  </label>
                 </td>
                 <td>
                     <input type="text" name="firstName" id="firstName">
@@ -34,7 +35,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Mail : </label>
+                    <label>Mail  </label>
                 </td>
                 <td>
                     <input type="email" name="email" placeholder="Ex: jean.dupont@gmail.com" id="email">
@@ -43,15 +44,22 @@
             
             <tr>
                 <td>
-                    <label>Mot de passe : </label>
+                    <label>Mot de passe  </label>
                 </td>
                 <td>
-                    <input type="password" name="mdp">
+                <input type="password" id="mdp" name="mdp" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Il doit y avoir au moins 8 caractères des lettres des chiffres et un caractère spécial" required>
+                <div id="message">
+                <h3>Le mot de passe doit contenir</h3>
+                <p id="letter" class="invalid">A <b>lettre</b> minuscule</p>
+                <p id="capital" class="invalid">A <b>lettre</b> majuscule</p>
+                <p id="number" class="invalid">A <b>nombre</b></p>
+                <p id="length" class="invalid">Minimum <b>8 characterès</b></p>
+                </div>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Confirmation mot de passe : </label>
+                    <label>Confirmation mot de passe  </label>
                 </td>
                 <td>
                     <input type="password" name="confirm_mdp">
@@ -59,7 +67,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Téléphone : </label>
+                    <label>Téléphone  </label>
                 </td>
                 <td>
                     <input type="phone" name="phone">
@@ -75,7 +83,7 @@
             </tr>
             <tr>
                 <td>
-                    <label> Code postale  </label>
+                    <label> Code postal  </label>
                 </td>
                 <td>
                     <input type="text" name="postalcode">
