@@ -1,0 +1,15 @@
+html,body{
+    margin: 0;
+    padding:0;
+    width: 100%;
+    background-color:#00497A;
+}
+
+section{
+    padding-top: 10%;
+}
+
+h1{
+    color:white;
+    text-align: center;
+}

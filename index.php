@@ -51,7 +51,22 @@ if(isset($_GET["action"])){
 	    case 'catalogueUnlog':
 		    catalogueUnlog();
 		    break;
-		    
+
+        case 'consumption':
+            consumption();
+            break;
+
+        case 'lightSensors':
+            lightSensors();
+            break;
+
+        case 'presenceSensors':
+            presenceSensors();
+            break;
+
+        case 'temperatureSensors':
+            temperatureSensors();
+            break;
 	    case 'deconnexion':
 		    deconnexion();
             break;

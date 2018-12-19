@@ -158,3 +158,18 @@ function addHouse(){
     require "views/addHouse.php";
     
 }
+
+function lightSensors(){
+    $sensors = getLightSensors()->fetchAll();
+    require "views/lightSensors.php";
+}
+
+function presenceSensors(){
+    $sensors = getPresenceSensors()->fetchAll();
+    require "views/lightSensors.php";
+}
+
+function temperatureSensors(){
+    $sensors = getTemperatureSensors()->fetchAll();
+    require "views/lightSensors.php";
+}

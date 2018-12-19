@@ -104,3 +104,21 @@ function updateManu($a, $b, $c, $d, $e){
     $req->execute();
     $req->closeCursor();
 }
+
+function getLightSensors(){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM catalogue WHERE typeProduct='Luminosité'");
+    return $req;
+}
+
+function getPresenceSensors(){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM catalogue WHERE typeProduct='Présence'");
+    return $req;
+}
+
+function getTemperatureSensors(){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM catalogue WHERE typeProduct='Temperature'");
+    return $req;
+}

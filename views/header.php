@@ -36,7 +36,13 @@
                     </ul>
                 </li>
 
-                <li><a href="index.php?action=catalogue">Catalogue</a></li>
+                <li><a href="index.php?action=catalogue">Catalogue</a>
+                    <ul>
+                        <li><a href="index.php?action=lightSensors">Capteurs de luminosité</a></li>
+                        <li><a href="index.php?action=presenceSensors">Capteurs de présence</a></li>
+                        <li><a href="index.php?action=temperatureSensors">Capteurs de température</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Consommation</a></li>
                 <li><a href="#">Forum</a></li>
                 <li><a href="#">FAQ</a></li>
