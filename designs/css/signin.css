@@ -73,6 +73,12 @@ input {
       width: 8em;
   }
 
+  a {
+      text-decoration:none;
+      display: block;
+      color: white;
+  }
+
   .form-button:hover {
       background-color: rgb(27, 122, 160);
   }
@@ -112,7 +118,7 @@ input {
 
 .button {
     background-color: #4CAF50; 
-    border: none;
+    border-color: white;
     color: white;
     padding: 15px 32px;
     text-align: center;

@@ -36,7 +36,6 @@ function getRoomList(){
 
 function insertRoom() {
     session_start();
-
     $db = dbConnect();
     $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
 VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
@@ -57,7 +56,6 @@ VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:
 
 function insertHouse() {
     session_start();
-
     $db=dbConnect();
     $req=$db->prepare("INSERT INTO house VALUES('',:idClient, :adress)");
     $req ->execute([

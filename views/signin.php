@@ -47,8 +47,8 @@
             <input type="submit" value="valider" name="connexion" class="form-button">
         </form>
         <p>
-                <button href="index.php?action=signup" class="button"> S'inscrire </button>
-                <button class="button"> Mot de passe oublié</button>
+                <button class="button"> <a href="index.php?action=signup" >S'inscrire</a> </button>
+                <button class="button"> <a href="index.php?action=#" >Mot de passe oublié</a></button>
             </p>
     </div>
 
