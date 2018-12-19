@@ -45,6 +45,48 @@ footer{
     width: 100%;
 }
 
+/* Modifie tous les input */
+input {
+    width: 100%;
+    height: 1.5em;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+  
+  /* Modifie tous les submit */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Modifie la boite des input */
+  .container {
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+  
+  .form-button {
+      width: 8em;
+  }
+
+  .form-button:hover {
+      background-color: rgb(27, 122, 160);
+  }
+  /* La boite de message est affiché losque l'utilisateur clique sur le champ mdp */
+  #message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+
 /* Les boutons */
 
 .catalogue {
@@ -68,3 +110,14 @@ footer{
     float:left;
 }
 
+.button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 6em;
+  }

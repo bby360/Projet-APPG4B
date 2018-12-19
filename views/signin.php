@@ -44,17 +44,15 @@
 
             </table>
 
-            <input type="submit" value="valider" name="connexion">
+            <input type="submit" value="valider" name="connexion" class="form-button">
         </form>
         <p>
-                <a href="index.php?action=signup">sinscrire </a>
-                <input type="submit" value="Mot de passe oublié">
+                <button href="index.php?action=signup" class="button"> S'inscrire </button>
+                <button class="button"> Mot de passe oublié</button>
             </p>
     </div>
 
-    <div class="catalogue">
-        <a href="catalogue.html">Catalogue</a>
-    </div>
+
 
 </section>
 

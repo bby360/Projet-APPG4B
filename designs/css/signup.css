@@ -107,7 +107,7 @@ input {
     margin-bottom: 16px;
   }
   
-  /* Modifie tous le submit */
+  /* Modifie tous les submit */
   input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -121,6 +121,8 @@ input {
   
   .form-button {
       width: 8em;
+      text-align: center;
+
   }
 
   .form-button:hover {
