@@ -155,3 +155,12 @@ input {
     left: -35px;
     content: "&#10006;";
   }
+
+#cgu{
+    color: white;
+
+}
+
+#cgu:hover{
+    color: #F0A009;
+}
