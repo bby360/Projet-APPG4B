@@ -18,7 +18,7 @@
                 <li><a href="index.php?action=profileEdited">Votre profil</a>
                     <ul>
                         <li><a href="index.php?action=editProfile">Modifier mon profil</a></li>
-                        <li><a href="index.php?action=addGuest">Ajouter un invité</a></li>
+                        <li><a href="index.php?action=guest">Ajouter un invité</a></li>
                     </ul>
                 </li>
 
@@ -28,20 +28,12 @@
                         <li><a href="index.php?action=addRoom">Ajouter une pièce</a></li>
                     </ul>
                 </li>
-                <li><a href="index.php?action=addHouse">Vos maisons</a>
-                    <ul>
-                        <li><a href="index.php?action=addHouse">Ajouter une maison</a></li>
-                        <li><a href="#">Voir mes maisons</a></li>
-
-                    </ul>
-                </li>
 
                 <li><a href="index.php?action=catalogue">Catalogue</a></li>
                 <li><a href="#">Consommation</a></li>
-                <li><a href="#">Forum</a></li>
+                <li><a href="index.php?action=forum">Forum</a></li>
                 <li><a href="#">FAQ</a></li>
-                <li><a href="#">Urgence</a></li>
-
+                <li><a href="index.php?action=urgence">Urgence</a></li>
                 <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
             </ul>
         </div>

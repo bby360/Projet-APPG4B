@@ -22,7 +22,7 @@ html, body{
     margin-left: 42%;
     height: 30px;
     list-style-type: none ; 
-    margin-top:1px;
+    margin-top:5%;
     padding: 0px;  
     z-index: 200;
 
@@ -47,7 +47,7 @@ html, body{
     border: 2px solid #2D241E;
     padding: 0;
     margin: 0;
-    margin-top: 0.5%;   
+    margin-top: 0.2%;   
     background-color: grey;
 }
 

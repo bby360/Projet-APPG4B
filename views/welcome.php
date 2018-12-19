@@ -30,12 +30,11 @@
     <p id="titre">
         <b>Gérez votre maison <br/>
         où que vous soyez<b>
-
     </p>
 
     <div id="design">
         <p>designed by</p>
-        <img id="logo" src="./designs/pictures/logo.png">
+        <img id="creambition" src="./designs/pictures/logo.jpg">
     </div>
 
 

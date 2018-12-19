@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="./designs/css/error.css" />
 </head>
 <body>
-<img src="./designs/pictures/ins3bdd.PNG" id="logo">
 <header>
     <?php require "header.php"?>
 </header>
