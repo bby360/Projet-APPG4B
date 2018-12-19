@@ -68,6 +68,12 @@ function signin() {
 
 }
 
+function alreadyconnected() {
+    if (!(isset($_SESSION['email']) && !($_SESSION['email']!=NULL)) {
+        header('Location: index.php?action=signin');
+    }
+}
+
 function viewAddGuest(){
     $rooms = getRoomList()->fetchAll();
     require"views/addGuest.php";
