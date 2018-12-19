@@ -75,7 +75,8 @@ section {
     background-size: cover;
     background-position: bottom center;
     font-family: LibreBaskerville;
-    padding-top: 2%;
+    padding: 0px;
+    margin: 0px;
     height: 100%;
     width: 100%;
     color:white;
@@ -128,6 +129,7 @@ input {
   .form-button:hover {
       background-color: rgb(27, 122, 160);
   }
+  
   /* La boite de message est affiché losque l'utilisateur clique sur le champ mdp */
   #message {
     display:none;

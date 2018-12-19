@@ -3,6 +3,7 @@ var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
 var number = document.getElementById("number");
 var length = document.getElementById("length");
+var affichemdp = document.getElementById("amdp")
 
 // Quand l'utilisateur clique sur linput mdp cela saffiche
 myInput.onfocus = function() {
@@ -36,7 +37,7 @@ myInput.onkeyup = function() {
     capital.classList.add("invalid");
   }
 
-  // Validate des nombres
+  // Validation des nombres
   var numbers = /[0-9]/g;
   if(myInput.value.match(numbers)) { 
     number.classList.remove("invalid");
@@ -46,7 +47,7 @@ myInput.onkeyup = function() {
     number.classList.add("invalid");
   }
 
-  // Validate de la longueur
+  // Validation de la longueur
   if(myInput.value.length >= 8) {
     length.classList.remove("invalid");
     length.classList.add("valid");
@@ -56,11 +57,14 @@ myInput.onkeyup = function() {
   }
 }
 
-function showmdp() {
-  var x = document.getElementById("myInput");
+/* function showmdp() {
+  var x = document.getElementByid("amdp");
   if (x.type === "password") {
     x.type = "text";
   } else {
     x.type = "password";
   }
 }
+
+*/
+
