@@ -29,8 +29,8 @@ function getRoomList(){
     session_start();
 
     $db = dbConnect();
-    $idSession = $_SESSION['id'];
-    $req = $db->query("SELECT * FROM room ");
+    $idSession = $_SESSION['idClient'];
+    $req = $db->query("SELECT * FROM room JOIN house ON house.idHouse = room.idHouse WHERE house.idClient = $idSession");
     return $req;
 }
 
