@@ -1,4 +1,3 @@
-
 var myInput = document.getElementById("mdp");
 var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
@@ -54,5 +53,14 @@ myInput.onkeyup = function() {
   } else {
     length.classList.remove("valid");
     length.classList.add("invalid");
+  }
+}
+
+function showmdp() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
   }
 }

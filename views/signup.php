@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>Inscription</title>
     <link rel="stylesheet" type="text/css" href="./designs/css/signup.css" />
-    <script type="javascript" src="./designs/css/signup.js"></script>
+    <script type="text/javascript" src="./designs/css/signup.js"></script>
 </head>
 <body>
 
@@ -47,7 +47,7 @@
                     <label>Mot de passe  </label>
                 </td>
                 <td>
-                <input type="password" id="mdp" name="mdp" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Il doit y avoir au moins 8 caractères des lettres des chiffres et un caractère spécial" required>
+                <input type="password" id="mdp" name="mdp" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Il doit y avoir au moins 8 caractères des lettres des chiffres et un caractère spécial" onclick="showmdp()" required>
                 <div id="message">
                 <h3>Le mot de passe doit contenir</h3>
                 <p id="letter" class="invalid">A <b>lettre</b> minuscule</p>
@@ -109,7 +109,7 @@
         <p><input type="checkbox" required name="terms"> J'ai lu et j'accepte les <u> <a href="" id="cgu">conditions générales d'utilisation</a></u></p>
 
         <p>
-            <input type="reset" value="Retour">
+            <input type="reset" value="Retour" class="form-button">
             <input type="submit" value="valider" name="inscription" class="form-button">
         </p>
     </form>
