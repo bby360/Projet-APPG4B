@@ -47,21 +47,20 @@
             <input type="submit" value="valider" name="connexion" class="form-button">
         </form>
         <p>
-                <button class="button"> <a href="index.php?action=signup" >S'inscrire</a> </button>
-                <button class="button"> <a href="index.php?action=#" >Mot de passe oublié</a></button>
+                <button href="index.php?action=signup" class="button"> S'inscrire </button>
+                <button class="button"> Mot de passe oublié</button>
             </p>
     </div>
-
-
+    <div class = "admin">
+    <a href="indexAdmin.php?action=signin">administrateur</a>
+    </div>
 
 </section>
 
 
 <footer>
-        <p> Mentions légales
-            <img src="designs/pictures/Creaweb.jpg" id="creambition">
-        </p>
-    <p>Created by</p>
+
+    <?php require "footer.php"?>
 </footer>
 </body>
 </html>

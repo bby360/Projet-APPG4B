@@ -44,15 +44,15 @@
             
             <tr>
                 <td>
-                    <label>Mot de passe  </label> 
+                    <label>Mot de passe  </label>
                 </td>
                 <td>
                 <input type="password" id="mdp" name="mdp" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Il doit y avoir au moins 8 caractères des lettres des chiffres et un caractère spécial" onclick="showmdp()" required>
                 <div id="message">
                 <h3>Le mot de passe doit contenir</h3>
-                <p id="letter" class="invalid"><b>lettre</b> minuscule</p>
-                <p id="capital" class="invalid"><b>lettre</b> majuscule</p>
-                <p id="number" class="invalid"><b>nombre</b></p>
+                <p id="letter" class="invalid">A <b>lettre</b> minuscule</p>
+                <p id="capital" class="invalid">A <b>lettre</b> majuscule</p>
+                <p id="number" class="invalid">A <b>nombre</b></p>
                 <p id="length" class="invalid">Minimum <b>8 characterès</b></p>
                 </div>
                 </td>
@@ -62,7 +62,7 @@
                     <label>Confirmation mot de passe  </label>
                 </td>
                 <td>
-                    <input type="password" name="confirm_mdp" id=mdp>
+                    <input type="password" name="confirm_mdp">
                 </td>
             </tr>
             <tr>
@@ -106,7 +106,7 @@
             </tr>
         </table>
 
-        <p><input type="checkbox" name="terms" required> J'ai lu et j'accepte les <u> <a href="" id="cgu">conditions générales d'utilisation</a></u></p>
+        <p><input type="checkbox" required name="terms"> J'ai lu et j'accepte les <u> <a href="" id="cgu">conditions générales d'utilisation</a></u></p>
 
         <p>
             <input type="reset" value="Retour" class="form-button">
@@ -118,8 +118,7 @@
 
 </section>
 <footer>
-    <div id="triangle"></div>
-    <p>Copyright - Tous droits réservés<br/>
+    <?php require "footer.php"?>
 </footer>
 </body>
 </html>

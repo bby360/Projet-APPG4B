@@ -57,11 +57,7 @@ input {
     margin-bottom: 16px;
   }
   
-  /* Modifie tous les submit */
-  input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-  }
+
   
   /* Modifie la boite des input */
   .container {
@@ -71,12 +67,6 @@ input {
   
   .form-button {
       width: 8em;
-  }
-
-  a {
-      text-decoration:none;
-      display: block;
-      color: white;
   }
 
   .form-button:hover {
@@ -115,15 +105,11 @@ input {
     height: 50px;
     float:left;
 }
-
-.button {
-    background-color: #4CAF50; 
-    border-color: white;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
+a{
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 6em;
-  }
+    color: white;
+}
+.admin{
+margin-top: 200px;
+    margin-left: 1000px;
+}
