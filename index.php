@@ -30,11 +30,15 @@ if(isset($_GET["action"])){
             
         case 'updateRoom':
 		    updateRoom();
-		   break;
+		    break;
+
+        case 'addGuest':
+            viewAddGuest();
+            break;
             
         case 'rooms':
-             roomList2();
-             break;
+            rooms();
+            break;
 
         case 'editProfile':
         	editProfile();
@@ -45,38 +49,18 @@ if(isset($_GET["action"])){
         	break;
 		    
 	    case 'catalogueUnlog':
-	       	catalogueUnlog();
+		    catalogueUnlog();
 		    break;
 		    
 	    case 'deconnexion':
 		    deconnexion();
-		    break;
+            break;
             
-        case 'urgence':
-            urgence();
-            break;  
-
-        case 'contactUrgence':
-            contactUrgence();
+        case 'addHouse':
+            addHouse();
             break;
-
-        case 'forum':
-            seeForum();
-            break;
-
-        case 'messageForum':
-            seeMessageForum();
-            break;
-
-        case 'addMessage':
-            addMessage();
-            break;
-
-        case 'addTopic':
-            addTopic();
-            break;
-
-        default:
+            
+      default:
         notFound();
         break;
 

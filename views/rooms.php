@@ -13,16 +13,14 @@
 	<section>
 		
 	
-		<ul id="menuvertical">           
-            <li ><a href="#"><?php echo $_GET['piece']; ?></a>
-            	<ul>
-            	<?php
-            	foreach($rooms as $room) { ?>
-                 
-                 	<li><?php echo $room["roomName"]; ?></li>
-                
-                <?php } ?>
-            	 </ul>
+			<ul id="menuvertical">           
+            <li id="salon"><a href="#">SALON</a>
+                <ul>
+                    <li id="bureau"><a href="index.php?action=salon&amp;piece=bureau">BUREAU</a></li>
+                    <li><a href="index.php?action=salon&amp;piece=cuisine">CUISINE</a></li>
+                    <li><a href="index.php?action=salon&amp;piece=chambre1">CHAMBRE 1 </a></li>
+                    <li><a href="index.php?action=salon&amp;piece=chambre2">CHAMBRE 2</a></li>
+                </ul>
             </li>                       
         </ul>
 	<form action="index.php?action=updateRoom" method="post"> 
@@ -37,7 +35,7 @@
 			0% <input type="range" name="lumiere_auto" value="15" max="100" min="0" step="5"> 100%
 			<div id="lumiere_manuel">
 				luminosité &nbsp &nbsp
-    			0% <input type="range" name="lumiere_manuel" value="15" max="100" min="0" step="5"/>100%
+    			0% <input type="range" name="lumiere_manuel" value="15" max="100" min="0" step="5">100%
     		</div>
 		</div>
 
@@ -46,7 +44,7 @@
 			<input type="time" name="ouverture_volets">
 			<div id="volets_manuel">
 				volets &nbsp &nbsp
-    			0% <input type="range" name="volets_manuel" value="15" max="100" min="0" step="5"/>100%
+    			0% <input type="range" name="volets_manuel" value="15" max="100" min="0" step="5">100%
     		</div>
 		</div>
 
@@ -68,7 +66,7 @@
     </form>
 	</section>
 	<footer>
- 		<!-- <?php /*include("footer.php")*/; ?> -->
+ 		<!-- <?php include("footer.php"); ?> !--->
 
 	</footer> 
 

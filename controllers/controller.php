@@ -1,7 +1,6 @@
 <?php
 require "models/model.php";
 
-
 function welcome(){
     require "views/welcome.php";
 }
@@ -21,11 +20,12 @@ function signup(){
  
                 $alerte = "Veuillez remplir tous les champs correctement.";
                 echo "Veuillez remplir tous les champs correctement.";
-            }   else {                
+            }   else {
                 signingup();                
                 header('Location: index.php?action=signin');
 
                 exit();
+                
             }
         }
 
@@ -49,7 +49,10 @@ function signin() {
                 $_SESSION['adress'] = $client->adress;
                 $_SESSION['phone'] = $client->phone;
                 $_SESSION['postalcode']=$client->postalcode;
-                $_SESSION['flash']['success'] = 'Vous êtes maintenant connecté';
+                $_SESSION['pays']=$client->pays;
+                $_SESSION['idClient']=$client->idClient;
+
+                echo 'Vous êtes maintenant connecté';
 
                 
                 header('Location: index.php?action=dashboard');
@@ -58,12 +61,17 @@ function signin() {
         
         else{
             $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
+            echo 'Vous avez tapé le mauvais mdp';
         }
     }
     require 'views/signin.php';
 
 }
 
+function viewAddGuest(){
+    $rooms = getRoomList()->fetchAll();
+    require"views/addGuest.php";
+}
 
 function catalogue(){
     require"views/catalogue.php";
@@ -80,25 +88,6 @@ function roomList()
     require "views/roomList.php";
 }
 
-function roomList2()
-{
-    $rooms = getRoomList()->fetchAll();
-
-    require "views/rooms.php";
-}
- function seeForum()
- {
-    $topics =getTopicList()->fetchAll();
-
-    require "views/forum.php";
- }
-
-function seeMessageForum()
-{
-    $id= $_GET["idTopic"];
-    $messages =getMessage($id)->fetchAll();
-    require "views/forumMessage.php";
-}
 function addRoom(){
 
 
@@ -160,37 +149,10 @@ function deconnexion(){
     require "views/deconnexion.php";
 }
 
-function urgence(){
-    require "views/urgence.php";
-}
-
-function contactUrgence(){
-    require "views/contact.php";
-}
-
-function addMessage(){
-
-        $pseudo=$_POST["pseudo"];
-        $message=$_POST["message"];
-        $idTopic=$_GET["idTopic"];
-        insertMessage($idTopic,$pseudo,$message);
-        seeMessageForum();
-
-}
-
-function addTopic(){
-        $subject=$_POST["subject"];
-        $pseudo=$_POST["pseudo"];
-        $message=$_POST["message"];
-        insertTopic($subject);
-        addMessageTopic($subject,$pseudo,$message);
-        seeForum();
-}
-
-function addMessageTopic($subject,$pseudo,$message){
-    $ids =getIdTopic($subject) -> fetchAll();
-    foreach($ids as $id) {
-        $idTopic=$id['idTopic'];
+function addHouse(){
+    if (isset($_POST['adress'])) {
+    insertHouse();
     }
-    insertMessage($idTopic,$pseudo,$message);
+    require "views/addHouse.php";
+    
 }
