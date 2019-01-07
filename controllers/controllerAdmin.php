@@ -5,23 +5,25 @@ function notFound() {
     require "views/notFound.php";
 }
 
-function signin() {
+function signin()
+{
 
-    if(!empty($_POST['email']) && !empty($_POST['mdp'])){
 
-        $db=dbConnect();
-        $req = $db->prepare('SELECT * FROM admin WHERE (email = :email)');
-        $req->execute(['email' => $_POST['email']]);
-        $client = $req->fetch(PDO::FETCH_OBJ);
+    if (isset($_POST['email'])) {
+        if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
+
+            $db = dbConnect();
+            $req = $db->prepare('SELECT * FROM admin WHERE (email = :email)');
+            $req->execute(['email' => $_POST['email']]);
+            $client = $req->fetch(PDO::FETCH_OBJ);
 
             header('Location: index.php?action=dashboard');
             exit();
-        }
-
-        else{
+        } else {
             $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
             echo 'Vous avez tapé le mauvais mdp';
         }
     }
     require 'views/signinAdmin.php';
+}
 
