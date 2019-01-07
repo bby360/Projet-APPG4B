@@ -34,6 +34,20 @@ function getRoomList(){
     return $req;
 }
 
+function getTopicList(){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM forumtopic ");
+    return $req;
+}
+
+function getMessage($id){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT * FROM forummessage WHERE idTopic= :id ");
+    $req->bindParam("id", $id);
+    $req->execute();
+    return $req;
+}
+
 function insertRoom() {
     session_start();
     $db = dbConnect();
@@ -121,4 +135,30 @@ function getTemperatureSensors(){
     $db = dbConnect();
     $req = $db->query("SELECT * FROM catalogue WHERE typeProduct='Temperature'");
     return $req;
+}
+
+function insertMessage($idTopic,$pseudo,$message){
+    $db = dbConnect();
+    $req = $db->prepare("INSERT INTO forummessage VALUES ('', :idTopic, :pseudo, :message, now())");
+    $req->bindParam("idTopic", $idTopic);
+    $req->bindParam("pseudo", $pseudo);
+    $req->bindParam("message", $message);
+    $req->execute();
+    $req->closeCursor();
+}
+
+function insertTopic($subject){
+    $db = dbConnect();
+    $req = $db->prepare("INSERT INTO forumtopic VALUES ('', :name, now())");
+    $req->bindParam("name", $subject);
+    $req->execute();
+    $req->closeCursor();
+}
+
+function getIdTopic($sujet){
+    $db = dbConnect();
+    $req2 = $db->prepare("SELECT * FROM forumtopic WHERE name= :sujet ");
+    $req2->bindParam("sujet", $sujet);
+    $req2->execute();
+    return $req2;
 }
