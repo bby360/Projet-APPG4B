@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<?php include("isConnected.php"); ?>
-
 <html>
 <head>
     <meta charset="utf-8" />
@@ -13,77 +11,90 @@
 </header>
 
 <section>
-    <h1> Consommation </h1>
 
     <script>
-        document.write("Consommation")
-        Highcharts.chart('container', {
-
-            title: {
-                text: 'Consommation electrique, 2019'
-            },
-
-            subtitle: {
-                text: 'Sous-titre'
-            },
-
-            yAxis: {
-                title: {
-                    text: 'Number of Employees'
+        function move1() {
+            var elem = document.getElementById("myBar1");
+            var width = 1;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
                 }
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle'
-            },
-
-            plotOptions: {
-                series: {
-                    label: {
-                        connectorAllowed: false
-                    },
-                    pointStart: 2010
-                }
-            },
-
-            series: [{
-                name: 'Installation',
-                data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-            }, {
-                name: 'Manufacturing',
-                data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-            }, {
-                name: 'Sales & Distribution',
-                data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-            }, {
-                name: 'Project Development',
-                data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-            }, {
-                name: 'Other',
-                data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-            }],
-
-            responsive: {
-                rules: [{
-                    condition: {
-                        maxWidth: 500
-                    },
-                    chartOptions: {
-                        legend: {
-                            layout: 'horizontal',
-                            align: 'center',
-                            verticalAlign: 'bottom'
-                        }
-                    }
-                }]
             }
+        }
 
-        });
+        function move2() {
+            var elem = document.getElementById("myBar2");
+            var width = 1;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                }
+            }
+        }
+
+        function move3() {
+            var elem = document.getElementById("myBar3");
+            var width = 1;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                }
+            }
+        }
     </script>
 
-    <div id="container"></div>
+    <table>
+        <h1> Consommation des capteurs de présence</h1>
+        <?php foreach($capteursP as $capteur) { ?>
+            <ul>
+                <li><?= $capteur["CSumP"];?></li>
+            </ul>
+        <?php } ?>
 
+        <div id="myProgress">
+            <div id="myBar1"></div>
+        </div>
+        <button onclick="move1()">Click Me</button>
+
+        <h1> Consommation de capteurs de Température</h1>
+        <?php foreach($capteursT as $capteur) { ?>
+            <ul>
+                <li><?= $capteur["CSumT"];?></li>
+            </ul>
+        <?php } ?>
+
+        <div id="myProgress">
+            <div id="myBar2"></div>
+        </div>
+        <button onclick="move2()">Click Me</button>
+
+        <h1> Consommation des capteurs de Luminosité </h1>
+        <?php foreach($capteursL as $capteur) { ?>
+            <ul>
+                <li><?= $capteur["CSumL"];?></li>
+            </ul>
+        <?php } ?>
+
+        <div id="myProgress">
+            <div id="myBar3"></div>
+        </div>
+        <button onclick="move3()">Click Me</button>
+
+
+    </table>
 
 </section>
 <footer>

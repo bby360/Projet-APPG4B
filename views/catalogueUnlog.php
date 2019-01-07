@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,19 +9,19 @@
 
 <section>
 <div class="gallery">
-        <a target="_blank" href="./designs/pictures/light.jpg">
+        <a target="_blank" href="index.php?action=lightSensors">
             <img src="designs/pictures/light.jpg">
         </a>
-        <div class="desc">Capteurs de luinosité</div>
+        <div class="desc">Capteurs de luminosité</div>
     </div>
     <div class="gallery">
-        <a target="_blank" href="./designs/pictures/presence.jpg">
+        <a target="_blank" href="index.php?action=presenceSensors">
             <img src="designs/pictures/presence.jpg">
         </a>
         <div class="desc">Capteurs de présence </div>
     </div>
     <div class="gallery">
-        <a target="_blank" href="designs/pictures/temperature.jpg">
+        <a target="_blank" href="index.php?action=temperatureSensors">
             <img src="designs/pictures/temperature.jpg">
         </a>
         <div class="desc">Capteurs de température </div>
