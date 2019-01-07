@@ -36,11 +36,6 @@
                     </td>
                 </tr>
                 
-                <tr>
-                <td>
-                <label><input type="checkbox" name="invite">Je suis un invité</label>
-                </td>
-                </tr>
 
             </table>
 
