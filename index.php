@@ -37,7 +37,7 @@ if(isset($_GET["action"])){
             break;
             
         case 'rooms':
-            rooms();
+            roomList2();
             break;
 
         case 'editProfile':
@@ -67,12 +67,37 @@ if(isset($_GET["action"])){
         case 'temperatureSensors':
             temperatureSensors();
             break;
+	
 	    case 'deconnexion':
 		    deconnexion();
             break;
             
         case 'addHouse':
             addHouse();
+            break;
+		    
+	case 'urgence':
+            urgence();
+            break;  
+
+        case 'contactUrgence':
+            contactUrgence();
+            break;
+
+        case 'forum':
+            seeForum();
+            break;
+
+        case 'messageForum':
+            seeMessageForum();
+            break;
+
+        case 'addMessage':
+            addMessage();
+            break;
+
+        case 'addTopic':
+            addTopic();
             break;
             
       default:
