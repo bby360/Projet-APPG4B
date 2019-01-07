@@ -3,6 +3,8 @@ html,body{
     padding:0;
     width: 100%;
     background-color:#00497A;
+    text-decoration: none;
+    color:white;
 }
 
 section{
@@ -11,5 +13,13 @@ section{
 
 h1{
     color:white;
+    text-align: center;
+}
+
+li {
+    float:left;
+    margin:auto;
+    padding:0;
+    background-color:#00497A;
     text-align: center;
 }

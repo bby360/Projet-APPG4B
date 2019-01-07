@@ -12,3 +12,30 @@ h1{
     height: 400px;
     margin: 0 auto
 }
+
+section{
+    text-align: center;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: white;
+}
+
+#myBar1 {
+    width: 1%;
+    height: 30px;
+    background-color: yellow;
+}
+
+#myBar2 {
+     width: 1%;
+     height: 30px;
+     background-color: yellow;
+ }
+
+#myBar3 {
+    width: 1%;
+    height: 30px;
+    background-color: yellow;
+}
