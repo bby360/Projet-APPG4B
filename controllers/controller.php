@@ -90,6 +90,27 @@ function roomList()
     require "views/roomList.php";
 }
 
+function roomList2()
+{
+    $rooms = getRoomList()->fetchAll();
+
+    require "views/rooms.php";
+}
+
+function seeForum()
+ {
+    $topics =getTopicList()->fetchAll();
+
+    require "views/forum.php";
+ }
+
+function seeMessageForum()
+{
+    $id= $_GET["idTopic"];
+    $messages =getMessage($id)->fetchAll();
+    require "views/forumMessage.php";
+}
+
 function addRoom(){
 
 
@@ -172,4 +193,39 @@ function presenceSensors(){
 function temperatureSensors(){
     $sensors = getTemperatureSensors()->fetchAll();
     require "views/lightSensors.php";
+}
+
+function urgence(){
+    require "views/urgence.php";
+}
+
+function contactUrgence(){
+    require "views/contact.php";
+}
+
+function addMessage(){
+
+        $pseudo=$_POST["pseudo"];
+        $message=$_POST["message"];
+        $idTopic=$_GET["idTopic"];
+        insertMessage($idTopic,$pseudo,$message);
+        seeMessageForum();
+
+}
+
+function addTopic(){
+        $subject=$_POST["subject"];
+        $pseudo=$_POST["pseudo"];
+        $message=$_POST["message"];
+        insertTopic($subject);
+        addMessageTopic($subject,$pseudo,$message);
+        seeForum();
+}
+
+function addMessageTopic($subject,$pseudo,$message){
+    $ids =getIdTopic($subject) -> fetchAll();
+    foreach($ids as $id) {
+        $idTopic=$id['idTopic'];
+    }
+    insertMessage($idTopic,$pseudo,$message);
 }
