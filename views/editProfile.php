@@ -1,5 +1,7 @@
 <?php
 session_start();
+include("isConnected.php");
+
 ?>
 <!DOCTYPE html>
 <html>

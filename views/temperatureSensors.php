@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php include("isConnected.php"); ?>
+
 <html>
 <head>
     <meta charset="utf-8" />
