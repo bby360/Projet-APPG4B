@@ -60,7 +60,7 @@ function insertHouse() {
     $req=$db->prepare("INSERT INTO house VALUES('',:idClient, :adress)");
     $req ->execute([
         'adress'=>$_POST['adress'],
-        'idClient'=>"1"//$_SESSION['idClient']
+        'idClient'=>$_SESSION['idClient']
     ]);
     $req ->CloseCursor();
 
