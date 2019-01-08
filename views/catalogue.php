@@ -12,21 +12,21 @@
 
 <section>
 <div class="gallery">
-        <a target="_blank" href="index.php?action=lightSensors">
+        <a href="index.php?action=lightSensors">
             <img src="designs/pictures/light.jpg">
         </a>
         <div class="desc">Capteurs de luminosité</div>
     </div>
 
     <div class="gallery">
-        <a target="_blank" href="index.php?action=presenceSensors">
+        <a href="index.php?action=presenceSensors">
             <img src="designs/pictures/presence.jpg">
         </a>
         <div class="desc">Capteurs de présence </div>
     </div>
 
     <div class="gallery">
-        <a target="_blank" href="index.php?action=temperatureSensors">
+        <a href="index.php?action=temperatureSensors">
             <img src="designs/pictures/temperature.jpg">
         </a>
         <div class="desc">Capteurs de température </div>
