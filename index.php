@@ -99,6 +99,11 @@ if(isset($_GET["action"])){
         case 'addTopic':
             addTopic();
             break;
+		    
+	case 'consumption':
+            consumption();
+            break;
+
             
       default:
         notFound();
