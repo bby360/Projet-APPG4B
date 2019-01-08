@@ -67,6 +67,18 @@ if(isset($_GET["action"])){
         case 'temperatureSensors':
             temperatureSensors();
             break;
+		    
+	    case 'lightSensorsUnlog':
+            lightSensorsUnlog();
+            break;
+
+        case 'presenceSensorsUnlog':
+            presenceSensorsUnlog();
+            break;
+
+        case 'temperatureSensorsUnlog':
+            temperatureSensorsUnlog();
+            break;
 	
 	    case 'deconnexion':
 		    deconnexion();
