@@ -187,12 +187,27 @@ function lightSensors(){
 
 function presenceSensors(){
     $sensors = getPresenceSensors()->fetchAll();
-    require "views/lightSensors.php";
+    require "views/presenceSensors.php";
 }
 
 function temperatureSensors(){
     $sensors = getTemperatureSensors()->fetchAll();
-    require "views/lightSensors.php";
+    require "views/temperatureSensors.php";
+}
+
+function lightSensorsUnlog(){
+    $sensors = getLightSensors()->fetchAll();
+    require "views/lightSensorsUnlog.php";
+}
+
+function presenceSensorsUnlog(){
+    $sensors = getPresenceSensors()->fetchAll();
+    require "views/presenceSensorsUnlog.php";
+}
+
+function temperatureSensorsUnlog(){
+    $sensors = getTemperatureSensors()->fetchAll();
+    require "views/temperatureSensorsUnlog.php";
 }
 
 function urgence(){
