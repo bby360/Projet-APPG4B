@@ -13,7 +13,7 @@
 
         <div id="menu">
             <ul>
-                <li><a href="#"><img src="./designs/pictures/G4B.jpg" id="logo"></a></li>
+                <li><a href="index.php?action=dashboard"><img src="./designs/pictures/G4B.jpg" id="logo"></a></li>
                 <li><a href="index.php?action=dashboard">Accueil</a></li>
                 <li><a href="index.php?action=profileEdited">Votre profil</a>
                     <ul>
@@ -43,7 +43,7 @@
                         <li><a href="index.php?action=temperatureSensors">Capteurs de température</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Consommation</a></li>
+                <li><a href="index.php?action=consumption">Consommation</a></li>
                 <li><a href="index.php?action=forum">Forum</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="index.php?action=urgence">Urgence</a></li>
