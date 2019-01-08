@@ -28,6 +28,6 @@ function signin()
 }
 
 function dashboard(){
-    require"views/dashboard.php";
+    require"views/dashboardAdmin.php";
 }
 
