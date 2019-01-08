@@ -9,25 +9,26 @@
 
 <section>
 <div class="gallery">
-        <a href="index.php?action=lightSensors">
+        <a href="index.php?action=lightSensorsUnlog">
             <img src="designs/pictures/light.jpg">
         </a>
         <div class="desc">Capteurs de luminosité</div>
     </div>
     <div class="gallery">
-        <a href="index.php?action=presenceSensors">
+        <a href="index.php?action=presenceSensorsUnlog">
             <img src="designs/pictures/presence.jpg">
         </a>
         <div class="desc">Capteurs de présence </div>
     </div>
     <div class="gallery">
-        <a href="index.php?action=temperatureSensors">
+        <a href="index.php?action=temperatureSensorsUnlog">
             <img src="designs/pictures/temperature.jpg">
         </a>
         <div class="desc">Capteurs de température </div>
     </div>
 </section>
-    <footer>
-        <?php require "footer.php"?>
+<footer>
+    <?php require "footer.php"?>
+</footer>
 </body>
 </html>
