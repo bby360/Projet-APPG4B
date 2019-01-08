@@ -1,0 +1,55 @@
+*{
+    background: #00497A;
+    font-family: "Libre Baskerville", Arial;
+}
+.clients{
+    margin-left:8%;
+}
+h1{
+    height: 30px;
+    padding-top: 8%;
+    color:white;
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+}
+table
+{
+    width: 80%;
+    border-collapse: collapse;
+}
+table, th, td /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid black;
+    padding: 12px;
+    background: lightsteelblue;
+}
+
+th
+{
+    height: 30px;
+}
+.clients tr:hover td{
+    background-color: #00497A;
+}
+.clients td{
+    background-color:lightsteelblue;
+}
+.button {
+    background-color: lightsteelblue;
+    border: black;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+a{
+    color: white;
+    text-align: center;
+}
+a:hover{
+    color: #F0A009;
+}
