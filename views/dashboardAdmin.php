@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<?php include("isConnected.php"); ?>
-
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,14 +8,14 @@
 <body>
 <img id="fond" src="./designs/pictures/photo.jpg">
 <header>
-    <?php include("header.php"); ?>
+    <?php include("headerAdmin.php"); ?>
 
 </header>
 
 <section>
 
 
-    <div class="piece"><a href="index.php?action=rooms&amp;piece=salon">
+    <div class="piece"><a href="indexAdmin.php?action=clients">
             <div class="text">
                 <p>CLIENTS</p>
             </div>

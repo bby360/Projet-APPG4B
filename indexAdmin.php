@@ -12,6 +12,10 @@ if(isset($_GET["action"])){
             dashboard();
             break;
 
+        case 'clients':
+            clients();
+            break;
+
         default:
             notFound();
             break;

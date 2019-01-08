@@ -6,7 +6,7 @@ session_start();
 <div xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="../designs/clients.css" />
+        <link rel="stylesheet" type="text/css" href="./designs/clients.css" />
         <title>Fichier Clients</title>
 
         <script>
@@ -22,7 +22,7 @@ session_start();
     <?php
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $dbname = "domisep";
     $bdd = new mysqli($servername, $username, $password, $dbname);
 

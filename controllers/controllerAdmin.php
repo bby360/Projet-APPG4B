@@ -15,9 +15,23 @@ function signin()
             $db = dbConnect();
             $req = $db->prepare('SELECT * FROM admin WHERE (email = :email)');
             $req->execute(['email' => $_POST['email']]);
-            $client = $req->fetch(PDO::FETCH_OBJ);
+            $admin = $req->fetch(PDO::FETCH_OBJ);
 
-            header('Location: indexAdmin.php?action=dashboard');
+
+
+            if(password_verify($_POST['mdp'], $admin->mdp)) {
+                session_start();
+
+                $_SESSION['email'] = $admin->email;
+
+
+                echo 'Vous êtes maintenant connecté';
+
+
+                header('Location: indexAdmin.php?action=dashboard');
+                exit();
+            }
+
             exit();
         } else {
             $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
@@ -29,5 +43,9 @@ function signin()
 
 function dashboard(){
     require"views/dashboardAdmin.php";
+}
+
+function clients(){
+    require "views/clients.php";
 }
 
