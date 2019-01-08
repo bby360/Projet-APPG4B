@@ -180,21 +180,3 @@ function getConsumptionL(){
     $req = $db->query("SELECT SUM(consommation)AS 'CSumL' FROM capteur WHERE type='Luminosité' ");
     return $req;
 }
-
-function getConsumptionP(){
-    $db = dbConnect();
-    $req = $db->query("SELECT SUM(consommation)AS 'CSumP' FROM capteur WHERE type='Présence' ");
-    return $req;
-}
-
-function getConsumptionT(){
-    $db = dbConnect();
-    $req = $db->query("SELECT SUM(consommation)AS 'CSumT' FROM capteur WHERE type='Température' ");
-    return $req;
-}
-
-function getConsumptionL(){
-    $db = dbConnect();
-    $req = $db->query("SELECT SUM(consommation)AS 'CSumL' FROM capteur WHERE type='Luminosité' ");
-    return $req;
-}
