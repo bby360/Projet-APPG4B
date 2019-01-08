@@ -76,7 +76,7 @@ if(isset($_GET["action"])){
             addHouse();
             break;
 		    
-	case 'urgence':
+	    case 'urgence':
             urgence();
             break;  
 

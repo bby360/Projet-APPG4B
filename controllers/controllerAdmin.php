@@ -17,7 +17,7 @@ function signin()
             $req->execute(['email' => $_POST['email']]);
             $client = $req->fetch(PDO::FETCH_OBJ);
 
-            header('Location: index.php?action=dashboard');
+            header('Location: indexAdmin.php?action=dashboard');
             exit();
         } else {
             $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
@@ -25,5 +25,9 @@ function signin()
         }
     }
     require 'views/signinAdmin.php';
+}
+
+function dashboard(){
+    require"views/dashboard.php";
 }
 

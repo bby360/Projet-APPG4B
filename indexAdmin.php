@@ -8,6 +8,9 @@ if(isset($_GET["action"])){
             signin();
             break;
 
+        case 'dashboard':
+            dashboard();
+            break;
 
         default:
             notFound();
