@@ -38,7 +38,7 @@
         </a>
     </div>
 
-    <div class="consommation"><a href="index.php?action=consommation">
+    <div class="consommation"><a href="index.php?action=consumption">
             <div class="text">
                 <p>CONSOMMATION</p>
             </div>
