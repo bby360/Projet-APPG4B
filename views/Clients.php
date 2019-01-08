@@ -6,7 +6,7 @@ session_start();
 <div xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="../design/Clients.css" />
+        <link rel="stylesheet" type="text/css" href="../designs/Clients.css" />
         <title>Fichier Clients</title>
 
         <script>
