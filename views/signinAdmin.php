@@ -16,7 +16,7 @@
 
     <div class = "connexion">
 
-        <form method="POST" action="">
+        <form method="POST" action="indexAdmin.php?action=signin">
 
             <table align="center">
                 <tr>

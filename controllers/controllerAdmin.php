@@ -31,8 +31,6 @@ function signin()
                 header('Location: indexAdmin.php?action=dashboard');
                 exit();
             }
-
-            exit();
         } else {
             $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
             echo 'Vous avez tapé le mauvais mdp';
