@@ -229,3 +229,11 @@ function addMessageTopic($subject,$pseudo,$message){
     }
     insertMessage($idTopic,$pseudo,$message);
 }
+
+function consumption(){
+    $capteursP = getConsumptionP()->fetchAll();
+    $capteursT = getConsumptionT()->fetchAll();
+    $capteursL = getConsumptionL()->fetchAll();
+    require "views/consumption.php";
+}
+
