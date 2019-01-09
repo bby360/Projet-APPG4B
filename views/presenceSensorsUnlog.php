@@ -3,8 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <title>Capteurs de présence</title>
-    <link rel="stylesheet" type="text/css" href="designs/css/presenceSensors.css" />
+    <link rel="stylesheet" type="text/css" href="designs/css/sensors.css" />
 </head>
+<header>
+    <?php require "catalogueHeader.php"?>
+</header>
 <body>
 
 <section>
