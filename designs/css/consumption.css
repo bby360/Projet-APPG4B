@@ -17,25 +17,25 @@ section{
     text-align: center;
 }
 
-#myProgress {
+div.gallery {
+    margin: 5px;
+    float:left;
+    width: 400px;
+    color:white;
+    justify-content:space-around;
+
+}
+
+div.gallery:hover {
+    border: 1px solid white;
+}
+
+div.gallery img {
     width: 100%;
-    background-color: white;
+    height: auto;
 }
 
-#myBar1 {
-    width: 1%;
-    height: 30px;
-    background-color: yellow;
-}
-
-#myBar2 {
-     width: 1%;
-     height: 30px;
-     background-color: yellow;
- }
-
-#myBar3 {
-    width: 1%;
-    height: 30px;
-    background-color: yellow;
+div.desc {
+    padding: 30px;
+    text-align: center;
 }
