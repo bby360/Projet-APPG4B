@@ -40,6 +40,15 @@ function getRoomList(){
     return $req;
 }
 
+function getInfoRoom($name, $idHouse){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT * FROM room WHERE roomName= :name AND idHouse= :house");
+    $req->bindParam("name", $name);
+    $req->bindParam("house", $idHouse);
+    $req->execute();
+    return $req;
+}
+
 function getTopicList(){
     $db = dbConnect();
     $req = $db->query("SELECT * FROM forumtopic ");
