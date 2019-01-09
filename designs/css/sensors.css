@@ -22,4 +22,10 @@ li {
     padding:0;
     background-color:#00497A;
     text-align: center;
+    text-decoration: none;
+    color:white;
+}
+a{
+    text-decoration: none;
+    color:white;
 }
