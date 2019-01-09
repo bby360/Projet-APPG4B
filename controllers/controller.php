@@ -92,8 +92,10 @@ function roomList()
 
 function roomList2()
 {
+    $nom=$_GET['piece'];
+    $idHouse= '5';//$_SESSION['idHouse'];
+    $infos = getInfoRoom($nom, $idHouse)->fetchAll();
     $rooms = getRoomList()->fetchAll();
-
     require "views/rooms.php";
 }
 
