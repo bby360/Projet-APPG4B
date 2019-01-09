@@ -105,12 +105,12 @@ function insertHouse() {
 
 }
 
-function updateMode($mode,$client,$nom) {
+function updateMode($mode,$house,$nom) {
     $db = dbConnect();
-    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse SET mode= :nvmode WHERE house.idClient= :idClient AND roomName= :nvnom');
+    $req = $db->prepare('UPDATE room SET mode= :nvmode WHERE idHouse= :idHouse AND roomName= :nvnom');
 
     $req->bindParam("nvmode", $mode);
-    $req->bindParam("idClient", $client);
+    $req->bindParam("idHouse", $house);
     $req->bindParam("nvnom", $nom);
     $req->execute();
     $req->closeCursor();
@@ -118,9 +118,9 @@ function updateMode($mode,$client,$nom) {
 
 function updateAuto($a, $b, $c, $d, $e, $f){
     $db = dbConnect();
-    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
-						SET lumAuto=:nvLumiereAuto, blindOpenTime=:nvOuvertureVolets, blindCloseTime=:nvFermetureVolets, tempAuto=:nvTemperature WHERE house.idClient= :idClient AND roomName= :nvNom');
-    $req->bindParam("idClient", $a);
+    $req = $db->prepare('UPDATE room
+                            SET lumAuto=:nvLumiereAuto, blindOpenTime=:nvOuvertureVolets, blindCloseTime=:nvFermetureVolets, tempAuto=:nvTemperature WHERE idHouse= :idHouse AND roomName= :nvNom');
+    $req->bindParam("idHouse", $a);
     $req->bindParam("nvNom", $b);
     $req->bindParam("nvLumiereAuto", $c);
     $req->bindParam("nvOuvertureVolets", $d);
@@ -132,10 +132,10 @@ function updateAuto($a, $b, $c, $d, $e, $f){
 
 function updateManu($a, $b, $c, $d, $e){
     $db = dbConnect();
-    $req = $db->prepare('UPDATE room JOIN house ON room.idHouse=house.idHouse
+    $req = $db->prepare('UPDATE room 
 						SET lumManu=:nvLumiereManu, voletsManu=:nvVoletsManu, tempManu=:nvTemperature
-						 WHERE house.idClient= :idClient AND roomName= :nvNom');
-    $req->bindParam("idClient", $a);
+						 WHERE idHouse= :idHouse AND roomName= :nvNom');
+    $req->bindParam("idHouse", $a);
     $req->bindParam("nvNom", $b);
     $req->bindParam("nvLumiereManu", $c);
     $req->bindParam("nvVoletsManu", $d);
