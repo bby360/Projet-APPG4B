@@ -2,7 +2,10 @@
 require "models/dbconnexion.php";
 
 function signingup(): bool
-{   session_start();
+{   if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
     $pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     $db=dbConnect();
@@ -26,7 +29,10 @@ function signingup(): bool
 
 
 function getRoomList(){
-    session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
     $db = dbConnect();
     $idSession = $_SESSION['idClient'];
@@ -49,7 +55,10 @@ function getMessage($id){
 }
 
 function insertRoom() {
-    session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     $db = dbConnect();
     $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
 VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
@@ -69,13 +78,19 @@ VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:
 }
 
 function insertHouse() {
-    session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     $db=dbConnect();
-    $req=$db->prepare("INSERT INTO house VALUES('',:idClient, :adress)");
+    $req=$db->prepare("INSERT INTO house(idClient,adress) VALUES(:idClient, :adress)");
+    $house = $req2->fetchAll();
     $req ->execute([
         'adress'=>$_POST['adress'],
-        'idClient'=>$_SESSION['idClient']
-    ]);
+        'idClient'=>$_SESSION['idClient'],
+        ]);
+        var_dump($house);
+    $_SESSION['idHouse'] = $house->idHouse;
     $req ->CloseCursor();
 
 }
