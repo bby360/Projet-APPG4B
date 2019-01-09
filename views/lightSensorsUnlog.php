@@ -7,6 +7,7 @@
 </head>
 <body>
 <header>
+    <?php require "catalogueHeader.php"?>
 </header>
 <section>
     <h1> Capteurs de Luminosité</h1>
