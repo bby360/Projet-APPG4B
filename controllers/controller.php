@@ -92,8 +92,10 @@ function roomList()
 
 function roomList2()
 {
+    $nom=$_GET['piece'];
+    $idHouse= '5';//$_SESSION['idHouse'];
+    $infos = getInfoRoom($nom, $idHouse)->fetchAll();
     $rooms = getRoomList()->fetchAll();
-
     require "views/rooms.php";
 }
 
@@ -133,26 +135,30 @@ function rooms(){
 }
 
 function updateRoom(){
-    $idClient="1" /*$_SESSION[idClient]*/ ;
-    $nom ="Salon" /*$_Get[nom]*/ ;
+    if(!isset($_SESSION)) {
+     session_start();
+}
+    $idClient=$_SESSION['idClient'];
+    $idHouse= '5';//$_SESSION['idHouse'];
+    $nom =$_GET['piece'];
     $nvMode=$_POST['mode'];
     $nvLumiereAuto=$_POST['lumiere_auto'];
     $nvOuvertureVolets=$_POST['ouverture_volets'];
     $nvFermetureVolets=$_POST['fermeture_volets'];
     $nvVoletsManu=$_POST['volets_manuel'];
     $nvTemperature=$_POST['temperature'];
-
     $nvLumiereManu=$_POST['lumiere_manuel'];
-    updateMode($nvMode, $idClient, $nom);
+
+    updateMode($nvMode, $idHouse, $nom);
 
     if($nvMode =='Auto'){
-        updateAuto($idClient, $nom, $nvLumiereAuto, $nvOuvertureVolets, $nvFermetureVolets, $nvTemperature);
+        updateAuto($idHouse, $nom, $nvLumiereAuto, $nvOuvertureVolets, $nvFermetureVolets, $nvTemperature);
     }
     else{
-        updateManu($idClient, $nom, $nvLumiereManu, $nvVoletsManu, $nvTemperature);
+        updateManu($idHouse, $nom, $nvLumiereManu, $nvVoletsManu, $nvTemperature);
     }
 
-    require "views/rooms.php";
+    roomList2();
 }
 
 

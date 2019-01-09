@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="./designs/css/rooms.css" />
 </head>
 <body>
-	 <img id="fond" src="./designs/pictures/photo.jpg"> 
+	<img id="fond" src="./designs/pictures/photo.jpg"> 
 	<header class="header">
 		 <?php include("header.php"); ?>
 	</header>
@@ -19,46 +20,51 @@
             	<?php
             	foreach($rooms as $room) { ?>
                  
-                 	<li><a href="index.php?action=rooms?piece=<?= $room["roomName"]; ?>"><?php echo $room["roomName"]; ?></a></li>
+                 	<li><a href="index.php?action=rooms&piece=<?= $room["roomName"]; ?>"><?php echo $room["roomName"]; ?></a></li>
                 
                 <?php } ?>
             	 </ul>
             </li>                       
         </ul>
-	<form action="index.php?action=updateRoom" method="post"> 
-		<div id="mode"> 
-			<p>Mode de gestion de la pièce : <br></p>
-			<input type="radio" name="mode" value="Auto" id="automatique" checked="checked" /> <label for="automatique">Automatique</label>
-			<input type="radio" name="mode" value="Manuel" id="manuel" /> <label for="manuel">Manuel</label>
-		</div>
 
+	<form action="index.php?action=updateRoom&piece=<?php echo $_GET['piece']; ?>" method="post"> 
+		
+		<div id="mode"> 
+			
+			
+			<p>Mode de gestion de la pièce : <br></p>
+			<input type="radio" name="mode" value="Auto" id="automatique" <?php foreach($infos as $info) { if ($info['mode'] == 'Auto'){ echo 'checked="checked"';} }?>>  <label for="automatique">Automatique</label>
+			<input type="radio" name="mode" value="Manuel" id="manuel" <?php  foreach($infos as $info) { if ($info['mode'] == 'Manuel'){ echo 'checked="checked"';} }?>> <label for="manuel">Manuel</label>
+		
+		</div>
+		
 		<div id="lumiere_auto">
 			luminosité &nbsp &nbsp
-			0% <input type="range" name="lumiere_auto" value="15" max="100" min="0" step="5"> 100%
+			0% <input type="range" name="lumiere_auto" value=<?php foreach($infos as $info) { echo $info['lumAuto']; }?> max="100" min="0" step="5"> 100%
 			<div id="lumiere_manuel">
 				luminosité &nbsp &nbsp
-    			0% <input type="range" name="lumiere_manuel" value="15" max="100" min="0" step="5"/>100%
+    			0% <input type="range" name="lumiere_manuel" value=<?php foreach($infos as $info) { echo $info['lumManu']; }?> max="100" min="0" step="5"/>100%
     		</div>
 		</div>
 
 		<div id="ouverture_volets">
 			<label for="ouverture_volets">horaire ouverture volets &nbsp &nbsp</label>
-			<input type="time" name="ouverture_volets">
+			<input type="time" name="ouverture_volets" value=<?php foreach($infos as $info) { echo $info['blindOpenTime']; }?>>
 			<div id="volets_manuel">
 				volets &nbsp &nbsp
-    			0% <input type="range" name="volets_manuel" value="15" max="100" min="0" step="5"/>100%
+    			0% <input type="range" name="volets_manuel" value=<?php foreach($infos as $info) { echo $info['voletsManu']; }?> max="100" min="0" step="5"/>100%
     		</div>
 		</div>
 
 		<div id="fermeture_volets">
 			<label for="fermeture_volets">horaire fermeture volets &nbsp &nbsp</label>
-			<input type="time" name="fermeture_volets">
+			<input type="time" name="fermeture_volets" value=<?php foreach($infos as $info) { echo $info['blindCloseTime']; }?>>
 		</div>
 
 		
 
 		<div id="temperature">	
-    		Temperature &nbsp <input type="number" name="temperature" placeholder="°C"  />
+    		Temperature &nbsp <input type="number" name="temperature" placeholder=<?php foreach($infos as $info) { if ($info['mode'] == 'Auto'){ echo $info['tempAuto'];} else{ echo $info['tempManu']; } }?>°C  />
     	</div>
 
     	<div id="valider">
@@ -66,6 +72,7 @@
     	</div>
 
     </form>
+    
 	</section>
 	<footer>
  		<!-- <?php /*include("footer.php")*/; ?> -->

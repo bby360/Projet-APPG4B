@@ -12,12 +12,37 @@
 
 <section>
     <h1> Capteurs de présence</h1>
+    
     <table>
+
+        <thead>
+        <tr>
+            <td><h3>Référence</h3></td>
+            <td><h3>Type de produit</h3></td>
+            <td><h3>Consommation</h3></td>
+            <td><h3>Prix</h3></td>
+        </tr>
+        </thead>
+
+        <tbody>
         <?php foreach($sensors as $sensors) { ?>
-            <ul>
-                <li><a href="index.php?action=detailedSensors&id=<?=$sensors["idProduit"];?>"><?= $sensors["typeProduct"];?></li>
-            </ul>
+            <tr>
+                <td>
+                    <a href="index.php?action=detailedSensors&id=<?=$sensors["idProduit"];?>"><?= $sensors["idProduit"];?>
+                </td>
+                <td>
+                    <?= $sensors["typeProduct"];?>
+                </td>
+                <td>
+                    <?= $sensors["consumption"];?>
+                </td>
+                <td>
+                    <?= $sensors["price"];?>
+                </td>
+            </tr>
         <?php } ?>
+        </tbody>
+
     </table>
 
 </section>
