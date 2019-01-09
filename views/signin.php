@@ -47,7 +47,7 @@
             </p>
     </div>
     <div class = "admin">
-    <a href="indexAdmin.php?action=signin">administrateur</a>
+    <a href="indexAdmin.php?action=signinAdmin">administrateur</a>
     </div>
 
 </section>
