@@ -7,24 +7,23 @@ function notFound() {
 
 function signupAdmin(){
     if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email'])
-        && isset($_POST['mdp']) && isset($_POST['phone']) && isset($_POST['adress']) && isset($_POST['confirm_mdp']) && isset($_POST['pays'])) {
+        && isset($_POST['mdp'])){
 
-        if (empty($_POST['lastName']) || empty($_POST['firstName'])  || empty($_POST['pays'])  ||
-            empty($_POST['email'])  || empty($_POST['mdp'])  ||  empty($_POST['phone']) &&
-            empty($_POST['adress'])  || $_POST['mdp']!=$_POST['confirm_mdp']) {
+        if (empty($_POST['lastName']) || empty($_POST['firstName']) ||
+            empty($_POST['email']) || empty($_POST['mdp']) || $_POST['mdp'] != $_POST['confirm_mdp']) {
 
             $alerte = "Veuillez remplir tous les champs correctement.";
             echo "Veuillez remplir tous les champs correctement.";
-        }   else {
+        } else {
             signingup();
-            header('Location: index.php?action=signin');
+            header('Location: indexAdmin.php?action=signin');
 
             exit();
 
         }
     }
 
-    require "views/signup.php";
+    require "views/signupAdmin.php";
 }
 
 function signinAdmin(){
