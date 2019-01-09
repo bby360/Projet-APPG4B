@@ -22,3 +22,9 @@ function signingup(): bool
 
     return true;
 }
+
+function getSensorsList(){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM catalogue ORDER BY (typeProduct)");
+    return $req;
+}
