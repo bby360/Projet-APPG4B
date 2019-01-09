@@ -68,8 +68,9 @@
             <input type="reset" value="Retour" class="form-button">
             <input type="submit" value="valider" name="inscription" class="form-button">
         </p>
+        </table>
     </form>
-    
+
 
 
 </section>

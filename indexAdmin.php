@@ -4,12 +4,12 @@ if(isset($_GET["action"])){
     $action = htmlspecialchars($_GET["action"]);
     switch ($action) {
 
-        case 'signin':
-            signin();
+        case 'signinAdmin':
+            signinAdmin();
             break;
 
-        case 'dashboard':
-            dashboard();
+        case 'dashboardAdmin':
+            dashboardAdmin();
             break;
 
         case 'clients':
