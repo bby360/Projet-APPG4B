@@ -84,6 +84,7 @@ function insertHouse() {
     } 
     $db=dbConnect();
     $req=$db->prepare("INSERT INTO house(idClient,adress) VALUES(:idClient, :adress)");
+    $req2=$db->prepare('SELECT * FROM house JOIN client ON house.idClient=client.idClient');
     $house = $req2->fetchAll();
     $req ->execute([
         'adress'=>$_POST['adress'],
