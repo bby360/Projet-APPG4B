@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php include("isConnected.php"); ?>
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -12,21 +14,21 @@
 
 <section>
 <div class="gallery">
-        <a href="index.php?action=lightSensors">
+        <a target="_blank" href="./designs/pictures/light.jpg">
             <img src="designs/pictures/light.jpg">
         </a>
-        <div class="desc">Capteurs de luminosité</div>
+        <div class="desc">Capteurs de luinosité</div>
     </div>
 
     <div class="gallery">
-        <a href="index.php?action=presenceSensors">
+        <a target="_blank" href="./designs/pictures/presence.jpg">
             <img src="designs/pictures/presence.jpg">
         </a>
         <div class="desc">Capteurs de présence </div>
     </div>
 
     <div class="gallery">
-        <a href="index.php?action=temperatureSensors">
+        <a target="_blank" href="temperature.jpg">
             <img src="designs/pictures/temperature.jpg">
         </a>
         <div class="desc">Capteurs de température </div>

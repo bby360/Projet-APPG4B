@@ -84,6 +84,7 @@ VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:
         'blindCloseTime' => $_POST['blindCloseTime'],
         'voletsManu' => $_POST['voletsManu']
     ]);
+    $req ->CloseCursor();
 }
 
 function insertHouse() {
