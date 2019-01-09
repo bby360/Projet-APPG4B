@@ -65,7 +65,13 @@ function dashboardAdmin(){
 function clients(){
     require "views/clients.php";
 }
+
 function catalogue(){
+    $sensors = getSensorsList()->fetchAll();
     require"views/catalogueAdmin.php";
+}
+
+function addSensors(){
+    require"views/addSensors.php";
 }
 
