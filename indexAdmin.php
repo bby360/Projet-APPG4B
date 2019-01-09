@@ -20,8 +20,12 @@ if(isset($_GET["action"])){
             clients();
             break;
             
-        case 'catalogue':
+        case 'catalogueAdmin':
             catalogue();
+            break;
+            
+        case 'addSensors':
+            addSensors();
             break;
 
         default:
