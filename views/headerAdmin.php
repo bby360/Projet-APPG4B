@@ -16,6 +16,7 @@
                 <li><a href="indexAdmin.php?action=dashboard"><img src="./designs/pictures/G4B.jpg" id="logo"></a></li>
                 <li><a href="indexAdmin.php?action=dashboard">Accueil</a></li>
                 <li><a href="indexAdmin.php?action=clients">Clients</a>
+                <li><a href="indexAdmin.php?action=catalogue">Catalogue</a>
 
 
                 <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
