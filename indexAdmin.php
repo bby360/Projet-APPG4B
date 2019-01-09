@@ -15,6 +15,10 @@ if(isset($_GET["action"])){
         case 'clients':
             clients();
             break;
+            
+        case 'catalogue':
+            catalogue();
+            break;
 
         default:
             notFound();
