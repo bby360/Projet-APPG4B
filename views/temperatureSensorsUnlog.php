@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="designs/css/sensors.css" />
 </head>
 <body>
+<header>
+    <?php require "catalogueHeader.php"?>
+</header>
 <section>
     <h1> Capteurs de Température</h1>
     <table>
