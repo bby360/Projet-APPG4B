@@ -47,3 +47,7 @@ function clients(){
     require "views/clients.php";
 }
 
+function catalogue(){
+    require"views/catalogueAdmin.php";
+}
+
