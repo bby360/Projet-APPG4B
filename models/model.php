@@ -85,12 +85,12 @@ function insertHouse() {
     $db=dbConnect();
     $req=$db->prepare("INSERT INTO house(idClient,adress) VALUES(:idClient, :adress)");
     $req2=$db->prepare('SELECT * FROM house JOIN client ON house.idClient=client.idClient');
-    $house = $req2->fetchAll();
+    $req2->execute();
+    $house = $req2->fetch(PDO::FETCH_OBJ);
     $req ->execute([
         'adress'=>$_POST['adress'],
         'idClient'=>$_SESSION['idClient'],
         ]);
-        var_dump($house);
     $_SESSION['idHouse'] = $house->idHouse;
     $req ->CloseCursor();
 
