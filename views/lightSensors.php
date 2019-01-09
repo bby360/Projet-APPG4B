@@ -45,6 +45,9 @@
     </table>
 
 </section>
+<footer>
+    <?php require "footer.php"?>
+</footer>
 </body>
 
 </html>
