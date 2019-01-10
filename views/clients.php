@@ -6,7 +6,7 @@ session_start();
 <div xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="./designs/clients.css" />
+        <link rel="stylesheet" type="text/css" href="designs/css/clients.css" />
         <title>Fichier Clients</title>
 
         <script>
@@ -26,9 +26,6 @@ session_start();
     $dbname = "domisep";
     $bdd = new mysqli($servername, $username, $password, $dbname);
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
     $result = $bdd->query($sql);

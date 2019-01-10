@@ -22,23 +22,23 @@
         </a>
     </div>
 
-    <div class="profil"><a href="index.php?action=profileEdited.php">
+    <div class="profil"><a href="indexAdmin.php?action=faqAdmin.php">
             <div class="text">
-                <p>PROFIL</p>
+                <p>FAQ</p>
             </div>
         </a>
     </div>
 
-    <div class="catalogue"><a href="index.php?action=catalogue">
+    <div class="catalogue"><a href="indexAdmin.php?action=forumAdmin">
             <div class="text">
-                <p>CATALOGUE</p>
+                <p>Forum</p>
             </div>
         </a>
     </div>
 
-    <div class="consommation"><a href="index.php?action=consommation">
+    <div class="consommation"><a href="indexAdmin.php?action=alertesAdmin">
             <div class="text">
-                <p>CONSOMMATION</p>
+                <p>Gestion Alertes</p>
             </div>
         </a>
     </div>
