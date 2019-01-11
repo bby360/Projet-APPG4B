@@ -40,6 +40,7 @@ function signin() {
         $req = $db->prepare('SELECT * FROM client WHERE (email = :email)');
         $req->execute(['email' => $_POST['email']]);
         $client = $req->fetch(PDO::FETCH_OBJ);
+        if($client) {
 
             if(password_verify($_POST['mdp'], $client->mdp)) {
                 session_start();
@@ -61,8 +62,12 @@ function signin() {
         
         else{
             $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
-            echo 'Vous avez tapé le mauvais mdp';
+            echo 'Identifiant ou mot de passe incorrecte';
         }
+    }
+    else{
+        echo "Identifiant ou mot de passe incorrecte";
+    }
     }
     require 'views/signin.php';
 
