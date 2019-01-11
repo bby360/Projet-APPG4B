@@ -14,8 +14,9 @@
 <section>
         <h1> Catalogue</h1>
 
-    <a href="indexAdmin.php?action=addSensors"><button class="button"> Ajouter un capteur </button></a>
-
+    <a href="indexAdmin.php?action=addSensors">
+        <button class="button"> Ajouter un capteur </button>
+    </a>
 
         <table>
 
@@ -60,11 +61,10 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close">&times;</span>
             <p>Attention, vous allez supprimer tous les capteurs!</p>
             <p> En êtes-vous sûr?</p>
-            <button id="bouton">Annuler</button>
-            <button id="bouton">Supprimer</button>
+            <span class="cancel"><button id="bouton">Annuler</button></span>
+            <a href="indexAdmin.php?action=deleteSensors"><button id="bouton">Supprimer</button></a>
         </div>
 
     </div>
@@ -77,7 +77,7 @@
         var btn = document.getElementById("myBtn");
 
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        var span = document.getElementsByClassName("cancel")[0];
 
         // When the user clicks on the button, open the modal
         btn.onclick = function() {

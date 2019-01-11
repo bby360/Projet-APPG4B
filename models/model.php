@@ -43,10 +43,11 @@ function getRoomList(){
     { 
         session_start(); 
     } 
-
     $db = dbConnect();
     $idSession = $_SESSION['idClient'];
-    $req = $db->query("SELECT * FROM room JOIN house ON house.idHouse = room.idHouse WHERE house.idClient = $idSession");
+    $req = $db->prepare("SELECT * FROM room JOIN house ON house.idHouse = room.idHouse WHERE house.idClient = idClient");
+    $req->bindParam("idClient", $idSession);
+    $req->execute();
     return $req;
 }
 
@@ -61,7 +62,8 @@ function getInfoRoom($name, $idHouse){
 
 function getTopicList(){
     $db = dbConnect();
-    $req = $db->query("SELECT * FROM forumtopic ");
+    $req = $db->prepare("SELECT * FROM forumtopic ");
+	$req->execute();
     return $req;
 }
 
@@ -115,6 +117,19 @@ function insertHouse() {
     $req ->CloseCursor();
 
 }
+
+/* function getHouseList(){
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+    $db = dbConnect();
+    $idSession = $_SESSION['idClient'];
+    $req = $db->prepare("SELECT adress FROM house JOIN client ON house.idClient= idClient");
+    $req->bindParam("idClient", $idSession);
+    $req->execute();
+    return $req;
+} */
 
 function updateMode($mode,$house,$nom) {
     $db = dbConnect();

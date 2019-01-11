@@ -2,6 +2,11 @@
     background: #00497A;
     font-family: "Libre Baskerville", Arial;
 }
+
+section{
+   padding-bottom: 5%;
+}
+
 .clients{
     margin-left:8%;
 }

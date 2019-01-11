@@ -46,3 +46,19 @@ function getTemperatureSensors(){
     return $req;
 }
 
+function deletedSensors(){
+    $db=dbConnect();
+    $req =$db ->query("DELETE * FROM catalogue");
+    return $req;
+}
+
+function insertSensors(){
+    $db = dbConnect();
+    $req = $db->prepare("INSERT INTO catalogue(typeProduct,consumption,price) VALUES(:typeProduct,:consumption,:price)");
+    $req->execute([
+        'typeProduct'=> $_POST['typeProduct'],
+        'consumption' => $_POST['consumption'],
+        'price'=> $_POST['price'],
+    ]);
+    header("location: indexAdmin.php?action=catalogueAdmin");
+}
