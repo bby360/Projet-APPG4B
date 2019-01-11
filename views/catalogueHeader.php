@@ -13,13 +13,13 @@
 
         <div id="menu">
             <ul>
-                <li><a href="index.php?action=welcome"><img src="./designs/pictures/G4B.jpg" id="logo"></a></li>
-                <li><a href="index.php?action=lightSensorsUnlog">Capteur de Luminosité</a></li>
-                <li><a href="index.php?action=presenceSensorsUnlog">Capteur de Présence</a></li>
-                <li><a href="index.php?action=temperatureSensorsUnlog">Capteur de Température</a></li>
+                <li><a href="indexAdmin.php?action=welcome"><img src="./designs/pictures/G4B.jpg" id="logo"></a></li>
+                <li><a href="indexAdmin.php?action=lightSensorsUnlog">Capteur de Luminosité</a></li>
+                <li><a href="indexAdmin.php?action=presenceSensorsUnlog">Capteur de Présence</a></li>
+                <li><a href="indexAdmin.php?action=temperatureSensorsUnlog">Capteur de Température</a></li>
 
 
-                <li><a href="index.php?action=welcome">Retour à la page d'accueil</a></li>
+                <li><a href="indexAdmin.php?action=welcome">Retour à la page d'accueil</a></li>
             </ul>
         </div>
 

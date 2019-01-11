@@ -62,7 +62,8 @@ function getInfoRoom($name, $idHouse){
 
 function getTopicList(){
     $db = dbConnect();
-    $req = $db->query("SELECT * FROM forumtopic ");
+    $req = $db->prepare("SELECT * FROM forumtopic ");
+	$req->execute();
     return $req;
 }
 
