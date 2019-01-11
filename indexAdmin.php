@@ -27,6 +27,23 @@ if(isset($_GET["action"])){
         case 'addSensors':
             addSensors();
             break;
+            
+        case 'welcome':
+            welcome();
+            break;
+
+        case 'lightSensorsUnlog':
+            lightSensorsUnlog();
+            break;
+
+        case 'presenceSensorsUnlog':
+            presenceSensorsUnlog();
+            break;
+
+        case 'temperatureSensorsUnlog':
+            temperatureSensorsUnlog();
+            break;
+
 
         default:
             notFound();

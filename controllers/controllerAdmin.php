@@ -79,3 +79,22 @@ function addSensors(){
     require"views/addSensors.php";
 }
 
+function welcome(){
+    require "views/welcome.php";
+}
+
+function lightSensorsUnlog(){
+    $sensors = getLightSensors()->fetchAll();
+    require "views/lightSensorsUnlog.php";
+}
+
+function presenceSensorsUnlog(){
+    $sensors = getPresenceSensors()->fetchAll();
+    require "views/presenceSensorsUnlog.php";
+}
+
+function temperatureSensorsUnlog(){
+    $sensors = getTemperatureSensors()->fetchAll();
+    require "views/temperatureSensorsUnlog.php";
+}
+
