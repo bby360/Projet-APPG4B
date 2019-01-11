@@ -118,7 +118,7 @@ function insertHouse() {
 
 }
 
-function getHouseList(){
+/* function getHouseList(){
     if(!isset($_SESSION)) 
     { 
         session_start(); 
@@ -129,7 +129,7 @@ function getHouseList(){
     $req->bindParam("idClient", $idSession);
     $req->execute();
     return $req;
-}
+} */
 
 function updateMode($mode,$house,$nom) {
     $db = dbConnect();

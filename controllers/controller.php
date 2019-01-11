@@ -95,6 +95,13 @@ function roomList()
     require "views/roomList.php";
 }
 
+function houseList()
+{
+    $rooms = getHouseList()->fetchAll();
+
+    require "views/houseList.php";
+}
+
 function roomList2()
 {
     $nom=$_GET['piece'];
