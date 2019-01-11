@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="designs/css/dashboardAdmin.css" />
 </head>
 <body>
-<img id="fond" src="./designs/pictures/photo.jpg">
+<img id="fond" src="./designs/pictures/fondAdmin.jpg">
 <header>
     <?php include("headerAdmin.php"); ?>
 
@@ -38,7 +38,7 @@
 
     <div class="alertes"><a href="indexAdmin.php?action=alertesAdmin">
             <div class="text">
-                <p>Gestion Alertes</p>
+                <p>Alertes</p>
             </div>
         </a>
     </div>
