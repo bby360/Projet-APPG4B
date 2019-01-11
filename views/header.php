@@ -45,7 +45,7 @@
                 </li>
                 <li><a href="index.php?action=consumption">Consommation</a></li>
                 <li><a href="index.php?action=forum">Forum</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="index.php?action=faq">FAQ</a></li>
                 <li><a href="index.php?action=urgence">Urgence</a></li>
 
                 <li><a href="index.php?action=deconnexion">Déconnexion</a></li>

@@ -27,6 +27,16 @@ function signingup(): bool
     return true;
 }
 
+function existingEmail() {
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+    $db= dbConnect();
+    $req = $db->prepare('SELECT * FROM client WHERE (email = :email)');
+    $req->execute(['email' => $_POST['email']]);
+    $exist = $req->fetch(PDO::FETCH_OBJ);
+}
 
 function getRoomList(){
     if(!isset($_SESSION)) 

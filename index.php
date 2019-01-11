@@ -112,11 +112,14 @@ if(isset($_GET["action"])){
             addTopic();
             break;
 		    
-	case 'consumption':
+	    case 'consumption':
             consumption();
             break;
-
             
+        case 'faq':
+            faq();
+            break;
+
       default:
         notFound();
         break;

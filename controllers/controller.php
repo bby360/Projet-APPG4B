@@ -263,3 +263,6 @@ function consumption(){
     require "views/consumption.php";
 }
 
+function faq() {
+    require "views/faq.php";
+}

@@ -127,7 +127,7 @@ input {
   }
 
   .form-button:hover {
-      background-color: rgb(27, 122, 160);
+      background-color: #1b7aa0;
   }
   
   /* La boite de message est affiché losque l'utilisateur clique sur le champ mdp */
