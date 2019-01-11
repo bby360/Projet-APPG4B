@@ -10,7 +10,7 @@
 <body>
 
 <header>
-    <h1>Rejoignez nous</h1>
+    <h1>TEST ceci est une page temporaire</h1>
 </header>
 
 <section>
