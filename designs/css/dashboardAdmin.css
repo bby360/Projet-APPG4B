@@ -1,0 +1,170 @@
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    width: 100%;
+}
+
+#fond {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+a {
+    text-decoration: none!important;
+}
+
+
+/*clients*/
+.clients {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 300px;
+    height: 250px;
+    background-image: url("clients.jpg");
+    background-size: contain;
+    background-size: cover;
+    margin-left: 20%;
+    margin-top: 5%;
+    border: 4px solid #2D241E;
+}
+
+.clients .text {
+    color: orange;
+    font-size: 300%;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 2px #000;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.clients .text:hover{
+    opacity: 1;
+    transition: .5s ease;
+}
+/*FIN clients*/
+
+/*faq*/
+.faq {
+    display: inline-block;
+    position: relative;
+    float: right;
+    width: 300px;
+    height: 250px;
+    background-image: url("faq.jpg");
+    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    margin-top: 5%;
+    margin-right: 20%;
+    border: 4px solid #2D241E;
+}
+
+.faq .text {
+    color: orange;
+    font-size: 300%;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 2px #000;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.faq .text:hover{
+    opacity: 1;
+    transition: .5s ease;
+}
+/*FIN faq*/
+
+/*forum*/
+.forum {
+    display:inline-block;
+    position: relative;
+    float: right;
+    width: 300px;
+    height: 250px;
+    background-image: url("forum.jpg");
+    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    margin-right: 20%;
+    margin-top: 3%;
+    border: 4px solid #2D241E;
+}
+
+.forum .text {
+    color: orange;
+    font-size: 250%;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 2px #000;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.forum .text:hover{
+    opacity: 1;
+    transition: .5s ease;
+}
+/*FIN forum*/
+
+/*CONSOMMATION*/
+.alertes {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 250px;
+    background-image: url("alerte.jpg");
+    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    margin-top: 3%;
+    margin-left: 20%;
+    border: 4px solid #2D241E;
+}
+
+.alertes .text {
+    color: orange;
+    font-size: 200%;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 2px #000;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.alertes .text:hover{
+    opacity: 1;
+    transition: .5s ease;
+}
+/*FIN CONSOMMATION*/
+
+
+
