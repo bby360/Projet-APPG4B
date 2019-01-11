@@ -35,7 +35,7 @@ function signinAdmin(){
             $req = $db->prepare('SELECT * FROM admin WHERE (email = :email)');
             $req->execute(['email' => $_POST['email']]);
             $admin = $req->fetch(PDO::FETCH_OBJ);
-
+            if($admin) {
 
 
             if(password_verify($_POST['mdp'], $admin->mdp)) {
@@ -53,6 +53,10 @@ function signinAdmin(){
             $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
             echo 'Vous avez tapé le mauvais mdp';
         }
+    }
+    else {
+        echo "Identifiant ou mot de passe incorrecte";
+    }
     }
     require 'views/signinAdmin.php';
 }
