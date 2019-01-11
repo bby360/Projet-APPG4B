@@ -22,7 +22,7 @@
                     </ul>
                 </li>
 
-                <li><a href="index.php?action=rooms&amp;piece=salon">Pièces</a>
+                <li><a href="index.php?action=rooms&amp;piece=Choisir une pièce">Pièces</a>
                     <ul>
                         <li><a href="index.php?action=roomList">Voir mes pièces</a></li>
                         <li><a href="index.php?action=addRoom">Ajouter une pièce</a></li>
