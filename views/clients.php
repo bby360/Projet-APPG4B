@@ -3,21 +3,19 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<div xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="designs/css/clients.css" />
         <title>Fichier Clients</title>
-
-        <script>
-
-        </script>
-
     </head>
 
-    <body>
+    <header>
+        <?php require 'headerAdmin.php'?>
+    </header>
 
-        <h1 id="top">Liste des clients</h1>
+<section>
+
+    <h1 id="top">Liste des clients</h1>
 
     <?php
     $servername = "localhost";
@@ -26,6 +24,9 @@ session_start();
     $dbname = "domisep";
     $bdd = new mysqli($servername, $username, $password, $dbname);
 
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
     $result = $bdd->query($sql);
@@ -66,5 +67,14 @@ session_start();
         echo "0 results";
     }
     ?>
-        <a href="#top">Go to top</a>
+    <a href="#top">Go to top</a>
+</section>
+
+
+
+    <footer>
+        <?php require "footer.php"?>
+    </footer>
+
     </body>
+</html>
