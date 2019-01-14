@@ -14,12 +14,12 @@ session_start();
 
     </head>
 
+    
+    
+    <body>
     <header>
         <?php require 'headerAdmin.php'?>
     </header>
-    
-    <body>
-
 
     <div class="card">
 
