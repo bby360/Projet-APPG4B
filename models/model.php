@@ -231,3 +231,21 @@ function getConsumptionL(){
     $req = $db->query("SELECT SUM(consommation)AS 'CSumL' FROM capteur WHERE type='Luminosité' ");
     return $req;
 }
+
+function getCapteur($house){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT * FROM capteur JOIN room ON capteur.idRoom=room.idRoom WHERE room.idHouse= :house ");
+    $req->bindParam("house", $house);
+    $req->execute();
+    return $req;
+}
+
+function insertAlerte($idCapteur,$type,$message){
+    $db = dbConnect();
+    $req = $db->prepare("UPDATE capteur SET typeAlerte = :type ,message =:message WHERE idCapteur = :idCapteur");
+    $req->bindParam("type", $type);
+    $req->bindParam("message", $message);
+    $req->bindParam("idCapteur", $idCapteur);
+    $req->execute();
+    $req->closeCursor();
+}

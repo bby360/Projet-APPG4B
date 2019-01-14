@@ -4,10 +4,10 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<div xmlns="http://www.w3.org/1999/html">
+
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="../design/css/clientProfile.css" />
+    <link rel="stylesheet" type="text/css" href="./designs/css/clientProfile.css" />
         <title>Client</title>
 
 
@@ -24,7 +24,7 @@ session_start();
     <div class="card">
 
         <?php
-    $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
 
     $idProfil=$_GET['idProfil'];
 
@@ -47,9 +47,6 @@ session_start();
 
     ?>
 
-
-
-    </div>
 
     <script>
 

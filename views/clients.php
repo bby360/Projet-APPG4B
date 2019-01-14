@@ -19,7 +19,7 @@ session_start();
     <h1 id="top">Liste des clients</h1>
 
     <?php
-    $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
 
     if (!$bdd) {
         die("Connection failed: " . !$bdd);
@@ -28,7 +28,7 @@ session_start();
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
     $result = $bdd->query($sql);
 
-    if ($result->num_rows > 0) {
+    if ($result->rowCount() > 0) {
         echo "<table class='clients'>
         <tr>
             <th>ID</th>
@@ -42,7 +42,7 @@ session_start();
             <th>Voir le profil</th>
         </tr>";
         // output data of each row
-        while($row = $result->fetch_assoc()) {
+        while($row = $result->fetch()) {
             echo "
                <tr>
                 <td>".$row["idClient"]."</td>
@@ -54,7 +54,7 @@ session_start();
                 <td>".htmlspecialchars($row["postalcode"])."</td>
                 <td>".htmlspecialchars($row["emergency"])."</td>
                 <td>
-                <form action='clientProfile.php' method='GET'>
+                <form action='views/clientProfile.php' method='GET'>
                     <input type='text' name='idProfil' value='".$row['idClient']."' style='visibility:hidden' class='buttonHidden';>
                     <input type=\"submit\" name='VoirProfil'  value='Voir profil ".$row["idClient"]."' class='button' style=\"vertical-align:middle\">
                 </form>
