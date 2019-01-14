@@ -295,3 +295,7 @@ function posterAlerte(){
     declarerAlerte();
 }
 
+function showHouse(){
+
+    require 'views/houseList.php';
+}
