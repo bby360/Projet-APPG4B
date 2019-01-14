@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 14 jan. 2019 à 18:05
+-- Généré le :  lun. 14 jan. 2019 à 18:13
 -- Version du serveur :  10.1.37-MariaDB
 -- Version de PHP :  7.2.12
 
@@ -32,7 +32,8 @@ CREATE TABLE `admin` (
   `idAdmin` int(11) NOT NULL,
   `lastName` varchar(255) NOT NULL,
   `firstName` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `mdp` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -55,9 +56,8 @@ CREATE TABLE `capteur` (
 --
 
 INSERT INTO `capteur` (`idCapteur`, `idRoom`, `consommation`, `type`, `typeAlerte`, `message`) VALUES
-(1, 6, 22, 'lumiere', 'je l\'ai cassé', 'dommage'),
-(2, 6, 22, 'temperature', '', ''),
-(3, 7, 22, 'volet', '', '');
+(1, 6, 22, 'Luminosité', 'je l\'ai cassé', 'dommage'),
+(2, 6, 22, 'temperature', '', '');
 
 -- --------------------------------------------------------
 
@@ -77,8 +77,9 @@ CREATE TABLE `catalogue` (
 --
 
 INSERT INTO `catalogue` (`idProduit`, `typeProduct`, `consumption`, `price`) VALUES
-(1, 'Température', '', '6,99'),
-(2, 'Présence', '', '12,49');
+(1, 'Température', '80', '6,99'),
+(2, 'Présence', '160', '12,49'),
+(3, 'Luminosité', '120', '12.99');
 
 -- --------------------------------------------------------
 
@@ -297,7 +298,7 @@ ALTER TABLE `capteur`
 -- AUTO_INCREMENT pour la table `catalogue`
 --
 ALTER TABLE `catalogue`
-  MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `client`
