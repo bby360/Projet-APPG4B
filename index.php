@@ -119,6 +119,18 @@ if(isset($_GET["action"])){
         case 'faq':
             faq();
             break;
+		    
+	 case 'declarerAlerte':
+            declarerAlerte();
+            break;
+
+        case 'commenterAlerte':
+            commenterAlerte();
+            break;
+
+        case 'posterAlerte':
+            posterAlerte();
+            break;	    
 
       default:
         notFound();
