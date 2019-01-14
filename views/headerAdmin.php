@@ -19,7 +19,7 @@
                 <li><a href="indexAdmin.php?action=catalogue">Catalogue</a>
 
 
-                <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                <li><a href="indexAdmin.php?action=deconnexion">Déconnexion</a></li>
             </ul>
         </div>
 
