@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Inscription</title>
+    <title>InscriptionAdmin</title>
     <link rel="stylesheet" type="text/css" href="./designs/css/signup.css" />
     <script type="text/javascript" src="./designs/css/signup.js"></script>
 </head>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Page d'accueil</title>
+    <title>Connexion Admin</title>
     <link rel="stylesheet" type="text/css" href="./designs/css/signin.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
 
     <div class = "connexion">
 
-        <form method="POST" action="indexAdmin.php?action=signin">
+        <form method="POST" action="">
 
             <table align="center">
                 <tr>
