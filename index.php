@@ -130,7 +130,11 @@ if(isset($_GET["action"])){
 
         case 'posterAlerte':
             posterAlerte();
-            break;	    
+            break;
+
+        case 'houseList':
+            showHouse();
+            break;
 
       default:
         notFound();
