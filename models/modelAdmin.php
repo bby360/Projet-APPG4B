@@ -6,7 +6,6 @@ function signingup(): bool
 {
     session_start();
 }
-echo'kk';
 
     $pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     $db=dbConnect();

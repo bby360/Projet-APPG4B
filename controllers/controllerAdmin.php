@@ -17,7 +17,7 @@ function signupAdmin(){
             echo "Veuillez remplir tous les champs correctement.";
         } else {
             signingup();
-            echo'kk';
+            header('Location: indexAdmin.php?action=dashboardAdmin');
 
             exit();
 

@@ -1,7 +1,3 @@
-<?php
-dbConnect();
-?>
-
 <!DOCTYPE html>
 
 <html>
