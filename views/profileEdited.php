@@ -1,12 +1,5 @@
 <?php
 session_start();
-$_SESSION['lastName']='Taravel';
-$_SESSION['firstName']='Hanna';
-
-
-?>
-<!DOCTYPE html><?php
-session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', 'root');
 
 $requser = $bdd->prepare("SELECT * FROM client WHERE lastName = ?");
@@ -127,7 +120,11 @@ else{
         <link rel="stylesheet" type="text/css" href="../design/ProfileEdited.css" />
         <title>Profil</title>
     </head>
-
+    
+    <header>
+        <?php require 'headerAdmin.php'?>
+    </header>
+    
     <body>
 
     <section>
@@ -157,45 +154,9 @@ else{
 
         </div>
     </section>
+    
+    <footer>
+        <?php require "footer.php"?>
+    </footer>
 
     </body>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="../designs/css/editProfile.css" />
-        <title>Editer votre profil</title>
-    </head>
-
-    <body>
-    	
-            <h1> Editer votre profil</h1>
-
-    	<section>
-        <p>Bonjour, vous pouvez <em>modifier</em> <strong>votre profil</strong> ici!</p>
-
-        <div id=soussection>
-        <div class="Contact">
-            <form method="post" action="ProfileEdited.php">
-
-                <fieldset>
-                <legend><h2>Changer votre contact</h2></legend>
-                <p>
-                    <h3><label for="phone">Portable</label> : <input type="tel" name="phone" id="phone" value="<?php echo $user['phone']; ?>"/></h3>
-                    <h3><label for="email">E-mail</label> : <input type="email" name="email" id="email" value="<?php echo $user['email']; ?>"/></h3>
-                    <h3><label for="emergency">Contact d'urgence</label> : <input type="text" name="emergency" id="emergency" /></h3>
-
-                    <h3><input type="submit" value="Enregistrer" /></h3>
-                </p>
-                </fieldset>
-            </form>
-
-        </div>
-        </div>
-
-        </section>
-
-       
-    </body>
-
-
-
