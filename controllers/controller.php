@@ -97,7 +97,7 @@ function roomList()
 
 /* function houseList()
 {
-    $rooms = getHouseList()->fetchAll();
+    $houses = getHouseList()->fetchAll();
 
     require "views/houseList.php";
 }

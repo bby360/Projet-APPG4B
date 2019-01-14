@@ -6,9 +6,10 @@ function notFound() {
 }
 
 function signupAdmin(){
+
     if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email'])
         && isset($_POST['mdp'])){
-
+            echo'kk';
         if (empty($_POST['lastName']) || empty($_POST['firstName']) ||
             empty($_POST['email']) || empty($_POST['mdp']) || $_POST['mdp'] != $_POST['confirm_mdp']) {
 
@@ -36,7 +37,6 @@ function signinAdmin(){
             $req->execute(['email' => $_POST['email']]);
             $admin = $req->fetch(PDO::FETCH_OBJ);
             if($admin) {
-
 
             if(password_verify($_POST['mdp'], $admin->mdp)) {
                 session_start();
@@ -98,6 +98,3 @@ function temperatureSensorsUnlog(){
     require "views/temperatureSensorsUnlog.php";
 }
 
-function deconnexion(){
-    require "views/welcome.php";
-}
