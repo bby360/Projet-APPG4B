@@ -98,3 +98,6 @@ function temperatureSensorsUnlog(){
     require "views/temperatureSensorsUnlog.php";
 }
 
+function deconnexion(){
+    require "views/welcome.php";
+}
