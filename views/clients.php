@@ -18,14 +18,10 @@ session_start();
     <h1 id="top">Liste des clients</h1>
 
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "domisep";
-    $bdd = new mysqli($servername, $username, $password, $dbname);
+    $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', 'root');
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if (!$bdd) {
+        die("Connection failed: " . !$bdd);
     }
 
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
@@ -49,16 +45,18 @@ session_start();
             echo "
                <tr>
                 <td>".$row["idClient"]."</td>
-                <td>".$row["lastName"]."</td>
-                <td>".$row["firstName"]."</td>
-                <td>".$row["email"]."</td>
-                <td>".$row["phone"]."</td>
-                <td>".$row["adress"]."</td>
-                <td>".$row["postalcode"]."</td>
-                <td>".$row["emergency"]."</td>
-                <td><a href='clientProfile.php'>
-                    <input type=\"submit\" name='VoirProfil' value=\"Voir profil ".$row["idClient"]."\" class='button' style=\"vertical-align:middle\">
-                    </a>
+                <td>".htmlspecialchars($row["lastName"])."</td>
+                <td>".htmlspecialchars($row["firstName"])."</td>
+                <td>".htmlspecialchars($row["email"])."</td>
+                <td>".htmlspecialchars($row["phone"])."</td>
+                <td>".htmlspecialchars($row["adress"])."</td>
+                <td>".htmlspecialchars($row["postalcode"])."</td>
+                <td>".htmlspecialchars($row["emergency"])."</td>
+                <td>
+                <form action='clientProfile.php' method='GET'>
+                    <input type='text' name='idProfil' value='".$row['idClient']."' style='visibility:hidden' class='buttonHidden';>
+                    <input type=\"submit\" name='VoirProfil'  value='Voir profil ".$row["idClient"]."' class='button' style=\"vertical-align:middle\">
+                </form>
                 </td>
                </tr>";
         }
