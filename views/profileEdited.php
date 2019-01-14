@@ -1,107 +1,77 @@
 <?php
-include("isConnected.php"); 
+session_start();
+$_SESSION['lastName']='Taravel';
+$_SESSION['firstName']='Hanna';
+
+
 ?>
-
-
 <!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="../design/ProfileEdited.css" />
-        <title>Profil</title>
+        <link rel="stylesheet" type="text/css" href="../designs/css/editProfile.css" />
+        <title>Editer votre profil</title>
     </head>
 
     <body>
-    <header>
-    <?php include("header.php"); ?>
+    	<header>
+            <ul>
+                <li><a href="">Accueil</a></li>
+                <li><a href="">Votre profil</a></li>
+                <li><a href="">Pièces</a></li>
+                <li><a href="">Urgence</a></li>
+                <li><a href="">Catalogue</a></li>
+                <li><a href="">Consommation</a></li>
+                <li><a href="">Forum</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
 
-</header>
+             <div class="deconnexion">
+                 <a href="">Déconnexion</a></li>
+             </div>
 
-    <section>
+            <h1> Editer votre profil</h1></header>
 
-        <p> <h1>Votre profil</h1>
+    	<section>
+        <p>Bonjour, vous pouvez <em>modifier</em> <strong>votre profil</strong> ici!</p>
 
-        <div id="soussection">
-
-            <div class="Contact">
-                <?php
-                $db = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
-                if ( !empty($_POST['email']) and empty($_POST['phone'])) {
-                    $newemail = $_POST['email'];
-                    $newemergency = $_POST['emergency'];
-                    $req = $db->prepare('UPDATE client SET email = :newemail WHERE lastName = :lastName');
-                    $req->execute(array(
-                        'newemail' => $newemail,
-                        'lastName' => $_SESSION['lastName'],
-                    ));
-                }
-                elseif (!empty($_POST['phone']) and empty($_POST['email'])){
-                    $newphone = $_POST['phone'];
-                    $req = $db->prepare('UPDATE client SET phone = :newphone WHERE lastName = :lastName');
-                    $req->execute(array(
-                        'newphone' => $newphone,
-                        'lastName' => $_SESSION['lastName'],
-                    ));
-                }
-                elseif (!empty($_POST['phone']) AND !empty($_POST['email'])){
-                    $newphone = $_POST['phone'];
-                    $newemail = $_POST['email'];
-                    $req = $db->prepare('UPDATE client SET email = newemail, phone = :newphone WHERE lastName = :lastName');
-                    $req->execute(array(
-                        'newemail' => $newemail,
-                        'newphone' => $newphone,
-                        'lastName' => $_SESSION['lastName'],
-                    ));
-                }
-                else{
-                }
-                ?>
+        <div id=soussection>
+        <div class="Contact">
+            <form method="post" action="ProfileEdited.php">
 
                 <fieldset>
-                    <legend><h2>Vos informations</h2></legend>
-                    <p>
-                    <h3>Nom : <?php /* récupérer le nom de l'utilisateur*/ echo $_SESSION['lastName'];?> </h3>
-                    <h3>Prénom : <?php /* récupérer le prénom de l'utilisateur*/ echo $_SESSION['firstName']; ?> </h3>
-                    <h3>Téléphone : <?php echo $_SESSION['phone']; ?> </h3>
-                    <h3>E-mail : <?php echo $_SESSION['email'];?> </h3>
-                    </p>
+                <legend><h2>Changer votre contact</h2></legend>
+                <p>
+                    <h3><label for="phone">Portable</label> : <input type="tel" name="phone" id="phone" value="<?php echo $user['phone']; ?>"/></h3>
+                    <h3><label for="email">E-mail</label> : <input type="email" name="email" id="email" value="<?php echo $user['email']; ?>"/></h3>
+                    <h3><label for="emergency">Contact d'urgence</label> : <input type="text" name="emergency" id="emergency" /></h3>
+
+                    <h3><input type="submit" value="Enregistrer" /></h3>
+                </p>
                 </fieldset>
-
-            </div>
-
-            <div class="Photo">
-
-
-                <fieldset>
-                    <legend><h2>Votre photo de profil a été modifiée </h2></legend>
-
-                    <?php
-                    // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
-                    if (isset($_FILES['newpic']) AND $_FILES['newpic']['error'] == 0)
-                    {
-                        // Testons si le fichier n'est pas trop gros
-                        if ($_FILES['newpic']['size'] <= 1000000)
-                        {
-                            // Testons si l'extension est autorisée
-                            $infosfichier = pathinfo($_FILES['newpic']['name']);
-                            $extension_upload = $infosfichier['extension'];
-                            $extensions_autorisees = array('jpg', 'jpeg', 'png');
-                            if (in_array($extension_upload, $extensions_autorisees))
-                            {
-                                // On peut valider le fichier et le stocker définitivement
-                                move_uploaded_file($_FILES['newpic']['tmp_name'], 'uploads/' . basename($_FILES['newpic']['name']));
-                                echo "Votre photo a été modifiée !";
-                            }
-                        }
-                    }
-                    ?>
-
-            </div>
-
-            <div class=edit>
-                <h4> <a href="index.php?action=editProfile">Modifier votre profil</a></h4>
-            </div>
+            </form>
 
         </div>
-    </section>
+        </div>
 
+        </section>
+
+        <footer>
+
+            <p>
+            <ul> 
+                <li><a href="" id="mention">Mentions légales</a></li>
+                <li><a href="" id="Apropos">A Propos</a></li>
+                <li>Created by</li>
+                <li><img src="..design/logo.jpg" id="logo" alt="Logo CA"></li>
+                
+
+                
+            </ul>
+            </p>
+
+        </footer>
     </body>
+
+
+
