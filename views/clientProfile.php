@@ -7,13 +7,17 @@ session_start();
 <div xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="../design/clientProfile.css" />
+        <link rel="stylesheet" type="text/css" href="../design/css/clientProfile.css" />
         <title>Client</title>
 
 
 
     </head>
 
+    <header>
+        <?php require 'headerAdmin.php'?>
+    </header>
+    
     <body>
 
 
@@ -58,8 +62,9 @@ session_start();
 
     </script>
 
-
-
+    <footer>
+        <?php require "footer.php"?>
+    </footer>
 
 
     </body>
