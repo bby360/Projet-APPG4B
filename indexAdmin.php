@@ -43,6 +43,10 @@ if(isset($_GET["action"])){
         case 'temperatureSensorsUnlog':
             temperatureSensorsUnlog();
             break;
+            
+        case 'deconnexion':
+            deconnexion();
+            break;
 
 
         default:
