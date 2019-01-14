@@ -107,7 +107,10 @@ a{
 
 #design{
     position: absolute;
-    float: right;
+    right: 20;
     bottom: 0;
-    right: 0;
 }
+ #logo{
+    width: 20%;
+    height: auto;
+ }
