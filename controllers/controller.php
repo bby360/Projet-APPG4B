@@ -273,3 +273,25 @@ function consumption(){
 function faq() {
     require "views/faq.php";
 }
+
+function declarerAlerte(){
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    $house = "5";//$_SESSION['idHouse'];
+    $capteurs = getCapteur($house) -> fetchAll();
+    require "views/declarerAlerte.php";
+}
+
+function commenterAlerte(){
+    require "views/commenterAlerte.php";
+}
+
+function posterAlerte(){
+    $idCapteur = $_GET['capteur'];
+    $type = $_POST['typeAlerte'];
+    $message = $_POST['commentaire'];
+    insertAlerte($idCapteur,$type,$message);
+    declarerAlerte();
+}
+
