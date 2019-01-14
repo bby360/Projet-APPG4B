@@ -14,23 +14,8 @@ $_SESSION['firstName']='Hanna';
     </head>
 
     <body>
-    	<header>
-            <ul>
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Votre profil</a></li>
-                <li><a href="">Pièces</a></li>
-                <li><a href="">Urgence</a></li>
-                <li><a href="">Catalogue</a></li>
-                <li><a href="">Consommation</a></li>
-                <li><a href="">Forum</a></li>
-                <li><a href="">FAQ</a></li>
-            </ul>
-
-             <div class="deconnexion">
-                 <a href="">Déconnexion</a></li>
-             </div>
-
-            <h1> Editer votre profil</h1></header>
+    	
+            <h1> Editer votre profil</h1>
 
     	<section>
         <p>Bonjour, vous pouvez <em>modifier</em> <strong>votre profil</strong> ici!</p>
@@ -56,21 +41,7 @@ $_SESSION['firstName']='Hanna';
 
         </section>
 
-        <footer>
-
-            <p>
-            <ul> 
-                <li><a href="" id="mention">Mentions légales</a></li>
-                <li><a href="" id="Apropos">A Propos</a></li>
-                <li>Created by</li>
-                <li><img src="..design/logo.jpg" id="logo" alt="Logo CA"></li>
-                
-
-                
-            </ul>
-            </p>
-
-        </footer>
+       
     </body>
 
 
