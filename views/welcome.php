@@ -35,7 +35,7 @@
 
     <div id="design">
         <p>designed by</p>
-        <img id="logo" src="./designs/pictures/logo.png">
+        <img id="logo" src="./designs/pictures/logo.jpg">
     </div>
 
 
