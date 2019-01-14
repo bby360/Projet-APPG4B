@@ -22,7 +22,7 @@
                     <label>Nom </label>
                 </td>
                 <td>
-                    <input type="text" name="lastName" id="lastName"autofocus>
+                    <input type="text" name="lastName" id="lastName" autofocus>
                 </td>
             </tr>
             <tr>

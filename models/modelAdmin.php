@@ -6,16 +6,17 @@ function signingup(): bool
 {
     session_start();
 }
+echo'kk';
 
     $pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     $db=dbConnect();
-    $req = $db->prepare("INSERT INTO admin(lastName, firstName,email, mdp) VALUES(:lastName, :firstName, :email, :mdp)");
+    $req = $db->prepare("INSERT INTO admin(lastName, firstName, email, mdp) VALUES(:lastName, :firstName, :email, :mdp)");
 
     $req->execute([
         'lastName'=> $_POST['lastName'],
         'firstName' => $_POST['firstName'],
         'email'=> $_POST['email'],
-        'mdp'=> $pass_hache,
+        'mdp'=> $pass_hache
 
     ]);
 

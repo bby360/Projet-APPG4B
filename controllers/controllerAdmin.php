@@ -9,7 +9,7 @@ function signupAdmin(){
 
     if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email'])
         && isset($_POST['mdp'])){
-            echo'kk';
+
         if (empty($_POST['lastName']) || empty($_POST['firstName']) ||
             empty($_POST['email']) || empty($_POST['mdp']) || $_POST['mdp'] != $_POST['confirm_mdp']) {
 
@@ -17,7 +17,7 @@ function signupAdmin(){
             echo "Veuillez remplir tous les champs correctement.";
         } else {
             signingup();
-            header('Location: indexAdmin.php?action=signin');
+            echo'kk';
 
             exit();
 
@@ -36,6 +36,7 @@ function signinAdmin(){
             $req = $db->prepare('SELECT * FROM admin WHERE (email = :email)');
             $req->execute(['email' => $_POST['email']]);
             $admin = $req->fetch(PDO::FETCH_OBJ);
+    
             if($admin) {
 
             if(password_verify($_POST['mdp'], $admin->mdp)) {

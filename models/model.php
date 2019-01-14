@@ -6,12 +6,11 @@ function signingup(): bool
     { 
         session_start(); 
     } 
-
     $pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     $db=dbConnect();
     $req = $db->prepare("INSERT INTO client(lastName, firstName, email, phone, adress, mdp, postalcode, emergency,pays) 
     VALUES(:lastName, :firstName, :email, :phone, :adress, :mdp, :postalcode, :emergency, :pays)");
- 
+    
     $req->execute([
     'lastName'=> $_POST['lastName'],
     'firstName' => $_POST['firstName'],
