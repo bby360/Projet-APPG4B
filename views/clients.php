@@ -9,6 +9,7 @@ session_start();
         <title>Fichier Clients</title>
     </head>
 
+<body>
     <header>
         <?php require 'headerAdmin.php'?>
     </header>
