@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
 --
--- Client :  localhost
--- Généré le :  Lun 14 Janvier 2019 à 16:41
--- Version du serveur :  10.1.19-MariaDB
--- Version de PHP :  7.0.9
+-- Hôte : 127.0.0.1
+-- Généré le :  lun. 14 jan. 2019 à 18:05
+-- Version du serveur :  10.1.37-MariaDB
+-- Version de PHP :  7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -49,11 +51,11 @@ CREATE TABLE `capteur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `capteur`
+-- Déchargement des données de la table `capteur`
 --
 
 INSERT INTO `capteur` (`idCapteur`, `idRoom`, `consommation`, `type`, `typeAlerte`, `message`) VALUES
-(1, 6, 22, 'lumiere', 'je l''ai cassé', 'dommage'),
+(1, 6, 22, 'lumiere', 'je l\'ai cassé', 'dommage'),
 (2, 6, 22, 'temperature', '', ''),
 (3, 7, 22, 'volet', '', '');
 
@@ -71,12 +73,12 @@ CREATE TABLE `catalogue` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `catalogue`
+-- Déchargement des données de la table `catalogue`
 --
 
 INSERT INTO `catalogue` (`idProduit`, `typeProduct`, `consumption`, `price`) VALUES
-(1, 'Capteur Température 1', '', '6,99'),
-(2, 'Capteur présence 1', '', '12,49');
+(1, 'Température', '', '6,99'),
+(2, 'Présence', '', '12,49');
 
 -- --------------------------------------------------------
 
@@ -99,7 +101,7 @@ CREATE TABLE `client` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Ceci est la table client';
 
 --
--- Contenu de la table `client`
+-- Déchargement des données de la table `client`
 --
 
 INSERT INTO `client` (`idClient`, `lastName`, `firstName`, `email`, `phone`, `adress`, `mdp`, `postalcode`, `emergency`, `remember`, `pays`) VALUES
@@ -115,7 +117,7 @@ INSERT INTO `client` (`idClient`, `lastName`, `firstName`, `email`, `phone`, `ad
 (16, 'b', 'b', 'b@b.com', '1', 'b', '$2y$10$0bYk.2NV2fam/g4W0w.FCOErdIjhde/B6bh6.Ios8wxzBYbEkRO1S', 1, '1', '', 'b'),
 (17, 'gabriel', 'astieres', 'gabriel.astieres@gmail.com', '0615434238', '115 route du plan de la tour, villa 64 parc de ste Maxime', '$2y$10$545YzgDhhq06xI9nTmsTleS.7yA32YWhNrkpNglQYCdmTmn5N.PTu', 83120, '', '', 'France'),
 (18, 'sdfsd', 'sdfs', 'sdfasdheilly@gmail.com', '56456', 'dsfgsd', '$2y$10$LzxdZu0NT19V1J2MDabBAO4HoJ2J/E7P2Kyu16CKUNB0enldpGFl.', 654, '5646', NULL, 'dfgdfg'),
-(19, 'd''Heilly', 'Mathias', 'mathiasdheilly@gmail.com', '0645454545', '123 dsfgdf', '$2y$10$7PiRszbB7yPUQHD496ov..GhpE4/CRyZuHeFGfEISq/x4lsG26ajW', 92150, '', NULL, 'france');
+(19, 'd\'Heilly', 'Mathias', 'mathiasdheilly@gmail.com', '0645454545', '123 dsfgdf', '$2y$10$7PiRszbB7yPUQHD496ov..GhpE4/CRyZuHeFGfEISq/x4lsG26ajW', 92150, '', NULL, 'france');
 
 -- --------------------------------------------------------
 
@@ -132,7 +134,7 @@ CREATE TABLE `forummessage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `forummessage`
+-- Déchargement des données de la table `forummessage`
 --
 
 INSERT INTO `forummessage` (`idMessage`, `idTopic`, `author`, `message`, `date`) VALUES
@@ -154,7 +156,7 @@ CREATE TABLE `forumtopic` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `forumtopic`
+-- Déchargement des données de la table `forumtopic`
 --
 
 INSERT INTO `forumtopic` (`idTopic`, `name`, `creationDate`) VALUES
@@ -174,7 +176,7 @@ CREATE TABLE `house` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `house`
+-- Déchargement des données de la table `house`
 --
 
 INSERT INTO `house` (`idHouse`, `idClient`, `adress`) VALUES
@@ -207,7 +209,7 @@ CREATE TABLE `room` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `room`
+-- Déchargement des données de la table `room`
 --
 
 INSERT INTO `room` (`idRoom`, `idHouse`, `roomName`, `surface`, `mode`, `tempAuto`, `tempManu`, `lumAuto`, `lumManu`, `blindOpenTime`, `blindCloseTime`, `voletsManu`) VALUES
@@ -222,7 +224,7 @@ INSERT INTO `room` (`idRoom`, `idHouse`, `roomName`, `surface`, `mode`, `tempAut
 (9, 5, 'hugo', 22, 'Auto', 24, 0, 20, 15, '22:23:00', '23:24:00', 15);
 
 --
--- Index pour les tables exportées
+-- Index pour les tables déchargées
 --
 
 --
@@ -276,7 +278,7 @@ ALTER TABLE `room`
   ADD PRIMARY KEY (`idRoom`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
@@ -284,41 +286,50 @@ ALTER TABLE `room`
 --
 ALTER TABLE `admin`
   MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
   MODIFY `idCapteur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT pour la table `catalogue`
 --
 ALTER TABLE `catalogue`
   MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
   MODIFY `idClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- AUTO_INCREMENT pour la table `forummessage`
 --
 ALTER TABLE `forummessage`
   MODIFY `idMessage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT pour la table `forumtopic`
 --
 ALTER TABLE `forumtopic`
   MODIFY `idTopic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT pour la table `house`
 --
 ALTER TABLE `house`
   MODIFY `idHouse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT pour la table `room`
 --
 ALTER TABLE `room`
   MODIFY `idRoom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
