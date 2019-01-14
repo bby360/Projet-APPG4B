@@ -14,8 +14,7 @@ include("isConnected.php");
     <body>
     <header>
     <?php include("header.php"); ?>
-
-</header>
+    </header>
 
             <h1> Editer votre profil</h1></header>
 
@@ -58,19 +57,7 @@ include("isConnected.php");
 
         </section>
 
-        <footer>
-
-            <p>
-            <ul> 
-                <li><a href="" id="mention">Mentions légales</a></li>
-                <li><a href="" id="Apropos">A Propos</a></li>
-                <li>Created by</li>
-                <li><img src="..design/logo.jpg" id="logo" alt="Logo CA"></li>
-                
-
-                
-            </ul>
-            </p>
-
-        </footer>
+    <footer>
+        <?php require "footer.php"?>
+    </footer>
     </body>
