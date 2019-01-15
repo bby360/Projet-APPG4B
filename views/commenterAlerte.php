@@ -11,7 +11,7 @@
     <?php include("header.php"); ?>
 </header>
  <p> Vous souhaitez déclarer une alerte pour un capteur de type <?= $_GET['capteur'];?> </p>
-<form action="index.php?action=posterAlerte&capteur=<?= $_GET['capteur'];?>" method="post" name="alerte">
+<form action="index.php?action=posterAlerte&idCapteur=<?= $_GET['idCapteur'];?>" method="post" name="alerte">
     <p>
         <label for="typeAlerte">Type d'alerte</label><br />
         <SELECT name="typeAlerte" id="typeAlerte" size="1">
@@ -26,6 +26,23 @@
         <textarea name="commentaire" id="commentaire" rows="10" cols="50"></textarea>
     </p>
     <div id="valider">
-        <input type="submit"  value="Valider" />
+        <input type='button' value='Confirmer' onClick='Confirmer()'>
+
     </div>
 </form>
+
+<script language='javascript'>
+    function Confirmer()
+    {
+        if (document.alerte.commentaire.value == "") {
+
+            alert("Veuillez ajouter un commentaire");
+            return false;
+        }
+        else (confirm("Souhaitez-vous vraiment déclarer cette alerte ?"))
+        {
+            alerte.submit();
+        }
+    }
+
+</script>
