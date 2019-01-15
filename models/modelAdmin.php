@@ -47,9 +47,19 @@ function getTemperatureSensors(){
 }
 
 function deletedSensors(){
-    $db=dbConnect();
-    $req =$db ->query("DELETE * FROM catalogue");
-    return $req;
+    // Le tableau $_POST['db'] contient les valeurs des checkbox cochées
+    if(!$_POST['<?php $sensors["idProduit"]?>']){
+        foreach($_POST['<?php $sensors["idProduit"]?>'] as $valeurs){
+            var_dump("Aucun capteur n'a été séléctionné $valeurs") ;
+        }
+    } else{
+        foreach($_POST['<?php $sensors["idProduit"]?>'] as $valeur) {
+            var_dump("La checkbox $valeur a été cochée");
+            $db=dbConnect();
+            $req = $db->query("DELETE * FROM catalogue");
+            return $req;
+        }
+    }
 }
 
 function insertSensors(){
