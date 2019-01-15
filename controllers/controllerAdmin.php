@@ -99,3 +99,7 @@ function temperatureSensorsUnlog(){
     require "views/temperatureSensorsUnlog.php";
 }
 
+function sensorsGestion(){
+    $sensors = getSensorsGestionList()->fetchAll();
+    require"views/sensorsGestion.php";
+}
