@@ -103,3 +103,23 @@ function sensorsGestion(){
     $sensors = getSensorsGestionList()->fetchAll();
     require"views/sensorsGestion.php";
 }
+
+function deleteSensors(){
+    $delete = deletedSensors();
+    require "views/catalogueAdmin.php";
+}
+
+function addedSensors(){
+
+    if (isset($_POST['typeProduct']) && isset($_POST['consumption']) && isset($_POST['price'])) {
+        insertSensors();
+        exit();
+    }
+
+    require "views/catalogueAdmin.php";
+
+}
+
+function deconnexion(){
+    require "views/welcome.php";
+}
