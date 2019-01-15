@@ -9,7 +9,8 @@
 
 <body>
 <header>
-    <?php include "header.php"; ?>
+    <?php include "header.php"; 
+    ?>
 </header>
 
 <h1> Choix de l'habitation </h1><br><br>
