@@ -13,6 +13,7 @@
 
 <table>
     <?php foreach($capteurs as $capteur) { ?>
+    
          <tr id='info'> 
             <td id="select">  
             </td>  
@@ -23,11 +24,14 @@
                 <p><?= $capteur["type"];?></p>
             </td>
             <td class="tab4">
-                <a href="index.php?action=commenterAlerte&capteur=<?= $capteur["type"];?>&capteur=<?= $capteur["idCapteur"];?>" > <input type="button" value="declarer alerte"> </a>
+                <a href="index.php?action=commenterAlerte&capteur=<?= $capteur["type"];?>&idCapteur=<?= $capteur["idCapteur"];?>" > <input type="button" value="declarer alerte"> </a>
 
             </td>
         </tr>
     <?php } ?>
+   
 </table>
+
+
 
 
