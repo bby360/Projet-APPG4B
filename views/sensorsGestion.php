@@ -28,22 +28,22 @@
         </thead>
 
         <tbody>
-        <?php foreach($sensors as $sensors) { ?>
+        <?php foreach($sensorsG as $sensorsG) { ?>
             <tr>
                 <td>
-                    Client
+                    <?= $client["idClient"];?>
                 </td>
                 <td>
-                    <a href="index.php?action=detailedSensors&id=<?=$sensors["idProduit"];?>"><?= $sensors["idProduit"];?>
+                    <a href="index.php?action=detailedSensors&id=<?=$sensorsG["idCapteur"];?>"><?= $sensorsG["idCapteur"];?>
                 </td>
                 <td>
-                    <?= $sensors["typeProduct"];?>
+                    <?= $sensorsG["type"];?>
                 </td>
                 <td>
-                    <?= $sensors["consumption"];?>
+                    <?= $sensorsG["typeAlerte"];?>
                 </td>
                 <td>
-                    <?= $sensors["price"];?>
+                    <?= $sensorsG["message"];?>
                 </td>
                 <td>
                     <input type="checkbox" name="delete" value="sensors"><br>
