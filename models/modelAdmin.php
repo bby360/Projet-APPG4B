@@ -78,3 +78,13 @@ function getSensorsGestionList(){
     $req = $db->query("SELECT * FROM catalogue ORDER BY (typeProduct)");
     return $req;
 }
+
+function insertQuestion() {
+    
+        $db = dbConnect();
+        $req = $db->prepare("INSERT INTO faqquestion VALUES ('question');
+        $req->bindParam("question", $question);
+        $req->execute();
+        $req->closeCursor();
+    
+}

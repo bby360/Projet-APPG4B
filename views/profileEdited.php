@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', 'root');
+$bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
 
 $requser = $bdd->prepare("SELECT * FROM client WHERE lastName = ?");
 $requser->execute(array($_SESSION['lastName']));

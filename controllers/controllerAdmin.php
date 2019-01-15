@@ -120,6 +120,11 @@ function addedSensors(){
 
 }
 
+function addQuestion(){
+    $question=$_POST["question"];
+    insertQuesion($question);
+}
+
 function deconnexion(){
     require "views/welcome.php";
 }
