@@ -62,3 +62,9 @@ function insertSensors(){
     ]);
     header("location: indexAdmin.php?action=catalogueAdmin");
 }
+
+function getSensorsGestionList(){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM catalogue ORDER BY (typeProduct)");
+    return $req;
+}
