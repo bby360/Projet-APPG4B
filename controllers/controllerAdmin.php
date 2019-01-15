@@ -100,7 +100,8 @@ function temperatureSensorsUnlog(){
 }
 
 function sensorsGestion(){
-    $sensors = getSensorsGestionList()->fetchAll();
+    //$client = getClientId()->fetchAll();
+    $sensorsG = getSensorsGestionList()->fetchAll();
     require"views/sensorsGestion.php";
 }
 
