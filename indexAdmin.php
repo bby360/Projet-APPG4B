@@ -47,6 +47,10 @@ if(isset($_GET["action"])){
         case 'deconnexion':
             deconnexion();
             break;
+            
+        case 'sensorsGestion':
+            sensorsGestion();
+            break;
 
 
         default:
