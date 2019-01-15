@@ -12,8 +12,10 @@
     <?php include("header.php"); ?>
 
 </header>
-
+<a href="index.php?action=declarerAlerte"><input id="button" type="button" value="ALERTE"></a>
 <section>
+    
+    
 	<div class="gallery">
         <a href="./index.php?action=contactUrgence">
             <img src="designs/pictures/light.jpg">
@@ -27,13 +29,13 @@
         <div class="desc">FAQ</div>
     </div>
     <div class="gallery">
-        <a href="designs/pictures/temperature.jpg">
+        <a href="index.php?action=forum">
             <img src="designs/pictures/light.jpg">
         </a>
         <div class="desc">Forum</div>
     </div>
    
- <a href="index.php?action=declarerAlerte">ALAAAAARME</a>
+ 
 
 
 

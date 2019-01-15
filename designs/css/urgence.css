@@ -1,12 +1,14 @@
-html,body{
+html,body,section{
     margin: 0;
     padding:0;
     width: 100%;
     background-color:#00497A;
 }
-section{
-    padding-top: 15%;
+
+a{
+    text-decoration: none;
 }
+
 div.gallery {
     margin: 1%;
     float:left;
@@ -28,4 +30,15 @@ div.gallery img {
 div.desc {
     padding: 30px;
     text-align: center;
+}
+
+#button{
+    margin-top: 8%;
+    margin-bottom: 8%;
+    width: 20%;
+    height: 20%;
+    margin-left: 40%;
+    background-color: red;
+    color: black;
+    border-color: red;
 }
