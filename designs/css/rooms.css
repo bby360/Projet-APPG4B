@@ -5,9 +5,6 @@ html, body{
     width: 100%;
     width: 100%;
 }
-section{
-    margin-top: 2%;
-}
 
 #fond {
     position: absolute;
@@ -15,18 +12,18 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    
+
 }
 
 /*menu deroulant*/
 #menuvertical {
-   position: relative;
+    position: relative;
     width: 16%;
     margin-left: 42%;
     height: 30px;
-    list-style-type: none ; 
-    margin-top:1px;
-    padding: 0px;  
+    list-style-type: none ;
+    margin-top:2%;
+    padding: 0px;
     z-index: 200;
 
 }
@@ -34,24 +31,24 @@ section{
 #menuvertical ul {
     position: relative;
     display: none ;
-    list-style-type: none ; 
+    list-style-type: none ;
     margin: 0px;
     padding: 0px;
     width: 100%;
-    height: 30px;   
+    height: 30px;
 
 }
 
 #menuvertical li {
     position: relative;
     border-radius: 15px 15px;
-    width: 100%;
-    height: 2em;
-    border: 2px solid #2D241E;
+    width: 20em;
+    height: 45px;
+    border: 1px solid #2D241E;
     padding: 0;
     margin: 0;
-    margin-top: 0.5%;   
-    background-color: grey;
+    margin-top: 0;
+    background-color: #00497A;
 }
 
 #menuvertical a {
@@ -59,9 +56,9 @@ section{
     display: block ;
     width: 100%;
     text-decoration: none;
-   padding: 0;
-   margin: 0;
-   color: #21177d;
+    padding: 0;
+    margin: 0;
+    color: orange;
     font-size: 200%;
     text-align: center;
 }
@@ -69,10 +66,10 @@ section{
 #menuvertical li:hover ul {
     display: block ;
     position: absolute;
-    margin-top: 5%;  /*espace entre 1er choix et le menu deroulant*/
+    margin-top: 6.5%;  /*espace entre 1er choix et le menu deroulant*/
     left: 49%;  /*pour aligner le menu deroulant*/
     transform: translate(-50%, -50%);
-    
+
 }
 
 #menuvertical ul a {
@@ -88,7 +85,7 @@ section{
 #mode{
     position: relative;
     margin-top: 3%;
-    
+
     font-size: 150%;
 }
 #mode p{
@@ -186,6 +183,6 @@ section{
 }
 
 #valider input{
-    
+
     font-size: 100%;
 }
