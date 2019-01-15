@@ -37,7 +37,7 @@
         if (document.alerte.commentaire.value == "") {
 
             alert("Veuillez ajouter un commentaire");
-            return false;
+            return false; 
         }
         else (confirm("Souhaitez-vous vraiment déclarer cette alerte ?"))
         {
