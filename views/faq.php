@@ -13,24 +13,21 @@ require 'isConnected.php';
 </header>
 
 <body>
-    <section>
-        <div class="faq_container">
-        <div class="faq">
-            <div class="faq_question">Mon capteur ne marche plus, que faire ? </div>
-                <div class="faq_answer_container">
-                    <div class="faq_answer">Si votre capteur ne marche plus cliquez <a href="index.php?action=contactUrgence">ici</a> </div>
-                </div>        
-            </div>
-        </div>
-        <div class="faq_container">
-        <div class="faq">
-            <div class="faq_question">Je n'arrive pas à me connecter, pourquoi ?</div>
-                <div class="faq_answer_container">
-                    <div class="faq_answer">Les serveurs sont peut etre en maintenance</div>
-                </div>        
-            </div>
-        </div>
-    </section>
+<table>
+<tr>
+        <td>
+            <p>Ajouter une question</p>
+        </td>
+    </tr>
+    <tr>
+        <form method="post" action="index.php?action=addTopic">
+            <td>
+                <p>
+                    <label for="subject">Sujet du topic</label> : <input type="text" name="subject" id="subject" />
+                </p>
+            </td>
+        </tr>
+</table>
 </body>
 
  </html>
