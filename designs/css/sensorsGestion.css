@@ -22,7 +22,7 @@ table
 {
     border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
     text-align: center;
-    margin-left: 32%;
+    margin-left: 20%;
 }
 
 td /* Toutes les cellules des tableaux... */
@@ -41,18 +41,12 @@ a{
     color:white;
 }
 
-#ad{
-    margin-bottom: 1%;
+#myBtn{
+    margin-top: 1%;
     background-color:#77B5FE;
     border-radius: 10%;
     color:white;
-}
 
-#myBtn{
-    margin-top: 1%;
-    background-color:indianred;
-    border-radius: 10%;
-    color:white;
 }
 
 /* The Modal (background) */
