@@ -26,7 +26,6 @@ session_start();
     if (!$bdd) {
         die("Connection failed: " . !$bdd);
     }
-    dcbjcbkjdchqvkjvkjh
 
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
     $result = $bdd->query($sql);
