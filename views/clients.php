@@ -23,6 +23,12 @@ session_start();
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
     $result = $bdd->query($sql);
 
+    if (!$bdd) {
+        die("Connection failed: " . !$bdd);
+    }
+
+    $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
+    $result = $bdd->query($sql);
     if ($result->rowCount() > 0) {
         echo "<table class='clients'>
         <tr>
