@@ -15,9 +15,10 @@
         <h1> Catalogue</h1>
 
     <a href="indexAdmin.php?action=addSensors">
-        <button class="button"> Ajouter un capteur </button>
+        <button class="button" id="ad"> Ajouter un capteur </button>
     </a>
 
+    <form method="post" action="indexAdmin.php?action=deleteSensors">
         <table>
 
             <thead>
@@ -46,7 +47,7 @@
                         <?= $sensors["price"];?>
                     </td>
                     <td>
-                        <input type="checkbox" name="delete" value="sensors"><br>
+                        <input type="checkbox" name="delete" id="delete" value=<?= $sensors["idProduit"];?>><br>
                     </td>
                 </tr>
             <?php } ?>
@@ -64,10 +65,11 @@
             <p>Attention, vous allez supprimer tous les capteurs!</p>
             <p> En êtes-vous sûr?</p>
             <span class="cancel"><button id="bouton">Annuler</button></span>
-            <a href="indexAdmin.php?action=deleteSensors"><button id="bouton">Supprimer</button></a>
+            <input type="submit" value="Supprimer">
         </div>
 
     </div>
+    </form>
 
     <script>
         // Get the modal
