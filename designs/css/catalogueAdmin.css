@@ -41,6 +41,20 @@ a{
     color:white;
 }
 
+#ad{
+    margin-bottom: 1%;
+    background-color:#77B5FE;
+    border-radius: 10%;
+    color:white;
+}
+
+#myBtn{
+    margin-top: 1%;
+    background-color:indianred;
+    border-radius: 10%;
+    color:white;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
