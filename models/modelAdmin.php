@@ -80,20 +80,18 @@ function getSensorsGestionList(){
 
 function getClientId(){
     $db =dbConnect();
-    $req = $db->query("SELECT idClient FROM house JOIN room ON house.idHouse=roo.idHouse JOIN capteur ON room.idRoom=capteur.idRoom");
+    $req = $db->query("SELECT idClient FROM house JOIN room ON house.idHouse=room.idHouse JOIN capteur ON room.idRoom=capteur.idRoom");
     return $req;
 }
 
-/* function insertQuestionReponse() {
+
+function insertQuestionReponse() {
 
     $db = dbConnect();
-    $_POST['question']=$question;
-    $_POST['reponse']=$reponse;
-    $req = $db->prepare("INSERT INTO faq VALUES (:question, :reponse);
+    $req = $db->prepare("INSERT INTO faq VALUES (:question, :reponse");
     $req->bindParam("question", $question);
     $req->bindParam("reponse", $reponse);
     $req->execute();
     $req->closeCursor();
     
 }
- */

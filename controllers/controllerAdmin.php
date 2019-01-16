@@ -121,9 +121,13 @@ function addedSensors(){
 
 }
 
-function addQuestion(){
-    $question=$_POST["question"];
-    insertQuesion($question);
+
+function addQuestionReponse(){
+    $_POST['question']=$question;
+    $_POST['reponse']=$reponse;
+    insertQuestionReponse();
+    
+    require "views/faqAdmin.php";
 }
 
 function deconnexion(){

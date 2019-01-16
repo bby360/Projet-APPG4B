@@ -59,7 +59,10 @@ if(isset($_GET["action"])){
         case 'sensorsGestion':
             sensorsGestion();
             break;
-
+            
+        case 'faqAdmin':
+            addQuestionReponse();
+            break;
 
         default:
             notFound();

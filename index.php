@@ -135,6 +135,10 @@ if(isset($_GET["action"])){
         case 'houseList':
             showHouse();
             break;
+        
+        case 'faqAdmin':
+            addQuestionReponse();
+            break;
 
       default:
         notFound();
