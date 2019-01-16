@@ -266,3 +266,14 @@ function getQuestionList(){
 	$req->execute();
     return $req;
 }
+function updateIDHouse()
+{
+
+    session_start();
+    $maison = $_POST["maison"];
+
+    if (isset($_POST["selectionner"])) {
+        $_SESSION['idHouse'] = $maison;
+
+    }
+}

@@ -109,7 +109,7 @@
         <p><input type="checkbox" required name="terms"> J'ai lu et j'accepte les <u> <a href="" id="cgu">conditions générales d'utilisation</a></u></p>
 
         <p>
-            <input type="reset" value="Retour" class="form-button">
+            <input type="button" value="Retour" onclick="history.back()" class="form-button">
             <input type="submit" value="valider" name="inscription" class="form-button">
         </p>
     </form>

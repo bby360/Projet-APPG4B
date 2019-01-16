@@ -140,9 +140,6 @@ if(isset($_GET["action"])){
             sethouse();
             break;
 
-      default:
-        notFound();
-        break;
 
     }
 } else {
