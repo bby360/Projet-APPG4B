@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Gestion des capteurs</title>
-    <link rel="stylesheet" type="text/css" href="designs/css/catalogueAdmin.css" />
+    <link rel="stylesheet" type="text/css" href="designs/css/sensorsGestion.css" />
 </head>
 <body>
 <header>
@@ -14,6 +14,7 @@
 <section>
     <h1> Gestion des capteurs </h1>
 
+    <form method="post" action="indexAdmin.php?action=deleteAlert">
     <table>
 
         <thead>
@@ -31,7 +32,7 @@
         <?php foreach($sensorsG as $sensorsG) { ?>
             <tr>
                 <td>
-                    <?= $client["idClient"];?>
+                    <a href="index.php?action=detailedSensors&id=<?=$client["idClient"];?>">
                 </td>
                 <td>
                     <a href="index.php?action=detailedSensors&id=<?=$sensorsG["idCapteur"];?>"><?= $sensorsG["idCapteur"];?>
@@ -46,7 +47,7 @@
                     <?= $sensorsG["message"];?>
                 </td>
                 <td>
-                    <input type="checkbox" name="delete" value="sensors"><br>
+                    <input type="checkbox" name="delete" id="delete" value="sensors"><br>
                 </td>
             </tr>
         <?php } ?>
@@ -68,6 +69,7 @@
         </div>
 
     </div>
+    </form>
 
     <script>
         // Get the modal
