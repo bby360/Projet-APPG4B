@@ -16,7 +16,6 @@ function signingup(): bool
         'firstName' => $_POST['firstName'],
         'email'=> $_POST['email'],
         'mdp'=> $pass_hache
-
     ]);
 
     return true;
@@ -79,11 +78,12 @@ function getSensorsGestionList(){
     return $req;
 }
 
-function insertQuestion() {
+function insertQuestionReponse() {
     
         $db = dbConnect();
-        $req = $db->prepare("INSERT INTO faqquestion VALUES ('question');
+        $req = $db->prepare("INSERT INTO faq VALUES (:question, :reponse);
         $req->bindParam("question", $question);
+        $req->bindParam("reponse", $reponse);
         $req->execute();
         $req->closeCursor();
     

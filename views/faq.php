@@ -14,19 +14,16 @@ require 'isConnected.php';
 
 <body>
 <table>
-<tr>
-        <td>
-            <p>Ajouter une question</p>
-        </td>
-    </tr>
-    <tr>
-        <form method="post" action="index.php?action=addTopic">
-            <td>
-                <p>
-                    <label for="subject">Sujet du topic</label> : <input type="text" name="subject" id="subject" />
-                </p>
+<?php foreach($questions as $question) { ?>
+         <tr id='info'>   
+            <td class="faq_question">
+                <p><?= $question["question"];?></p>
+            </td>
+            <td class="faq_reponse">
+                <p><?= $question["reponse"];?></p>
             </td>
         </tr>
+    <?php } ?>
 </table>
 </body>
 
