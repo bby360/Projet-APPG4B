@@ -299,7 +299,15 @@ function posterAlerte(){
     declarerAlerte();
 }
 
-function showHouse(){
+function seeHouse(){
 
     require 'views/houseList.php';
+}
+
+function setHouse(){
+
+   updateIDHouse();
+
+
+   require 'views/houseList.php';
 }
