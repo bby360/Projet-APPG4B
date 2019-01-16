@@ -213,21 +213,29 @@ function getIdTopic($sujet){
     return $req2;
 }
 
-function getConsumptionP(){
+function getConsumptionP($idClient){
     $db = dbConnect();
-    $req = $db->query("SELECT SUM(consommation)AS 'CSumP' FROM capteur WHERE type='Présence' ");
+    $req = $db->prepare("SELECT SUM(consommation)AS 'CSumP' FROM capteur JOIN room ON capteur.idRoom=room.idRoom JOIN house ON room.idHouse=house.idHouse WHERE type='Présence' AND house.idClient=: idClient");
+    $req->bindParam("idClient",$idClient);
+    $req->execute();
     return $req;
 }
 
-function getConsumptionT(){
+function getConsumptionT($idClient){
     $db = dbConnect();
-    $req = $db->query("SELECT SUM(consommation)AS 'CSumT' FROM capteur WHERE type='Température' ");
+    //$req = $db->query("SELECT SUM(consommation)AS 'CSumT' FROM capteur WHERE type='Température' ");
+    $req = $db->prepare("SELECT SUM(consommation)AS 'CSumT' FROM capteur JOIN room ON capteur.idRoom=room.idRoom JOIN house ON room.idHouse=house.idHouse WHERE type='Température' AND house.idClient=: idClient");
+    $req->bindParam("idClient",$idClient);
+    $req->execute();
     return $req;
 }
 
-function getConsumptionL(){
+function getConsumptionL($idClient){
     $db = dbConnect();
-    $req = $db->query("SELECT SUM(consommation)AS 'CSumL' FROM capteur WHERE type='Luminosité' ");
+    //$req = $db->query("SELECT SUM(consommation)AS 'CSumL' FROM capteur WHERE type='Luminosité' ");
+    $req = $db->prepare("SELECT SUM(consommation)AS 'CSumL' FROM capteur JOIN room ON capteur.idRoom=room.idRoom JOIN house ON room.idHouse=house.idHouse WHERE type='Luminosité' AND house.idClient=: idClient");
+    $req->bindParam("idClient",$idClient);
+    $req->execute();
     return $req;
 }
 
@@ -248,3 +256,13 @@ function insertAlerte($idCapteur,$type,$message){
     $req->execute();
     $req->closeCursor();
 }
+
+function updateIDHouse(){
+
+    session_start();
+    $maison=$_POST["maison"];
+
+    if(isset($_POST["selectionner"])){
+        $_SESSION['idHouse']=$maison;
+
+    }

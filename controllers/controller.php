@@ -264,9 +264,13 @@ function addMessageTopic($subject,$pseudo,$message){
 }
 
 function consumption(){
-    $capteursP = getConsumptionP()->fetchAll();
-    $capteursT = getConsumptionT()->fetchAll();
-    $capteursL = getConsumptionL()->fetchAll();
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    $idClient=$_SESSION['idClient'];
+    $capteursP = getConsumptionP($idClient)->fetchAll();
+    $capteursT = getConsumptionT($idClient)->fetchAll();
+    $capteursL = getConsumptionL($idClient)->fetchAll();
     require "views/consumption.php";
 }
 
@@ -295,7 +299,15 @@ function posterAlerte(){
     declarerAlerte();
 }
 
-function showHouse(){
+function seeHouse(){
 
     require 'views/houseList.php';
+}
+
+function setHouse(){
+
+   updateIDHouse();
+
+
+   require 'views/houseList.php';
 }

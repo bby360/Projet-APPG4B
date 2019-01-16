@@ -132,13 +132,20 @@ if(isset($_GET["action"])){
             posterAlerte();
             break;
 
-        case 'houseList':
-            showHouse();
+        case 'seeHouse':
+            seeHouse();
             break;
         
         case 'faqAdmin':
             addQuestionReponse();
             break;
+
+        case 'setHouse':
+            sethouse();
+            break;
+      default:
+        notFound();
+        break;
 
       default:
         notFound();
