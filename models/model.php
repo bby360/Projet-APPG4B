@@ -257,12 +257,14 @@ function insertAlerte($idCapteur,$type,$message){
     $req->closeCursor();
 }
 
-function updateIDHouse(){
+function updateIDHouse()
+{
 
     session_start();
-    $maison=$_POST["maison"];
+    $maison = $_POST["maison"];
 
-    if(isset($_POST["selectionner"])){
-        $_SESSION['idHouse']=$maison;
+    if (isset($_POST["selectionner"])) {
+        $_SESSION['idHouse'] = $maison;
 
     }
+}

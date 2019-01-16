@@ -38,11 +38,12 @@
                 
 
             </table>
-
+            <input type="button" value="Retour" onclick="history.back()" class="form-button">
             <input type="submit" value="valider" name="connexion" class="form-button">
         </form>
 
         <p>
+
                 <button ><a href="index.php?action=signup"> S'inscrire</a> </button>
 
 

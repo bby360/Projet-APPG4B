@@ -147,9 +147,6 @@ if(isset($_GET["action"])){
         notFound();
         break;
 
-      default:
-        notFound();
-        break;
 
     }
 } else {

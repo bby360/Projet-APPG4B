@@ -20,11 +20,6 @@ session_start();
 
     <?php
     $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
-
-    if (!$bdd) {
-        die("Connection failed: " . !$bdd);
-    }
-
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
     $result = $bdd->query($sql);
 
