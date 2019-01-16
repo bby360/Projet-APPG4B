@@ -74,7 +74,13 @@ function insertSensors(){
 
 function getSensorsGestionList(){
     $db = dbConnect();
-    $req = $db->query("SELECT * FROM catalogue ORDER BY (typeProduct)");
+    $req = $db->query("SELECT * FROM capteur");
+    return $req;
+}
+
+function getClientId(){
+    $db =dbConnect();
+    $req = $db->query("SELECT idClient FROM house JOIN room ON house.idHouse=roo.idHouse JOIN capteur ON room.idRoom=capteur.idRoom");
     return $req;
 }
 

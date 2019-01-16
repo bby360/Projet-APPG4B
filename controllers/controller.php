@@ -288,7 +288,7 @@ function commenterAlerte(){
 }
 
 function posterAlerte(){
-    $idCapteur = $_GET['capteur'];
+    $idCapteur = $_GET['idCapteur'];
     $type = $_POST['typeAlerte'];
     $message = $_POST['commentaire'];
     insertAlerte($idCapteur,$type,$message);
