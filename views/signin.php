@@ -43,7 +43,7 @@
         </form>
 
         <p>
-                <button href="index.php?action=signup" class="button"> S'inscrire </button>
+                <button ><a href="index.php?action=signup"> S'inscrire</a> </button>
 
 
 
