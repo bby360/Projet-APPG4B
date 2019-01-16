@@ -256,3 +256,13 @@ function insertAlerte($idCapteur,$type,$message){
     $req->execute();
     $req->closeCursor();
 }
+
+function updateIDHouse(){
+
+    session_start();
+    $maison=$_POST["maison"];
+
+    if(isset($_POST["selectionner"])){
+        $_SESSION['idHouse']=$maison;
+
+    }
