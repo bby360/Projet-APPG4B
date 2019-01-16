@@ -213,29 +213,21 @@ function getIdTopic($sujet){
     return $req2;
 }
 
-function getConsumptionP($idClient){
+function getConsumptionP(){
     $db = dbConnect();
-    $req = $db->prepare("SELECT SUM(consommation)AS 'CSumP' FROM capteur JOIN room ON capteur.idRoom=room.idRoom JOIN house ON room.idHouse=house.idHouse WHERE type='Présence' AND house.idClient=: idClient");
-    $req->bindParam("idClient",$idClient);
-    $req->execute();
+    $req = $db->query("SELECT SUM(consommation)AS 'CSumP' FROM capteur WHERE type='Présence' ");
     return $req;
 }
 
-function getConsumptionT($idClient){
+function getConsumptionT(){
     $db = dbConnect();
-    //$req = $db->query("SELECT SUM(consommation)AS 'CSumT' FROM capteur WHERE type='Température' ");
-    $req = $db->prepare("SELECT SUM(consommation)AS 'CSumT' FROM capteur JOIN room ON capteur.idRoom=room.idRoom JOIN house ON room.idHouse=house.idHouse WHERE type='Température' AND house.idClient=: idClient");
-    $req->bindParam("idClient",$idClient);
-    $req->execute();
+    $req = $db->query("SELECT SUM(consommation)AS 'CSumT' FROM capteur WHERE type='Température' ");
     return $req;
 }
 
-function getConsumptionL($idClient){
+function getConsumptionL(){
     $db = dbConnect();
-    //$req = $db->query("SELECT SUM(consommation)AS 'CSumL' FROM capteur WHERE type='Luminosité' ");
-    $req = $db->prepare("SELECT SUM(consommation)AS 'CSumL' FROM capteur JOIN room ON capteur.idRoom=room.idRoom JOIN house ON room.idHouse=house.idHouse WHERE type='Luminosité' AND house.idClient=: idClient");
-    $req->bindParam("idClient",$idClient);
-    $req->execute();
+    $req = $db->query("SELECT SUM(consommation)AS 'CSumL' FROM capteur WHERE type='Luminosité' ");
     return $req;
 }
 
@@ -257,12 +249,20 @@ function insertAlerte($idCapteur,$type,$message){
     $req->closeCursor();
 }
 
-function updateIDHouse(){
 
-    session_start();
-    $maison=$_POST["maison"];
+function insertQuestionReponse($question,$reponse) {
 
-    if(isset($_POST["selectionner"])){
-        $_SESSION['idHouse']=$maison;
+    $db = dbConnect();
+    $req = $db->prepare("INSERT INTO faq VALUES('',:question, :reponse)");
+    $req->bindParam("question", $question);
+    $req->bindParam("reponse", $reponse);
+    $req->execute();
+    
+}
 
-    }
+function getQuestionList(){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT * FROM faq ");
+	$req->execute();
+    return $req;
+}

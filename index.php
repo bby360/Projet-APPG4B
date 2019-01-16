@@ -117,7 +117,7 @@ if(isset($_GET["action"])){
             break;
             
         case 'faq':
-            faq();
+            seeQuestion();
             break;
 		    
 	 case 'declarerAlerte':
@@ -135,17 +135,10 @@ if(isset($_GET["action"])){
         case 'seeHouse':
             seeHouse();
             break;
-        
-        case 'faqAdmin':
-            addQuestionReponse();
-            break;
 
         case 'setHouse':
             sethouse();
             break;
-      default:
-        notFound();
-        break;
 
       default:
         notFound();

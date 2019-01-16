@@ -18,6 +18,7 @@
                 <li><a href="indexAdmin.php?action=clients">Clients</a>
                 <li><a href="indexAdmin.php?action=catalogueAdmin">Catalogue</a>
                 <li><a href="indexAdmin.php?action=sensorsGestion">Gestion des capteurs</a>
+                <li><a href="indexAdmin.php?action=faqAdmin">Gestion FAQ</a>
 
 
                 <li><a href="indexAdmin.php?action=deconnexion">Déconnexion</a></li>

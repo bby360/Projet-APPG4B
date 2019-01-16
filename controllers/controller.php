@@ -237,13 +237,11 @@ function contactUrgence(){
 }
 
 function addMessage(){
-
         $pseudo=$_POST["pseudo"];
         $message=$_POST["message"];
         $idTopic=$_GET["idTopic"];
         insertMessage($idTopic,$pseudo,$message);
         seeMessageForum();
-
 }
 
 function addTopic(){
@@ -264,19 +262,29 @@ function addMessageTopic($subject,$pseudo,$message){
 }
 
 function consumption(){
-    if(!isset($_SESSION)){
-        session_start();
-    }
-    $idClient=$_SESSION['idClient'];
-    $capteursP = getConsumptionP($idClient)->fetchAll();
-    $capteursT = getConsumptionT($idClient)->fetchAll();
-    $capteursL = getConsumptionL($idClient)->fetchAll();
+    $capteursP = getConsumptionP()->fetchAll();
+    $capteursT = getConsumptionT()->fetchAll();
+    $capteursL = getConsumptionL()->fetchAll();
     require "views/consumption.php";
 }
 
-function faq() {
-    require "views/faq.php";
+function addQuestionReponse(){
+    $question=$_POST['question'];
+    $reponse=$_POST['reponse'];
+
+    if (!(empty($_POST['question'])) && !(empty($_POST['reponse']))) {
+    insertQuestionReponse($question,$reponse);
+    }
+    require "views/faqAdmin.php";
 }
+
+function seeQuestion()
+ {
+    $questions =getQuestionList()->fetchAll();
+
+    require "views/faq.php";
+ }
+
 
 function declarerAlerte(){
     if(!isset($_SESSION)) {
@@ -292,22 +300,15 @@ function commenterAlerte(){
 }
 
 function posterAlerte(){
-    $idCapteur = $_GET['idCapteur'];
+    $idCapteur = $_GET['capteur'];
     $type = $_POST['typeAlerte'];
     $message = $_POST['commentaire'];
     insertAlerte($idCapteur,$type,$message);
     declarerAlerte();
 }
 
-function seeHouse(){
+function showHouse(){
 
     require 'views/houseList.php';
 }
 
-function setHouse(){
-
-   updateIDHouse();
-
-
-   require 'views/houseList.php';
-}

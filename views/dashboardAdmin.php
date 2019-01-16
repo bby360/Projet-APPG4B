@@ -22,7 +22,7 @@
         </a>
     </div>
 
-    <div class="faq"><a href="indexAdmin.php?action=faqAdmin.php">
+    <div class="faq"><a href="indexAdmin.php?action=faqAdmin">
             <div class="text">
                 <p>FAQ</p>
             </div>

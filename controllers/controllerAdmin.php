@@ -123,12 +123,21 @@ function addedSensors(){
 
 
 function addQuestionReponse(){
-    $_POST['question']=$question;
-    $_POST['reponse']=$reponse;
-    insertQuestionReponse();
-    
+    $question=$_POST['question'];
+    $reponse=$_POST['reponse'];
+
+    if (!(empty($_POST['question'])) && !(empty($_POST['reponse']))) {
+    insertQuestionReponse($question,$reponse);
+    }
     require "views/faqAdmin.php";
 }
+
+function seeQuestion()
+ {
+    $questions =getQuestionList()->fetchAll();
+
+    require "views/faq.php";
+ }
 
 function deconnexion(){
     require "views/welcome.php";

@@ -19,10 +19,10 @@ include 'headerAdmin.php';
         </td>
     </tr>
     <tr>
-        <form method="post" action="">
+        <form method="post" action="indexAdmin.php?action=faqAdmin">
             <td>
                 <p>
-                    <label for="quesstion">Question</label> : <input type="text" name="question"/>
+                    <label for="question">Question</label> : <input type="text" name="question"/>
                 </p>
             </td>
             <td>
@@ -31,6 +31,9 @@ include 'headerAdmin.php';
                 </p>
             </td>
         </tr>
+        <div id="envoyer">
+                    <input type="submit" value="Ajouter" />
+                </div>
         </form>
 </table>
 </body>

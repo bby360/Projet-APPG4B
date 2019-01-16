@@ -7,7 +7,7 @@ $(document).ready(function() {
             $(this).closest('.faq').removeClass('open');
  
             }else{
-                var newHeight =$(this).closest('.faq').find('.faq_answer').height() +'px';
+                var newHeight =$(this).closest('.faq').find('.faq_reponse').height() +'px';
                 $(this).closest('.faq').find('.faq_answer_container').animate({'height':newHeight},500);
                 $(this).closest('.faq').addClass('open');
             }
