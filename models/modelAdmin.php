@@ -84,13 +84,16 @@ function getClientId(){
     return $req;
 }
 
-function insertQuestionReponse() {
-    
-        $db = dbConnect();
-        $req = $db->prepare("INSERT INTO faq VALUES (:question, :reponse);
-        $req->bindParam("question", $question);
-        $req->bindParam("reponse", $reponse);
-        $req->execute();
-        $req->closeCursor();
+/* function insertQuestionReponse() {
+
+    $db = dbConnect();
+    $_POST['question']=$question;
+    $_POST['reponse']=$reponse;
+    $req = $db->prepare("INSERT INTO faq VALUES (:question, :reponse);
+    $req->bindParam("question", $question);
+    $req->bindParam("reponse", $reponse);
+    $req->execute();
+    $req->closeCursor();
     
 }
+ */
