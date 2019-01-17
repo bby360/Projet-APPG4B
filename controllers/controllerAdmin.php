@@ -134,7 +134,7 @@ function addQuestionReponse(){
 
 function seeQuestion()
  {
-    $questions =getQuestionList()->fetchAll();
+    $questions=getQuestionList()->fetchAll();
 
     require "views/faq.php";
  }

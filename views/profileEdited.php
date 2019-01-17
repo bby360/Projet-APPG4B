@@ -122,7 +122,7 @@ else{
     </head>
     
     <header>
-        <?php require 'headerAdmin.php'?>
+        <?php require 'header.php'?>
     </header>
     
     <body>
