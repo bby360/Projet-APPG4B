@@ -63,7 +63,31 @@ if(isset($_GET["action"])){
         case 'faqAdmin':
             addQuestionReponse();
             break;
+        
+         case 'forum':
+            seeForum();
+            break;
 
+        case 'messageForum':
+            seeMessageForum();
+            break;
+            
+        case 'addMessage':
+            addMessage();
+            break;
+
+        case 'addTopic':
+            addTopic();
+            break;
+
+        case 'supMessage':
+            supMessage();
+            break;
+
+        case 'supTopic':
+            supTopic();
+            break;
+            
         default:
             notFound();
             break;
