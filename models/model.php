@@ -141,30 +141,32 @@ function updateMode($mode,$house,$nom) {
     $req->closeCursor();
 }
 
-function updateAuto($a, $b, $c, $d, $e, $f){
+function updateAuto($a, $b, $c, $d, $e, $f, $g){
     $db = dbConnect();
     $req = $db->prepare('UPDATE room
-                            SET lumAuto=:nvLumiereAuto, blindOpenTime=:nvOuvertureVolets, blindCloseTime=:nvFermetureVolets, tempAuto=:nvTemperature WHERE idHouse= :idHouse AND roomName= :nvNom');
+                            SET lumAuto=:nvLumiereAuto, blindOpenTime=:nvOuvertureVolets, blindCloseTime=:nvFermetureVolets, tempAuto=:nvTemperature, lum=:nvLum WHERE idHouse= :idHouse AND roomName= :nvNom');
     $req->bindParam("idHouse", $a);
     $req->bindParam("nvNom", $b);
     $req->bindParam("nvLumiereAuto", $c);
     $req->bindParam("nvOuvertureVolets", $d);
     $req->bindParam("nvFermetureVolets", $e);
     $req->bindParam("nvTemperature", $f);
+    $req->bindParam("nvLum", $g);
     $req->execute();
     $req->closeCursor();
 }
 
-function updateManu($a, $b, $c, $d, $e){
+function updateManu($a, $b, $c, $d, $e, $f){
     $db = dbConnect();
     $req = $db->prepare('UPDATE room 
-						SET lumManu=:nvLumiereManu, voletsManu=:nvVoletsManu, tempManu=:nvTemperature
+						SET lumManu=:nvLumiereManu, voletsManu=:nvVoletsManu, tempManu=:nvTemperature, lum=:nvLum
 						 WHERE idHouse= :idHouse AND roomName= :nvNom');
     $req->bindParam("idHouse", $a);
     $req->bindParam("nvNom", $b);
     $req->bindParam("nvLumiereManu", $c);
     $req->bindParam("nvVoletsManu", $d);
     $req->bindParam("nvTemperature", $e);
+    $req->bindParam("nvLum", $f);
     $req->execute();
     $req->closeCursor();
 }
