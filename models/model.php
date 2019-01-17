@@ -249,7 +249,6 @@ function insertAlerte($idCapteur,$type,$message){
     $req->closeCursor();
 }
 
-<<<<<<< HEAD
 
 function insertQuestionReponse($question,$reponse) {
 
@@ -267,8 +266,6 @@ function getQuestionList(){
 	$req->execute();
     return $req;
 }
-=======
->>>>>>> 8d51cf52d8ced9eb8a0a66ef7063275d7f4229c5
 function updateIDHouse()
 {
 
