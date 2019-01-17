@@ -243,16 +243,23 @@ function contactUrgence(){
 }
 
 function addMessage(){
-        $pseudo=$_POST["pseudo"];
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+        $pseudo=$_SESSION["firstName"];
         $message=$_POST["message"];
         $idTopic=$_GET["idTopic"];
         insertMessage($idTopic,$pseudo,$message);
         seeMessageForum();
+
 }
 
 function addTopic(){
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+        $pseudo=$_SESSION["firstName"];
         $subject=$_POST["subject"];
-        $pseudo=$_POST["pseudo"];
         $message=$_POST["message"];
         insertTopic($subject);
         addMessageTopic($subject,$pseudo,$message);
@@ -298,6 +305,18 @@ function declarerAlerte(){
     }
     $house = "5";//$_SESSION['idHouse'];
     $capteurs = getCapteur($house) -> fetchAll();
+    $roomNames = Array();
+    $typeCapteurs = Array();
+    $idCapteurs = Array();
+    foreach ($capteurs as $capteur){
+        $typeCapteurs[]= $capteur['type'];
+        $idCapteurs[]= $capteur['idCapteur'];
+        $room=$capteur['idRoom'];
+        $roomName = getRoomName($room)-> fetchAll();
+        foreach ($roomName as $r){
+        $roomNames[]=$r['roomName'];
+       }
+    }
     require "views/declarerAlerte.php";
 }
 
