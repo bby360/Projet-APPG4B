@@ -5,7 +5,9 @@ html, body{
     width: 100%;
     width: 100%;
 }
-
+.header{
+    z-index: 200;
+}
 #fond {
     position: absolute;
     top: 0;
@@ -19,12 +21,12 @@ html, body{
 #menuvertical {
     position: relative;
     width: 16%;
-    margin-left: 42%;
+    margin-left: 39%;
     height: 30px;
     list-style-type: none ;
     margin-top:2%;
     padding: 0px;
-    z-index: 200;
+    z-index: 20;
 
 }
 
@@ -113,7 +115,7 @@ html, body{
     position: relative;
     font-size: 90%;
     margin-top: 3%;
-    margin-left: 23%;
+    margin-left: 8%;
 }
 
 #ouverture_volets{
@@ -134,7 +136,7 @@ html, body{
     position: relative;
     font-size: 90%;
     margin-top: 3%;
-    margin-left: 23%;
+    margin-left: 28%;
 }
 
 #fermeture_volets{
@@ -185,4 +187,68 @@ html, body{
 #valider input{
 
     font-size: 100%;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 5%;
+    height: 2%;
+    margin-left: 13%;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 90%;
+    width: 45%;
+    left: 5%;
+    bottom: 7%;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: limegreen;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
