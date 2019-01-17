@@ -33,7 +33,7 @@
                     <?= $sensors["typeProduct"];?>
                 </td>
                 <td>
-                    <?= $sensors["consumption"];?>
+                    <?= $sensors["consumption"];?> kWh
                 </td>
                 <td>
                     <?= $sensors["price"];?>

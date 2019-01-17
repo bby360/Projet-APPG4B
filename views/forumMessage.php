@@ -35,12 +35,9 @@
         </td>
     </tr>
     <tr>
-        <form method="post" action="index.php?action=addMessage&amp;idTopic=<?= $message["idTopic"];?>">
-        <td>
-            <p>
-                <label for="pseudo">Votre pseudo</label> : <input type="text" name="pseudo" id="pseudo" />
-            </p>
-        </td>
+        <form method="post"  name="message" action="index.php?action=addMessage&amp;idTopic=<?= $message['idTopic'];?>" onsubmit="return Confirmer();">
+
+
     </tr>
     <tr>
 
@@ -55,10 +52,25 @@
     <tr>
         <td>
             <div id="repondre">
-                <input type="submit" value="Répondre" />
+                <input type='submit' value='Envoyer'>
             </div>
         </td>
     </tr>
+    </form>
 </table>
 
+<script language='javascript'>
+    function Confirmer()
+    {
+        if (document.message.message.value == "") {
+            alert("Veuillez ajouter un message");
+            return false;
+        }
+        else
+        {
+            message.submit();
+        }
+    }
+
+</script>
 

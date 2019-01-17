@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 16 jan. 2019 à 11:42
+-- Généré le :  jeu. 17 jan. 2019 à 16:25
 -- Version du serveur :  10.1.37-MariaDB
 -- Version de PHP :  7.2.12
 
@@ -34,6 +34,29 @@ CREATE TABLE `admin` (
   `firstName` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `alerte`
+--
+
+CREATE TABLE `alerte` (
+  `idAlert` int(255) NOT NULL,
+  `idCapteur` int(255) NOT NULL,
+  `idRoom` int(255) NOT NULL,
+  `typeAlerte` varchar(1000) NOT NULL,
+  `message` text NOT NULL,
+  `type` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `alerte`
+--
+
+INSERT INTO `alerte` (`idAlert`, `idCapteur`, `idRoom`, `typeAlerte`, `message`, `type`) VALUES
+(1, 1, 6, 'Il est cassé', 'Il y a un bouton rouge qui clignote', ''),
+(2, 4, 8, 'Consommation', 'Je n\'ai plus la consommation pour la luminosité', 'Luminosité');
 
 -- --------------------------------------------------------
 
@@ -76,7 +99,9 @@ CREATE TABLE `catalogue` (
 
 INSERT INTO `catalogue` (`idProduit`, `typeProduct`, `consumption`, `price`) VALUES
 (13, 'Luminosité', '23', '12'),
-(14, 'Présence', '45', '21');
+(16, 'Présence', '3', '45'),
+(17, 'Température', '8', '16'),
+(19, 'Luminosité', '5', '56');
 
 -- --------------------------------------------------------
 
@@ -140,7 +165,9 @@ INSERT INTO `forummessage` (`idMessage`, `idTopic`, `author`, `message`, `date`)
 (13, 1, 'fghfg', 'fghfgh', '2019-01-09 10:48:58'),
 (14, 2, 'klkl', 'klklk', '2019-01-09 10:49:03'),
 (15, 2, 'yti', 'yti', '2019-01-09 10:49:10'),
-(16, 1, 'rzeere', 'ererere', '2019-01-09 10:49:17');
+(16, 1, 'rzeere', 'ererere', '2019-01-09 10:49:17'),
+(17, 3, 'lolilol', 'C nul mdr!', '2019-01-16 15:59:41'),
+(18, 3, 'mdr', 'c toa k nul wesh', '2019-01-16 16:00:16');
 
 -- --------------------------------------------------------
 
@@ -160,7 +187,8 @@ CREATE TABLE `forumtopic` (
 
 INSERT INTO `forumtopic` (`idTopic`, `name`, `creationDate`) VALUES
 (1, 'hfgh', '2019-01-09'),
-(2, 'klkl', '2019-01-09');
+(2, 'klkl', '2019-01-09'),
+(3, 'Coucou', '2019-01-16');
 
 -- --------------------------------------------------------
 
@@ -233,6 +261,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`idAdmin`);
 
 --
+-- Index pour la table `alerte`
+--
+ALTER TABLE `alerte`
+  ADD PRIMARY KEY (`idAlert`);
+
+--
 -- Index pour la table `capteur`
 --
 ALTER TABLE `capteur`
@@ -287,6 +321,12 @@ ALTER TABLE `admin`
   MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `alerte`
+--
+ALTER TABLE `alerte`
+  MODIFY `idAlert` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
@@ -296,7 +336,7 @@ ALTER TABLE `capteur`
 -- AUTO_INCREMENT pour la table `catalogue`
 --
 ALTER TABLE `catalogue`
-  MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `client`
@@ -308,13 +348,13 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT pour la table `forummessage`
 --
 ALTER TABLE `forummessage`
-  MODIFY `idMessage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idMessage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `forumtopic`
 --
 ALTER TABLE `forumtopic`
-  MODIFY `idTopic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idTopic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `house`

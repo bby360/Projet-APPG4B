@@ -139,6 +139,59 @@ function seeQuestion()
     require "views/faq.php";
  }
 
+function seeForum()
+ {
+    $topics =getTopicList()->fetchAll();
+
+    require "views/forumAdmin.php";
+ }
+
+function seeMessageForum()
+{
+    $id= $_GET["idTopic"];
+    $messages =getMessage($id)->fetchAll();
+    require "views/forumMessageAdmin.php";
+}
+
+function addMessage(){
+
+        $pseudo="Balavoine";
+        $message=$_POST["message"];
+        $idTopic=$_GET["idTopic"];
+        insertMessage($idTopic,$pseudo,$message);
+        seeMessageForum();
+
+}
+
+function addTopic(){
+        $subject=$_POST["subject"];
+        $pseudo="Balavoine";
+        $message=$_POST["message"];
+        insertTopic($subject);
+        addMessageTopic($subject,$pseudo,$message);
+        seeForum();
+}
+
+function addMessageTopic($subject,$pseudo,$message){
+    $ids =getIdTopic($subject) -> fetchAll();
+    foreach($ids as $id) {
+        $idTopic=$id['idTopic'];
+    }
+    insertMessage($idTopic,$pseudo,$message);
+}
+
+function supMessage(){
+    $idMessage=$_POST['select'];
+    suppMessage($idMessage);
+    seeForum();
+}
+
+function supTopic(){
+    $idTopic=$_POST['select'];
+    suppTopic($idTopic);
+    seeForum();
+}
+
 function deconnexion(){
     require "views/welcome.php";
 }

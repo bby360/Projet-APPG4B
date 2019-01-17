@@ -8,9 +8,10 @@
 </head>
 <body>
 	<header>
-      <?php include("header.php"); ?>
+      <?php include("headerAdmin.php"); ?>
   </header>
     <table>
+         
     <tr>
         <td class="sujet1">
             <p>Sujet</p>
@@ -18,27 +19,32 @@
         <td class="date">
             <p>Date de création</p>
         </td>
-        <td class="date">
-            <p>Crée par</p>
-        </td>
+        
     </tr>
     </table>
   <table>
     <?php foreach($topics as $topic) { ?>
-
+    <form method="post" action="indexAdmin.php?action=supTopic" name="supprimer">
     <tr>
+        <td id="select">
+               <input type="checkbox" name="select" value='<?= $topic["idTopic"];?>' id="select">
+            </td> 
         <td class="sujet">
-            <p><a href="index.php?action=messageForum&amp;idTopic=<?= $topic["idTopic"];?>"><?= $topic["name"];?></a></p>
+            <p><a href="indexAdmin.php?action=messageForum&amp;idTopic=<?= $topic["idTopic"];?>"><?= $topic["name"];?></a></p>
         </td>
         <td class="date">
             <p><?= $topic["creationDate"];?></p>
         </td>
-        <td class="date">
-            <p><?= $topic["creationDate"];?></p>
-        </td>
+       
     </tr>
     <?php } ?>
+
+
   </table>
+    <div id="valider">
+        <input type='button' value='Confirmer' onClick='Confirmer()'>
+    </div>
+    </form>
     <table id="ajout">
     <tr>
         <td>
@@ -46,12 +52,10 @@
         </td>
     </tr>
     <tr>
-        <form method="post" name="topic" action="index.php?action=addTopic" onsubmit="return Confirmer();">
-
+        <form method="post" action="indexAdmin.php?action=addTopic">
             <td>
                 <p>
-                    <label for="subject">Sujet du topic</label>
-                    <input type="text" name="subject" id="subject" />
+                    <label for="subject">Sujet du topic</label> : <input type="text" name="subject" id="subject" />
                 </p>
             </td>
         </tr>
@@ -74,7 +78,7 @@
             </td>
         </tr>
     </table>
-
+    </form>
 
 
 </body>
@@ -82,19 +86,9 @@
 <script language='javascript'>
     function Confirmer()
     {
-        if (document.topic.subject.value == "") {
-
-            alert("Veuillez ajouter un sujet");
-            return false;
-        }
-        else if (document.topic.message.value == "") {
-
-            alert("Veuillez ajouter un message");
-            return false;
-        }
-        else
+        if (confirm("Souhaitez-vous vraiment supprimer ce topic ?"))
         {
-            topic.submit();
+            supprimer.submit();
         }
     }
 

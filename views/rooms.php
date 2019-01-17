@@ -15,6 +15,8 @@
 <section>
 
 
+
+
     <ul id="menuvertical">
         <li ><a href="#"><?php echo $_GET['piece']; ?></a>
             <ul>
@@ -31,9 +33,7 @@
     <form action="index.php?action=updateRoom&piece=<?php echo $_GET['piece']; ?>" method="post">
 
         <div id="mode">
-
-
-            <p>Mode de gestion de la pièce : <br></p>
+        <p>Mode de gestion de la pièce : <br></p>
             <input type="radio" name="mode" value="Auto" id="automatique" <?php foreach($infos as $info) { if ($info['mode'] == 'Auto'){ echo 'checked="checked"';} }?>>  <label for="automatique">Automatique</label>
             <input type="radio" name="mode" value="Manuel" id="manuel" <?php  foreach($infos as $info) { if ($info['mode'] == 'Manuel'){ echo 'checked="checked"';} }?>> <label for="manuel">Manuel</label>
 
@@ -42,6 +42,13 @@
         <div id="lumiere_auto">
             Luminosité &nbsp &nbsp
             0% <input type="range" name="lumiere_auto" value=<?php foreach($infos as $info) { echo $info['lumAuto']; }?> max="100" min="0" step="5"> 100%
+
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input type="checkbox" name='onOff' value="1" <?php foreach($infos as $info) { if ($info['lum'] == '1'){ echo 'checked="checked"';} }?> />
+                <span class="slider round"></span>
+            </label>
+
             <div id="lumiere_manuel">
                 Luminosité &nbsp &nbsp
                 0% <input type="range" name="lumiere_manuel" value=<?php foreach($infos as $info) { echo $info['lumManu']; }?> max="100" min="0" step="5"/>100%
@@ -84,3 +91,11 @@
 
 </body>
 </html>
+
+<!-- <form name="lumiere" id="lumiere" method="post" action="index.php?action=updateLum">
+            <label class="switch">
+                <input type="checkbox" name='onOff' value="1" onchange="this.lumiere.submit();"/>
+                <span class="slider round"></span>
+            </label>
+            </form> -->
+
