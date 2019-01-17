@@ -133,7 +133,7 @@ if(isset($_GET["action"])){
             break;
 
         case 'seeHouse':
-            seeHouse();
+            showHouse();
             break;
 
         case 'setHouse':
