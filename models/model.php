@@ -279,3 +279,11 @@ function updateIDHouse()
 
     }
 }
+
+function getRoomName($room){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT * FROM room WHERE idRoom= :room ");
+    $req->bindParam("room", $room);
+    $req->execute();
+    return $req;
+}
