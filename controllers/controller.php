@@ -150,6 +150,12 @@ function updateRoom(){
     if(!isset($_SESSION)) {
      session_start();
 }
+    if(isset($_POST["onOff"])) {
+        $lum=$_POST['onOff'];
+    }
+    else{
+        $lum="0";
+    }
     $idClient=$_SESSION['idClient'];
     $idHouse= '5';//$_SESSION['idHouse'];
     $nom =$_GET['piece'];
@@ -160,14 +166,14 @@ function updateRoom(){
     $nvVoletsManu=$_POST['volets_manuel'];
     $nvTemperature=$_POST['temperature'];
     $nvLumiereManu=$_POST['lumiere_manuel'];
-
+   // $lum=$_POST['onOff'];
     updateMode($nvMode, $idHouse, $nom);
 
     if($nvMode =='Auto'){
-        updateAuto($idHouse, $nom, $nvLumiereAuto, $nvOuvertureVolets, $nvFermetureVolets, $nvTemperature);
+        updateAuto($idHouse, $nom, $nvLumiereAuto, $nvOuvertureVolets, $nvFermetureVolets, $nvTemperature, $lum);
     }
     else{
-        updateManu($idHouse, $nom, $nvLumiereManu, $nvVoletsManu, $nvTemperature);
+        updateManu($idHouse, $nom, $nvLumiereManu, $nvVoletsManu, $nvTemperature, $lum);
     }
 
     roomList2();
