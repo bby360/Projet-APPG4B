@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 16 jan. 2019 à 11:42
+-- Généré le :  lun. 14 jan. 2019 à 18:13
 -- Version du serveur :  10.1.37-MariaDB
 -- Version de PHP :  7.2.12
 
@@ -32,7 +32,8 @@ CREATE TABLE `admin` (
   `idAdmin` int(11) NOT NULL,
   `lastName` varchar(255) NOT NULL,
   `firstName` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `mdp` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -45,17 +46,18 @@ CREATE TABLE `capteur` (
   `idCapteur` int(11) NOT NULL,
   `idRoom` int(11) NOT NULL,
   `consommation` int(11) NOT NULL,
-  `type` varchar(255) NOT NULL
+  `type` varchar(255) NOT NULL,
+  `typeAlerte` text,
+  `message` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `capteur`
 --
 
-INSERT INTO `capteur` (`idCapteur`, `idRoom`, `consommation`, `type`) VALUES
-(1, 6, 22, 'Luminosité'),
-(2, 6, 22, 'Température'),
-(4, 6, 28, 'Luminosité');
+INSERT INTO `capteur` (`idCapteur`, `idRoom`, `consommation`, `type`, `typeAlerte`, `message`) VALUES
+(1, 6, 22, 'Luminosité', 'je l\'ai cassé', 'dommage'),
+(2, 6, 22, 'temperature', '', '');
 
 -- --------------------------------------------------------
 
@@ -75,8 +77,9 @@ CREATE TABLE `catalogue` (
 --
 
 INSERT INTO `catalogue` (`idProduit`, `typeProduct`, `consumption`, `price`) VALUES
-(13, 'Luminosité', '23', '12'),
-(14, 'Présence', '45', '21');
+(1, 'Température', '80', '6,99'),
+(2, 'Présence', '160', '12,49'),
+(3, 'Luminosité', '120', '12.99');
 
 -- --------------------------------------------------------
 
@@ -115,8 +118,7 @@ INSERT INTO `client` (`idClient`, `lastName`, `firstName`, `email`, `phone`, `ad
 (16, 'b', 'b', 'b@b.com', '1', 'b', '$2y$10$0bYk.2NV2fam/g4W0w.FCOErdIjhde/B6bh6.Ios8wxzBYbEkRO1S', 1, '1', '', 'b'),
 (17, 'gabriel', 'astieres', 'gabriel.astieres@gmail.com', '0615434238', '115 route du plan de la tour, villa 64 parc de ste Maxime', '$2y$10$545YzgDhhq06xI9nTmsTleS.7yA32YWhNrkpNglQYCdmTmn5N.PTu', 83120, '', '', 'France'),
 (18, 'sdfsd', 'sdfs', 'sdfasdheilly@gmail.com', '56456', 'dsfgsd', '$2y$10$LzxdZu0NT19V1J2MDabBAO4HoJ2J/E7P2Kyu16CKUNB0enldpGFl.', 654, '5646', NULL, 'dfgdfg'),
-(19, 'd\'Heilly', 'Mathias', 'mathiasdheilly@gmail.com', '0645454545', '123 dsfgdf', '$2y$10$7PiRszbB7yPUQHD496ov..GhpE4/CRyZuHeFGfEISq/x4lsG26ajW', 92150, '', NULL, 'france'),
-(20, 'Bocquier', 'Anaïs', 'anais.bocquier@free.fr', '01', '34', '$2y$10$M5R6ijYzYzmfO3PeA9gqduHLKVOZEbBz5s7enU8EXv/srhGI5reFC', 23, '23', NULL, 'FRANCE');
+(19, 'd\'Heilly', 'Mathias', 'mathiasdheilly@gmail.com', '0645454545', '123 dsfgdf', '$2y$10$7PiRszbB7yPUQHD496ov..GhpE4/CRyZuHeFGfEISq/x4lsG26ajW', 92150, '', NULL, 'france');
 
 -- --------------------------------------------------------
 
@@ -217,7 +219,7 @@ INSERT INTO `room` (`idRoom`, `idHouse`, `roomName`, `surface`, `mode`, `tempAut
 (3, 3, 'garage', 20, 'automatique', 0, 0, 0, 0, NULL, NULL, 0),
 (4, 3, 'garage', 20, 'automatique', 0, 0, 0, 0, NULL, NULL, 1),
 (5, 4, 'oui', 22, 'Auto', 22, 22, 22, 22, '22:22:00', '23:23:00', 22),
-(6, 5, 'chambre', 22, 'Manuel', 0, 0, 20, 100, '22:22:00', '22:23:00', 100),
+(6, 5, 'chambre', 22, 'Auto', 0, 100, 20, 100, '22:22:00', '22:23:00', 100),
 (7, 5, 'ed', 22, 'Auto', 23232, 100, 25, 100, '05:05:00', '21:11:00', 100),
 (8, 5, 'billy', 22, 'Auto', 14, 0, 100, 0, '12:13:00', '12:14:00', 0),
 (9, 5, 'hugo', 22, 'Auto', 24, 0, 20, 15, '22:23:00', '23:24:00', 15);
@@ -290,19 +292,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `idCapteur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idCapteur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `catalogue`
 --
 ALTER TABLE `catalogue`
-  MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `idClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `forummessage`
