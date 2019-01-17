@@ -46,19 +46,17 @@
         </td>
     </tr>
     <tr>
-        <form method="post" action="index.php?action=addTopic">
+        <form method="post" name="topic" action="index.php?action=addTopic" onsubmit="return Confirmer();">
+
             <td>
                 <p>
-                    <label for="subject">Sujet du topic</label> : <input type="text" name="subject" id="subject" />
+                    <label for="subject">Sujet du topic</label>
+                    <input type="text" name="subject" id="subject" />
                 </p>
             </td>
         </tr>
         <tr>
-            <td>
-                <p>
-                    <label for="pseudo">Votre pseudo</label> : <input type="text" name="pseudo" id="pseudo" />
-                </p>
-            </td>
+
         </tr>
         <tr>
             <td>
@@ -80,3 +78,24 @@
 
 
 </body>
+
+<script language='javascript'>
+    function Confirmer()
+    {
+        if (document.topic.subject.value == "") {
+
+            alert("Veuillez ajouter un sujet");
+            return false;
+        }
+        else if (document.topic.message.value == "") {
+
+            alert("Veuillez ajouter un message");
+            return false;
+        }
+        else
+        {
+            topic.submit();
+        }
+    }
+
+</script>
