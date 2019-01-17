@@ -10,7 +10,7 @@
 <header>
     <?php include("header.php"); ?>
 </header>
- <p> Vous souhaitez déclarer une alerte pour un capteur de type <?= $_GET['capteur'];?> </p>
+ <p> Vous souhaitez déclarer une alerte pour un capteur de type : <?= $_GET['capteur'];?> dans la pièce : <?= $_GET['room'];?>  </p>
 <form action="index.php?action=posterAlerte&idCapteur=<?= $_GET['idCapteur'];?>" method="post" name="alerte">
     <p>
         <label for="typeAlerte">Type d'alerte</label><br />
