@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Ajouter une pièce</title>
-    <link rel="stylesheet" type="text/css" href="designs/css/addRoom.css" />
+    <link rel="stylesheet" type="text/css" href="designs/css/seeRoom.css" />
 
 </head>
 <body>
