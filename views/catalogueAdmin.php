@@ -54,8 +54,7 @@
             </tbody>
 
         </table>
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Supprimer les capteurs séléctionnés</button>
+
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -70,7 +69,8 @@
 
     </div>
     </form>
-
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Supprimer les capteurs séléctionnés</button>
     <script>
         // Get the modal
         var modal = document.getElementById('myModal');
