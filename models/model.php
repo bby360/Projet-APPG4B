@@ -241,12 +241,13 @@ function getCapteur($house){
     return $req;
 }
 
-function insertAlerte($idCapteur,$type,$message){
+function insertAlerte($idCapteur,$idRoom, $type,$message){
     $db = dbConnect();
-    $req = $db->prepare("UPDATE capteur SET typeAlerte = :type ,message =:message WHERE idCapteur = :idCapteur");
-    $req->bindParam("type", $type);
+    $req = $db->prepare("INSERT INTO alerte Values('',:idCapteur,:idRoom, :nvtype , :message)");
+    $req->bindParam("nvtype", $type);
     $req->bindParam("message", $message);
     $req->bindParam("idCapteur", $idCapteur);
+    $req->bindParam("idRoom", $idRoom);
     $req->execute();
     $req->closeCursor();
 }
