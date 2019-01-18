@@ -7,7 +7,18 @@ $requser->execute(array($_SESSION['lastName']));
 $user = $requser->fetch();
 
 
-if ( !empty($_POST['email']) and empty($_POST['phone']) and empty($_POST['emergency'])) {
+$_SESSION['email']=$user['email'];
+$_SESSION['phone']=$user['phone'];
+$_SESSION['emergency']=$user['emergency'];
+
+
+$bdd->prepare('SELECT * FROM client WHERE (email = ?');
+$req->execute(array($_POST['email']));
+$exist = $req->fetchAll();
+if($exist != null){
+    echo'ce mail est déjà pris';
+}
+elseif ( !empty($_POST['email']) and empty($_POST['phone']) and empty($_POST['emergency'])) {
 
     $newemail = htmlspecialchars($_POST['email']);
 
@@ -114,49 +125,40 @@ else{
 ?>
 
 <!DOCTYPE html>
-<div xmlns="http://www.w3.org/1999/html">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="../design/ProfileEdited.css" />
-        <title>Profil</title>
-    </head>
-    
-    <header>
-        <?php require 'header.php'?>
-    </header>
-    
-    <body>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./designs/css/ProfileEdited.css" />
+    <title>Profil</title>
+</head>
 
-    <section>
+<body>
 
-        <p> <h1>Votre profil</h1>
+<section>
 
-        <div id="soussection">
+    <p> <h1>Votre profil</h1>
 
-            <div class="Contact">
+    <div id="soussection">
 
-                <fieldset>
-                    <legend><h2>Vos informations</h2></legend>
-                    <p>
-                    <h3>Nom : <?php /* récupérer le nom de l'utilisateur*/ echo $_SESSION['lastName'];?> </h3>
-                    <h3>Prénom : <?php /* récupérer le prénom de l'utilisateur*/ echo $_SESSION['firstName']; ?> </h3>
-                    <h3>Téléphone : <?php echo $_SESSION['phone']; ?> </h3>
-                    <h3>E-mail : <?php echo $_SESSION['email'];?> </h3>
-                    <h3>Contact d'urgence : <?php echo $_SESSION['emergency'];?> </h3>
-                    </p>
-                </fieldset>
+        <div class="Contact">
 
-            </div>
-
-            <div class=edit>
-                <h4> <a href="index.php?action=editProfile">Modifier votre profil</a></h4>
-            </div>
+            <fieldset>
+                <legend><h2>Vos informations</h2></legend>
+                <p>
+                <h3>Nom : <?php /* récupérer le nom de l'utilisateur*/ echo $_SESSION['lastName'];?> </h3>
+                <h3>Prénom : <?php /* récupérer le prénom de l'utilisateur*/ echo $_SESSION['firstName']; ?> </h3>
+                <h3>Téléphone : <?php echo $_SESSION['phone']; ?> </h3>
+                <h3>E-mail : <?php echo $_SESSION['email'];?> </h3>
+                <h3>Contact d'urgence : <?php echo $_SESSION['emergency'];?> </h3>
+                </p>
+            </fieldset>
 
         </div>
-    </section>
-    
-    <footer>
-        <?php require "footer.php"?>
-    </footer>
 
-    </body>
+        <div class=edit>
+            <h4> <a href="editProfile.php">Modifier votre profil</a></h4>
+        </div>
+
+    </div>
+</section>
+
+</body>

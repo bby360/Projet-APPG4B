@@ -18,7 +18,7 @@
                 <li><a href="index.php?action=profileEdited">Votre profil</a>
                     <ul>
                         <li><a href="index.php?action=editProfile">Modifier mon profil</a></li>
-                        <li><a href="index.php?action=addGuest">Ajouter un invité</a></li>
+                        <!--  <li><a href="index.php?action=addGuest">Ajouter un invité</a></li> !-->
                     </ul>
                 </li>
 

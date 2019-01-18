@@ -3,25 +3,24 @@ session_start();
 ?>
 
 <!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="designs/css/clients.css" />
+        <link rel="stylesheet" type="text/css" href="./designs/css/clients.css" />
         <title>Fichier Clients</title>
+
+        <script type='text/javascript'>
+
+        </script>
+
     </head>
 
-<body>
-    <header>
-        <?php require 'headerAdmin.php'?>
-    </header>
-
-<section>
+    <body>
 
     <h1 id="top">Liste des clients</h1>
 
     <?php
     $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
-    $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
-    $result = $bdd->query($sql);
 
     if (!$bdd) {
         die("Connection failed: " . !$bdd);
@@ -29,6 +28,7 @@ session_start();
 
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
     $result = $bdd->query($sql);
+
     if ($result->rowCount() > 0) {
         echo "<table class='clients'>
         <tr>
@@ -61,20 +61,13 @@ session_start();
                 </form>
                 </td>
                </tr>";
+
         }
         echo "</table>";
     } else {
         echo "0 results";
     }
+
     ?>
     <a href="#top">Go to top</a>
-</section>
-
-
-
-    <footer>
-        <?php require "footer.php"?>
-    </footer>
-
     </body>
-</html>
