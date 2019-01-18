@@ -166,7 +166,7 @@ function updateRoom(){
     $nvVoletsManu=$_POST['volets_manuel'];
     $nvTemperature=$_POST['temperature'];
     $nvLumiereManu=$_POST['lumiere_manuel'];
-   // $lum=$_POST['onOff'];
+   
     updateMode($nvMode, $idHouse, $nom);
 
     if($nvMode =='Auto'){
@@ -308,9 +308,11 @@ function declarerAlerte(){
     $roomNames = Array();
     $typeCapteurs = Array();
     $idCapteurs = Array();
+    $idRooms = Array();
     foreach ($capteurs as $capteur){
         $typeCapteurs[]= $capteur['type'];
         $idCapteurs[]= $capteur['idCapteur'];
+        $idRooms[]= $capteur['idRoom'];
         $room=$capteur['idRoom'];
         $roomName = getRoomName($room)-> fetchAll();
         foreach ($roomName as $r){
@@ -325,10 +327,11 @@ function commenterAlerte(){
 }
 
 function posterAlerte(){
-    $idCapteur = $_GET['capteur'];
+    $idCapteur = $_GET['idCapteur'];
+    $idRoom = $_GET['idRoom'];
     $type = $_POST['typeAlerte'];
     $message = $_POST['commentaire'];
-    insertAlerte($idCapteur,$type,$message);
+    insertAlerte($idCapteur,$idRoom,$type,$message);
     declarerAlerte();
 }
 
