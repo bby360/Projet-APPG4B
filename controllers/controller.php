@@ -340,3 +340,11 @@ function showHouse(){
     require 'views/houseList.php';
 }
 
+function setHouse(){
+
+   updateIDHouse();
+
+
+   require 'views/houseList.php';
+}
+
