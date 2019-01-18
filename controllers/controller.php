@@ -348,3 +348,7 @@ function setHouse(){
    require 'views/houseList.php';
 }
 
+
+function clientProfil(){
+    require 'views/clientProfile';
+}

@@ -194,7 +194,7 @@ else{
         </div>
 
         <div class=edit>
-            <h4> <a href="editProfile.php">Modifier votre profil</a></h4>
+            <h4> <a index.php?action=clientProfil>Modifier votre profil</a></h4>
         </div>
 
     </div>

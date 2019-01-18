@@ -1,11 +1,14 @@
 <?php
 session_start();
 
-include 'header.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+    <?php
+
+    include 'header.php';
+    ?>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="./designs/css/editProfile.css" />
     <title>Editer votre profil</title>
@@ -21,7 +24,7 @@ include 'header.php';
 
     <div id=soussection>
         <div class="Contact">
-            <form method="post" action="views/profileEdited.php">
+            <form method="post" index.php?action="clientProfil">
 
                 <fieldset>
                     <legend><h2>Changer votre contact</h2></legend>

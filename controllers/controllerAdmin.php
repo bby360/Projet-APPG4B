@@ -196,3 +196,7 @@ function supTopic(){
 function deconnexion(){
     require "views/welcome.php";
 }
+
+function infoClient(){
+    require "views/clientProfileAdmin.php";
+}

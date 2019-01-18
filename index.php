@@ -120,7 +120,7 @@ if(isset($_GET["action"])){
             seeQuestion();
             break;
 		    
-	 case 'declarerAlerte':
+	    case 'declarerAlerte':
             declarerAlerte();
             break;
 
@@ -138,6 +138,10 @@ if(isset($_GET["action"])){
 
         case 'setHouse':
             sethouse();
+            break;
+
+        case 'clientProfil':
+            clientProfil();
             break;
 
 

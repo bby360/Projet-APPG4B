@@ -58,7 +58,7 @@ session_start();
                 <td>".htmlspecialchars($row["postalcode"])."</td>
                 <td>".htmlspecialchars($row["emergency"])."</td>
                 <td>
-                <form action='views/clientProfile.php' method='GET'>
+                <form action='indexAdmin.php?action=infoClient' method='GET'>
                     <input type='text' name='idProfil' value='".$row['idClient']."' style='visibility:hidden' class='buttonHidden';>
                     <input type=\"submit\" name='VoirProfil'  value='Voir profil ".$row["idClient"]."' class='button' style=\"vertical-align:middle\">
                 </form>
