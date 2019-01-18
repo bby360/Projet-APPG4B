@@ -106,8 +106,9 @@ function sensorsGestion(){
 }
 
 function deleteSensors(){
-    $delete = deletedSensors();
-    require "views/catalogueAdmin.php";
+    $idSensor=$_POST['delete'];
+    deletedSensors($idSensor);
+    catalogue();
 }
 
 function addedSensors(){
