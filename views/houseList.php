@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="utf-8" />
     <title>Choix de la maison</title>
-    <link rel="stylesheet" type="text/css" href="../designs/css/houseList.css" />
+    <link rel="stylesheet" type="text/css" href="./designs/css/houseList.css" />
 </head>
 
 <img src="../designs/pictures/photo.jpg" id="fond">
@@ -31,7 +31,7 @@ session_start();
 
             $servername = "localhost";
             $username = "root";
-            $password = "root";
+            $password = "";
             $dbname = "domisep";
             $bdd = new mysqli($servername, $username, $password, $dbname);
 
