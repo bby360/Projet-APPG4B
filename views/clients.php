@@ -5,6 +5,9 @@ session_start();
 <!DOCTYPE html>
 <div xmlns="http://www.w3.org/1999/html">
     <head>
+        <?php
+        include 'header.php';
+        ?>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="./designs/css/clients.css" />
         <title>Fichier Clients</title>
