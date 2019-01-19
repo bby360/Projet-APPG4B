@@ -17,7 +17,7 @@
 <section>
 
 
-    <div class="piece"><a href="index.php?action=rooms&amp;piece=salon">
+    <div class="piece"><a href="index.php?action=rooms&amp;piece=Choisir une pièce">
             <div class="text">
                 <p>PIECES</p>
             </div>
