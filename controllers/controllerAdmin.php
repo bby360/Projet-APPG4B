@@ -127,7 +127,7 @@ function deleteAlerte()
     $idAlerte = $_POST['delete'];
     supAlerte($idAlerte);
     sensorsGestion();
-
+}
     function deleteSensors()
     {
         $idSensor = $_POST['delete'];
@@ -233,4 +233,4 @@ function deleteAlerte()
     {
         require "views/clientProfile.php";
     }
-}
+
