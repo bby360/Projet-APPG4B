@@ -100,10 +100,32 @@ function temperatureSensorsUnlog(){
 }
 
 function sensorsGestion(){
-    //$client = getClientId()->fetchAll();
-    $sensorsG = getSensorsGestionList()->fetchAll();
+    $clients[] = Array();
+    $idCapteurs[] = Array();
+    $typeAlertes[] = Array();
+    $idAlertes[] = Array();
+    $messages[] = Array();
+    $sensorsGs = getSensorsGestionList()->fetchAll();
+    foreach ($sensorsGs as $sensorsG) {
+        $idCapteurs[] = $sensorsG['idCapteur'];
+        $typeAlertes[] = $sensorsG['typeAlerte'];
+        $messages[] = $sensorsG['message'];
+        $idAlertes[] = $sensorsG['idAlert'];
+
+        $idRoom=$sensorsG['idRoom'];
+        $client = getClientId($idRoom)->fetchAll();
+        foreach ($client as $c) {
+        $clients[] = $c['idClient'];
+        }
+    }
+   
     require"views/sensorsGestion.php";
 }
+
+function deleteAlerte(){
+    $idAlerte= $_POST['delete'];
+    supAlerte($idAlerte);
+    sensorsGestion();
 
 function deleteSensors(){
     $idSensor=$_POST['delete'];
