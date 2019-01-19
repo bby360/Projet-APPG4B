@@ -5,7 +5,11 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
+    
+        <?php require "header.php"?>
+
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="./design/editProfile.css" />
     <title>Editer votre profil</title>
