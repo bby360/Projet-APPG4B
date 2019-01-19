@@ -153,9 +153,6 @@ elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and !empty($_POST
     }
 
 }
-else{
-    echo 'Veuillez remplir un ou plusieurs champs';
-}
 
 
 ?>
@@ -194,7 +191,8 @@ else{
         </div>
 
         <div class=edit>
-            <h4> <a index.php?action=clientProfil>Modifier votre profil</a></h4>
+
+            <button ><a href="index.php?action=editProfile">Modifier votre profil</a> </button>
         </div>
 
     </div>

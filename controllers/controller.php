@@ -349,6 +349,3 @@ function setHouse(){
 }
 
 
-function clientProfil(){
-    require 'views/clientProfile';
-}

@@ -122,103 +122,115 @@ function sensorsGestion(){
     require"views/sensorsGestion.php";
 }
 
-function deleteAlerte(){
-    $idAlerte= $_POST['delete'];
+function deleteAlerte()
+{
+    $idAlerte = $_POST['delete'];
     supAlerte($idAlerte);
     sensorsGestion();
 
-function deleteSensors(){
-    $idSensor=$_POST['delete'];
-    deletedSensors($idSensor);
-    catalogue();
-}
-
-function addedSensors(){
-
-    if (isset($_POST['typeProduct']) && isset($_POST['consumption']) && isset($_POST['price'])) {
-        insertSensors();
-        exit();
+    function deleteSensors()
+    {
+        $idSensor = $_POST['delete'];
+        deletedSensors($idSensor);
+        catalogue();
     }
 
-    require "views/catalogueAdmin.php";
+    function addedSensors()
+    {
 
-}
+        if (isset($_POST['typeProduct']) && isset($_POST['consumption']) && isset($_POST['price'])) {
+            insertSensors();
+            exit();
+        }
 
+        require "views/catalogueAdmin.php";
 
-function addQuestionReponse(){
-    $question=$_POST['question'];
-    $reponse=$_POST['reponse'];
-
-    if (!(empty($_POST['question'])) && !(empty($_POST['reponse']))) {
-    insertQuestionReponse($question,$reponse);
     }
-    require "views/faqAdmin.php";
-}
 
-function seeQuestion()
- {
-    $questions=getQuestionList()->fetchAll();
 
-    require "views/faq.php";
- }
+    function addQuestionReponse()
+    {
+        $question = $_POST['question'];
+        $reponse = $_POST['reponse'];
 
-function seeForum()
- {
-    $topics =getTopicList()->fetchAll();
+        if (!(empty($_POST['question'])) && !(empty($_POST['reponse']))) {
+            insertQuestionReponse($question, $reponse);
+        }
+        require "views/faqAdmin.php";
+    }
 
-    require "views/forumAdmin.php";
- }
+    function seeQuestion()
+    {
+        $questions = getQuestionList()->fetchAll();
 
-function seeMessageForum()
-{
-    $id= $_GET["idTopic"];
-    $messages =getMessage($id)->fetchAll();
-    require "views/forumMessageAdmin.php";
-}
+        require "views/faq.php";
+    }
 
-function addMessage(){
+    function seeForum()
+    {
+        $topics = getTopicList()->fetchAll();
 
-        $pseudo="Balavoine";
-        $message=$_POST["message"];
-        $idTopic=$_GET["idTopic"];
-        insertMessage($idTopic,$pseudo,$message);
+        require "views/forumAdmin.php";
+    }
+
+    function seeMessageForum()
+    {
+        $id = $_GET["idTopic"];
+        $messages = getMessage($id)->fetchAll();
+        require "views/forumMessageAdmin.php";
+    }
+
+    function addMessage()
+    {
+
+        $pseudo = "Balavoine";
+        $message = $_POST["message"];
+        $idTopic = $_GET["idTopic"];
+        insertMessage($idTopic, $pseudo, $message);
         seeMessageForum();
 
-}
-
-function addTopic(){
-        $subject=$_POST["subject"];
-        $pseudo="Balavoine";
-        $message=$_POST["message"];
-        insertTopic($subject);
-        addMessageTopic($subject,$pseudo,$message);
-        seeForum();
-}
-
-function addMessageTopic($subject,$pseudo,$message){
-    $ids =getIdTopic($subject) -> fetchAll();
-    foreach($ids as $id) {
-        $idTopic=$id['idTopic'];
     }
-    insertMessage($idTopic,$pseudo,$message);
-}
 
-function supMessage(){
-    $idMessage=$_POST['select'];
-    suppMessage($idMessage);
-    seeForum();
-}
+    function addTopic()
+    {
+        $subject = $_POST["subject"];
+        $pseudo = "Balavoine";
+        $message = $_POST["message"];
+        insertTopic($subject);
+        addMessageTopic($subject, $pseudo, $message);
+        seeForum();
+    }
 
-function supTopic(){
-    $idTopic=$_POST['select'];
-    suppTopic($idTopic);
-    seeForum();
-}
+    function addMessageTopic($subject, $pseudo, $message)
+    {
+        $ids = getIdTopic($subject)->fetchAll();
+        foreach ($ids as $id) {
+            $idTopic = $id['idTopic'];
+        }
+        insertMessage($idTopic, $pseudo, $message);
+    }
 
-function deconnexion(){
-    require "views/welcome.php";
-}
+    function supMessage()
+    {
+        $idMessage = $_POST['select'];
+        suppMessage($idMessage);
+        seeForum();
+    }
 
-function infoClient(){
-    require "views/clientProfileAdmin.php";
+    function supTopic()
+    {
+        $idTopic = $_POST['select'];
+        suppTopic($idTopic);
+        seeForum();
+    }
+
+    function deconnexion()
+    {
+        require "views/welcome.php";
+    }
+
+    function infoClient()
+    {
+        require "views/clientProfile.php";
+    }
 }

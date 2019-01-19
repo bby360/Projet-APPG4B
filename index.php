@@ -140,10 +140,12 @@ if(isset($_GET["action"])){
             sethouse();
             break;
 
-        case 'clientProfil':
-            clientProfil();
+        case 'editProfile':
+            editProfile();
             break;
-
+        case 'profileEdited':
+            profileEdited();
+            break;
 
     }
 } else {
