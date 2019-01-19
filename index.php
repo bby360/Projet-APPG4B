@@ -27,6 +27,10 @@ if(isset($_GET["action"])){
         case 'addRoom':
             addRoom();
             break;
+		    
+	case 'seeAddRoom':
+           seeAddRoom();
+            break;
             
         case 'updateRoom':
 		    updateRoom();
