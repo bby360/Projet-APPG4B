@@ -9,7 +9,6 @@
         <title>Fichier Clients</title>
 
         <script type='text/javascript'>
-
         </script>
 
     </head>
@@ -20,14 +19,11 @@
 
     <?php
     $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
-
     if (!$bdd) {
         die("Connection failed: " . !$bdd);
     }
-
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
     $result = $bdd->query($sql);
-
     if ($result->rowCount() > 0) {
         echo "<table class='clients'>
         <tr>
@@ -60,13 +56,11 @@
                 </form>
                 </td>
                </tr>";
-
         }
         echo "</table>";
     } else {
         echo "0 results";
     }
-
     ?>
     <a href="#top">Go to top</a>
     </body>

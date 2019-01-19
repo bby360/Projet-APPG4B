@@ -20,7 +20,7 @@ session_start();
 
     <div id=soussection>
         <div class="Contact">
-            <form method="post" action="ProfileEdited.php">
+            <form method="post" action="index.php?action=profileEdited">
 
                 <fieldset>
                     <legend><h2>Changer votre contact</h2></legend>

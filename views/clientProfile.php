@@ -1,11 +1,16 @@
+<?php
+session_start();
+
+?>
 
 <!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/html">
     <head>
-        <?php
-        include 'header.php';
-        ?>
+        <header>
+            <?php require "headerAdmin.php"?>
+        </header>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="./designs/css/clientProfile.css" />
+        <link rel="stylesheet" type="text/css" href="./design/css/clientProfile.css" />
         <title>Client</title>
 
 
@@ -40,6 +45,10 @@
         <p id=\"demo\"></p>";
 
         ?>
+
+
+
+    </div>
 
     <script>
 
