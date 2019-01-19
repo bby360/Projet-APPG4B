@@ -125,21 +125,22 @@ function seeMessageForum()
     require "views/forumMessage.php";
 }
 
+function  seeAddRoom(){
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    $idClient=$_SESSION['idClient'];
+    $houses = getHouseList($idClient) -> fetchAll();
+    require "views/addRoom.php";
+}
+
 function addRoom(){
+    $idHouse= $_POST['idHouse'];
+    $roomName = $_POST['name'];
+    $surface= $_POST['area'];
+    insertRoom($idHouse, $roomName, $surface);
 
-
-        if (isset($_POST['name']) && isset($_POST['area']) && isset($_POST['idHouse'])
-            && isset($_POST['tempManu']) && isset($_POST['tempAuto']) && isset($_POST['lumAuto'])
-            && isset($_POST['lumManu'])&& isset($_POST['blindOpenTime'])&& isset($_POST['blindCloseTime'])) {
-
-
-                insertRoom();
-                header('Location: index.php?action=roomList');
-
-                exit();
-
-        }
-  require "views/addRoom.php";
+    seeAddRoom();
 }
 
 function rooms(){
