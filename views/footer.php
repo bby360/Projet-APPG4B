@@ -14,7 +14,7 @@
     <ul>
         <li><a href="" id="mention">Mentions légales</a> </li>
         <li><a href="" id="Apropos">A Propos</a></li>
-        <li>Created by Creambition     <img src="designs/pictures/logo.jpg" class="logo"></li>
+        <li>Created by <img src="designs/pictures/logo.jpg" class="logo"></li>
     </ul>
     </p>
 
