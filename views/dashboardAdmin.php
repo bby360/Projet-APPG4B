@@ -29,7 +29,7 @@
         </a>
     </div>
 
-    <div class="forum"><a href="indexAdmin.php?action=forumAdmin">
+    <div class="forum"><a href="indexAdmin.php?action=forum">
             <div class="text">
                 <p>Forum</p>
             </div>
