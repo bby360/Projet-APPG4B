@@ -337,15 +337,17 @@ function posterAlerte(){
 }
 
 function showHouse(){
-
+    if(!isset($_SESSION)) {
+        session_start();
+    }
     require 'views/houseList.php';
 }
 
 function setHouse(){
-
+    if(!isset($_SESSION)) {
+        session_start();
+    }
    updateIDHouse();
-
-
    require 'views/houseList.php';
 }
 
