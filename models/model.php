@@ -74,27 +74,14 @@ function getMessage($id){
     return $req;
 }
 
-function insertRoom() {
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+function insertRoom($idHouse, $roomName, $surface) {
+
     $db = dbConnect();
-    $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
-VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
-    $req->execute([
-        'idHouse'=> $_POST['idHouse'],
-        'roomName' => $_POST['name'],
-        'surface'=> $_POST['area'],
-        'mode'=> $_POST['Mode'],
-        'tempAuto'=> $_POST['tempAuto'],
-        'tempManu'=> $_POST['tempManu'],
-        'lumAuto'=> $_POST['lumAuto'],
-        'lumManu'=> $_POST['lumManu'],
-        'blindOpenTime'=> $_POST['blindOpenTime'],
-        'blindCloseTime' => $_POST['blindCloseTime'],
-        'voletsManu' => $_POST['voletsManu']
-    ]);
+    $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface, mode) VALUES(:idHouse,:roomName,:surface, 'Manuel')");
+    $req->bindParam("idHouse", $idHouse);
+    $req->bindParam("roomName", $roomName);
+    $req->bindParam("surface", $surface);
+    $req ->execute();
     $req ->CloseCursor();
 }
 
@@ -117,18 +104,17 @@ function insertHouse() {
 
 }
 
-/* function getHouseList(){
+function getHouseList($idClient){
     if(!isset($_SESSION)) 
     { 
         session_start(); 
     } 
     $db = dbConnect();
-    $idSession = $_SESSION['idClient'];
-    $req = $db->prepare("SELECT adress FROM house JOIN client ON house.idClient= idClient");
-    $req->bindParam("idClient", $idSession);
+    $req = $db->prepare("SELECT * FROM house WHERE idClient= :idClient");
+    $req->bindParam("idClient", $idClient);
     $req->execute();
     return $req;
-} */
+}
 
 function updateMode($mode,$house,$nom) {
     $db = dbConnect();
