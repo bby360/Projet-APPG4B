@@ -59,6 +59,10 @@ if(isset($_GET["action"])){
         case 'sensorsGestion':
             sensorsGestion();
             break;
+
+        case 'deleteAlerte':
+            deleteAlerte();
+            break;
             
         case 'faqAdmin':
             addQuestionReponse();
