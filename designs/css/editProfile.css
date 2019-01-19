@@ -1,3 +1,11 @@
+*{
+	background: #00497A;
+	font-family: "Libre Baskerville", Arial;
+}
+body{
+	height: 100%;
+	position: relative;
+}
 
 
 h1
@@ -102,12 +110,10 @@ footer li:last-child {
 	padding: 0;
 	overflow: hidden;
 	background-color: white;
-
 }
 footer ul :first-child {
 	border-radius: 10px 0 0 10px;
 }
-
 footer ul :last-child {
 	border-radius: 0 10px 10px 0;
 }
@@ -117,11 +123,11 @@ footer li {
 	padding: 0px;
 	width: auto;
 	background-color:white;
-	list-style-type: none;
+	list-style-type: none;   
 }
 footer li a{
 	display:block;
-    float:left;
+    float:left;   
     width: auto;
     color:white;
     font-size: medium;
@@ -145,7 +151,6 @@ footer li a{
 	bottom: 40px;
 	z-index: 1;
 }
-
 /* Crated by */
 
 /*#crea {
