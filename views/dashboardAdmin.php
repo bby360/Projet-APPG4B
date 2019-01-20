@@ -29,16 +29,16 @@
         </a>
     </div>
 
-    <div class="forum"><a href="indexAdmin.php?action=forumAdmin">
+    <div class="forum"><a href="indexAdmin.php?action=forum">
             <div class="text">
-                <p>Forum</p>
+                <p>FORUM</p>
             </div>
         </a>
     </div>
 
     <div class="alertes"><a href="indexAdmin.php?action=alertesAdmin">
             <div class="text">
-                <p>Alertes</p>
+                <p>ALERTES</p>
             </div>
         </a>
     </div>

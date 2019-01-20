@@ -26,6 +26,22 @@ function signingup(): bool
     return true;
 }
 
+function nbHouse($idClient){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT COUNT(idHouse)  FROM house WHERE idClient= :client");
+    $req->bindParam("client", $idClient);
+    $req->execute();
+    return $req;
+}
+
+function idHouse($idClient){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT *  FROM house WHERE idClient= :client");
+    $req->bindParam("client", $idClient);
+    $req->execute();
+    return $req;
+}
+
 function existingEmail() {
     if(!isset($_SESSION)) 
     { 
@@ -43,7 +59,7 @@ function getRoomList(){
         session_start(); 
     } 
     $db = dbConnect();
-    $idHouse = '5';//$_SESSION['idHouse'];
+    $idHouse = $_SESSION['idHouse'];
     $req = $db->prepare("SELECT * FROM room  WHERE idHouse = :idHouse");
     $req->bindParam("idHouse", $idHouse);
     $req->execute();
@@ -74,27 +90,14 @@ function getMessage($id){
     return $req;
 }
 
-function insertRoom() {
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+function insertRoom($idHouse, $roomName, $surface) {
+
     $db = dbConnect();
-    $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface,mode,tempAuto,tempManu,lumAuto,lumManu,blindOpenTime,blindCloseTime,voletsManu) 
-VALUES(:idHouse,:roomName,:surface,:mode,:tempAuto,:tempManu,:lumAuto,:lumManu,:blindOpenTime,:blindCloseTime,:voletsManu)");
-    $req->execute([
-        'idHouse'=> $_POST['idHouse'],
-        'roomName' => $_POST['name'],
-        'surface'=> $_POST['area'],
-        'mode'=> $_POST['Mode'],
-        'tempAuto'=> $_POST['tempAuto'],
-        'tempManu'=> $_POST['tempManu'],
-        'lumAuto'=> $_POST['lumAuto'],
-        'lumManu'=> $_POST['lumManu'],
-        'blindOpenTime'=> $_POST['blindOpenTime'],
-        'blindCloseTime' => $_POST['blindCloseTime'],
-        'voletsManu' => $_POST['voletsManu']
-    ]);
+    $req = $db->prepare("INSERT INTO room(idHouse,roomName,surface, mode) VALUES(:idHouse,:roomName,:surface, 'Manuel')");
+    $req->bindParam("idHouse", $idHouse);
+    $req->bindParam("roomName", $roomName);
+    $req->bindParam("surface", $surface);
+    $req ->execute();
     $req ->CloseCursor();
 }
 
@@ -117,18 +120,17 @@ function insertHouse() {
 
 }
 
-/* function getHouseList(){
+function getHouseList($idClient){
     if(!isset($_SESSION)) 
     { 
         session_start(); 
     } 
     $db = dbConnect();
-    $idSession = $_SESSION['idClient'];
-    $req = $db->prepare("SELECT adress FROM house JOIN client ON house.idClient= idClient");
-    $req->bindParam("idClient", $idSession);
+    $req = $db->prepare("SELECT * FROM house WHERE idClient= :idClient");
+    $req->bindParam("idClient", $idClient);
     $req->execute();
     return $req;
-} */
+}
 
 function updateMode($mode,$house,$nom) {
     $db = dbConnect();
@@ -241,12 +243,13 @@ function getCapteur($house){
     return $req;
 }
 
-function insertAlerte($idCapteur,$type,$message){
+function insertAlerte($idCapteur,$idRoom, $type,$message){
     $db = dbConnect();
-    $req = $db->prepare("UPDATE capteur SET typeAlerte = :type ,message =:message WHERE idCapteur = :idCapteur");
-    $req->bindParam("type", $type);
+    $req = $db->prepare("INSERT INTO alerte Values('',:idCapteur,:idRoom, :nvtype , :message)");
+    $req->bindParam("nvtype", $type);
     $req->bindParam("message", $message);
     $req->bindParam("idCapteur", $idCapteur);
+    $req->bindParam("idRoom", $idRoom);
     $req->execute();
     $req->closeCursor();
 }
@@ -270,8 +273,11 @@ function getQuestionList(){
 }
 function updateIDHouse()
 {
-
-    session_start();
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+    
     $maison = $_POST["maison"];
 
     if (isset($_POST["selectionner"])) {

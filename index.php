@@ -27,7 +27,11 @@ if(isset($_GET["action"])){
         case 'addRoom':
             addRoom();
             break;
-            
+		    
+        case 'seeAddRoom':
+               seeAddRoom();
+                break;
+
         case 'updateRoom':
 		    updateRoom();
 		    break;
@@ -43,18 +47,10 @@ if(isset($_GET["action"])){
         case 'editProfile':
         	editProfile();
         	break;
-
-        case 'profileEdited':
-        	profileEdited();
-        	break;
 		    
 	    case 'catalogueUnlog':
 		    catalogueUnlog();
 		    break;
-
-        case 'consumption':
-            consumption();
-            break;
 
         case 'lightSensors':
             lightSensors();
@@ -120,7 +116,7 @@ if(isset($_GET["action"])){
             seeQuestion();
             break;
 		    
-	 case 'declarerAlerte':
+	    case 'declarerAlerte':
             declarerAlerte();
             break;
 
@@ -140,6 +136,9 @@ if(isset($_GET["action"])){
             sethouse();
             break;
 
+        case 'profileEdited':
+            profileEdited();
+            break;
 
     }
 } else {

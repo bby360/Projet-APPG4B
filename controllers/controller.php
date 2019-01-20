@@ -55,9 +55,14 @@ function signin() {
 
                 echo 'Vous êtes maintenant connecté';
 
-                
+                $nbHouse=countHouse();
+                if($nbHouse==0){
+                    header('Location: index.php?action=addHouse');
+                }
+                else{
                 header('Location: index.php?action=dashboard');
                 exit();
+                }
             }
         
         else{
@@ -73,7 +78,26 @@ function signin() {
 
 }
 
-
+function countHouse(){
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    $House= nbHouse($_SESSION['idClient']) -> fetchAll();
+    foreach ($House as $key => $H){
+        $nb=$H[$key];
+    }
+    if($nb==0){
+        return 0;
+    }
+    else{
+        $idHouse= idHouse($_SESSION['idClient']) -> fetchAll();
+        foreach ($idHouse as $i){
+            $id=$i['idHouse'];
+        }
+        $_SESSION['idHouse']=$id;
+        return 1;
+    }
+}
 
 function viewAddGuest(){
     $rooms = getRoomList()->fetchAll();
@@ -90,6 +114,9 @@ function dashboard(){
 
 function roomList()
 {
+    if(!isset($_SESSION)) {
+        session_start();
+    }
     $rooms = getRoomList()->fetchAll();
 
     require "views/roomList.php";
@@ -104,8 +131,11 @@ function roomList()
  */
 function roomList2()
 {
+    if(!isset($_SESSION)) {
+        session_start();
+    }
     $nom=$_GET['piece'];
-    $idHouse= '5';//$_SESSION['idHouse'];
+    $idHouse= $_SESSION['idHouse'];
     $infos = getInfoRoom($nom, $idHouse)->fetchAll();
     $rooms = getRoomList()->fetchAll();
     require "views/rooms.php";
@@ -125,21 +155,22 @@ function seeMessageForum()
     require "views/forumMessage.php";
 }
 
+function  seeAddRoom(){
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    $idClient=$_SESSION['idClient'];
+    $houses = getHouseList($idClient) -> fetchAll();
+    require "views/addRoom.php";
+}
+
 function addRoom(){
+    $idHouse= $_POST['idHouse'];
+    $roomName = $_POST['name'];
+    $surface= $_POST['area'];
+    insertRoom($idHouse, $roomName, $surface);
 
-
-        if (isset($_POST['name']) && isset($_POST['area']) && isset($_POST['idHouse'])
-            && isset($_POST['tempManu']) && isset($_POST['tempAuto']) && isset($_POST['lumAuto'])
-            && isset($_POST['lumManu'])&& isset($_POST['blindOpenTime'])&& isset($_POST['blindCloseTime'])) {
-
-
-                insertRoom();
-                header('Location: index.php?action=roomList');
-
-                exit();
-
-        }
-  require "views/addRoom.php";
+    seeAddRoom();
 }
 
 function rooms(){
@@ -157,7 +188,7 @@ function updateRoom(){
         $lum="0";
     }
     $idClient=$_SESSION['idClient'];
-    $idHouse= '5';//$_SESSION['idHouse'];
+    $idHouse= $_SESSION['idHouse'];
     $nom =$_GET['piece'];
     $nvMode=$_POST['mode'];
     $nvLumiereAuto=$_POST['lumiere_auto'];
@@ -166,7 +197,7 @@ function updateRoom(){
     $nvVoletsManu=$_POST['volets_manuel'];
     $nvTemperature=$_POST['temperature'];
     $nvLumiereManu=$_POST['lumiere_manuel'];
-   // $lum=$_POST['onOff'];
+   
     updateMode($nvMode, $idHouse, $nom);
 
     if($nvMode =='Auto'){
@@ -303,14 +334,16 @@ function declarerAlerte(){
     if(!isset($_SESSION)) {
         session_start();
     }
-    $house = "5";//$_SESSION['idHouse'];
+    $house = $_SESSION['idHouse'];
     $capteurs = getCapteur($house) -> fetchAll();
     $roomNames = Array();
     $typeCapteurs = Array();
     $idCapteurs = Array();
+    $idRooms = Array();
     foreach ($capteurs as $capteur){
         $typeCapteurs[]= $capteur['type'];
         $idCapteurs[]= $capteur['idCapteur'];
+        $idRooms[]= $capteur['idRoom'];
         $room=$capteur['idRoom'];
         $roomName = getRoomName($room)-> fetchAll();
         foreach ($roomName as $r){
@@ -325,15 +358,26 @@ function commenterAlerte(){
 }
 
 function posterAlerte(){
-    $idCapteur = $_GET['capteur'];
+    $idCapteur = $_GET['idCapteur'];
+    $idRoom = $_GET['idRoom'];
     $type = $_POST['typeAlerte'];
     $message = $_POST['commentaire'];
-    insertAlerte($idCapteur,$type,$message);
+    insertAlerte($idCapteur,$idRoom,$type,$message);
     declarerAlerte();
 }
 
 function showHouse(){
-
+    if(!isset($_SESSION)) {
+        session_start();
+    }
     require 'views/houseList.php';
+}
+
+function setHouse(){
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+   updateIDHouse();
+   require 'views/houseList.php';
 }
 

@@ -7,21 +7,21 @@
 </head>
 <body>
 <header>
-    <?php require "headerAdmin.php"?>
+    <?php require "headerAdmin.php";?>
 </header>
 
 
 <section>
     <h1> Gestion des capteurs </h1>
 
-    <form method="post" action="indexAdmin.php?action=deleteAlert">
+    <form method="post" action="indexAdmin.php?action=deleteAlerte">
     <table>
 
         <thead>
         <tr>
             <td><h3>Client</h3></td>
             <td><h3>Référence capteurs</h3></td>
-            <td><h3>Type capteur</h3></td>
+            <td><h3>id capteur</h3></td>
             <td><h3>Type d'alerte</h3></td>
             <td><h3>Message</h3></td>
             <td><h3>Pris en charge</h3></td>
@@ -29,48 +29,50 @@
         </thead>
 
         <tbody>
-        <?php foreach($sensorsG as $sensorsG) { ?>
+        <?php foreach ($sensorsGs as $key =>$sensorsG) { ?>
             <tr>
                 <td>
-                    <a href="index.php?action=detailedSensors&id=<?=$client["idClient"];?>">
+                    <?= $clients[$key+1];?>
                 </td>
                 <td>
-                    <a href="index.php?action=detailedSensors&id=<?=$sensorsG["idCapteur"];?>"><?= $sensorsG["idCapteur"];?>
+                    <?= $idProducts[$key+1];?>
                 </td>
                 <td>
-                    <?= $sensorsG["type"];?>
+                    <?= $idCapteurs[$key+1];?>
+
                 </td>
                 <td>
-                    <?= $sensorsG["typeAlerte"];?>
+                    <?= $typeAlertes[$key+1];?>
                 </td>
                 <td>
-                    <?= $sensorsG["message"];?>
+                    <?= $messages[$key+1];?>
                 </td>
                 <td>
-                    <input type="checkbox" name="delete" id="delete" value="sensors"><br>
+                    <input type="checkbox" name="delete" id="delete" value="<?= $idAlertes[$key+1];?>"><br>
+                    
                 </td>
             </tr>
         <?php } ?>
         </tbody>
 
     </table>
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Supprimer les capteurs séléctionnés</button>
+
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
-            <p>Attention, vous allez supprimer tous les capteurs!</p>
+            <p>Attention, vous allez supprimer cette alerte</p>
             <p> En êtes-vous sûr?</p>
             <span class="cancel"><button id="bouton">Annuler</button></span>
-            <a href="indexAdmin.php?action=deleteSensors"><button id="bouton">Supprimer</button></a>
+            <input type="submit" value="supprimer">
         </div>
 
     </div>
     </form>
-
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Supprimer les capteurs séléctionnés</button>
     <script>
         // Get the modal
         var modal = document.getElementById('myModal');
@@ -102,7 +104,7 @@
 </section>
 
 <footer>
-    <?php require "footer.php"?>
+    <?php require "footer.php";?>
 </footer>
 
 </body>

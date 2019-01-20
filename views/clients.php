@@ -1,32 +1,27 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/html">
     <head>
+        <?php
+        include 'headerAdmin.php';
+        ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="designs/css/clients.css" />
+        <link rel="stylesheet" type="text/css" href="./designs/css/clients.css" />
         <title>Fichier Clients</title>
+
+        <script type='text/javascript'>
+        </script>
+
     </head>
 
-<body>
-    <header>
-        <?php require 'headerAdmin.php'?>
-    </header>
-
-<section>
+    <body>
 
     <h1 id="top">Liste des clients</h1>
 
     <?php
     $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
-    $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
-    $result = $bdd->query($sql);
-
     if (!$bdd) {
         die("Connection failed: " . !$bdd);
     }
-
     $sql = "SELECT idClient, lastName, firstName, email, phone, adress, postalcode, emergency FROM client";
     $result = $bdd->query($sql);
     if ($result->rowCount() > 0) {
@@ -55,7 +50,7 @@ session_start();
                 <td>".htmlspecialchars($row["postalcode"])."</td>
                 <td>".htmlspecialchars($row["emergency"])."</td>
                 <td>
-                <form action='views/clientProfile.php' method='GET'>
+                <form action='indexAdmin.php?action=infoClient' method='GET'>
                     <input type='text' name='idProfil' value='".$row['idClient']."' style='visibility:hidden' class='buttonHidden';>
                     <input type=\"submit\" name='VoirProfil'  value='Voir profil ".$row["idClient"]."' class='button' style=\"vertical-align:middle\">
                 </form>
@@ -68,13 +63,4 @@ session_start();
     }
     ?>
     <a href="#top">Go to top</a>
-</section>
-
-
-
-    <footer>
-        <?php require "footer.php"?>
-    </footer>
-
     </body>
-</html>

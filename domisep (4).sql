@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 17 jan. 2019 à 16:25
+-- Généré le :  Dim 20 jan. 2019 à 10:21
 -- Version du serveur :  10.1.37-MariaDB
 -- Version de PHP :  7.2.12
 
@@ -46,17 +46,19 @@ CREATE TABLE `alerte` (
   `idCapteur` int(255) NOT NULL,
   `idRoom` int(255) NOT NULL,
   `typeAlerte` varchar(1000) NOT NULL,
-  `message` text NOT NULL,
-  `type` varchar(1000) NOT NULL
+  `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `alerte`
 --
 
-INSERT INTO `alerte` (`idAlert`, `idCapteur`, `idRoom`, `typeAlerte`, `message`, `type`) VALUES
-(1, 1, 6, 'Il est cassé', 'Il y a un bouton rouge qui clignote', ''),
-(2, 4, 8, 'Consommation', 'Je n\'ai plus la consommation pour la luminosité', 'Luminosité');
+INSERT INTO `alerte` (`idAlert`, `idCapteur`, `idRoom`, `typeAlerte`, `message`) VALUES
+(1, 1, 6, 'Il est cassé', 'Il y a un bouton rouge qui clignote'),
+(2, 4, 8, 'Consommation', 'Je n\'ai plus la consommation pour la luminosité'),
+(6, 2, 6, 'je l\'ai cassé', 'oh'),
+(7, 2, 6, 'met du temps à repondre', 'oui'),
+(8, 6, 9, 'fonctionne par intermittence', 'trop');
 
 -- --------------------------------------------------------
 
@@ -68,17 +70,21 @@ CREATE TABLE `capteur` (
   `idCapteur` int(11) NOT NULL,
   `idRoom` int(11) NOT NULL,
   `consommation` int(11) NOT NULL,
-  `type` varchar(255) NOT NULL
+  `type` varchar(255) NOT NULL,
+  `idProduit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `capteur`
 --
 
-INSERT INTO `capteur` (`idCapteur`, `idRoom`, `consommation`, `type`) VALUES
-(1, 6, 22, 'Luminosité'),
-(2, 6, 22, 'Température'),
-(4, 6, 28, 'Luminosité');
+INSERT INTO `capteur` (`idCapteur`, `idRoom`, `consommation`, `type`, `idProduit`) VALUES
+(1, 6, 22, 'Luminosité', 13),
+(2, 6, 22, 'Température', 20),
+(4, 6, 28, 'Luminosité', 13),
+(5, 7, 37, 'Presence', 16),
+(6, 9, 37, 'Luminosité', 13),
+(7, 8, 37, 'Volet', 0);
 
 -- --------------------------------------------------------
 
@@ -100,8 +106,9 @@ CREATE TABLE `catalogue` (
 INSERT INTO `catalogue` (`idProduit`, `typeProduct`, `consumption`, `price`) VALUES
 (13, 'Luminosité', '23', '12'),
 (16, 'Présence', '3', '45'),
-(17, 'Température', '8', '16'),
-(19, 'Luminosité', '5', '56');
+(19, 'Luminosité', '5', '56'),
+(20, 'Temperature', '66', '24'),
+(21, 'Température', '77', '55');
 
 -- --------------------------------------------------------
 
@@ -146,6 +153,26 @@ INSERT INTO `client` (`idClient`, `lastName`, `firstName`, `email`, `phone`, `ad
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `faq`
+--
+
+CREATE TABLE `faq` (
+  `idQuestionReponse` int(11) NOT NULL,
+  `question` text NOT NULL,
+  `reponse` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `faq`
+--
+
+INSERT INTO `faq` (`idQuestionReponse`, `question`, `reponse`) VALUES
+(2, 'Qui est le plus intelligent', 'Mathias'),
+(3, 'C\'est lesquels les chinois qui étaient alliés aux nazis ?', 'Les Japonais');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `forummessage`
 --
 
@@ -162,12 +189,11 @@ CREATE TABLE `forummessage` (
 --
 
 INSERT INTO `forummessage` (`idMessage`, `idTopic`, `author`, `message`, `date`) VALUES
-(13, 1, 'fghfg', 'fghfgh', '2019-01-09 10:48:58'),
-(14, 2, 'klkl', 'klklk', '2019-01-09 10:49:03'),
-(15, 2, 'yti', 'yti', '2019-01-09 10:49:10'),
-(16, 1, 'rzeere', 'ererere', '2019-01-09 10:49:17'),
-(17, 3, 'lolilol', 'C nul mdr!', '2019-01-16 15:59:41'),
-(18, 3, 'mdr', 'c toa k nul wesh', '2019-01-16 16:00:16');
+(1, 1, 'Mathias', 'Je ne comprends pas', '2019-01-18 09:00:15'),
+(2, 1, 'Balavoine', 'allumer la lumière pour voir', '2019-01-18 09:00:59'),
+(3, 1, 'Mathias', 'Ah oui merci', '2019-01-18 09:01:24'),
+(4, 2, 'Balavoine', 'Je n\'arrive pas à me connecter au magnifique siteWeb', '2019-01-18 09:02:16'),
+(5, 2, 'Mathias', 'Bah comment as tu fais pour envoyer ce message ?', '2019-01-18 09:02:39');
 
 -- --------------------------------------------------------
 
@@ -186,9 +212,8 @@ CREATE TABLE `forumtopic` (
 --
 
 INSERT INTO `forumtopic` (`idTopic`, `name`, `creationDate`) VALUES
-(1, 'hfgh', '2019-01-09'),
-(2, 'klkl', '2019-01-09'),
-(3, 'Coucou', '2019-01-16');
+(1, 'ma lumière ne marche plus', '2019-01-18'),
+(2, 'problème de connexion au site', '2019-01-18');
 
 -- --------------------------------------------------------
 
@@ -225,30 +250,31 @@ CREATE TABLE `room` (
   `idHouse` int(11) NOT NULL,
   `roomName` varchar(255) NOT NULL,
   `surface` int(4) NOT NULL,
-  `mode` varchar(255) NOT NULL,
-  `tempAuto` int(11) NOT NULL,
-  `tempManu` int(11) NOT NULL,
-  `lumAuto` int(11) NOT NULL,
-  `lumManu` int(11) NOT NULL,
+  `mode` varchar(255) DEFAULT NULL,
+  `tempAuto` int(11) DEFAULT NULL,
+  `tempManu` int(11) DEFAULT NULL,
+  `lumAuto` int(11) DEFAULT NULL,
+  `lumManu` int(11) DEFAULT NULL,
   `blindOpenTime` time DEFAULT NULL,
   `blindCloseTime` time DEFAULT NULL,
-  `voletsManu` int(11) NOT NULL
+  `voletsManu` int(11) DEFAULT NULL,
+  `lum` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `room`
 --
 
-INSERT INTO `room` (`idRoom`, `idHouse`, `roomName`, `surface`, `mode`, `tempAuto`, `tempManu`, `lumAuto`, `lumManu`, `blindOpenTime`, `blindCloseTime`, `voletsManu`) VALUES
-(1, 1, 'Salon', 42, 'Auto', 0, 20, 15, 300, '00:00:00', '00:00:00', 0),
-(2, 1, 'Chambre 1', 18, 'Auto', 19, 21, 200, 200, '00:00:00', '00:00:00', 0),
-(3, 3, 'garage', 20, 'automatique', 0, 0, 0, 0, NULL, NULL, 0),
-(4, 3, 'garage', 20, 'automatique', 0, 0, 0, 0, NULL, NULL, 1),
-(5, 4, 'oui', 22, 'Auto', 22, 22, 22, 22, '22:22:00', '23:23:00', 22),
-(6, 5, 'chambre', 22, 'Manuel', 0, 0, 20, 100, '22:22:00', '22:23:00', 100),
-(7, 5, 'ed', 22, 'Auto', 23232, 100, 25, 100, '05:05:00', '21:11:00', 100),
-(8, 5, 'billy', 22, 'Auto', 14, 0, 100, 0, '12:13:00', '12:14:00', 0),
-(9, 5, 'hugo', 22, 'Auto', 24, 0, 20, 15, '22:23:00', '23:24:00', 15);
+INSERT INTO `room` (`idRoom`, `idHouse`, `roomName`, `surface`, `mode`, `tempAuto`, `tempManu`, `lumAuto`, `lumManu`, `blindOpenTime`, `blindCloseTime`, `voletsManu`, `lum`) VALUES
+(1, 1, 'Salon', 42, 'Auto', 0, 20, 15, 300, '00:00:00', '00:00:00', 0, 0),
+(2, 1, 'Chambre 1', 18, 'Auto', 19, 21, 200, 200, '00:00:00', '00:00:00', 0, 0),
+(3, 3, 'garage', 20, 'automatique', 0, 0, 0, 0, NULL, NULL, 0, 0),
+(4, 3, 'garage', 20, 'automatique', 0, 0, 0, 0, NULL, NULL, 1, 0),
+(5, 4, 'oui', 22, 'Auto', 22, 22, 22, 22, '22:22:00', '23:23:00', 22, 0),
+(6, 5, 'chambre', 22, 'Manuel', 0, 1, 20, 10, '22:22:00', '22:23:00', 15, 1),
+(7, 5, 'ed', 22, 'Manuel', 23232, 0, 25, 100, '05:05:00', '21:11:00', 100, 0),
+(8, 5, 'billy', 22, 'Auto', 14, 0, 100, 0, '12:13:00', '12:14:00', 0, 0),
+(9, 5, 'hugo', 22, 'Auto', 6, 0, 20, 15, '22:23:00', '23:24:00', 15, 1);
 
 --
 -- Index pour les tables déchargées
@@ -283,6 +309,12 @@ ALTER TABLE `catalogue`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`idClient`);
+
+--
+-- Index pour la table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`idQuestionReponse`);
 
 --
 -- Index pour la table `forummessage`
@@ -324,49 +356,55 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT pour la table `alerte`
 --
 ALTER TABLE `alerte`
-  MODIFY `idAlert` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idAlert` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `idCapteur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idCapteur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `catalogue`
 --
 ALTER TABLE `catalogue`
-  MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `idClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT pour la table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `idQuestionReponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `forummessage`
 --
 ALTER TABLE `forummessage`
-  MODIFY `idMessage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idMessage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `forumtopic`
 --
 ALTER TABLE `forumtopic`
-  MODIFY `idTopic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idTopic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `house`
 --
 ALTER TABLE `house`
-  MODIFY `idHouse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idHouse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `room`
 --
 ALTER TABLE `room`
-  MODIFY `idRoom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idRoom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

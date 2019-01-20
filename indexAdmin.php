@@ -44,7 +44,7 @@ if(isset($_GET["action"])){
             temperatureSensorsUnlog();
             break;
             
-       case 'deleteSensors':
+        case 'deleteSensors':
             deleteSensors();
             break;
 
@@ -59,12 +59,16 @@ if(isset($_GET["action"])){
         case 'sensorsGestion':
             sensorsGestion();
             break;
+
+        case 'deleteAlerte':
+            deleteAlerte();
+            break;
             
         case 'faqAdmin':
             addQuestionReponse();
             break;
-        
-         case 'forum':
+
+        case 'forum':
             seeForum();
             break;
 
@@ -86,6 +90,10 @@ if(isset($_GET["action"])){
 
         case 'supTopic':
             supTopic();
+            break;
+
+        case 'infoClient':
+            infoClient();
             break;
             
         default:

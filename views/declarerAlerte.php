@@ -26,7 +26,7 @@
                 <p><?= $typeCapteurs[$key];?></p>
             </td>
             <td class="tab4">
-                <a href="index.php?action=commenterAlerte&amp;capteur=<?= $typeCapteurs[$key];?>&amp;idCapteur=<?= $idCapteurs[$key];?>&amp;room=<?=$roomNames[$key]; ?>" > <input type="button" value="declarer alerte"> </a>
+            <a href="index.php?action=commenterAlerte&amp;capteur=<?= $typeCapteurs[$key];?>&amp;idCapteur=<?= $idCapteurs[$key];?>&amp;room=<?=$roomNames[$key]; ?>&amp;idRoom=<?= $idRooms[$key];?>" > <input type="button" value="declarer alerte" /> </a>
 
             </td>
         </tr>

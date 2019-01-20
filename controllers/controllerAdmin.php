@@ -100,98 +100,143 @@ function temperatureSensorsUnlog(){
 }
 
 function sensorsGestion(){
-    //$client = getClientId()->fetchAll();
-    $sensorsG = getSensorsGestionList()->fetchAll();
+    $clients[] = Array();
+    $idCapteurs[] = Array();
+    $typeAlertes[] = Array();
+    $idAlertes[] = Array();
+    $idProducts[] = Array();
+    $messages[] = Array();
+    $sensorsGs = getSensorsGestionList()->fetchAll();
+    foreach ($sensorsGs as $sensorsG) {
+        $idCapteurs[] = $sensorsG['idCapteur'];
+        $typeAlertes[] = $sensorsG['typeAlerte'];
+        $messages[] = $sensorsG['message'];
+        $idAlertes[] = $sensorsG['idAlert'];
+
+        $idRoom=$sensorsG['idRoom'];
+        $typeProduit= getIdProduct($sensorsG['idCapteur']) -> fetchAll();
+        foreach ($typeProduit as $t) {
+            $idProducts[] = $t['idProduit'];
+        }
+        $client = getClientId($idRoom)->fetchAll();
+        foreach ($client as $c) {
+        $clients[] = $c['idClient'];
+        }
+
+    }
+   
     require"views/sensorsGestion.php";
 }
 
-function deleteSensors(){
-    $delete = deletedSensors();
-    require "views/catalogueAdmin.php";
-}
-
-function addedSensors(){
-
-    if (isset($_POST['typeProduct']) && isset($_POST['consumption']) && isset($_POST['price'])) {
-        insertSensors();
-        exit();
-    }
-
-    require "views/catalogueAdmin.php";
-
-}
-
-
-function addQuestionReponse(){
-    $question=$_POST['question'];
-    $reponse=$_POST['reponse'];
-
-    if (!(empty($_POST['question'])) && !(empty($_POST['reponse']))) {
-    insertQuestionReponse($question,$reponse);
-    }
-    require "views/faqAdmin.php";
-}
-
-function seeQuestion()
- {
-    $questions=getQuestionList()->fetchAll();
-
-    require "views/faq.php";
- }
-
-function seeForum()
- {
-    $topics =getTopicList()->fetchAll();
-
-    require "views/forumAdmin.php";
- }
-
-function seeMessageForum()
+function deleteAlerte()
 {
-    $id= $_GET["idTopic"];
-    $messages =getMessage($id)->fetchAll();
-    require "views/forumMessageAdmin.php";
+    $idAlerte = $_POST['delete'];
+    supAlerte($idAlerte);
+    sensorsGestion();
 }
+    function deleteSensors()
+    {
+        $idSensor = $_POST['delete'];
+        deletedSensors($idSensor);
+        catalogue();
+    }
 
-function addMessage(){
+    function addedSensors()
+    {
 
-        $pseudo="Balavoine";
-        $message=$_POST["message"];
-        $idTopic=$_GET["idTopic"];
-        insertMessage($idTopic,$pseudo,$message);
+        if (isset($_POST['typeProduct']) && isset($_POST['consumption']) && isset($_POST['price'])) {
+            insertSensors();
+            exit();
+        }
+
+        require "views/catalogueAdmin.php";
+
+    }
+
+
+    function addQuestionReponse()
+    {
+        $question = $_POST['question'];
+        $reponse = $_POST['reponse'];
+
+        if (!(empty($_POST['question'])) && !(empty($_POST['reponse']))) {
+            insertQuestionReponse($question, $reponse);
+        }
+        require "views/faqAdmin.php";
+    }
+
+    function seeQuestion()
+    {
+        $questions = getQuestionList()->fetchAll();
+
+        require "views/faq.php";
+    }
+
+    function seeForum()
+    {
+        $topics = getTopicList()->fetchAll();
+
+        require "views/forumAdmin.php";
+    }
+
+    function seeMessageForum()
+    {
+        $id = $_GET["idTopic"];
+        $messages = getMessage($id)->fetchAll();
+        require "views/forumMessageAdmin.php";
+    }
+
+    function addMessage()
+    {
+
+        $pseudo = "Admin";
+        $message = $_POST["message"];
+        $idTopic = $_GET["idTopic"];
+        insertMessage($idTopic, $pseudo, $message);
         seeMessageForum();
 
-}
-
-function addTopic(){
-        $subject=$_POST["subject"];
-        $pseudo="Balavoine";
-        $message=$_POST["message"];
-        insertTopic($subject);
-        addMessageTopic($subject,$pseudo,$message);
-        seeForum();
-}
-
-function addMessageTopic($subject,$pseudo,$message){
-    $ids =getIdTopic($subject) -> fetchAll();
-    foreach($ids as $id) {
-        $idTopic=$id['idTopic'];
     }
-    insertMessage($idTopic,$pseudo,$message);
-}
 
-function supMessage(){
-    $idMessage=$_POST['select'];
-    suppMessage($idMessage);
-    seeForum();
-}
+    function addTopic()
+    {
+        $subject = $_POST["subject"];
+        $pseudo = "Admin";
+        $message = $_POST["message"];
+        insertTopic($subject);
+        addMessageTopic($subject, $pseudo, $message);
+        seeForum();
+    }
 
-function supTopic(){
-    $idTopic=$_POST['select'];
-    suppTopic($idTopic);
-    seeForum();
-}
+    function addMessageTopic($subject, $pseudo, $message)
+    {
+        $ids = getIdTopic($subject)->fetchAll();
+        foreach ($ids as $id) {
+            $idTopic = $id['idTopic'];
+        }
+        insertMessage($idTopic, $pseudo, $message);
+    }
 
-function deconnexion(){
-    require "views/welcome.php";
-}
+    function supMessage()
+    {
+        $idMessage = $_POST['select'];
+        suppMessage($idMessage);
+        seeForum();
+    }
+
+    function supTopic()
+    {
+        $idTopic = $_POST['select'];
+        suppTopic($idTopic);
+        seeForum();
+    }
+
+    function deconnexion()
+    {
+        require "views/welcome.php";
+    }
+
+    function infoClient()
+    {
+        require "views/clientProfile.php";
+    }
+

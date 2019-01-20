@@ -1,6 +1,4 @@
-
-
-html, body{
+body{
     margin: 0;
     padding: 0;
     width: 100%;
@@ -24,13 +22,13 @@ a {
     position: relative;
     display: inline-block;
     float: left;
-    width: 300px;
-    height: 250px;
+    width: 250px;
+    height: 200px;
     background-image: url("bureau-moderne.jpg");
     background-size: contain;
     background-size: cover;
     margin-left: 20%;
-    margin-top: 5%;
+    margin-top: 2%;
     border: 4px solid #2D241E;
 }
 
@@ -60,13 +58,13 @@ a {
     display: inline-block;
     position: relative;
     float: right;
-    width: 300px;
-    height: 250px;
-    background-image: url("photo.jpg");
+    width: 250px;
+    height: 200px;
+    background-image: url("m.jpg");
     background-size: contain;
     background-size: cover;
     background-position: center;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-right: 20%;
     border: 4px solid #2D241E;
 }
@@ -97,9 +95,9 @@ a {
     display:inline-block;
     position: relative;
     float: right;
-    width: 300px;
-    height: 250px;
-    background-image: url("catalogue.jpg");
+    width: 250px;
+    height: 200px;
+    background-image: url("catalogue2.jpg");
     background-size: contain;
     background-size: cover;
     background-position: center;
@@ -134,8 +132,8 @@ a {
     display: inline-block;
     position: relative;
     float: left;
-    width: 300px;
-    height: 250px;
+    width: 250px;
+    height: 200px;
     background-image: url("graph.jpg");
     background-size: contain;
     background-size: cover;

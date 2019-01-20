@@ -18,7 +18,7 @@
 		<img src="designs/pictures/light.jpg">
 		<div class="desc">
 			Hotline<br>
-			Joignable 24/7<br>
+			Joignable 24h/24 - 7j/7<br>
 			+33 6 48 75 96 63
 		</div>
 	</div>

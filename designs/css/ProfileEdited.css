@@ -1,6 +1,6 @@
 *{
     background: #00497A;
-    font-family: "Libre Baskerville", Arial;
+    font-family: "Libre Baskerville";
 }
 body{
     height: 100%;
@@ -33,23 +33,18 @@ section {
     width: 100%;
     color:white;
     text-align: center;
-    margin-left: 20px;
 
 }
 #soussection{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .Contact{
     text-align: center;
     float: left;
 }
-.Photo{
-    text-align: center;
-    float: right;
-}
 .edit a {
-    display: block;
+    display: flex;
     float: center;
     color:white;
 }
@@ -67,3 +62,4 @@ section {
 ;
 
 }
+

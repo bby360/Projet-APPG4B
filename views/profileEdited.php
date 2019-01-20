@@ -9,18 +9,35 @@ $requser->execute(array($_SESSION['lastName']));
 $user = $requser->fetch();
 
 
+$_SESSION['email']=$user['email'];
+$_SESSION['phone']=$user['phone'];
+$_SESSION['emergency']=$user['emergency'];
+
+
+
 if ( !empty($_POST['email']) and empty($_POST['phone']) and empty($_POST['emergency'])) {
 
     $newemail = htmlspecialchars($_POST['email']);
 
-    $insertmail = $bdd->prepare('UPDATE client SET email = ? WHERE lastName = ? ');
-    $insertmail->execute(array(
-        $newemail,
-        $_SESSION['lastName']
-    ));
+    $req = $bdd->prepare('SELECT * FROM client WHERE email = ?');
+    $req->execute(array($_POST['email']));
+    $exist = $req->fetch();
 
-    $_SESSION['email']=$newemail;
+    if ($exist != null){
+        die("Cet email existe déjà" . !$exist);
 
+    }
+
+    else {
+        $insertmail = $bdd->prepare('UPDATE client SET email = ? WHERE lastName = ? ');
+
+        $insertmail->execute(array(
+            $newemail,
+            $_SESSION['lastName']
+        ));
+
+        $_SESSION['email'] = $newemail;
+    }
 }
 elseif (!empty($_POST['phone']) and empty($_POST['email']) and empty($_POST['emergency'])){
 
@@ -38,15 +55,25 @@ elseif (!empty($_POST['phone']) AND !empty($_POST['email']) and empty($_POST['em
 
     $newphone = htmlspecialchars($_POST['phone']);
     $newemail = htmlspecialchars($_POST['email']);
-    $req = $bdd->prepare('UPDATE client SET email = ?, phone = ? WHERE lastName = ?');
-    $req->execute(array(
-        $newemail,
-        $newphone,
-        $_SESSION['lastName'],
-    ));
+    $req = $bdd->prepare('SELECT * FROM client WHERE email = ?');
+    $req->execute(array($_POST['email']));
+    $exist = $req->fetch();
 
-    $_SESSION['email']=$newemail;
-    $_SESSION['phone']=$newphone;
+    if ($exist != null){
+        die("Cet email existe déjà" . !$exist);
+    }
+
+    else {
+        $req = $bdd->prepare('UPDATE client SET email = ?, phone = ? WHERE lastName = ?');
+        $req->execute(array(
+            $newemail,
+            $newphone,
+            $_SESSION['lastName'],
+        ));
+
+        $_SESSION['email'] = $newemail;
+        $_SESSION['phone'] = $newphone;
+    }
 }
 elseif(!empty($_POST['emergency']) and empty($_POST['phone']) and empty($_POST['email'])){
 
@@ -79,15 +106,25 @@ elseif(!empty($_POST['emergency']) and empty($_POST['phone']) and !empty($_POST[
 
     $newemail = htmlspecialchars($_POST['email']);
     $newemergency = htmlspecialchars($_POST['emergency']);
-    $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, email = ? WHERE lastName = ?');
-    $insertphone->execute(array(
-        $newemergency,
-        $newemail,
-        $_SESSION['lastName'],
-    ));
 
-    $_SESSION['emergency']=$newemergency;
-    $_SESSION['email']=$newemail;
+    $req = $bdd->prepare('SELECT * FROM client WHERE email = ?');
+    $req->execute(array($_POST['email']));
+    $exist = $req->fetch();
+
+    if ($exist != null){
+        die("Cet email existe déjà" . !$exist);
+    }
+    else {
+        $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, email = ? WHERE lastName = ?');
+        $insertphone->execute(array(
+            $newemergency,
+            $newemail,
+            $_SESSION['lastName'],
+        ));
+
+        $_SESSION['emergency'] = $newemergency;
+        $_SESSION['email'] = $newemail;
+    }
 
 }
 elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and !empty($_POST['email'])){
@@ -95,22 +132,31 @@ elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and !empty($_POST
     $newphone = htmlspecialchars($_POST['phone']);
     $newemail = htmlspecialchars($_POST['email']);
     $newemergency = htmlspecialchars($_POST['emergency']);
-    $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, phone = ?, email = ? WHERE lastName = ?');
-    $insertphone->execute(array(
-        $newemergency,
-        $newphone,
-        $newemail,
-        $_SESSION['lastName'],
-    ));
 
-    $_SESSION['emergency']=$newemergency;
-    $_SESSION['email']=$newemail;
-    $_SESSION['phone']=$newphone;
+    $req = $bdd->prepare('SELECT * FROM client WHERE email = ?');
+    $req->execute(array($_POST['email']));
+    $exist = $req->fetch();
+
+    if ($exist != null){
+        die("Cet email existe déjà" . !$exist);
+    }
+
+    else {
+        $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, phone = ?, email = ? WHERE lastName = ?');
+        $insertphone->execute(array(
+            $newemergency,
+            $newphone,
+            $newemail,
+            $_SESSION['lastName'],
+        ));
+
+        $_SESSION['emergency'] = $newemergency;
+        $_SESSION['email'] = $newemail;
+        $_SESSION['phone'] = $newphone;
+    }
 
 }
-else{
-    echo 'Veuillez remplir un ou plusieurs champs';
-}
+
 
 
 ?>
@@ -123,41 +169,42 @@ else{
     </head>
     
     <header>
-        <?php require 'header.php'?>
+        <?php require "header.php"?>
     </header>
-    
-    <body>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./design/css/ProfileEdited.css" />
+    <title>Profil</title>
+</head>
 
-    <section>
+<body>
 
-        <p> <h1>Votre profil</h1>
+<section>
 
-        <div id="soussection">
+    <p> <h1>Votre profil</h1>
 
-            <div class="Contact">
+    <div id="soussection">
 
-                <fieldset>
-                    <legend><h2>Vos informations</h2></legend>
-                    <p>
-                    <h3>Nom : <?php /* récupérer le nom de l'utilisateur*/ echo $_SESSION['lastName'];?> </h3>
-                    <h3>Prénom : <?php /* récupérer le prénom de l'utilisateur*/ echo $_SESSION['firstName']; ?> </h3>
-                    <h3>Téléphone : <?php echo $_SESSION['phone']; ?> </h3>
-                    <h3>E-mail : <?php echo $_SESSION['email'];?> </h3>
-                    <h3>Contact d'urgence : <?php echo $_SESSION['emergency'];?> </h3>
-                    </p>
-                </fieldset>
+        <div class="Contact">
 
-            </div>
-
-            <div class=edit>
-                <h4> <a href="index.php?action=editProfile">Modifier votre profil</a></h4>
-            </div>
+            <fieldset>
+                <legend><h2>Vos informations</h2></legend>
+                <p>
+                <h3>Nom : <?php /* récupérer le nom de l'utilisateur*/ echo $_SESSION['lastName'];?> </h3>
+                <h3>Prénom : <?php /* récupérer le prénom de l'utilisateur*/ echo $_SESSION['firstName']; ?> </h3>
+                <h3>Téléphone : <?php echo $_SESSION['phone']; ?> </h3>
+                <h3>E-mail : <?php echo $_SESSION['email'];?> </h3>
+                <h3>Contact d'urgence : <?php echo $_SESSION['emergency'];?> </h3>
+                </p>
+            </fieldset>
 
         </div>
-    </section>
-    
-    <footer>
-        <?php require "footer.php"?>
-    </footer>
 
-    </body>
+        <div class=edit>
+
+     <button ><a href="index.php?action=editProfile">Modifier votre profil</a> </button>
+        </div>
+
+    </div>
+</section>
+
+</body>

@@ -2,11 +2,6 @@
     background: #00497A;
     font-family: "Libre Baskerville", Arial;
 }
-
-section{
-   padding-bottom: 5%;
-}
-
 .clients{
     margin-left:8%;
 }
@@ -50,6 +45,12 @@ th
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+.buttonHidden{
+    font-size: 0%;
+    background-color: lightsteelblue;
+    display: inline-block;
+    border: lightsteelblue;
 }
 a{
     color: white;

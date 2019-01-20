@@ -18,14 +18,14 @@
                 <li><a href="index.php?action=profileEdited">Votre profil</a>
                     <ul>
                         <li><a href="index.php?action=editProfile">Modifier mon profil</a></li>
-                        <li><a href="index.php?action=addGuest">Ajouter un invité</a></li>
+                        <!--  <li><a href="index.php?action=addGuest">Ajouter un invité</a></li> !-->
                     </ul>
                 </li>
 
                 <li><a href="index.php?action=rooms&amp;piece=Choisir une pièce">Pièces</a>
                     <ul>
                         <li><a href="index.php?action=roomList">Voir mes pièces</a></li>
-                        <li><a href="index.php?action=addRoom">Ajouter une pièce</a></li>
+                        <li><a href="index.php?action=seeAddRoom">Ajouter une pièce</a></li>
                     </ul>
                 </li>
                 <li><a href="index.php?action=addHouse">Vos maisons</a>

@@ -49,11 +49,7 @@
     </tr>
     <tr>
         <form method="post" action="indexAdmin.php?action=addMessage&amp;idTopic=<?= $message["idTopic"];?>">
-        <td>
-            <p>
-                <label for="pseudo">Votre pseudo</label> : <input type="text" name="pseudo" id="pseudo" />
-            </p>
-        </td>
+        
     </tr>
     <tr>
 

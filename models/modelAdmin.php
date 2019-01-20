@@ -45,20 +45,12 @@ function getTemperatureSensors(){
     return $req;
 }
 
-function deletedSensors(){
-    // Le tableau $_POST['db'] contient les valeurs des checkbox cochées
-    if(!$_POST['<?php $sensors["idProduit"]?>']){
-        foreach($_POST['<?php $sensors["idProduit"]?>'] as $valeurs){
-            var_dump("Aucun capteur n'a été séléctionné $valeurs") ;
-        }
-    } else{
-        foreach($_POST['<?php $sensors["idProduit"]?>'] as $valeur) {
-            var_dump("La checkbox $valeur a été cochée");
-            $db=dbConnect();
-            $req = $db->query("DELETE * FROM catalogue");
-            return $req;
-        }
-    }
+function deletedSensors($idProduit){
+    $db = dbConnect();
+    $req = $db->prepare("DELETE FROM catalogue WHERE idProduit=:idProduct");
+    $req->bindParam("idProduct",$idProduit);
+    $req->execute();
+    return $req;
 }
 
 function insertSensors(){
@@ -74,14 +66,33 @@ function insertSensors(){
 
 function getSensorsGestionList(){
     $db = dbConnect();
-    $req = $db->query("SELECT * FROM capteur");
+    $req = $db->prepare("SELECT * FROM alerte");
+    $req->execute();
     return $req;
 }
 
-function getClientId(){
+function getClientId($idRoom){
     $db =dbConnect();
-    $req = $db->query("SELECT idClient FROM house JOIN room ON house.idHouse=room.idHouse JOIN capteur ON room.idRoom=capteur.idRoom");
+    $req = $db->prepare("SELECT * FROM house JOIN room ON house.idHouse=room.idHouse  WHERE room.idRoom= :idRoom ");
+    $req->bindParam("idRoom", $idRoom);
+    $req->execute();
     return $req;
+}
+
+function getIdProduct($idCapteur){
+    $db =dbConnect();
+    $req = $db->prepare("SELECT * FROM capteur JOIN alerte ON capteur.idCapteur=alerte.idCapteur  WHERE alerte.idCapteur= :idCapteur ");
+    $req->bindParam("idCapteur", $idCapteur);
+    $req->execute();
+    return $req;
+}
+
+function supAlerte($idAlerte){
+    $db = dbConnect();
+    $req = $db->prepare("DELETE FROM alerte WHERE idAlert = :idAlerte");
+    $req->bindParam("idAlerte", $idAlerte);
+    $req->execute();
+    $req->closeCursor();
 }
 
 
