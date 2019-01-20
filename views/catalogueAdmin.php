@@ -61,9 +61,11 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <p>Attention, vous allez supprimer tous les capteurs!</p>
+            <p>Vous allez supprimer les capteurs sélectionnés</p>
             <p> En êtes-vous sûr?</p>
-            <span class="cancel"><button id="bouton">Annuler</button></span>
+
+
+            <button class="delete"><a href="indexAdmin.php?action=catalogueAdmin"> Annuler</a> </button>
             <input type="submit" value="Supprimer">
         </div>
 
