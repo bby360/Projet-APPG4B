@@ -189,7 +189,7 @@ function deleteAlerte()
     function addMessage()
     {
 
-        $pseudo = "Balavoine";
+        $pseudo = "Admin";
         $message = $_POST["message"];
         $idTopic = $_GET["idTopic"];
         insertMessage($idTopic, $pseudo, $message);
