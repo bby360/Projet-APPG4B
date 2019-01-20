@@ -90,6 +90,9 @@ function dashboard(){
 
 function roomList()
 {
+    if(!isset($_SESSION)) {
+        session_start();
+    }
     $rooms = getRoomList()->fetchAll();
 
     require "views/roomList.php";
@@ -104,6 +107,9 @@ function roomList()
  */
 function roomList2()
 {
+    if(!isset($_SESSION)) {
+        session_start();
+    }
     $nom=$_GET['piece'];
     $idHouse= $_SESSION['idHouse'];
     $infos = getInfoRoom($nom, $idHouse)->fetchAll();
