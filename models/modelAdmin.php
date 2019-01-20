@@ -79,7 +79,13 @@ function getClientId($idRoom){
     return $req;
 }
 
-
+function getIdProduct($idCapteur){
+    $db =dbConnect();
+    $req = $db->prepare("SELECT * FROM capteur JOIN alerte ON capteur.idCapteur=alerte.idCapteur  WHERE alerte.idCapteur= :idCapteur ");
+    $req->bindParam("idCapteur", $idCapteur);
+    $req->execute();
+    return $req;
+}
 
 function supAlerte($idAlerte){
     $db = dbConnect();
