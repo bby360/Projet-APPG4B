@@ -55,9 +55,14 @@ function signin() {
 
                 echo 'Vous êtes maintenant connecté';
 
-                
+                $nbHouse=countHouse();
+                if($nbHouse==0){
+                    header('Location: index.php?action=addHouse');
+                }
+                else{
                 header('Location: index.php?action=dashboard');
                 exit();
+                }
             }
         
         else{
