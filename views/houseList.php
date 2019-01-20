@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./designs/css/houseList.css" />
 </head>
 
-<img src="../designs/pictures/photo.jpg" id="fond">
+<img src="./designs/pictures/photo.jpg" id="fond">
 <body>
 
 <header>
