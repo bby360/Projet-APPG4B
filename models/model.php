@@ -26,6 +26,22 @@ function signingup(): bool
     return true;
 }
 
+function nbHouse($idClient){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT COUNT(idHouse)  FROM house WHERE idClient= :client");
+    $req->bindParam("client", $idClient);
+    $req->execute();
+    return $req;
+}
+
+function idHouse($idClient){
+    $db = dbConnect();
+    $req = $db->prepare("SELECT *  FROM house WHERE idClient= :client");
+    $req->bindParam("client", $idClient);
+    $req->execute();
+    return $req;
+}
+
 function existingEmail() {
     if(!isset($_SESSION)) 
     { 
