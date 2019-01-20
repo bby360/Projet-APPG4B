@@ -73,7 +73,26 @@ function signin() {
 
 }
 
-
+function countHouse(){
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    $House= nbHouse($_SESSION['idClient']) -> fetchAll();
+    foreach ($House as $key => $H){
+        $nb=$H[$key];
+    }
+    if($nb==0){
+        return 0;
+    }
+    else{
+        $idHouse= idHouse($_SESSION['idClient']) -> fetchAll();
+        foreach ($idHouse as $i){
+            $id=$i['idHouse'];
+        }
+        $_SESSION['idHouse']=$id;
+        return 1;
+    }
+}
 
 function viewAddGuest(){
     $rooms = getRoomList()->fetchAll();
