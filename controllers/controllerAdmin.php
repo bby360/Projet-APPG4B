@@ -156,14 +156,17 @@ function deleteAlerte()
 
     function addQuestionReponse()
     {
+        if (isset($_POST['question']) && isset($_POST['reponse'])) {
         $question = $_POST['question'];
         $reponse = $_POST['reponse'];
 
         if (!(empty($_POST['question'])) && !(empty($_POST['reponse']))) {
             insertQuestionReponse($question, $reponse);
         }
-        require "views/faqAdmin.php";
     }
+        require "views/faqAdmin.php";
+    
+}
 
     function seeQuestion()
     {

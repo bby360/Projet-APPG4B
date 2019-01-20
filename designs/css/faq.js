@@ -2,7 +2,8 @@ $(document).ready(function() {
  
     $('.faq_question').click(function() {
  
-        if ($(this).parent().is('.open')){
+        if ($(this).parent().is('.open'))
+        {
             $(this).closest('.faq').find('.faq_answer_container').animate({'height':'0'},500);
             $(this).closest('.faq').removeClass('open');
  

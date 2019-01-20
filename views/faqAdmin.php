@@ -30,10 +30,13 @@ include 'headerAdmin.php';
                     <label for="reponse">Reponse</label> : <input type="text" name="reponse"/>
                 </p>
             </td>
+            <td>
+            <input type="submit" value="Ajouter" />
+
+</td>
         </tr>
-        <div id="envoyer">
-                    <input type="submit" value="Ajouter" />
-                </div>
+
+        
         </form>
 </table>
 </body>

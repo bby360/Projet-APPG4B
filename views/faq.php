@@ -15,20 +15,16 @@ require 'isConnected.php';
 <body>
 <table>
     <section>
-        <div class="faq_container">
-<?php foreach($questions as $question) { ?>
-         <tr id='info'>   
-            <td class="faq_question">
-                <p><?= $question["question"];?></p>
-            </td>
-            <div class="faq_answer_container">
-            <td class="faq_reponse">
-                <p><?= $question["reponse"];?></p>
-            </td>
-</div>
-        </tr>
-    <?php } ?>
-</div>
+    <div class="faq_container">
+    <?php foreach($questions as $question) { ?>
+   <div class="faq">
+      <div class="faq_question"><?= $question["question"];?></div>
+           <div class="faq_answer_container">
+              <div class="faq_answer"><?= $question["reponse"];?></div>
+           </div>        
+    </div>
+ </div>
+ <?php } ?>
 </section>
 </table>
 </body>
