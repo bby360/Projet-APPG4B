@@ -35,7 +35,7 @@
                     <?= $clients[$key+1];?>
                 </td>
                 <td>
-                    <a href="index.php?action=detailedSensors&id=<?=$sensorsG["idCapteur"];?>"><?= $sensorsG["idCapteur"];?>
+                    <?= $idProducts[$key+1];?>
                 </td>
                 <td>
                     <?= $idCapteurs[$key+1];?>
