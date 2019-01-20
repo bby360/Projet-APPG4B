@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
@@ -113,7 +115,6 @@ else{
 
 ?>
 
-<!DOCTYPE html>
 <div xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8" />
