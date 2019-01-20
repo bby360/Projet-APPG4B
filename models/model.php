@@ -43,7 +43,7 @@ function getRoomList(){
         session_start(); 
     } 
     $db = dbConnect();
-    $idHouse = '5';//$_SESSION['idHouse'];
+    $idHouse = $_SESSION['idHouse'];
     $req = $db->prepare("SELECT * FROM room  WHERE idHouse = :idHouse");
     $req->bindParam("idHouse", $idHouse);
     $req->execute();
