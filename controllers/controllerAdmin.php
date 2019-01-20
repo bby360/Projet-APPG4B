@@ -104,6 +104,7 @@ function sensorsGestion(){
     $idCapteurs[] = Array();
     $typeAlertes[] = Array();
     $idAlertes[] = Array();
+    $idProducts[] = Array();
     $messages[] = Array();
     $sensorsGs = getSensorsGestionList()->fetchAll();
     foreach ($sensorsGs as $sensorsG) {
@@ -113,10 +114,15 @@ function sensorsGestion(){
         $idAlertes[] = $sensorsG['idAlert'];
 
         $idRoom=$sensorsG['idRoom'];
+        $typeProduit= getIdProduct($sensorsG['idCapteur']) -> fetchAll();
+        foreach ($typeProduit as $t) {
+            $idProducts[] = $t['idProduit'];
+        }
         $client = getClientId($idRoom)->fetchAll();
         foreach ($client as $c) {
         $clients[] = $c['idClient'];
         }
+
     }
    
     require"views/sensorsGestion.php";
