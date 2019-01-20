@@ -105,7 +105,7 @@ function roomList()
 function roomList2()
 {
     $nom=$_GET['piece'];
-    $idHouse= '5';//$_SESSION['idHouse'];
+    $idHouse= $_SESSION['idHouse'];
     $infos = getInfoRoom($nom, $idHouse)->fetchAll();
     $rooms = getRoomList()->fetchAll();
     require "views/rooms.php";
@@ -158,7 +158,7 @@ function updateRoom(){
         $lum="0";
     }
     $idClient=$_SESSION['idClient'];
-    $idHouse= '5';//$_SESSION['idHouse'];
+    $idHouse= $_SESSION['idHouse'];
     $nom =$_GET['piece'];
     $nvMode=$_POST['mode'];
     $nvLumiereAuto=$_POST['lumiere_auto'];
@@ -304,7 +304,7 @@ function declarerAlerte(){
     if(!isset($_SESSION)) {
         session_start();
     }
-    $house = "5";//$_SESSION['idHouse'];
+    $house = $_SESSION['idHouse'];
     $capteurs = getCapteur($house) -> fetchAll();
     $roomNames = Array();
     $typeCapteurs = Array();
