@@ -37,7 +37,7 @@
                 Choix de la maison :
                 <select name="idHouse" id="idHouse" >
                     <?php foreach($houses as $house){ ?>
-                    <option  value="<?=$house['idHouse']; ?>"> <?=$house['adress']; ?> et <?=$house['idHouse']; ?></option>
+                    <option  value="<?=$house['idHouse']; ?>"> <?=$house['adress']; ?> </option>
                     <?php } ?>
                 </select>
 
