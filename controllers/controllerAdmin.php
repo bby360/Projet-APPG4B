@@ -200,7 +200,7 @@ function deleteAlerte()
     function addTopic()
     {
         $subject = $_POST["subject"];
-        $pseudo = "Balavoine";
+        $pseudo = "Admin";
         $message = $_POST["message"];
         insertTopic($subject);
         addMessageTopic($subject, $pseudo, $message);
