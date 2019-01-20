@@ -23,7 +23,7 @@ include("isConnected.php");
 
         <div id=soussection>
         <div class="Contact">
-            <form method="post" action="index.php?action=profileEdited.php">
+            <form method="post" action="index.php?action=profileEdited">
 
                 <fieldset>
                 <legend><h2>Changer votre contact</h2></legend>
@@ -39,21 +39,7 @@ include("isConnected.php");
 
         </div>
 
-        <div class="Photo">
-    	   <form method="post" action="index.php?action=profileEdited.php" enctype="multipart/form-data">
 
-                <fieldset>
-                <legend><h2>Changer votre photo de profil</h2></legend>
-
-    	           <p>
-                    <label for="photo">Choisir votre photo (JPG, JPEG, PNG ) :</label><br />
-                    <h3> <input type="file" name="newpic" /> </h3>
-                    <h3><input type="submit" value="Enregistrer" /></h3>
-                    </p>
-                </fieldset>
-            </form>
-        </div>
-        </div>
 
         </section>
 

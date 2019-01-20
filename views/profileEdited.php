@@ -23,6 +23,7 @@ if ( !empty($_POST['email']) and empty($_POST['phone']) and empty($_POST['emerge
 
     if ($exist != null){
         die("Cet email existe déjà" . !$exist);
+
     }
 
     else {

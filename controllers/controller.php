@@ -357,4 +357,3 @@ function setHouse(){
    require 'views/houseList.php';
 }
 
-

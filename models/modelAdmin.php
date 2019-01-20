@@ -79,13 +79,7 @@ function getClientId($idRoom){
     return $req;
 }
 
-function getClientId($idRoom){
-    $db =dbConnect();
-    $req = $db->prepare("SELECT * FROM house JOIN room ON house.idHouse=room.idHouse  WHERE room.idRoom= :idRoom ");
-    $req->bindParam("idRoom", $idRoom);
-    $req->execute();
-    return $req;
-}
+
 
 function supAlerte($idAlerte){
     $db = dbConnect();

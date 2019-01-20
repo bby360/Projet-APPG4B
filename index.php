@@ -28,10 +28,10 @@ if(isset($_GET["action"])){
             addRoom();
             break;
 		    
-	case 'seeAddRoom':
-           seeAddRoom();
-            break;
-            
+        case 'seeAddRoom':
+               seeAddRoom();
+                break;
+
         case 'updateRoom':
 		    updateRoom();
 		    break;
@@ -47,18 +47,10 @@ if(isset($_GET["action"])){
         case 'editProfile':
         	editProfile();
         	break;
-
-        case 'profileEdited':
-        	profileEdited();
-        	break;
 		    
 	    case 'catalogueUnlog':
 		    catalogueUnlog();
 		    break;
-
-        case 'consumption':
-            consumption();
-            break;
 
         case 'lightSensors':
             lightSensors();
@@ -144,9 +136,6 @@ if(isset($_GET["action"])){
             sethouse();
             break;
 
-        case 'editProfile':
-            editProfile();
-            break;
         case 'profileEdited':
             profileEdited();
             break;
