@@ -315,7 +315,6 @@ function consumption(){
 function addQuestionReponse(){
     $question=$_POST['question'];
     $reponse=$_POST['reponse'];
-
     if (!(empty($_POST['question'])) && !(empty($_POST['reponse']))) {
     insertQuestionReponse($question,$reponse);
     }

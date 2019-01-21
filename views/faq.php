@@ -13,7 +13,6 @@ require 'isConnected.php';
 </header>
 
 <body>
-<table>
     <section>
     <div class="faq_container">
     <?php foreach($questions as $question) { ?>
@@ -26,7 +25,6 @@ require 'isConnected.php';
  </div>
  <?php } ?>
 </section>
-</table>
 </body>
 
  </html>
