@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    
+<?php require 'isConnectedAdmin.php';
+?>
 <head>
     <meta charset="utf-8" />
     <title>Catalogue Administrateur</title>

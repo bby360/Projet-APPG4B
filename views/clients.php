@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <div xmlns="http://www.w3.org/1999/html">
     <head>
+        
+<?php require 'isConnectedAdmin.php';
+?>
         <?php
         include 'headerAdmin.php';
         ?>

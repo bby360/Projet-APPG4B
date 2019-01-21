@@ -11,6 +11,8 @@ include 'headerAdmin.php';
 ?>
 </header>
 
+<?php require 'isConnectedAdmin.php';
+?>
 <body>
 <table>
 <tr>

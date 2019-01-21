@@ -2,6 +2,9 @@
 
 <html>
 <head>
+    
+<?php require 'isConnectedAdmin.php';
+?>
     <meta charset="utf-8" />
     <title>Forum</title>
     <link rel="stylesheet" type="text/css" href="./designs/css/forumMessageAdmin.css" />

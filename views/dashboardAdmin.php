@@ -10,6 +10,8 @@
 <header>
     <?php include("headerAdmin.php"); ?>
 
+    <?php require 'isConnectedAdmin.php';
+?>
 </header>
 
 <section>
