@@ -5,7 +5,10 @@ session_start();
 <!DOCTYPE html>
 
 <?php
+
+if(!isset($_SESSION)) {
 session_start();
+} 
 $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
 
 $requser = $bdd->prepare("SELECT * FROM client WHERE lastName = ?");
