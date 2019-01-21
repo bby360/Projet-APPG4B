@@ -15,7 +15,9 @@ require 'isConnected.php';
 <body>
 
 <h1><?php
-
+ if(!isset($_SESSION)) {
+        session_start();
+    }
     switch ($_SESSION['lang']){
         case 'fr':
             echo "Foire Aux Questions";
