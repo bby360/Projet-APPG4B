@@ -42,7 +42,7 @@ session_start();
         </a>
     </div>
 
-    <div class="alertes"><a href="indexAdmin.php?action=alertesAdmin">
+    <div class="alertes"><a href="indexAdmin.php?action=sensorsGestion">
             <div class="text">
                 <p>ALERTES</p>
             </div>
