@@ -1,8 +1,11 @@
 
 
 <!DOCTYPE html>
+<?php include("isConnected.php"); ?>
+
 <html>
 <head>
+
     <meta charset="utf-8" />
     <title>Pièce</title>
     <link rel="stylesheet" type="text/css" href="./designs/css/rooms.css" />

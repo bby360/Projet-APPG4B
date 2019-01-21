@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include("isConnectedAdmin.php"); ?>
 <html>
 <head>
     <meta charset="utf-8" />

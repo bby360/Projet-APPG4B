@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php include("isConnected.php"); ?>
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
@@ -161,7 +161,7 @@ elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and !empty($_POST
 
 ?>
 
-<div xmlns="http://www.w3.org/1999/html">
+
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="../design/ProfileEdited.css" />
