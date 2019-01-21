@@ -33,8 +33,6 @@
 
     </p>
 
-    <div id="design">
-        <p>designed by</p>
 
     </div>
 
