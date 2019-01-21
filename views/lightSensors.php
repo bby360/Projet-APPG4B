@@ -22,7 +22,9 @@
 </header>
 <section>
     <h1> <?php
+        if(!isset($_SESSION)) {
         session_start();
+    }
         switch ($_SESSION['lang']){
             case 'fr':
                 echo "Capteurs de luminosité";
@@ -39,7 +41,9 @@
         <thead>
         <tr>
             <td><h3><?php
-                    session_start();
+                     if(!isset($_SESSION)) {
+        session_start();
+    }
                     switch ($_SESSION['lang']){
                         case 'fr':
                             echo "Référence";
@@ -51,7 +55,9 @@
                     }
                     ?></h3></td>
             <td><h3><?php
-                    session_start();
+                     if(!isset($_SESSION)) {
+        session_start();
+    }
                     switch ($_SESSION['lang']){
                         case 'fr':
                             echo "Type de produit";
@@ -63,7 +69,9 @@
                     }
                     ?></h3></td>
             <td><h3><?php
-                    session_start();
+                     if(!isset($_SESSION)) {
+        session_start();
+    }
                     switch ($_SESSION['lang']){
                         case 'fr':
                             echo "Consommation";
@@ -75,7 +83,9 @@
                     }
                     ?></h3></td>
             <td><h3><?php
-                    session_start();
+                     if(!isset($_SESSION)) {
+        session_start();
+    }
                     switch ($_SESSION['lang']){
                         case 'fr':
                             echo "Prix";
