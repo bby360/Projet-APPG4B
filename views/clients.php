@@ -1,3 +1,7 @@
+<?php
+if(!isset($_SESSION)) {
+session_start();
+} ?>
 <!DOCTYPE html>
 <div xmlns="http://www.w3.org/1999/html">
     <head>
