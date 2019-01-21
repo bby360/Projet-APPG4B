@@ -12,7 +12,7 @@
 
     <p>
     <ul>
-        <li><a href="" id="mention"><?php
+        <li><a href="./views/legal.php" id="mention"><?php
                  if(!isset($_SESSION)) {
         session_start();
     }
