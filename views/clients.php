@@ -35,7 +35,7 @@
             <th>Adresse</th>
             <th>Code Postal</th>
             <th>Numéro d'urgence</th>
-            <th>Voir le profil</th>
+            
         </tr>";
         // output data of each row
         while($row = $result->fetch()) {
@@ -49,11 +49,7 @@
                 <td>".htmlspecialchars($row["adress"])."</td>
                 <td>".htmlspecialchars($row["postalcode"])."</td>
                 <td>".htmlspecialchars($row["emergency"])."</td>
-                <td>
-                <form action='indexAdmin.php?action=infoClient' method='GET'>
-                    <input type='text' name='idProfil' value='".$row['idClient']."' style='visibility:hidden' class='buttonHidden';>
-                    <input type=\"submit\" name='VoirProfil'  value='Voir profil ".$row["idClient"]."' class='button' style=\"vertical-align:middle\">
-                </form>
+                
                 </td>
                </tr>";
         }
