@@ -3,7 +3,7 @@ if(!isset($_SESSION)) {
 session_start();
 } ?>
 <!DOCTYPE html>
-<?php include("isConnected.php"); ?>
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -48,22 +48,7 @@ session_start();
                 }
                 ?></p>
         </td>
-        <td class="date">
-            <p><?php
-                 if(!isset($_SESSION)) {
-        session_start();
-    }
-                switch ($_SESSION['lang']){
-                    case 'fr':
-                        echo "Créé par :";
-                        break;
 
-                    case 'eng':
-                        echo "Created by :";
-                        break;
-                }
-                ?></p>
-        </td>
     </tr>
     </table>
   <table>
@@ -76,9 +61,7 @@ session_start();
         <td class="date">
             <p><?= $topic["creationDate"];?></p>
         </td>
-        <td class="date">
-            <p><?= $topic["creationDate"];?></p>
-        </td>
+        
     </tr>
     <?php } ?>
   </table>
