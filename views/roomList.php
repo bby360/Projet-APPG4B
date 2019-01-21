@@ -20,7 +20,7 @@
     <table>
         <?php foreach($rooms as $room) { ?>
         <ul>
-            <li><a href="index.php?action=rooms&piece=<?= $room["roomName"]; ?>"><?php echo $room["roomName"]; ?></a>
+            <li><?php echo $room["roomName"]; ?>
         </ul>
         <?php } ?>
 
