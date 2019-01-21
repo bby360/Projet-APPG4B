@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php include("isConnected.php"); ?>
 
 
 <html>

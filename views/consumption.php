@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php include("isConnected.php"); ?>
 <head>
     <meta charset="utf-8" />
     <title>Consommation</title>

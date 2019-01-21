@@ -139,6 +139,10 @@ if(isset($_GET["action"])){
         case 'profileEdited':
             profileEdited();
             break;
+		    
+	case 'langue':
+            changeLang();
+            break;
 
     }
 } else {

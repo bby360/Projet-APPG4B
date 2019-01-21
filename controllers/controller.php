@@ -52,6 +52,7 @@ function signin() {
                 $_SESSION['postalcode']=$client->postalcode;
                 $_SESSION['pays']=$client->pays;
                 $_SESSION['idClient']=$client->idClient;
+                $_SESSION['lang']= 'fr';
 
                 echo 'Vous êtes maintenant connecté';
 
@@ -380,3 +381,16 @@ function setHouse(){
    require 'views/houseList.php';
 }
 
+function changeLang(){
+    session_start();
+    switch ($_SESSION['lang']){
+        case 'fr':
+            $_SESSION['lang']='eng';
+            break;
+
+        case 'eng':
+            $_SESSION['lang']='fr';
+            break;
+    }
+
+    require 'views/dashboard.php';

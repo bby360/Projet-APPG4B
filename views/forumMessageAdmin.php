@@ -2,14 +2,14 @@
 
 <html>
 <head>
-    
+<body>
 <?php require 'isConnectedAdmin.php';
 ?>
     <meta charset="utf-8" />
     <title>Forum</title>
     <link rel="stylesheet" type="text/css" href="./designs/css/forumMessageAdmin.css" />
 </head>
-<body>
+
 <header>
     <?php include("headerAdmin.php"); ?>
 </header>
@@ -73,7 +73,7 @@
     </tr>
 </table>
 </form>
-
+</body>
 
 <script language='javascript'>
     function Confirmer()

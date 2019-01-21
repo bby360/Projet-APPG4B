@@ -2,7 +2,7 @@
 session_start();
 
 ?>
-
+<?php include("isConnectedAdmin.php"); ?>
 <!DOCTYPE html>
 <div xmlns="http://www.w3.org/1999/html">
     <head>
