@@ -13,7 +13,9 @@
     <p>
     <ul>
         <li><a href="" id="mention"><?php
-
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo 'Mentions légales';
@@ -25,7 +27,9 @@
                 }
                 ?></a> </li>
         <li><a href="" id="Apropos"><?php
-
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo 'A propos';
