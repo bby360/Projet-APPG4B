@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <title><?php
+         if(!isset($_SESSION)) {
         session_start();
+    }
         switch ($_SESSION['lang']){
             case 'fr':
                 echo "Consommation";
@@ -74,7 +76,9 @@
             <img src="designs/pictures/temperature.jpg">
         </a>
         <div class="desc"><h1> <?php
+                if(!isset($_SESSION)) {
                 session_start();
+                }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Consommation des capteurs de température";
