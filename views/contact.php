@@ -19,7 +19,9 @@
 		<div class="desc">
 			Hotline<br>
             <?php
-            session_start();
+             if(!isset($_SESSION)) {
+        	session_start();
+    		}
             switch ($_SESSION['lang']){
                 case 'fr':
                     echo "Joignable";
@@ -39,7 +41,9 @@
 		<div class="desc">
 			Mail<br>
             <?php
-            session_start();
+             if(!isset($_SESSION)) {
+        session_start();
+    }
             switch ($_SESSION['lang']){
                 case 'fr':
                     echo "Réponse en 24h";
@@ -58,7 +62,9 @@
 		<img src="designs/pictures/light.jpg">
 		<div class="desc">
             <?php
-            session_start();
+             if(!isset($_SESSION)) {
+        session_start();
+    }
             switch ($_SESSION['lang']){
                 case 'fr':
                     echo "Voie Postale";
@@ -70,7 +76,9 @@
             }
             ?><br>
             <?php
-            session_start();
+            if(!isset($_SESSION)) {
+        session_start();
+    }
             switch ($_SESSION['lang']){
                 case 'fr':
                     echo "Réponse en une semaine";
