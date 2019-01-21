@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include("isConnected.php"); ?>
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -12,7 +12,18 @@
     <?php include("header.php"); ?>
 
 </header>
-<a href="index.php?action=declarerAlerte"><input id="button" type="button" value="ALERTE"></a>
+<a href="index.php?action=declarerAlerte"><input id="button" type="button" value="<?php
+    session_start();
+    switch ($_SESSION['lang']){
+        case 'fr':
+            echo "ALERTE";
+            break;
+
+        case 'eng':
+            echo "EMERGENCY";
+            break;
+    }
+    ?>"></a>
 <section>
     
     
@@ -20,7 +31,18 @@
         <a href="./index.php?action=contactUrgence">
             <img src="designs/pictures/light.jpg">
         </a>
-        <div class="desc">Contact d'urgence</div>
+        <div class="desc"><?php
+            session_start();
+            switch ($_SESSION['lang']){
+                case 'fr':
+                    echo "Contact d'urgence";
+                    break;
+
+                case 'eng':
+                    echo "Emergency contact";
+                    break;
+            }
+            ?></div>
     </div>
     <div class="gallery">
         <a href="./designs/pictures/presence.jpg">

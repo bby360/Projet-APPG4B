@@ -1,13 +1,21 @@
 
 
 <!DOCTYPE html>
-<?php include("isConnected.php"); ?>
-
 <html>
 <head>
-
     <meta charset="utf-8" />
-    <title>Pièce</title>
+    <title><?php
+
+        switch ($_SESSION['lang']){
+            case 'fr':
+                echo 'Pièce';
+                break;
+
+            case 'eng':
+                echo 'Room';
+                break;
+        }
+        ?></title>
     <link rel="stylesheet" type="text/css" href="./designs/css/rooms.css" />
 </head>
 <body>
@@ -36,14 +44,58 @@
     <form action="index.php?action=updateRoom&piece=<?php echo $_GET['piece']; ?>" method="post">
 
         <div id="mode">
-        <p>Mode de gestion de la pièce : <br></p>
-            <input type="radio" name="mode" value="Auto" id="automatique" <?php foreach($infos as $info) { if ($info['mode'] == 'Auto'){ echo 'checked="checked"';} }?>>  <label for="automatique">Automatique</label>
-            <input type="radio" name="mode" value="Manuel" id="manuel" <?php  foreach($infos as $info) { if ($info['mode'] == 'Manuel'){ echo 'checked="checked"';} }?>> <label for="manuel">Manuel</label>
+        <p><?php
+
+            switch ($_SESSION['lang']){
+                case 'fr':
+                    echo 'Mode de gestion de la pièce :';
+                    break;
+
+                case 'eng':
+                    echo 'Room management mode :';
+                    break;
+            }
+            ?><br></p>
+            <input type="radio" name="mode" value="Auto" id="automatique" <?php foreach($infos as $info) { if ($info['mode'] == 'Auto'){ echo 'checked="checked"';} }?>>  <label for="automatique"><?php
+
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo 'Automatique';
+                        break;
+
+                    case 'eng':
+                        echo 'Automatic';
+                        break;
+                }
+                ?></label>
+            <input type="radio" name="mode" value="Manuel" id="manuel" <?php  foreach($infos as $info) { if ($info['mode'] == 'Manuel'){ echo 'checked="checked"';} }?>> <label for="manuel"><?php
+
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo 'Manuel';
+                        break;
+
+                    case 'eng':
+                        echo 'Manual';
+                        break;
+                }
+                ?></label>
 
         </div>
 
         <div id="lumiere_auto">
-            Luminosité &nbsp &nbsp
+            <?php
+
+            switch ($_SESSION['lang']){
+                case 'fr':
+                    echo 'Luminosité';
+                    break;
+
+                case 'eng':
+                    echo 'Brightness';
+                    break;
+            }
+            ?> &nbsp &nbsp
             0% <input type="range" name="lumiere_auto" value=<?php foreach($infos as $info) { echo $info['lumAuto']; }?> max="100" min="0" step="5"> 100%
 
             <!-- Rounded switch -->
@@ -53,22 +105,66 @@
             </label>
 
             <div id="lumiere_manuel">
-                Luminosité &nbsp &nbsp
+                <?php
+
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo 'Luminosité';
+                        break;
+
+                    case 'eng':
+                        echo 'Brightness';
+                        break;
+                }
+                ?> &nbsp &nbsp
                 0% <input type="range" name="lumiere_manuel" value=<?php foreach($infos as $info) { echo $info['lumManu']; }?> max="100" min="0" step="5"/>100%
             </div>
         </div>
 
         <div id="ouverture_volets">
-            <label for="ouverture_volets">Horaire ouverture volets &nbsp &nbsp</label>
+            <label for="ouverture_volets"><?php
+
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Heure d'ouverture des volets";
+                        break;
+
+                    case 'eng':
+                        echo "Blinds' opening time";
+                        break;
+                }
+                ?> &nbsp &nbsp</label>
             <input type="time" name="ouverture_volets" value=<?php foreach($infos as $info) { echo $info['blindOpenTime']; }?>>
             <div id="volets_manuel">
-                Volets &nbsp &nbsp
+                <?php
+
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Volets";
+                        break;
+
+                    case 'eng':
+                        echo "Blinds";
+                        break;
+                }
+                ?> &nbsp &nbsp
                 0% <input type="range" name="volets_manuel" value=<?php foreach($infos as $info) { echo $info['voletsManu']; }?> max="100" min="0" step="5"/>100%
             </div>
         </div>
 
         <div id="fermeture_volets">
-            <label for="fermeture_volets">Horaire fermeture volets &nbsp &nbsp</label>
+            <label for="fermeture_volets"><?php
+
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Heure de fermeture des volets";
+                        break;
+
+                    case 'eng':
+                        echo "Blinds' closing time";
+                        break;
+                }
+                ?> &nbsp &nbsp</label>
             <input type="time" name="fermeture_volets" value=<?php foreach($infos as $info) { echo $info['blindCloseTime']; }?>>
         </div>
 
@@ -79,7 +175,18 @@
         </div>
 
         <div id="valider">
-            <input type="submit" value="Valider" />
+            <input type="submit" value="<?php
+
+            switch ($_SESSION['lang']){
+                case 'fr':
+                    echo "Valider";
+                    break;
+
+                case 'eng':
+                    echo "Confirm";
+                    break;
+            }
+            ?>" />
         </div>
 
     </form>

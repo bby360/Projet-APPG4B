@@ -8,7 +8,18 @@ include("isConnected.php");
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="./designs/css/editProfile.css" />
-        <title>Editer votre profil</title>
+        <title><?php
+            session_start();
+            switch ($_SESSION['lang']){
+                case 'fr':
+                    echo "Editer votre profil";
+                    break;
+
+                case 'eng':
+                    echo "Edit your profile";
+                    break;
+            }
+            ?></title>
     </head>
 
     <body>
@@ -16,23 +27,89 @@ include("isConnected.php");
     <?php include("header.php"); ?>
     </header>
 
-            <h1> Editer votre profil</h1></header>
+            <h1> <?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Editer votre profil";
+                        break;
+
+                    case 'eng':
+                        echo "Edit your profile";
+                        break;
+                }
+                ?></h1></header>
 
     	<section>
-        <p>Bonjour, vous pouvez <em>modifier</em> <strong>votre profil</strong> ici!</p>
+        <p><?php
+            session_start();
+            switch ($_SESSION['lang']){
+                case 'fr':
+                    echo "Bonjour, vous pouvez modifier votre profil ici !";
+                    break;
+
+                case 'eng':
+                    echo "Hi, care to edit your profile ? It's down there ! ";
+                    break;
+            }
+            ?></p>
 
         <div id=soussection>
         <div class="Contact">
             <form method="post" action="index.php?action=profileEdited">
 
                 <fieldset>
-                <legend><h2>Changer votre contact</h2></legend>
-                <p>
-                    <h3><label for="phone">Portable</label> : <input type="tel" name="phone" id="phone" /></h3>
-                    <h3><label for="email">E-mail</label> : <input type="email" name="email" id="email" /></h3>
-                    <h3><label for="emergency">Contact d'urgence</label> : <input type="text" name="emergency" id="emergency" /></h3>
+                <legend><h2><?php
+                        session_start();
+                        switch ($_SESSION['lang']){
+                            case 'fr':
+                                echo "Changer votre contact";
+                                break;
 
-                    <h3><input type="submit" value="Enregistrer" /></h3>
+                            case 'eng':
+                                echo "Change your contact information";
+                                break;
+                        }
+                        ?></h2></legend>
+                <p>
+                    <h3><label for="phone"><?php
+                            session_start();
+                            switch ($_SESSION['lang']){
+                                case 'fr':
+                                    echo "Portable";
+                                    break;
+
+                                case 'eng':
+                                    echo "Mobile phone";
+                                    break;
+                            }
+                            ?></label> : <input type="tel" name="phone" id="phone" /></h3>
+                    <h3><label for="email">E-mail</label> : <input type="email" name="email" id="email" /></h3>
+                    <h3><label for="emergency"><?php
+                            session_start();
+                            switch ($_SESSION['lang']){
+                                case 'fr':
+                                    echo "Contact d'urgence";
+                                    break;
+
+                                case 'eng':
+                                    echo "Emergency contact";
+                                    break;
+                            }
+                            ?></label> : <input type="text" name="emergency" id="emergency" /></h3>
+
+                    <h3><input type="submit" value="<?php
+                        session_start();
+                        switch ($_SESSION['lang']){
+                            case 'fr':
+                                echo "Enregistrer";
+                                break;
+
+                            case 'eng':
+                                echo "Save information";
+                                break;
+                        }
+                        ?>" /></h3>
                 </p>
                 </fieldset>
             </form>

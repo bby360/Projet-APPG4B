@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
-<?php include("isConnected.php"); ?>
 <head>
     <meta charset="utf-8" />
-    <title>Consommation</title>
+    <title><?php
+        session_start();
+        switch ($_SESSION['lang']){
+            case 'fr':
+                echo "Consommation";
+                break;
+
+            case 'eng':
+                echo "Consumption";
+                break;
+        }
+        ?></title>
     <link rel="stylesheet" type="text/css"  href="designs/css/consumption.css" />
 </head>
 <body>
@@ -16,7 +26,18 @@
         <a>
             <img src="designs/pictures/light.jpg">
         </a>
-        <div class="desc"><h1> Consommation des capteurs de Luminosité </h1>
+        <div class="desc"><h1> <?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Consommation des capteurs de luminosité";
+                        break;
+
+                    case 'eng':
+                        echo "Light sensors consumption";
+                        break;
+                }
+                ?> </h1>
             <h1><?php foreach($capteursL as $capteur) { ?>
                     <?= $capteur["CSumL"];?>
                 <?php } ?> kWh
@@ -28,7 +49,18 @@
         <a>
             <img src="designs/pictures/presence.jpg">
         </a>
-        <div class="desc"><h1> Consommation des capteurs de présence</h1>
+        <div class="desc"><h1> <?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Consommation des capteurs de présence";
+                        break;
+
+                    case 'eng':
+                        echo "Proximity sensors consumption";
+                        break;
+                }
+                ?></h1>
             <h1>
                 <?php foreach($capteursP as $capteur) { ?>
                     <?= $capteur["CSumP"];?>
@@ -41,7 +73,18 @@
         <a>
             <img src="designs/pictures/temperature.jpg">
         </a>
-        <div class="desc"><h1> Consommation des capteurs de Température</h1>
+        <div class="desc"><h1> <?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Consommation des capteurs de température";
+                        break;
+
+                    case 'eng':
+                        echo "Heat sensors consumption";
+                        break;
+                }
+                ?></h1>
             <h1>
                 <?php foreach($capteursT as $capteur) { ?>
                     <?= $capteur["CSumT"];?>

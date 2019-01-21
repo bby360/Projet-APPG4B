@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<?php include("isConnected.php"); ?>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Capteurs de luminosité</title>
+    <title><?php
+
+        switch ($_SESSION['lang']){
+            case 'fr':
+                echo 'Capteurs de luminosité';
+                break;
+
+            case 'eng':
+                echo 'Light sensors';
+                break;
+        }
+        ?></title>
     <link rel="stylesheet" type="text/css" href="designs/css/sensors.css" />
 </head>
 <body>
@@ -11,16 +21,71 @@
     <?php require "header.php"?>
 </header>
 <section>
-    <h1> Capteurs de Luminosité</h1>
+    <h1> <?php
+        session_start();
+        switch ($_SESSION['lang']){
+            case 'fr':
+                echo "Capteurs de luminosité";
+                break;
+
+            case 'eng':
+                echo "Light sensors";
+                break;
+        }
+        ?></h1>
 
     <table>
 
         <thead>
         <tr>
-            <td><h3>Référence</h3></td>
-            <td><h3>Type de produit</h3></td>
-            <td><h3>Consommation</h3></td>
-            <td><h3>Prix</h3></td>
+            <td><h3><?php
+                    session_start();
+                    switch ($_SESSION['lang']){
+                        case 'fr':
+                            echo "Référence";
+                            break;
+
+                        case 'eng':
+                            echo "Reference";
+                            break;
+                    }
+                    ?></h3></td>
+            <td><h3><?php
+                    session_start();
+                    switch ($_SESSION['lang']){
+                        case 'fr':
+                            echo "Type de produit";
+                            break;
+
+                        case 'eng':
+                            echo "Product type";
+                            break;
+                    }
+                    ?></h3></td>
+            <td><h3><?php
+                    session_start();
+                    switch ($_SESSION['lang']){
+                        case 'fr':
+                            echo "Consommation";
+                            break;
+
+                        case 'eng':
+                            echo "Consumption";
+                            break;
+                    }
+                    ?></h3></td>
+            <td><h3><?php
+                    session_start();
+                    switch ($_SESSION['lang']){
+                        case 'fr':
+                            echo "Prix";
+                            break;
+
+                        case 'eng':
+                            echo "Price";
+                            break;
+                    }
+                    ?></h3></td>
         </tr>
         </thead>
 
@@ -37,7 +102,7 @@
                     <?= $sensors["consumption"];?> kWh
                 </td>
                 <td>
-                    <?= $sensors["price"];?>
+                    <?= $sensors["price"];?> €
                 </td>
             </tr>
         <?php } ?>

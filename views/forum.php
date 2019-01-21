@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include("isConnected.php"); ?>
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -13,13 +13,46 @@
     <table>
     <tr>
         <td class="sujet1">
-            <p>Sujet</p>
+            <p><?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Sujet";
+                        break;
+
+                    case 'eng':
+                        echo "Topic";
+                        break;
+                }
+                ?></p>
         </td>
         <td class="date">
-            <p>Date de création</p>
+            <p><?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Date de création";
+                        break;
+
+                    case 'eng':
+                        echo "Creation date";
+                        break;
+                }
+                ?></p>
         </td>
         <td class="date">
-            <p>Crée par</p>
+            <p><?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Créé par :";
+                        break;
+
+                    case 'eng':
+                        echo "Created by :";
+                        break;
+                }
+                ?></p>
         </td>
     </tr>
     </table>
@@ -42,7 +75,18 @@
     <table id="ajout">
     <tr>
         <td>
-            <p id='sujet'>Ajouter un topic </p>
+            <p id='sujet'><?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Ajouter un topic";
+                        break;
+
+                    case 'eng':
+                        echo "Write about a new subject";
+                        break;
+                }
+                ?> </p>
         </td>
     </tr>
     <tr>
@@ -50,7 +94,18 @@
 
             <td>
                 <p>
-                    <label for="subject">Sujet du topic</label>
+                    <label for="subject"><?php
+                        session_start();
+                        switch ($_SESSION['lang']){
+                            case 'fr':
+                                echo "Sujet du topic";
+                                break;
+
+                            case 'eng':
+                                echo "Topic's subject";
+                                break;
+                        }
+                        ?></label>
                     <input type="text" name="subject" id="subject" />
                 </p>
             </td>
@@ -61,7 +116,18 @@
         <tr>
             <td>
                 <p>
-                    <label for="message">Votre message</label><br />
+                    <label for="message"><?php
+                        session_start();
+                        switch ($_SESSION['lang']){
+                            case 'fr':
+                                echo "Votre message";
+                                break;
+
+                            case 'eng':
+                                echo "Your message";
+                                break;
+                        }
+                        ?></label><br />
                     <textarea name="message" id="message" rows="10" cols="50"></textarea>
                 </p>
             </td>
@@ -69,7 +135,18 @@
         <tr>
             <td>
                 <div id="repondre">
-                    <input type="submit" value="Ajouter" />
+                    <input type="submit" value="<?php
+                    session_start();
+                    switch ($_SESSION['lang']){
+                        case 'fr':
+                            echo "Envoyer";
+                            break;
+
+                        case 'eng':
+                            echo "Send";
+                            break;
+                    }
+                    ?>" />
                 </div>
             </td>
         </tr>

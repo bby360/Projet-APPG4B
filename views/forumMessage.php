@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include("isConnected.php"); ?>
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -31,7 +31,18 @@
 <table>
     <tr>
         <td>
-            <p id='ajouter'>Répondre à la discussion </p>
+            <p id='ajouter'><?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Répondre";
+                        break;
+
+                    case 'eng':
+                        echo "Answer";
+                        break;
+                }
+                ?> </p>
         </td>
     </tr>
     <tr>
@@ -44,7 +55,18 @@
         <td>
 
                 <p>
-                    <label for="message">Votre message</label><br />
+                    <label for="message"><?php
+                        session_start();
+                        switch ($_SESSION['lang']){
+                            case 'fr':
+                                echo "Votre message";
+                                break;
+
+                            case 'eng':
+                                echo "Your message";
+                                break;
+                        }
+                        ?></label><br />
                     <textarea name="message" id="message" rows="10" cols="50"></textarea>
                 </p>
         </td>
@@ -52,7 +74,18 @@
     <tr>
         <td>
             <div id="repondre">
-                <input type='submit' value='Envoyer'>
+                <input type='submit' value='<?php
+                session_start();
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo "Envoyer";
+                        break;
+
+                    case 'eng':
+                        echo "Send";
+                        break;
+                }
+                ?>'>
             </div>
         </td>
     </tr>

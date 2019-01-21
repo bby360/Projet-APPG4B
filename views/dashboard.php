@@ -4,7 +4,18 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Page d'accueil</title>
+    <title><?php
+
+        switch ($_SESSION['lang']){
+            case 'fr':
+                echo "Page d'accueil";
+                break;
+
+            case 'eng':
+                echo 'Homepage';
+                break;
+        }
+        ?></title>
     <link rel="stylesheet" type="text/css" href="designs/css/dashboard.css" />
 </head>
 <body>
@@ -19,14 +30,36 @@
 
     <div class="piece"><a href="index.php?action=rooms&amp;piece=Choisir une pièce">
             <div class="text">
-                <p>PIECES</p>
+                <p><?php
+
+                    switch ($_SESSION['lang']){
+                        case 'fr':
+                            echo 'PIECES';
+                            break;
+
+                        case 'eng':
+                            echo 'ROOMS';
+                            break;
+                    }
+                    ?></p>
             </div>
         </a>
     </div>
 
     <div class="profil"><a href="index.php?action=profileEdited">
             <div class="text">
-                <p>PROFIL</p>
+                <p><?php
+
+                    switch ($_SESSION['lang']){
+                        case 'fr':
+                            echo 'PROFIL';
+                            break;
+
+                        case 'eng':
+                            echo 'PROFILE';
+                            break;
+                    }
+                    ?></p>
             </div>
         </a>
     </div>
@@ -40,7 +73,18 @@
 
     <div class="consommation"><a href="index.php?action=consumption">
             <div class="text">
-                <p>CONSOMMATION</p>
+                <p><?php
+
+                    switch ($_SESSION['lang']){
+                        case 'fr':
+                            echo 'CONSOMMATION';
+                            break;
+
+                        case 'eng':
+                            echo 'CONSUMPTION';
+                            break;
+                    }
+                    ?></p>
             </div>
         </a>
     </div>

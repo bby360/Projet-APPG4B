@@ -15,7 +15,18 @@
 </header>
 <section>
 
-    <h1>Liste des pièces</h1>
+    <h1><?php
+
+        switch ($_SESSION['lang']){
+            case 'fr':
+                echo 'Liste des pièces';
+                break;
+
+            case 'eng':
+                echo 'List of your rooms';
+                break;
+        }
+        ?></h1>
 
     <table>
         <?php foreach($rooms as $room) { ?>

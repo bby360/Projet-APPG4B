@@ -17,21 +17,54 @@
         <a href="index.php?action=lightSensors">
             <img src="designs/pictures/light.jpg">
         </a>
-        <div class="desc">Capteurs de luminosité</div>
+        <div class="desc"><?php
+
+            switch ($_SESSION['lang']){
+                case 'fr':
+                    echo 'Capteurs de luminosité';
+                    break;
+
+                case 'eng':
+                    echo 'Light sensors';
+                    break;
+            }
+            ?></div>
     </div>
 
     <div class="gallery">
         <a href="index.php?action=presenceSensors">
             <img src="designs/pictures/presence.jpg">
         </a>
-        <div class="desc">Capteurs de présence </div>
+        <div class="desc"><?php
+
+            switch ($_SESSION['lang']){
+                case 'fr':
+                    echo 'Capteurs de présence';
+                    break;
+
+                case 'eng':
+                    echo 'Proximity sensors';
+                    break;
+            }
+            ?> </div>
     </div>
 
     <div class="gallery">
         <a href="index.php?action=temperatureSensors">
             <img src="designs/pictures/temperature.jpg">
         </a>
-        <div class="desc">Capteurs de température </div>
+        <div class="desc"><?php
+
+            switch ($_SESSION['lang']){
+                case 'fr':
+                    echo 'Capteurs de température';
+                    break;
+
+                case 'eng':
+                    echo 'Heat sensors';
+                    break;
+            }
+            ?> </div>
     </div>
 
 </section>

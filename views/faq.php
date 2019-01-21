@@ -13,6 +13,20 @@ require 'isConnected.php';
 </header>
 
 <body>
+
+<h1><?php
+
+    switch ($_SESSION['lang']){
+        case 'fr':
+            echo "Foire Aux Questions";
+            break;
+
+        case 'eng':
+            echo "Frequently Asked Questions";
+            break;
+    }
+    ?></h1>
+<table>
     <section>
     <div class="faq_container">
     <?php foreach($questions as $question) { ?>
@@ -25,6 +39,7 @@ require 'isConnected.php';
  </div>
  <?php } ?>
 </section>
+</table>
 </body>
 
  </html>

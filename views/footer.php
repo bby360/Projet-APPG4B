@@ -12,8 +12,30 @@
 
     <p>
     <ul>
-        <li><a href="" id="mention">Mentions légales</a> </li>
-        <li><a href="" id="Apropos">A Propos</a></li>
+        <li><a href="" id="mention"><?php
+
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo 'Mentions légales';
+                        break;
+
+                    case 'eng':
+                        echo 'Legal mentions';
+                        break;
+                }
+                ?></a> </li>
+        <li><a href="" id="Apropos"><?php
+
+                switch ($_SESSION['lang']){
+                    case 'fr':
+                        echo 'A propos';
+                        break;
+
+                    case 'eng':
+                        echo 'About us';
+                        break;
+                }
+                ?></a></li>
         <li>Created by <img src="designs/pictures/logo.jpg" class="logo"></li>
     </ul>
     </p>
