@@ -2,6 +2,7 @@
 if(!isset($_SESSION)) {
 session_start();
 } ?>
+<?php include("isConnectedAdmin.php"); ?>
 <!DOCTYPE html>
 
 <html>
