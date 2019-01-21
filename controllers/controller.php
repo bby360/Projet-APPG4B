@@ -381,16 +381,18 @@ function setHouse(){
    require 'views/houseList.php';
 }
 
-function changeLang(){
+function changeLang()
+{
     session_start();
-    switch ($_SESSION['lang']){
+    switch ($_SESSION['lang']) {
         case 'fr':
-            $_SESSION['lang']='eng';
+            $_SESSION['lang'] = 'eng';
             break;
 
         case 'eng':
-            $_SESSION['lang']='fr';
+            $_SESSION['lang'] = 'fr';
             break;
     }
 
     require 'views/dashboard.php';
+}
