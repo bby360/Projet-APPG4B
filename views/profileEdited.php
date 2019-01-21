@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include("isConnected.php"); ?>
+
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
@@ -24,7 +24,8 @@ if ( !empty($_POST['email']) and empty($_POST['phone']) and empty($_POST['emerge
     $exist = $req->fetch();
 
     if ($exist != null){
-        die("Cet email existe déjà" . !$exist);
+        echo "Cet email existe déjà";
+
 
     }
 
@@ -60,7 +61,8 @@ elseif (!empty($_POST['phone']) AND !empty($_POST['email']) and empty($_POST['em
     $exist = $req->fetch();
 
     if ($exist != null){
-        die("Cet email existe déjà" . !$exist);
+        echo "Cet email existe déjà";
+
     }
 
     else {
@@ -112,7 +114,8 @@ elseif(!empty($_POST['emergency']) and empty($_POST['phone']) and !empty($_POST[
     $exist = $req->fetch();
 
     if ($exist != null){
-        die("Cet email existe déjà" . !$exist);
+        echo "Cet email existe déjà";
+
     }
     else {
         $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, email = ? WHERE lastName = ?');
@@ -138,7 +141,8 @@ elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and !empty($_POST
     $exist = $req->fetch();
 
     if ($exist != null){
-        die("Cet email existe déjà" . !$exist);
+        echo "Cet email existe déjà";
+
     }
 
     else {
@@ -161,7 +165,7 @@ elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and !empty($_POST
 
 ?>
 
-
+<div xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="../design/ProfileEdited.css" />
@@ -174,7 +178,7 @@ elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and !empty($_POST
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="./design/css/ProfileEdited.css" />
     <title>Profil</title>
-</head>
+</div>
 
 <body>
 
