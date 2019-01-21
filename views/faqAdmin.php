@@ -1,3 +1,7 @@
+<?php
+if(!isset($_SESSION)) {
+session_start();
+} ?>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="designs/css/faq.css" />
