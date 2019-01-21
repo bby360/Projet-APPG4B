@@ -29,7 +29,9 @@
             <img src="designs/pictures/light.jpg">
         </a>
         <div class="desc"><h1> <?php
-                session_start();
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Consommation des capteurs de luminosité";
@@ -52,7 +54,9 @@
             <img src="designs/pictures/presence.jpg">
         </a>
         <div class="desc"><h1> <?php
-                session_start();
+         if(!isset($_SESSION)) {
+            session_start();
+         }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Consommation des capteurs de présence";
