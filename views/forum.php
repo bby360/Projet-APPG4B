@@ -14,7 +14,9 @@
     <tr>
         <td class="sujet1">
             <p><?php
-                session_start();
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Sujet";
@@ -28,7 +30,9 @@
         </td>
         <td class="date">
             <p><?php
-                session_start();
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Date de création";
@@ -42,7 +46,9 @@
         </td>
         <td class="date">
             <p><?php
-                session_start();
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Créé par :";
@@ -76,7 +82,9 @@
     <tr>
         <td>
             <p id='sujet'><?php
-                session_start();
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Ajouter un topic";
@@ -95,7 +103,9 @@
             <td>
                 <p>
                     <label for="subject"><?php
-                        session_start();
+                         if(!isset($_SESSION)) {
+        session_start();
+    }
                         switch ($_SESSION['lang']){
                             case 'fr':
                                 echo "Sujet du topic";
@@ -117,7 +127,9 @@
             <td>
                 <p>
                     <label for="message"><?php
-                        session_start();
+                        if(!isset($_SESSION)) {
+        session_start();
+    }
                         switch ($_SESSION['lang']){
                             case 'fr':
                                 echo "Votre message";
@@ -136,7 +148,9 @@
             <td>
                 <div id="repondre">
                     <input type="submit" value="<?php
-                    session_start();
+                     if(!isset($_SESSION)) {
+        session_start();
+    }
                     switch ($_SESSION['lang']){
                         case 'fr':
                             echo "Envoyer";
