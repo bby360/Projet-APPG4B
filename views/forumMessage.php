@@ -32,7 +32,9 @@
     <tr>
         <td>
             <p id='ajouter'><?php
-                session_start();
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Répondre";
@@ -56,7 +58,9 @@
 
                 <p>
                     <label for="message"><?php
-                        session_start();
+                         if(!isset($_SESSION)) {
+        session_start();
+    }
                         switch ($_SESSION['lang']){
                             case 'fr':
                                 echo "Votre message";
@@ -75,7 +79,9 @@
         <td>
             <div id="repondre">
                 <input type='submit' value='<?php
-                session_start();
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Envoyer";
