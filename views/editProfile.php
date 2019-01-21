@@ -9,7 +9,9 @@ include("isConnected.php");
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="./designs/css/editProfile.css" />
         <title><?php
-            session_start();
+             if(!isset($_SESSION)) {
+        session_start();
+    }
             switch ($_SESSION['lang']){
                 case 'fr':
                     echo "Editer votre profil";
@@ -28,7 +30,9 @@ include("isConnected.php");
     </header>
 
             <h1> <?php
-                session_start();
+                 if(!isset($_SESSION)) {
+        session_start();
+    }
                 switch ($_SESSION['lang']){
                     case 'fr':
                         echo "Editer votre profil";
@@ -42,7 +46,9 @@ include("isConnected.php");
 
     	<section>
         <p><?php
-            session_start();
+            if(!isset($_SESSION)) {
+        session_start();
+    }
             switch ($_SESSION['lang']){
                 case 'fr':
                     echo "Bonjour, vous pouvez modifier votre profil ici !";
@@ -60,7 +66,9 @@ include("isConnected.php");
 
                 <fieldset>
                 <legend><h2><?php
-                        session_start();
+                         if(!isset($_SESSION)) {
+        session_start();
+    }
                         switch ($_SESSION['lang']){
                             case 'fr':
                                 echo "Changer votre contact";
@@ -73,7 +81,9 @@ include("isConnected.php");
                         ?></h2></legend>
                 <p>
                     <h3><label for="phone"><?php
-                            session_start();
+                             if(!isset($_SESSION)) {
+        session_start();
+    }
                             switch ($_SESSION['lang']){
                                 case 'fr':
                                     echo "Portable";
@@ -86,7 +96,9 @@ include("isConnected.php");
                             ?></label> : <input type="tel" name="phone" id="phone" /></h3>
                     <h3><label for="email">E-mail</label> : <input type="email" name="email" id="email" /></h3>
                     <h3><label for="emergency"><?php
-                            session_start();
+                             if(!isset($_SESSION)) {
+        session_start();
+    }
                             switch ($_SESSION['lang']){
                                 case 'fr':
                                     echo "Contact d'urgence";
@@ -99,7 +111,9 @@ include("isConnected.php");
                             ?></label> : <input type="text" name="emergency" id="emergency" /></h3>
 
                     <h3><input type="submit" value="<?php
-                        session_start();
+                         if(!isset($_SESSION)) {
+        session_start();
+    }
                         switch ($_SESSION['lang']){
                             case 'fr':
                                 echo "Enregistrer";
