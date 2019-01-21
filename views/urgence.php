@@ -13,7 +13,9 @@
 
 </header>
 <a href="index.php?action=declarerAlerte"><input id="button" type="button" value="<?php
-    session_start();
+    if(!isset($_SESSION)) {
+        session_start();
+    }
     switch ($_SESSION['lang']){
         case 'fr':
             echo "ALERTE";
@@ -32,7 +34,9 @@
             <img src="designs/pictures/light.jpg">
         </a>
         <div class="desc"><?php
-            session_start();
+            if(!isset($_SESSION)) {
+        session_start();
+    }
             switch ($_SESSION['lang']){
                 case 'fr':
                     echo "Contact d'urgence";
