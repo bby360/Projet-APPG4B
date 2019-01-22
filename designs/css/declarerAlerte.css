@@ -1,0 +1,58 @@
+html,body{
+    margin: 0;
+    padding:0;
+    width: 100%;
+    background-color:#00497A;
+    text-decoration: none;
+    color:black;
+    font-family: "Libre Baskerville";
+}
+#fond {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    position: relative;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+h3{
+    position: relative;
+    color:black;
+    text-align: center;
+}
+
+p{
+    position: relative;
+    color:black;
+    text-align: center;
+}
+
+table
+{
+    position: relative;
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+td /* Toutes les cellules des tableaux... */
+{
+    position: relative;
+    border: 1px solid white; /* auront une bordure de 1px */
+    text-align: center;
+    width: 10em;
+}
+
+thead{
+    position: relative;
+    background-color:#77B5FE;
+    text-align: center;
+}
