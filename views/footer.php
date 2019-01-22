@@ -16,34 +16,7 @@ session_start();
 
     <p>
     <ul>
-        <li><a href="./views/legal.php" id="mention"><?php
-                 if(!isset($_SESSION)) {
-        session_start();
-    }
-                switch ($_SESSION['lang']){
-                    case 'fr':
-                        echo 'Mentions légales';
-                        break;
-
-                    case 'eng':
-                        echo 'Legal mentions';
-                        break;
-                }
-                ?></a> </li>
-        <li><a href="" id="Apropos"><?php
-                 if(!isset($_SESSION)) {
-        session_start();
-    }
-                switch ($_SESSION['lang']){
-                    case 'fr':
-                        echo 'A propos';
-                        break;
-
-                    case 'eng':
-                        echo 'About us';
-                        break;
-                }
-                ?></a></li>
+        <li><a href="./views/legal.php" id="mention">Mentions</a> </li>
         <li>Created by <img src="designs/pictures/logo.jpg" class="logo"></li>
     </ul>
     </p>

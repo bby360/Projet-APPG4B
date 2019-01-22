@@ -120,6 +120,9 @@ session_start();
     </form>
 
 </section>
+<footer>
+    <?php require "footer.php"?>
+</footer>
 </body>
 </html>
 
