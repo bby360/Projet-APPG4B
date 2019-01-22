@@ -46,6 +46,7 @@ require 'isConnected.php';
  <?php } ?>
 </section>
 </table>
+<footer><?php require "footer.php"?></footer>
 </body>
 
  </html>
