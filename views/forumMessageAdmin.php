@@ -41,11 +41,16 @@ session_start();
             </td> 
         </tr>
     <?php } ?>
-    </table>
-    <div id="valider">
-        <input type='button' value='Confirmer' onClick='Confirmer()'>
+    <tr>
+            <td id="supprimer">
+            <input type='button' value='Supprimer' onClick='Confirmer()'>
+            </td>
 
-    </div>
+
+        </tr>
+
+    </table>
+
 </form>
 
 <table>
