@@ -11,18 +11,25 @@ session_start();
     <link rel="stylesheet" type="text/css" href="./designs/css/declarerAlerte.css" />
 </head>
 <body>
+<img id="fond" src="./designs/pictures/photo.jpg">
 <header>
     <?php include("header.php"); ?>
 </header>
-
+<section>
 <table>
+    <thead>
+    <tr>
+        <td><h3>Pièce</h3></td>
+        <td><h3>Type de capteur</h3></td>
+        <td><h3></h3></td>
+    </tr>
+    </thead>
 
     <?php foreach($typeCapteurs as $key => $value){ ?>
     
         
          <tr id='info'> 
-            <td id="select">  
-            </td>  
+
             <td class="tab1">
                 <p><?=$roomNames[$key]; ?></p>
             </td>
@@ -38,7 +45,7 @@ session_start();
     
    
 </table>
-
+</section>
 
 
 
