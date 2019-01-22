@@ -8,11 +8,11 @@ session_start();
 
 if(!isset($_SESSION)) {
 session_start();
-} 
+}
 $bdd = new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
 
-$requser = $bdd->prepare("SELECT * FROM client WHERE lastName = ?");
-$requser->execute(array($_SESSION['lastName']));
+$requser = $bdd->prepare("SELECT * FROM client WHERE idClient = ?");
+$requser->execute(array($_SESSION['idClient']));
 $user = $requser->fetch();
 
 
@@ -37,11 +37,11 @@ if ( !empty($_POST['email']) and empty($_POST['phone']) and empty($_POST['emerge
     }
 
     else {
-        $insertmail = $bdd->prepare('UPDATE client SET email = ? WHERE lastName = ? ');
+        $insertmail = $bdd->prepare('UPDATE client SET email = ? WHERE idClient = ? ');
 
         $insertmail->execute(array(
             $newemail,
-            $_SESSION['lastName']
+            $_SESSION['idClient']
         ));
 
         $_SESSION['email'] = $newemail;
@@ -50,10 +50,10 @@ if ( !empty($_POST['email']) and empty($_POST['phone']) and empty($_POST['emerge
 elseif (!empty($_POST['phone']) and empty($_POST['email']) and empty($_POST['emergency'])){
 
     $newphone = htmlspecialchars($_POST['phone']);
-    $insertphone = $bdd->prepare('UPDATE client SET phone = ? WHERE lastName = ?');
+    $insertphone = $bdd->prepare('UPDATE client SET phone = ? WHERE idClient = ?');
     $insertphone->execute(array(
         $newphone,
-        $_SESSION['lastName'],
+        $_SESSION['idClient'],
     ));
 
     $_SESSION['phone']=$newphone;
@@ -73,11 +73,11 @@ elseif (!empty($_POST['phone']) AND !empty($_POST['email']) and empty($_POST['em
     }
 
     else {
-        $req = $bdd->prepare('UPDATE client SET email = ?, phone = ? WHERE lastName = ?');
+        $req = $bdd->prepare('UPDATE client SET email = ?, phone = ? WHERE idClient = ?');
         $req->execute(array(
             $newemail,
             $newphone,
-            $_SESSION['lastName'],
+            $_SESSION['idClient'],
         ));
 
         $_SESSION['email'] = $newemail;
@@ -87,10 +87,10 @@ elseif (!empty($_POST['phone']) AND !empty($_POST['email']) and empty($_POST['em
 elseif(!empty($_POST['emergency']) and empty($_POST['phone']) and empty($_POST['email'])){
 
     $newemergency = htmlspecialchars($_POST['emergency']);
-    $insertphone = $bdd->prepare('UPDATE client SET emergency = ? WHERE lastName = ?');
+    $insertphone = $bdd->prepare('UPDATE client SET emergency = ? WHERE idClient = ?');
     $insertphone->execute(array(
         $newemergency,
-        $_SESSION['lastName'],
+        $_SESSION['idClient'],
     ));
 
     $_SESSION['emergency']=$newemergency;
@@ -100,11 +100,11 @@ elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and empty($_POST[
 
     $newphone = htmlspecialchars($_POST['phone']);
     $newemergency = htmlspecialchars($_POST['emergency']);
-    $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, phone = ? WHERE lastName = ?');
+    $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, phone = ? WHERE idClient = ?');
     $insertphone->execute(array(
         $newemergency,
         $newphone,
-        $_SESSION['lastName'],
+        $_SESSION['idClient'],
     ));
 
     $_SESSION['emergency']=$newemergency;
@@ -125,11 +125,11 @@ elseif(!empty($_POST['emergency']) and empty($_POST['phone']) and !empty($_POST[
 
     }
     else {
-        $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, email = ? WHERE lastName = ?');
+        $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, email = ? WHERE idClient = ?');
         $insertphone->execute(array(
             $newemergency,
             $newemail,
-            $_SESSION['lastName'],
+            $_SESSION['idClient'],
         ));
 
         $_SESSION['emergency'] = $newemergency;
@@ -153,12 +153,12 @@ elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and !empty($_POST
     }
 
     else {
-        $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, phone = ?, email = ? WHERE lastName = ?');
+        $insertphone = $bdd->prepare('UPDATE client SET emergency = ?, phone = ?, email = ? WHERE idClient = ?');
         $insertphone->execute(array(
             $newemergency,
             $newphone,
             $newemail,
-            $_SESSION['lastName'],
+            $_SESSION['idClient'],
         ));
 
         $_SESSION['emergency'] = $newemergency;
