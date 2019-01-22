@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="utf-8" />
     <title>Forum</title>
-    <link rel="stylesheet" type="text/css" href="designs/css/forum.css" />
+    <link rel="stylesheet" type="text/css" href="designs/css/forumAdmin.css" />
 </head>
 <body>
 	<header>
@@ -31,7 +31,7 @@ session_start();
     <?php foreach($topics as $topic) { ?>
     <form method="post" action="indexAdmin.php?action=supTopic" name="supprimer">
     <tr>
-        <td id="select">
+        <td class="select">
                <input type="checkbox" name="select" value='<?= $topic["idTopic"];?>' id="select">
             </td> 
         <td class="sujet">
@@ -40,15 +40,16 @@ session_start();
         <td class="date">
             <p><?= $topic["creationDate"];?></p>
         </td>
-       
     </tr>
     <?php } ?>
-
+        <tr>
+            <td class="select">
+                <input type='button' value='Supprimer' onClick='Confirmer()'>
+            </td>
+        </tr>
 
   </table>
-    <div id="valider">
-        <input type='button' value='Confirmer' onClick='Confirmer()'>
-    </div>
+
     </form>
     <table id="ajout">
     <tr>
