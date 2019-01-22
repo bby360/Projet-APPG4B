@@ -24,7 +24,7 @@ session_start();
 
 </head>
 <body>
-
+<img id="fond" src="./designs/pictures/photo.jpg">
 <header>
     <?php
     include 'header.php';
