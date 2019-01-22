@@ -53,7 +53,7 @@ session_start();
             ?></div>
     </div>
     <div class="gallery">
-        <a href="./designs/pictures/presence.jpg">
+        <a href="index.php?action=faq"</a>
             <img src="designs/pictures/presence.jpg">
         </a>
         <div class="desc">FAQ</div>
