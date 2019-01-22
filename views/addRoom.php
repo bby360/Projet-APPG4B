@@ -6,6 +6,7 @@ session_start();
 <!DOCTYPE html>
 <?php include("isConnected.php"); ?>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title><?php
@@ -20,9 +21,10 @@ session_start();
                 break;
         }
         ?></title>
-    <link rel="stylesheet" type="text/css" href="designs/css/addRoom.css" />
+    <link rel="stylesheet" type="text/css" href="./designs/css/addRoom.css" />
 
 </head>
+
 <body>
 <img id="fond" src="./designs/pictures/photo.jpg">
 <header>

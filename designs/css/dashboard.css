@@ -22,8 +22,8 @@ a {
     position: relative;
     display: inline-block;
     float: left;
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 250px;
     background-image: url("bureau-moderne.jpg");
     background-size: contain;
     background-size: cover;
@@ -58,8 +58,8 @@ a {
     display: inline-block;
     position: relative;
     float: right;
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 250px;
     background-image: url("m.jpg");
     background-size: contain;
     background-size: cover;
@@ -95,8 +95,8 @@ a {
     display:inline-block;
     position: relative;
     float: right;
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 250px;
     background-image: url("catalogue2.jpg");
     background-size: contain;
     background-size: cover;
@@ -132,8 +132,8 @@ a {
     display: inline-block;
     position: relative;
     float: left;
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 250px;
     background-image: url("graph.jpg");
     background-size: contain;
     background-size: cover;

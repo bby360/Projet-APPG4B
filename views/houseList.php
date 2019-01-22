@@ -119,7 +119,9 @@ session_start();
 
 </form>
 
-    <footer><?php require"footer.php"?></footer>
+<footer>
+    <?php require"footer.php"; ?>
+</footer>
 
 </body>
 </html>

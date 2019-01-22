@@ -23,6 +23,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="designs/css/addRoom.css" />
 
 </head>
+<img src="./designs/pictures/photo.jpg" id="fond">
 <body>
 
 <header>

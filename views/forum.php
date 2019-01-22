@@ -4,6 +4,9 @@ session_start();
 } ?>
 <!DOCTYPE html>
 
+<?php require 'isConnected.php';
+?>
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -153,7 +156,9 @@ session_start();
         </tr>
     </table>
 
-
+    <footer>
+        <?php require "footer.php"?>
+    </footer>
 
 </body>
 

@@ -70,3 +70,7 @@ session_start();
 
 
 </section>
+
+<footer>
+    <?php require "footer.php"?>
+</footer>

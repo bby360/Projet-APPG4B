@@ -217,5 +217,7 @@ elseif(!empty($_POST['emergency']) and !empty($_POST['phone']) and !empty($_POST
 
     </div>
 </section>
-
+<footer>
+    <?php require "footer.php"?>
+</footer>
 </body>
