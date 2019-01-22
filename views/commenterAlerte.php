@@ -10,10 +10,12 @@ session_start();
     <title>CommenterAlerte</title>
     <link rel="stylesheet" type="text/css" href="./designs/css/commenterAlerte.css" />
 </head>
+<img id="fond" src="./designs/pictures/photo.jpg">
 <body>
 <header>
     <?php include("header.php"); ?>
 </header>
+<section>
  <p> Vous souhaitez déclarer une alerte pour un capteur de type : <?= $_GET['capteur'];?> dans la pièce : <?= $_GET['room'];?>  </p>
 <form action="index.php?action=posterAlerte&idCapteur=<?= $_GET['idCapteur'];?>&idRoom=<?= $_GET['idRoom'];?>" method="post" name="alerte">
     <p>
@@ -34,6 +36,7 @@ session_start();
 
     </div>
 </form>
+</section>
 
 <script language='javascript'>
     function Confirmer()
