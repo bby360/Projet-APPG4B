@@ -1,0 +1,43 @@
+*{
+    text-decoration: none;
+}
+
+#fond {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+h1{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 10%;
+    color: #00497A;
+    text-decoration: underline;
+
+}
+
+header{
+    position: absolute;
+    z-index: 0;
+    margin-top: 0px;
+}
+
+p{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: large;
+
+}
+
+form{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: large;
+}
+
+
