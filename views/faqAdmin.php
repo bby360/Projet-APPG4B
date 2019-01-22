@@ -46,5 +46,7 @@ include 'headerAdmin.php';
         </form>
 </table>
 </body>
-
+<footer>
+    <?php require"footer.php"?>
+</footer>
  </html>
