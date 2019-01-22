@@ -5,28 +5,6 @@ function notFound() {
     require "views/notFound.php";
 }
 
-function signupAdmin(){
-
-    if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email'])
-        && isset($_POST['mdp'])){
-
-        if (empty($_POST['lastName']) || empty($_POST['firstName']) ||
-            empty($_POST['email']) || empty($_POST['mdp']) || $_POST['mdp'] != $_POST['confirm_mdp']) {
-
-            $alerte = "Veuillez remplir tous les champs correctement.";
-            echo "Veuillez remplir tous les champs correctement.";
-        } else {
-            signingup();
-            header('Location: indexAdmin.php?action=dashboardAdmin');
-
-            exit();
-
-        }
-    }
-
-    require "views/signupAdmin.php";
-}
-
 function signinAdmin(){
 
 

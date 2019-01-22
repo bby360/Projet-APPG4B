@@ -44,7 +44,7 @@ session_start();
 
             <input type="submit" value="valider" name="connexion" class="form-button">
         </form>
-        <a href="indexAdmin.php?action=signupAdmin">inscription admin</a>
+        
     </div>
 
 </section>

@@ -8,10 +8,6 @@ if(isset($_GET["action"])){
             signinAdmin();
             break;
 
-        case 'signupAdmin':
-            signupAdmin();
-            break;
-
         case 'dashboardAdmin':
             dashboardAdmin();
             break;
