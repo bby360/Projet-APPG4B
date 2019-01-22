@@ -99,3 +99,6 @@ session_start();
     }
 
 </script>
+<footer>
+    <?php require"footer.php"?>
+</footer>

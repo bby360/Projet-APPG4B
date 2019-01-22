@@ -5,12 +5,11 @@ html, body{
     background-color:#00497A;
 }
 
-p{
+.body p{
     color: white;
 }
 
 a{
-    display: block;
     text-decoration: none;
     color: black;
 }
