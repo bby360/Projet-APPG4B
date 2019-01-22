@@ -1,3 +1,12 @@
+*{
+    text-align: center;
+    background-color:#00497A;
+    font-family: "Libre Baskerville";
+    text-decoration: none;
+    color: white;
+}
+
+
 
 .faq_question {
     margin: 0px;
@@ -5,13 +14,12 @@
     display: inline-block;
     cursor: pointer;
     font-weight: bold;
-    color: #00497A;
+    color: lightgrey;
 }
- 
-.faq_answer_container {
-    height: 20px;
+
+.faq_reponse {
+    height: 0px;
     overflow: hidden;
     padding: 0px;
-    color: #00497A;
-
+    color: white;
 }
