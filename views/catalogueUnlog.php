@@ -5,6 +5,9 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+    <header>
+        <?php include("catalogueHeader.php"); ?>
+    </header>
     <meta charset="utf-8" />
     <title>Catalogue</title>
     <link rel="stylesheet" type="text/css" href="./designs/css/catalogue.css" />
