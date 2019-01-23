@@ -110,7 +110,7 @@ session_start();
             </tr>
         </table>
 
-        <p><input type="checkbox" required name="terms"> J'ai lu et j'accepte les <u> <a href="" id="cgu">conditions générales d'utilisation</a></u></p>
+        <p><input type="checkbox" required name="terms"> J'ai lu et j'accepte les <u> <a href="../views/cgu.php" id="cgu">conditions générales d'utilisation</a></u></p>
 
         <p>
             <input type="button" value="Retour" onclick="history.back()" class="form-button">
