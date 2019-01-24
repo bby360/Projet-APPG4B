@@ -48,7 +48,7 @@ session_start();
                 ?> </h1>
             <h1><?php foreach($capteursL as $capteur) { ?>
                     0<?= $capteur["CSumL"];?>
-                <?php } ?> kWh
+                <?php } ?> Wh
             </h1>
         </div>
     </div>
@@ -74,7 +74,7 @@ session_start();
             <h1>
                 <?php foreach($capteursP as $capteur) { ?>
                     <?= $capteur["CSumP"];?>
-                <?php } ?> kWh
+                <?php } ?> Wh
             </h1>
         </div>
     </div>
@@ -100,7 +100,7 @@ session_start();
             <h1>
                 <?php foreach($capteursT as $capteur) { ?>
                     <?= $capteur["CSumT"];?>
-                <?php } ?> kWh
+                <?php } ?> Wh
             </h1> </div>
     </div>
 

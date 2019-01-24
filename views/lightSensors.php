@@ -113,7 +113,7 @@ session_start();
                     <?= $sensors["typeProduct"];?>
                 </td>
                 <td>
-                    <?= $sensors["consumption"];?> kWh
+                    <?= $sensors["consumption"];?> Wh
                 </td>
                 <td>
                     <?= $sensors["price"];?> €
