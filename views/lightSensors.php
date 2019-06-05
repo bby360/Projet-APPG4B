@@ -123,7 +123,6 @@ session_start();
         </tbody>
 
     </table>
-
 </section>
 <footer>
     <?php require "footer.php"?>

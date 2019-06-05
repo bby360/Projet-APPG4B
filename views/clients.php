@@ -21,7 +21,8 @@ session_start();
     </head>
 
     <body>
-
+    
+   
     <h1 id="top">Liste des clients</h1>
 
     <?php
@@ -64,6 +65,7 @@ session_start();
     } else {
         echo "0 results";
     }
+ 
     ?>
     <a href="#top">Go to top</a>
     </body>

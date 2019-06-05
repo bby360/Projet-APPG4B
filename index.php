@@ -143,6 +143,10 @@ if(isset($_GET["action"])){
 	case 'langue':
             changeLang();
             break;
+            
+    case 'logs':
+            logs();
+            break;
 
     }
 } else {
