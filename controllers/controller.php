@@ -186,7 +186,7 @@ function updateRoom(){
         $lum=$_POST['onOff'];
     }
     else{
-        $lum="0";
+        $lum="2";   //2 = eteint
     }
     $idClient=$_SESSION['idClient'];
     $idHouse= $_SESSION['idHouse'];
@@ -207,28 +207,38 @@ function updateRoom(){
     else{
         updateManu($idHouse, $nom, $nvLumiereManu, $nvVoletsManu, $nvTemperature, $lum);
     }
-    ?>
+    var_dump('onOff');
+    $a = createTrame(01,$lum); //type, val
+    $a1='';
+    foreach ($a as $ligne)
+    {
+        $a1.=$ligne;
+    } 
+    echo $a1;
+    $url = 'http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=004B&TRAME=' .$a1 ;
+    echo $url;
+?>
     <script>
 
- var window_handle;  // variable globale du script, à ne surtout pas modifier !!!
- //var a = <?php echo $a1; ?>;
+     var window_handle;  // variable globale du script, à ne surtout pas modifier !!!
+     var url2 = '<?php echo $url; ?>';
 
- function open_window() // on défini la fonction qui va ouvrir la fenêtre
- {
-    window_handle = window.open("http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=004B&TRAME=45" ); // ici c'est l'URL complète de la page à ouvrir attention de ne pas supprimer les guillemets
- } // on ferme la fonction open_window()
- 
- function close_window() // on défini la fonction qui va fermer la fenêtre qu'on a ouvert précédemment
- {
-    window_handle.close(); // on ferme la page comme window.close() à part que dans notre cas, on fermer une variable donc window_nomdelavariable.close()
- } // on ferme la fonction close_window()
+     function open_window() // on défini la fonction qui va ouvrir la fenêtre
+     {
+        window_handle = window.open(url2); // ici c'est l'URL complète de la page à ouvrir attention de ne pas supprimer les guillemets
+     } // on ferme la fonction open_window()
+     
+     function close_window() // on défini la fonction qui va fermer la fenêtre qu'on a ouvert précédemment
+     {
+        window_handle.close(); // on ferme la page comme window.close() à part que dans notre cas, on fermer une variable donc window_nomdelavariable.close()
+     } // on ferme la fonction close_window()
 
     </script>
 
     <script>
     
-    open_window();
-    window.setInterval(" window_handle.close();", 5000, "JavaScript"); // 20000 est le temps y EN MILISECONDE
+        open_window();
+        window.setInterval(" window_handle.close();", 100, "JavaScript"); // 20000 est le temps y EN MILISECONDE
     
     </script>
 <?php
@@ -428,8 +438,7 @@ function logs() {
     }
 
 function createTrame($typeCapt, $valcapt){
-    $typeCapt = 01;
-    $valcapt = 0001;
+    
     $TrameEnvoi = ''; // buffer pour envoyer une trame vers la passerelle
     // Partie constante de la trame
     $TrameEnvoi[0] = '1'; // le champ TRA. choisir toujours "Trame courante = 1"
@@ -441,19 +450,16 @@ function createTrame($typeCapt, $valcapt){
     $TrameEnvoi[4] = 'B'; // mettre la lettre du numero de groupe (A, B, ... E)
     $TrameEnvoi[5] = '1'; // champ REQ. 1= Requete en ecriture
     // TrameEnvoi[6] = ; // champ TYP. remplir dans la boucle (voir Doc)
+    $TrameEnvoi[6] = $typeCapt; // type capteur
     $TrameEnvoi[7] = '0'; // champ NUM (2 octets). Numero du capteur
     $TrameEnvoi[8] = '1'; // On choisit par exemple le numero 01.
     // TrameEnvoi[ 9] = ; // Champ VAL (4 octets) = valeur à envoyer au site web
     // TrameEnvoi[10] = ; // par exemple la valeur du capteur de lumiere
     // TrameEnvoi[11] = ;
     // TrameEnvoi[12] = ;
-    $TrameEnvoi[13] = 'B'; // Champ TIM (4 octets) = heure d'envoi de la trame
-    $TrameEnvoi[14] = 'A'; // Ce champ n'est pas utilisé par la passerelle; donc
-    $TrameEnvoi[15] = 'B'; // on peut mettre la valeur qu'on veut
-    $TrameEnvoi[16] = 'A';
 
     //$digH, $digA; // digit (4 bits) Hexa et Ascii
-    $TrameEnvoi[6] = $typeCapt; // type capteur
+    
     // convertir la valeur du capteur en 4 chiffres ASCII (poid fort en premier)
     // conversion du 1er chiffre (poid fort)
     $digH = ($valcapt >> 12) & 0x0F; // >> signifie décalage de 12 bits vers la droite
@@ -471,6 +477,13 @@ function createTrame($typeCapt, $valcapt){
     $digH = $valcapt & 0x0F; // pas besoin de décalage. garder juste le dernier digit
     $digA = dechex($digH);
     $TrameEnvoi[12] = $digA;
+
+    $TrameEnvoi[13] = 'B'; // Champ TIM (4 octets) = heure d'envoi de la trame
+    $TrameEnvoi[14] = 'A'; // Ce champ n'est pas utilisé par la passerelle; donc
+    $TrameEnvoi[15] = 'B'; // on peut mettre la valeur qu'on veut
+    $TrameEnvoi[16] = 'A';
+
+    
     // boucle pour envoyer une trame vers la passerelle
     $CheckSum = 0;
     // envoi des 'SIZE_ENVOI' premiers octets
@@ -478,5 +491,7 @@ function createTrame($typeCapt, $valcapt){
     {
         $CheckSum = $CheckSum + $TrameEnvoi[$n];
     }
+    $TrameEnvoi[17] = $CheckSum;
     return $TrameEnvoi;
 }
+
