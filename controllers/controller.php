@@ -207,13 +207,34 @@ function updateRoom(){
     else{
         updateManu($idHouse, $nom, $nvLumiereManu, $nvVoletsManu, $nvTemperature, $lum);
     }
-    var_dump('onOff');
-    $a = createTrame(01,$lum); //type, val
+    
+    //header ("Location: http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=004B&TRAME=1004Btest2") ;
+    envoieTrames(01,$lum);
+    $mot=moteur($nvVoletsManu);
+    envoieTrames(02,$mot);
+    roomList2();
+}
+
+function moteur($volet){
+    if($volet <= 20){
+        $mot = 1;     //tourne à gauche
+    }
+    elseif ($volet <= 80 && $volet > 20) {
+        $mot = 2;  //ne tourne pas
+    }
+    else{
+        $mot = 3;   //tourne à droite
+    }
+    return $mot;
+}
+
+function envoieTrames($cap,$val){
+    $a = createTrame($cap,$val); //type, val
     $a1='';
     foreach ($a as $ligne)
     {
         $a1.=$ligne;
-    } 
+    }
     echo $a1;
     $url = 'http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=004B&TRAME=' .$a1 ;
     echo $url;
@@ -238,13 +259,10 @@ function updateRoom(){
     <script>
     
         open_window();
-        window.setInterval(" window_handle.close();", 100, "JavaScript"); // 20000 est le temps y EN MILISECONDE
+        window.setInterval(" window_handle.close();", 5, "JavaScript"); // 20000 est le temps y EN MILISECONDE
     
     </script>
-<?php
-    //header ("Location: http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=004B&TRAME=1004Btest2") ;
-
-    roomList2();
+    <?php
 }
 
 
